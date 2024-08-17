@@ -5,7 +5,7 @@ import React from "react";
 
 function TraderCard({ name, rating, avatar, pnl, roi, aum, mdd, chart }) {
   return (
-    <div className="flex flex-col grow shrink justify-center self-stretch px-4 py-5 my-auto w-72 bg-white rounded-md shadow-sm min-h-[200px] min-w-[240px]">
+    <div className="flex flex-col grow shrink justify-center self-stretch px-4 py-5 my-auto  bg-white rounded-md shadow-sm min-h-[200px] min-w-[240px]">
       <div className="flex flex-col w-full">
         <div className="flex gap-10 justify-between items-center w-full whitespace-nowrap">
           <div className="flex gap-2.5 items-start self-stretch my-auto h-[43px]">

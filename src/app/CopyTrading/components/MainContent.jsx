@@ -11,17 +11,26 @@ import TopTraders from "./TopTraders";
 
 function MainContent() {
   return (
-    <main className="flex flex-col ml-5 w-4/5 max-md:ml-0 max-md:w-full">
-      <div className="flex flex-col w-full max-md:max-w-full">
+    <main className="main-container">
+      <div className="my-5">
         <DashboardIcons />
-        <div className="flex flex-wrap gap-5 justify-between items-center self-center mt-16 w-full leading-none h-[547px] max-w-[1129px] max-md:mt-10 max-md:max-w-full">
+        
+        <div className="flex flex-wrap gap-5 justify-between items-center self-center mt-10 px-16">
           <PnLCurve />
           <CurrentLivePosition />
         </div>
+
+
       </div>
-      <div className="flex flex-col self-end mt-0 mr-20 w-full max-w-[1129px] max-md:mr-2.5 max-md:max-w-full">
-        <StrategiesFollowed />
-        <TopTraders />
+      
+      <div className="my-5">
+      <StrategiesFollowed />
+      </div>
+      <div className="my-5">
+      <TopTraders />
+      </div>
+      <div className="my-5">
+       
         <TransactionHistory />
       </div>
     </main>

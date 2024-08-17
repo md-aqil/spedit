@@ -13,7 +13,7 @@ function StrategyItem({
   amount,
 }) {
   return (
-    <div className="flex flex-wrap gap-10 justify-center items-center px-3 py-4 mt-1 w-full bg-white rounded-lg shadow-sm max-md:max-w-full">
+    <div className="flex flex-wrap gap-10 justify-around items-center px-3 py-4 mt-1 w-full bg-white rounded-lg shadow-sm max-md:max-w-full">
       <div className="flex gap-3 items-start self-stretch my-auto whitespace-nowrap">
         <img
           loading="lazy"

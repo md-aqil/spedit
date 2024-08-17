@@ -6,6 +6,7 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+  --theme-color: #9BEC00;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -18,16 +19,92 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: #F7FAF5;
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+:root {
+  --swiper-theme-color: #9BEC00 !important;
+
+}
+      
+  .swiper-pagination-bullet {
+    background: #A2AB9A;
+    opacity: 0.5;
+    gap: 15px;
+  }
+  
+  .swiper-pagination-bullet-active {
+    background: #9BEC00 !important;
+  }
+
+  
+
+  .swiper-button-prev,
+  .swiper-button-next {
+   border:1px solid  #666;
+    color: #A2AB9A;
+    --swiper-navigation-size: 18px;
+    padding: 15px;
+    border-radius: 4px;
+   
+  }
+
+
+  .mySwiper .swiper-button-prev,  .mySwiper .swiper-button-next {
+    top:90% !important;
+    z-index: 100;
+  }
+
+  .mySwiper .swiper-button-prev {
+    left:40% !important;
+  }
+  .mySwiper .swiper-button-next {
+    right:40% !important;
+  }
+
+  .mySwiper .swiper-wrapper {
+    padding-bottom: 60px;
+  }
+
+.dash-sidebar {
+  position: fixed;
+  left:0;
+  width: 20%;
+}
+
+.main-container {
+  width: 80%;
+  margin-left:auto;
+}
+
+.dash-sidebar-content {
+  overflow-x: auto;
+  height:100vh;
+}
+
+.dash-item-active {
+  color: var(--theme-color);
+  position: relative;
+
+}
+.dash-item-active:before {
+content: "";
+width: 0.25rem;
+height: 2.5rem;
+background: var(--theme-color);
+position: absolute;
+left: -28px;
+}
+
+.dash-item {
+  cursor: pointer;
+}
+
+.main-body {
+  margin-top: 65px;
 }

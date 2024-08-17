@@ -5,7 +5,7 @@ import React from "react";
 
 function PnLCurve() {
   return (
-    <div className="flex flex-col self-stretch pt-9 my-auto text-xl font-bold bg-white rounded-xl shadow-sm min-h-[547px] min-w-[240px] text-neutral-800 w-[761px] max-md:max-w-full">
+    <div className="flex flex-col self-stretch pt-5  text-xl font-bold bg-white rounded-xl shadow-sm mt-0 min-w-[240px] text-neutral-800 w-[761px] max-md:max-w-full">
       <div className="gap-2 self-start px-9 max-md:px-5">PnL Curve</div>
       <img
         loading="lazy"
