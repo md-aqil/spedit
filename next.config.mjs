@@ -6,6 +6,7 @@ const nextConfig = {
   },
   distDir: "out", // Where to export all pages
   assetPrefix: "/spedit",
+  trailingSlash: true,
   eslint: {
     ignoreDuringBuilds: true,
   },
