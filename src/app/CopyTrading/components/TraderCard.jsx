@@ -1,4 +1,5 @@
 
+import Image from "next/image";
 import React from "react";
 
 function TraderCard({ name, rating, avatar, pnl, roi, aum, mdd, chart }) {
@@ -7,12 +8,7 @@ function TraderCard({ name, rating, avatar, pnl, roi, aum, mdd, chart }) {
       <div className="flex flex-col w-full">
         <div className="flex gap-10 justify-between items-center w-full whitespace-nowrap">
           <div className="flex gap-2.5 items-start self-stretch my-auto h-[43px]">
-            <img
-              loading="lazy"
-              src={avatar}
-              alt={`${name}'s avatar`}
-              className="object-contain shrink-0 w-10 rounded-full aspect-square"
-            />
+            <Image loading="lazy" src={avatar} alt={`${name}'s avatar`} className="object-contain shrink-0 w-10 rounded-full aspect-square" />
             <div className="flex flex-col py-1 w-[85px]">
               <div className="text-base font-bold text-neutral-800">{name}</div>
               <div className="flex gap-1.5 items-center self-start mt-1.5 text-xs text-neutral-500">
@@ -33,9 +29,7 @@ function TraderCard({ name, rating, avatar, pnl, roi, aum, mdd, chart }) {
               alt=""
               className="object-contain shrink-0 self-stretch my-auto aspect-[1.2] stroke-[1px] stroke-stone-950 w-[18px]"
             />
-            <button className="gap-2 self-stretch p-3 my-auto bg-lime-500 rounded min-h-[38px] w-[76px]">
-              Copy
-            </button>
+            <button className="gap-2 self-stretch p-3 my-auto bg-lime-500 rounded min-h-[38px] w-[76px]">Copy</button>
           </div>
         </div>
         <div className="flex gap-4 justify-between items-end mt-5 w-full">
@@ -69,25 +63,16 @@ function TraderCard({ name, rating, avatar, pnl, roi, aum, mdd, chart }) {
             <div className="flex gap-10 mt-6 max-w-full w-[190px]">
               <div className="flex flex-col justify-center whitespace-nowrap rounded">
                 <div className="text-xs text-neutral-500">AUM</div>
-                <div className="mt-1.5 text-sm font-semibold text-neutral-800">
-                  ₹{aum.toFixed(2)}
-                </div>
+                <div className="mt-1.5 text-sm font-semibold text-neutral-800">₹{aum.toFixed(2)}</div>
               </div>
               <div className="flex flex-col">
                 <div className="text-xs text-stone-400">7D MDD</div>
-                <div className="mt-1.5 text-sm font-semibold text-neutral-800">
-                  {mdd}%
-                </div>
+                <div className="mt-1.5 text-sm font-semibold text-neutral-800">{mdd}%</div>
               </div>
             </div>
           </div>
           <div className="flex flex-col text-xs text-center text-stone-400 w-[105px]">
-            <img
-              loading="lazy"
-              src={chart}
-              alt="7 day performance chart"
-              className="object-contain self-center rounded-sm aspect-[1.86] w-[89px]"
-            />
+            <img loading="lazy" src={chart} alt="7 day performance chart" className="object-contain self-center rounded-sm aspect-[1.86] w-[89px]" />
             <div className="mt-3.5">Last 7 day</div>
           </div>
         </div>

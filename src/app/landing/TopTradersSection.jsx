@@ -1,42 +1,41 @@
-import React from 'react';
-import TraderCard from './TraderCard';
+import React from "react";
+import TraderCard from "./TraderCard";
+import avatarIcon from "../../assets/avatar-f.png";
 
 const topTradersData = [
   {
     name: "Arash008787",
     username: "@Sam.Payne90",
-    avatarSrc: "./avatar-f.png",
+    avatarSrc: avatarIcon,
     returnPercentage: 15.75,
     riskLevel: 4,
     copiers: 143,
-    lastWeekPerformance: 37.50
+    lastWeekPerformance: 37.5,
   },
   {
     name: "Arash008787",
     username: "@Sam.Payne90",
-    avatarSrc: "./avatar-f.png",
+    avatarSrc: avatarIcon,
     returnPercentage: 15.75,
     riskLevel: 4,
     copiers: 143,
-    lastWeekPerformance: 37.50
+    lastWeekPerformance: 37.5,
   },
   {
     name: "Arash008787",
     username: "@Sam.Payne90",
-    avatarSrc: "./avatar-f.png",
+    avatarSrc: avatarIcon,
     returnPercentage: 15.75,
     riskLevel: 4,
     copiers: 143,
-    lastWeekPerformance: 37.50
-  }
+    lastWeekPerformance: 37.5,
+  },
 ];
 
 function TopTradersSection() {
   return (
     <section>
-      <h2 className="mt-12 text-5xl font-bold leading-none text-center text-white max-md:mt-10">
-        Top Traders
-      </h2>
+      <h2 className="mt-12 text-5xl font-bold leading-none text-center text-white max-md:mt-10">Top Traders</h2>
       <div className="flex flex-wrap gap-5 items-center mt-16 bg-stone-900 max-md:mt-10 max-md:max-w-full">
         {topTradersData.map((trader, index) => (
           <TraderCard key={index} {...trader} />

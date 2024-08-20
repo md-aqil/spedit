@@ -1,57 +1,58 @@
-'use client';
+"use client";
 
-import React from 'react';
-import TraderCard from './TraderCard';
+import React from "react";
+import TraderCard from "./TraderCard";
 
-import { Navigation, Pagination } from 'swiper/modules';
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+import avatarF from "../../../assets/avatar-f.png";
 
 // Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/scrollbar';
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/scrollbar";
 
 const traders = [
   {
     name: "Karishma",
     rating: 502,
-    avatar: "./avatar-f.png",
+    avatar: avatarF,
     pnl: 74100.23,
     roi: 5.71,
     aum: 74100.23,
     mdd: 1.27,
-    chart: "./chart.svg"
+    chart: "./chart.svg",
   },
   {
     name: "Karishma",
     rating: 502,
-    avatar: "./avatar-f.png",
+    avatar: avatarF,
     pnl: 74100.23,
     roi: 5.71,
     aum: 74100.23,
     mdd: 1.27,
-    chart: "./chart.svg"
+    chart: "./chart.svg",
   },
   {
     name: "Karishma",
     rating: 502,
-    avatar: "./avatar-f.png",
+    avatar: avatarF,
     pnl: 74100.23,
     roi: 5.71,
     aum: 74100.23,
     mdd: 1.27,
-    chart: "./chart.svg"
+    chart: "./chart.svg",
   },
   {
     name: "Karishma",
     rating: 502,
-    avatar: "./avatar-f.png",
+    avatar: avatarF,
     pnl: 74100.23,
     roi: 5.71,
     aum: 74100.23,
     mdd: 1.27,
-    chart: "./chart.svg"
+    chart: "./chart.svg",
   },
 ];
 
@@ -61,19 +62,19 @@ function TopTraders() {
       <style jsx>{`
         /* Swiper Pagination Bullets */
         .swiper-pagination-bullet {
-          background: #A2AB9A !important;
+          background: #a2ab9a !important;
           opacity: 0.5 !important;
         }
 
         .swiper-pagination-bullet-active {
-          background: #9BEC00 !important;
+          background: #9bec00 !important;
         }
 
         /* Swiper Navigation Buttons */
         .swiper-button-prev,
         .swiper-button-next {
-          border: 1px solid #A2AB9A !important;
-          color: #A2AB9A !important;
+          border: 1px solid #a2ab9a !important;
+          color: #a2ab9a !important;
           --swiper-navigation-size: 24px !important;
           padding: 18px !important;
           border-radius: 4px !important;
@@ -98,15 +99,12 @@ function TopTraders() {
         }
       `}</style>
 
-<div className="flex align-center justify-between mb-5">
-      <div className="self-start text-xl font-bold leading-none text-neutral-800">
-      Top traders of the week
-      </div>
+      <div className="flex align-center justify-between mb-5">
+        <div className="self-start text-xl font-bold leading-none text-neutral-800">Top traders of the week</div>
 
-      <div className="overflow-hidden z-10 gap-1.5 self-end px-3 py-1.5 -mt-6 text-xs font-semibold rounded border border-solid border-neutral-800 min-h-[24px] text-neutral-800">
-        View All
-      </div>
-
+        <div className="overflow-hidden z-10 gap-1.5 self-end px-3 py-1.5 -mt-6 text-xs font-semibold rounded border border-solid border-neutral-800 min-h-[24px] text-neutral-800">
+          View All
+        </div>
       </div>
 
       <Swiper
