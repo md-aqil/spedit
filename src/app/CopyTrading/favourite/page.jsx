@@ -4,6 +4,8 @@ import Sidebar from '../components/Sidebar';
 import Header from "../components/Header";
 import CopytraderCard from "../components/CopytraderCard";
 import DashboardIcons from "../components/DashboardIcons";
+import FavTable from "../components/FavTable";
+
 
 
 function LeaderBoard() {
@@ -58,6 +60,9 @@ function LeaderBoard() {
         
         <CopytraderCard  />
       </div>
+
+<FavTable />
+      
     </main>
         </div>
       </div>

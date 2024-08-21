@@ -6,6 +6,8 @@ import PerformanceCard from '../components/PerformanceCard';
 import PositionTable from '../components/PositionTable';
 import DashboardIcons from "../components/DashboardIcons";
 
+
+
 const StartegyDescription = () => {
   const traderData = {
     traderId: '16473i',
@@ -62,6 +64,7 @@ const StartegyDescription = () => {
 
 
         <PerformanceCard {...performanceData} />
+       
       </div>
       <div className="flex flex-col mt-16 max-md:mt-10 max-md:mr-1.5 max-md:max-w-full">
         <nav className="flex overflow-hidden flex-col pt-3 w-full bg-white rounded-lg shadow-sm max-md:max-w-full">

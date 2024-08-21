@@ -76,6 +76,7 @@ body {
 .main-container {
   width: 80%;
   margin-left: auto;
+  padding: 15px 30px;
 }
 
 .dash-sidebar-content {
