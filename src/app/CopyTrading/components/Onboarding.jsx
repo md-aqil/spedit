@@ -2,7 +2,13 @@
 
 import React, { useState } from "react";
 // import Swiper core and required modules
-import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from "swiper/modules";
+import {
+  Navigation,
+  Pagination,
+  Scrollbar,
+  A11y,
+  Autoplay,
+} from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import processIcon from "../../../assets/process.svg";
 
@@ -15,8 +21,6 @@ import Image from "next/image";
 
 function Onboarding() {
   const [open, setOpen] = useState(true); // By default, the dialog is open
-
-  const closeDialog = () => setOpen(false);
 
   return (
     <div className="flex flex-col items-center justify-center">
@@ -98,13 +102,18 @@ function Onboarding() {
                 <main className="flex flex-wrap justify-center items-center font-black text-stone-950 gap-28">
                   <section className="flex flex-col self-stretch my-auto min-w-[240px] w-[514px] max-md:max-w-full">
                     <h1 className="text-5xl max-md:max-w-full">
-                      <span className="font-medium">Profit from the markets</span>
+                      <span className="font-medium">
+                        Profit from the markets
+                      </span>
                       <span> no matter the experience</span>
                     </h1>
                     <p className="mt-6 text-base font-medium leading-6 text-neutral-500 max-md:max-w-full">
-                      Beginner to trading or don’t have time to analyse and monitor trade? With
-                      <span className="font-bold"> SPEDIT</span> you can copy your favorite lead trader. And if you are a lead trader yourself, share your strategies to earn
-                      monthly subscription fees.
+                      Beginner to trading or don’t have time to analyse and
+                      monitor trade? With
+                      <span className="font-bold"> SPEDIT</span> you can copy
+                      your favorite lead trader. And if you are a lead trader
+                      yourself, share your strategies to earn monthly
+                      subscription fees.
                     </p>
                   </section>
                   <img
@@ -129,9 +138,12 @@ function Onboarding() {
                         className="object-contain self-center w-20 aspect-square"
                       />
                       <div className="flex flex-col mt-8 w-full">
-                        <h3 className="text-base font-bold leading-none text-white">User Friendly</h3>
+                        <h3 className="text-base font-bold leading-none text-white">
+                          User Friendly
+                        </h3>
                         <p className="mt-2 text-base leading-5 text-stone-300">
-                          Our platform is designed with simplicity in mind, making it easy for anyone to start copy trading.
+                          Our platform is designed with simplicity in mind,
+                          making it easy for anyone to start copy trading.
                         </p>
                       </div>
                     </article>
@@ -143,8 +155,13 @@ function Onboarding() {
                         className="object-contain self-center w-20 aspect-square"
                       />
                       <div className="flex flex-col mt-8 w-full">
-                        <h3 className="text-base font-bold leading-none text-black">Real Time</h3>
-                        <p className="mt-2 text-base leading-5 text-neutral-500">Lead traders' trades will be copied to your account in real time as and when they trade.</p>
+                        <h3 className="text-base font-bold leading-none text-black">
+                          Real Time
+                        </h3>
+                        <p className="mt-2 text-base leading-5 text-neutral-500">
+                          Lead traders' trades will be copied to your account in
+                          real time as and when they trade.
+                        </p>
                       </div>
                     </article>
                     <article className="flex flex-col grow shrink justify-center px-6 py-10 bg-white rounded-xl min-h-[318px] min-w-[240px] w-[200px] max-md:px-5">
@@ -155,8 +172,13 @@ function Onboarding() {
                         className="object-contain self-center w-20 aspect-square"
                       />
                       <div className="flex flex-col items-start mt-8 w-full">
-                        <h3 className="text-base font-bold leading-none text-black">Trade Anytime Anywhere</h3>
-                        <p className="mt-2 text-base leading-5 text-neutral-500">Access our platform from any device from anyplace, allowing you to trade on the go.</p>
+                        <h3 className="text-base font-bold leading-none text-black">
+                          Trade Anytime Anywhere
+                        </h3>
+                        <p className="mt-2 text-base leading-5 text-neutral-500">
+                          Access our platform from any device from anyplace,
+                          allowing you to trade on the go.
+                        </p>
                       </div>
                     </article>
                     <article className="flex flex-col grow shrink justify-center px-6 py-10 bg-white rounded-xl min-h-[318px] min-w-[240px] w-[202px] max-md:px-5">
@@ -167,8 +189,13 @@ function Onboarding() {
                         className="object-contain self-center w-20 aspect-square"
                       />
                       <div className="flex flex-col mt-8 w-full">
-                        <h3 className="text-base font-bold leading-none text-black">Leverage their Expertise</h3>
-                        <p className="mt-2 text-base leading-5 text-neutral-500">Benefit from the strategies of expert traders and improve your own trading performance.</p>
+                        <h3 className="text-base font-bold leading-none text-black">
+                          Leverage their Expertise
+                        </h3>
+                        <p className="mt-2 text-base leading-5 text-neutral-500">
+                          Benefit from the strategies of expert traders and
+                          improve your own trading performance.
+                        </p>
                       </div>
                     </article>
                   </div>
@@ -177,16 +204,21 @@ function Onboarding() {
               <SwiperSlide>
                 <div className="mx-auto max-w-[1000px;]">
                   <h2 className="text-3xl font-medium text-stone-950 max-md:max-w-full mt-10 ml-8 mb-10">
-                    The process is <span className="font-bold">quick and easy </span>
+                    The process is{" "}
+                    <span className="font-bold">quick and easy </span>
                   </h2>
-                  <Image className="w-full" src={processIcon} alt="Process Icon" />
+                  <Image
+                    className="w-full"
+                    src={processIcon}
+                    alt="Process Icon"
+                  />
                 </div>
               </SwiperSlide>
             </Swiper>
 
             <div className="flex justify-center mt-4">
-              <button
-                onClick={closeDialog}
+              <a
+                href="/CopyTrading/leaderboard"
                 className="flex overflow-hidden gap-4 justify-center items-center self-start px-9 py-3.5 text-base whitespace-nowrap bg-lime-500 rounded-md max-md:px-5"
                 tabIndex="0"
                 role="button"
@@ -198,7 +230,7 @@ function Onboarding() {
                   className="object-contain shrink-0 self-stretch my-auto rounded-none aspect-square w-[22px]"
                 />
                 <span className="self-stretch my-auto">Explore</span>
-              </button>
+              </a>
             </div>
           </section>
 
