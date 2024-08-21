@@ -4,6 +4,8 @@ import Sidebar from '../components/Sidebar';
 import Header from "../components/Header";
 import PortfolioList from "../components/PortfolioList";
 import DashboardIcons from "../components/DashboardIcons";
+import ListFilter from "../components/ListFilter";
+import PortfolioTable from "../components/PortfolioTable";
 
 
 function LeaderBoard() {
@@ -16,7 +18,7 @@ function LeaderBoard() {
           <Sidebar />
          
          
-          <main className="flex flex-col main-container">
+    <main className="flex flex-col main-container">
           <DashboardIcons />
       <div className="z-10 shrink-0 self-center mt-8 max-w-full" />
       <div className="flex flex-col items-center mt-0 w-full max-md:max-w-full">
@@ -58,7 +60,17 @@ function LeaderBoard() {
         </div>
         <PortfolioList />
       </div>
+
+      <section className="flex flex-col " >
+      <ListFilter />
+      <PortfolioTable />
+    </section>
+
+
     </main>
+
+
+   
         </div>
       </div>
 
