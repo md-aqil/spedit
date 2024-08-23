@@ -58,10 +58,10 @@ function LeaderBoard() {
             <button className="self-stretch my-auto">Copy Traders PnL</button>
           </div>
         </div>
-        <PortfolioList />
+     
       </div>
-
-      <section className="flex flex-col " >
+      <PortfolioList />
+      <section className="flex flex-col px-10" >
       <ListFilter />
       <PortfolioTable />
     </section>
