@@ -63,7 +63,7 @@ function LeaderBoard() {
                       </span>
                     </div>
                   </div>
-                  <div className="flex flex-1 gap-6 items-start text-xs text-right text-stone-400">
+                  <div className="flex justify-end flex-1 gap-6 items-start text-xs text-right text-stone-400">
                     <form className="flex gap-1 justify-center items-center">
                       <label htmlFor="searchInput" className="sr-only">
                         Search traders or strategies
@@ -72,7 +72,7 @@ function LeaderBoard() {
                         type="search"
                         id="searchInput"
                         placeholder="Search traders|strategies.."
-                        className="self-stretch my-auto rounded-none w-[150px]"
+                        className="self-stretch my-auto rounded-none w-[150px] outline-none"
                       />
                       <button type="submit" aria-label="Search">
                         <img
