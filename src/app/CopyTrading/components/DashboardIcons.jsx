@@ -1,4 +1,3 @@
-
 import React from "react";
 
 const dashboardItems = [
@@ -25,10 +24,10 @@ const dashboardItems = [
   },
   {
     icon: "./mp.svg",
-      text: "Mock Positions",
+    text: "Mock Positions",
   },
   {
-     icon: "./ms.png",
+    icon: "./ms.png",
     text: "Mock History",
   },
   {
@@ -41,7 +40,7 @@ const dashboardItems = [
   },
 ];
 
-function DashboardIcons() {
+function DashboardIcons({}) {
   return (
     <div className="flex flex-col pt-6 w-full bg-stone-50 min-h-[127px] max-md:max-w-full">
       <div className="flex flex-wrap gap-3.5 items-start self-center pb-1.5 max-md:max-w-full">
@@ -75,6 +74,7 @@ function DashboardIcons() {
           </div>
         ))}
       </div>
+
       <div className="mt-2.5 w-full border border-solid opacity-50 bg-stone-300 border-stone-300 min-h-[1px] max-md:max-w-full" />
     </div>
   );
