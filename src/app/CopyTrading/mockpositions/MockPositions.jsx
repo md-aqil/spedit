@@ -10,7 +10,7 @@ const mockPositionsData = [
     unrealizedPnl: -47.5654,
     roi: -0.47,
     avatarSrc:
-      "https://cdn.builder.io/api/v1/image/assets/TEMP/11906bc4439458655d2aa6842a46c99272b5a1e82df95f2ee22a02af59fdbfd4?apiKey=b4d1b9e87b084579b1e2475047caf617&",
+      "./avatar.jpg",
     ratingSrc:
       "https://cdn.builder.io/api/v1/image/assets/TEMP/5ae64e79badb8d2b3f1be30867e1c1b178baaf830c6a9cc6c2e282dfd9003071?apiKey=b4d1b9e87b084579b1e2475047caf617&",
     arrowSrc:
