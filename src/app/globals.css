@@ -104,3 +104,8 @@ body {
 .main-body {
   margin-top: 65px;
 }
+
+input:focus, textarea:focus {
+outline:none;
+border-color: #84cc16;
+}

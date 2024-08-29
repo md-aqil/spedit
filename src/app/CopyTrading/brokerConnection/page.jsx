@@ -5,7 +5,7 @@ import Header from "../components/Header";
 import PortfolioList from "../components/PortfolioList";
 import DashboardIcons from "../components/DashboardIcons";
 import ListFilter from "../components/ListFilter";
-import TradeHistoryTable from "./TradeHistoryTable";
+import BrokerConnection from "./BrokerConnection";
 
 
 function LeaderBoard() {
@@ -21,7 +21,7 @@ function LeaderBoard() {
          
     <main className="flex flex-col main-container">
           <DashboardIcons />
-      <TradeHistoryTable />
+      <BrokerConnection />
 
     </main>
 
