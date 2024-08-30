@@ -11,26 +11,23 @@ import TopTraders from "./TopTraders";
 
 function MainContent() {
   return (
-    <main className="main-container">
+    <main style={{ marginTop: "-2rem" }} className="main-container">
       <div className="my-5">
         <DashboardIcons />
-        
+
         <div className="flex flex-wrap gap-5 justify-between items-center self-center mt-10 px-16">
           <PnLCurve />
           <CurrentLivePosition />
         </div>
+      </div>
 
-
-      </div>
-      
       <div className="my-5">
-      <StrategiesFollowed />
+        <StrategiesFollowed />
       </div>
       <div className="my-5">
-      <TopTraders />
+        <TopTraders />
       </div>
       <div className="my-5">
-       
         <TransactionHistory />
       </div>
     </main>

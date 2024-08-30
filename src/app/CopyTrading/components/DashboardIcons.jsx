@@ -20,7 +20,7 @@ const dashboardItems = [
     text: "Dash",
     isActive: true,
 
-    link: "/CopyTrading/leaderboard/",
+    link: "/CopyTrading/onboarding/",
   },
   {
     icon: (
@@ -37,7 +37,7 @@ const dashboardItems = [
       </svg>
     ),
     text: "Leader Board",
-    link: "/CopyTrading/LeadTraderManagement/",
+    link: "/CopyTrading/leaderboard/",
   },
   {
     text: "Broker Connect",

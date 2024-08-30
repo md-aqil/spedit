@@ -1,4 +1,3 @@
-
 import React from "react";
 import SidebarItem from "./SidebarItem";
 
@@ -43,10 +42,12 @@ const sidebarItems = [
 
 function Sidebar() {
   return (
-    <aside className="flex flex-col max-md:ml-0 max-md:w-full dash-sidebar">
+    <aside
+      style={{ marginTop: "-0.1rem" }}
+      className="flex flex-col max-md:ml-0 max-md:w-full dash-sidebar"
+    >
       <div className="flex flex-col items-center py-8 pr-5 mx-auto w-full bg-stone-950 dash-sidebar-content">
         <div className="flex gap-7 items-start text-xl  leading-7 text-neutral-500">
-
           <div className="w-[126px]">
             <span className="">Welcome,</span>
             <br />
