@@ -20,7 +20,7 @@ const dashboardItems = [
     text: "Dash",
     isActive: true,
 
-    // link: "/CopyTrading/leaderboard/",
+    link: "/CopyTrading/leaderboard/",
   },
   {
     icon: (
@@ -37,7 +37,7 @@ const dashboardItems = [
       </svg>
     ),
     text: "Leader Board",
-    link: "/CopyTrading/leaderboard/",
+    link: "/CopyTrading/LeadTraderManagement/",
   },
   {
     text: "Broker Connect",
@@ -53,6 +53,7 @@ const dashboardItems = [
         <path d="M2.5 3.5a.5.5 0 0 1 0-1h11a.5.5 0 0 1 0 1zm2-2a.5.5 0 0 1 0-1h7a.5.5 0 0 1 0 1zM0 13a1.5 1.5 0 0 0 1.5 1.5h13A1.5 1.5 0 0 0 16 13V6a1.5 1.5 0 0 0-1.5-1.5h-13A1.5 1.5 0 0 0 0 6zm1.5.5A.5.5 0 0 1 1 13V6a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-.5.5z" />
       </svg>
     ),
+    link: "/CopyTrading/brokerConnection/",
   },
   {
     icon: (
