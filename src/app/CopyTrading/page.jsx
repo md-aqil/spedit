@@ -8,7 +8,7 @@ import Onboarding from './components/Onboarding';
 
 function CopyTrading() {
   return (
-    <div className="flex overflow-hidden flex-col pb-20 bg-stone-50">
+    <div className="">
       <Header />
       <div className="z-10 w-full max-md:max-w-full main-body">
         <div className="flex gap-5 max-md:flex-col">

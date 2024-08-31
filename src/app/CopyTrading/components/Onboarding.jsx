@@ -70,7 +70,7 @@ function Onboarding() {
         } bg-black bg-opacity-50`}
       >
         <div
-          className="w-full h-[90%] bg-white shadow-lg"
+          className="w-full bg-white shadow-lg"
           style={{
             transition: "transform 0.3s ease-out",
             transform: open ? "translateY(0)" : "translateY(-100%)",
@@ -91,9 +91,7 @@ function Onboarding() {
               }}
               pagination={{
                 clickable: true,
-                el: ".swiper-pagination-vertical",
-                bulletClass: "swiper-pagination-bullet",
-                bulletActiveClass: "swiper-pagination-bullet-active",
+               
               }}
               onSwiper={(swiper) => console.log(swiper)}
               onSlideChange={() => console.log("slide change")}
@@ -216,7 +214,7 @@ function Onboarding() {
               </SwiperSlide>
             </Swiper>
 
-            <div className="flex justify-center mt-4">
+            <div className="flex justify-center my-5">
               <a
                 href="/CopyTrading/leaderboard"
                 className="flex overflow-hidden gap-4 justify-center items-center self-start px-9 py-3.5 text-base whitespace-nowrap bg-lime-500 rounded-md max-md:px-5"
@@ -235,7 +233,7 @@ function Onboarding() {
           </section>
 
           {/* Custom Navigation and Pagination */}
-          <div className="swiper-pagination-vertical"></div>
+          <div className="swiper-pagination"></div>
           <div className="swiper-button-prev swiper-button-bottom"></div>
           <div className="swiper-button-next swiper-button-bottom"></div>
         </div>

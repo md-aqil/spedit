@@ -16,26 +16,10 @@ const BasketStep3 = () => {
   };
 
   return (
-    <main className="flex flex-col px-8 py-6 bg-white rounded-xl shadow-md max-md:px-4">
-      {/* Header Section */}
-      <header className="flex flex-wrap items-center justify-between gap-6 w-full">
-        <div className="flex items-center gap-3">
-          <img src="http://b.io/ext_11-" alt="Basket Icon" className="w-6 h-6 object-contain" />
-          <h1 className="text-2xl font-bold text-black">My Basket</h1>
-        </div>
-        <div className="flex flex-col">
-          <span className="text-xs text-neutral-500">Available Margin</span>
-          <span className="text-sm font-semibold text-black">Rs 170,720.00</span>
-        </div>
-        <button className="flex items-center gap-2 px-4 py-2 border border-neutral-800 text-neutral-800 rounded hover:bg-neutral-800 hover:text-white">
-          <img src="http://b.io/ext_13-" alt="Add Basket Icon" className="w-5 h-5 object-contain" />
-          <span>Add new Basket</span>
-        </button>
-      </header>
-
-      {/* Form Section */}
+    <main className="flex flex-col px-5 py-6 bg-white rounded-xl shadow-md ">
+    
       <form onSubmit={handleSave} className="mt-6 p-6 bg-stone-50 border border-stone-300 rounded-xl">
-        <div className="grid gap-6 grid-cols-1 sm:grid-cols-2">
+        <div className="flex justify-between">
           <div className="flex flex-col">
             <label htmlFor="basketName" className="text-base font-bold text-black">
               Name Basket
@@ -61,7 +45,7 @@ const BasketStep3 = () => {
                 value={instrumentName}
                 onChange={(e) => setInstrumentName(e.target.value)}
               />
-              <button type="button" className="px-4 py-2 bg-neutral-800 text-white rounded hover:bg-neutral-900">
+              <button type="button" className="px-4 py-2 bg-neutral-800 text-white whitespace-nowrap rounded hover:bg-neutral-900">
                 Add Instrument
               </button>
             </div>

@@ -1,10 +1,12 @@
 import React from 'react';
+import cogIcon from "../../../assets/cog.svg";
+import Image from "next/image";
 
 const BasketStep6 = () => {
   const baskets = [1, 2, 3, 4];
 
   return (
-    <main className="flex overflow-hidden flex-col px-14 pt-36 pb-14 bg-white rounded-xl max-md:px-5 max-md:pt-24">
+    <main className="flex overflow-hidden flex-col px-5  py-5 bg-white rounded-xl">
       {baskets.map((basketNumber) => (
         <section
           key={basketNumber}

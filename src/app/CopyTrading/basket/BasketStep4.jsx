@@ -2,38 +2,9 @@ import React from 'react';
 
 const BasketStep4 = () => {
   return (
-    <div className="flex overflow-hidden flex-col px-14 pt-6 pb-14 bg-white rounded-xl max-md:px-5">
-      <div className="flex flex-wrap gap-10 justify-between items-center w-full leading-none max-md:max-w-full">
-        <div className="flex flex-col justify-center self-stretch my-auto w-[193px]">
-          <div className="flex gap-2 items-center self-start text-xl font-bold text-black">
-            <img loading="lazy" src="http://b.io/ext_17-" className="object-contain shrink-0 self-stretch my-auto w-6 aspect-square" alt="Basket icon" />
-            <div className="flex gap-1 items-end self-stretch my-auto">
-              <div className="gap-2 self-stretch">My Basket</div>
-            </div>
-          </div>
-          <div className="flex flex-col mt-2 w-full max-w-[193px]">
-            <div className="flex gap-2 items-center w-full">
-              <div className="self-stretch my-auto text-xs text-neutral-500">
-                Available Margin
-              </div>
-              <div className="self-stretch my-auto text-sm font-semibold text-black">
-                Rs 170,720.00
-              </div>
-            </div>
-            <div className="flex gap-2 items-center mt-2 w-full text-xs text-neutral-500">
-              <div className="self-stretch my-auto">Broker Connected:</div>
-              <img loading="lazy" src="http://b.io/ext_18-" className="object-contain shrink-0 self-stretch my-auto rounded aspect-[1.06] w-[18px]" alt="Broker icon" />
-            </div>
-          </div>
-        </div>
-        <div className="flex gap-10 items-center self-stretch my-auto text-sm font-bold text-center min-w-[240px] text-neutral-800 w-[590px] max-md:max-w-full">
-          <div className="flex gap-2 justify-center items-center self-stretch px-3 py-1.5 my-auto rounded border border-solid border-neutral-800 min-h-[36px]">
-            <img loading="lazy" src="http://b.io/ext_19-" className="object-contain shrink-0 self-stretch my-auto w-6 aspect-square" alt="Add basket icon" />
-            <div className="self-stretch my-auto">Add new Basket</div>
-          </div>
-        </div>
-      </div>
-      <div className="flex overflow-hidden flex-col px-14 pt-12 mt-4 w-full rounded-xl border border-solid bg-stone-50 border-stone-300 max-md:px-5 max-md:mr-0.5 max-md:max-w-full">
+    <div className="flex flex-col px-5 py-5  bg-white rounded-xl max-md:px-5">
+     
+      <div className="flex overflow-hidden flex-col px-5 py-4  w-full rounded-xl border border-solid bg-stone-50 border-stone-300 max-md:px-5 max-md:mr-0.5 max-md:max-w-full">
         <div className="flex flex-wrap gap-5 justify-between w-full max-md:max-w-full">
           <div className="my-auto text-base font-bold leading-none text-black">
             Basket 1
@@ -52,7 +23,7 @@ const BasketStep4 = () => {
             <div className="flex flex-col items-start">
               <div className="flex gap-px self-stretch text-xl leading-none">
                 <div className="grow text-black">BANKNIFTY 24th</div>
-                <div className="grow shrink font-bold text-black w-[101px]">
+                <div className="grow shrink font-bold text-black">
                   JUL 52400 CE
                 </div>
               </div>
@@ -174,7 +145,7 @@ const BasketStep4 = () => {
                 <div className="self-stretch my-auto text-xs text-neutral-500 w-[50px]">
                   Charges
                 </div>
-                <div className="self-stretch my-auto text-sm font-semibold text-black w-[76px]">
+                <div className="self-stretch my-auto text-sm font-semibold text-black">
                   Rs 534,656
                 </div>
                 <img loading="lazy" src="http://b.io/ext_26-" className="object-contain shrink-0 self-stretch my-auto w-3.5 aspect-square" alt="Info icon" />
