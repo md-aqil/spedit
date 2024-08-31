@@ -1,13 +1,13 @@
-'use client';
+"use client";
 
-import React, { useState } from 'react';
-import ProfileTab from './ProfileTab';
-import Sidebar from '../components/Sidebar';
+import React, { useState } from "react";
+import ProfileTab from "./ProfileTab";
+import Sidebar from "../components/Sidebar";
 import Header from "../components/Header";
-import Profile from './profile';
-import CreditHistory from './CreditHistory';
+import Profile from "./profile";
+import CreditHistory from "./CreditHistory";
 import TransactionHistory from "../components/TransactionHistory";
-import BrokerHistory from "../brokerConnection/BrokerHistory";
+import BrokerHistory from "../broker-connection/BrokerHistory";
 
 function MyComponent() {
   const [selectedDate, setSelectedDate] = useState("This Week");
@@ -28,10 +28,8 @@ function MyComponent() {
         <div className="flex gap-5 max-md:flex-col">
           <Sidebar />
           <main className="flex flex-col main-container">
-
             <ProfileTab activeTab={selectedTab} onTabChange={handleTabChange} />
 
-           
             {/* Conditionally render content based on selected tab */}
             {selectedTab === "Profile" && <Profile />}
             {selectedTab === "Copy History" && <TransactionHistory />}

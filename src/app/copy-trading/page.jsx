@@ -1,10 +1,8 @@
-
 import React from "react";
-import Sidebar from './components/Sidebar';
+import Sidebar from "./components/Sidebar";
 import Header from "./components/Header";
 import MainContent from "./components/MainContent";
-import Onboarding from './components/Onboarding';
-
+import Onboarding from "./components/Onboarding";
 
 function CopyTrading() {
   return (
@@ -17,11 +15,8 @@ function CopyTrading() {
         </div>
       </div>
 
-    
       {/* Other sections/components */}
       <Onboarding />
-   
-
     </div>
   );
 }
