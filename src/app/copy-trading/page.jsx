@@ -1,24 +1,15 @@
 import React from "react";
-import Sidebar from "./components/Sidebar";
-import Header from "./components/Header";
 import MainContent from "./components/MainContent";
 import Onboarding from "./components/Onboarding";
 
-function CopyTrading() {
+function CopyTrading() { // Corrected function name to camelCase
   return (
     <div className="">
-      <Header />
-      <div className="z-10 w-full max-md:max-w-full main-body">
-        <div className="flex gap-5 max-md:flex-col">
-          <Sidebar />
-          <MainContent />
-        </div>
-      </div>
-
-      {/* Other sections/components */}
+      {/* <Header /> */}
+      <MainContent />
       <Onboarding />
     </div>
   );
 }
 
-export default CopyTrading;
+export default CopyTrading; 

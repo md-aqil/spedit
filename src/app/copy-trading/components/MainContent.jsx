@@ -15,7 +15,7 @@ function MainContent() {
       <div className="my-5">
         <DashboardIcons />
 
-        <div className="flex flex-wrap gap-5 justify-between items-center self-center mt-10 px-16">
+        <div className="flex flex-wrap gap-5 justify-between items-center self-center mt-10">
           <PnLCurve />
           <CurrentLivePosition />
         </div>

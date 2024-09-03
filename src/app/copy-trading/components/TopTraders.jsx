@@ -58,7 +58,7 @@ const traders = [
 
 function TopTraders() {
   return (
-    <div className="w-[1280px] px-16 mx-auto relative">
+    <div className="w-full mx-auto relative">
       <style jsx>{`
         /* Swiper Pagination Bullets */
         .swiper-pagination-bullet {

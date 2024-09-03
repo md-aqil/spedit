@@ -27,7 +27,7 @@ const HeroSection = () => {
       </p>
       <div className="flex mt-10 gap-5">
         <a
-          href="/CopyTrading"
+          href="/copy-trading"
           className="flex flex-col justify-center p-1 rounded-md border border-lime-500 border-solid"
         >
           <div className="overflow-hidden z-10 px-12 py-3 mt-0 bg-lime-500 rounded-md max-md:px-5 font-semibold">

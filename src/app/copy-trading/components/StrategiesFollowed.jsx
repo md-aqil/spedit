@@ -47,7 +47,7 @@ const strategies = [
 
 function StrategiesFollowed() {
   return (
-    <section className="px-16 my-10">
+    <section className="my-10">
       <div className="flex align-center justify-between mb-5">
       <div className="self-start text-xl font-bold leading-none text-neutral-800">
         Strategies you follow

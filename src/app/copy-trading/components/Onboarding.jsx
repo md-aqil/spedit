@@ -5,6 +5,9 @@ import React, { useState } from "react";
 import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import processIcon from "../../../assets/process.svg";
+import arrowupsquare from "../../../assets/arrow-up-square.svg";
+import logo from "../../../assets/logo.svg";
+
 
 // Import Swiper styles
 import "swiper/css";
@@ -70,7 +73,12 @@ function Onboarding() {
             transform: open ? "translateY(0)" : "translateY(-100%)",
           }}
         >
+       
           <section className="container h-full">
+            <header className="mx-20 my-5">
+            <Image src={logo} />
+
+            </header>
             <Swiper
               modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
               spaceBetween={50}
@@ -181,14 +189,14 @@ function Onboarding() {
 
             <div className="flex justify-center my-5">
               <a
-                href="/copy-trading/leaderboard"
+                href="/copy-trading/leader-board"
                 className="flex overflow-hidden gap-4 justify-center items-center self-start px-9 py-3.5 text-base whitespace-nowrap bg-lime-500 rounded-md max-md:px-5"
                 tabIndex="0"
                 role="button"
               >
-                <img
+                <Image
                   loading="lazy"
-                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/60fee776a94c6e45e257178b87b618cdfa0615402efe5070acc9b16a997e29d5?apiKey=b4d1b9e87b084579b1e2475047caf617&"
+                  src={arrowupsquare}
                   alt="Explore"
                   className="object-contain shrink-0 self-stretch my-auto rounded-none aspect-square w-[22px]"
                 />
