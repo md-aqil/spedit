@@ -6,6 +6,7 @@ function CopyTrading() { // Corrected function name to camelCase
   return (
     <div className="">
       {/* <Header /> */}
+     
       <MainContent />
       <Onboarding />
     </div>

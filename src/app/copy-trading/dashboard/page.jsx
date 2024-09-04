@@ -21,7 +21,9 @@ function OnboardingPage() {
             style={{ width: "100%" }}
             className="flex flex-col main-container"
           >
+             <span className="icon-carbon_view"></span>
             <MainContent />;
+            
           </main>
         </div>
       </div>

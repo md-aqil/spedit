@@ -1,9 +1,61 @@
-// Sidebar.jsx
-import React from "react";
+'use client';
+import React, { useState } from "react";
 import PropTypes from "prop-types";
-import SidebarItem from "./SidebarItem";
 
-function Sidebar({ items, onSelect, activeItem }) {
+const SidebarItems = [
+  {
+    icon: "icon-profile", 
+    text: "Profile",
+    url: "/",
+  },
+  {
+    icon: "fa fa-chart-line", 
+    text: "Transaction Monitor",
+    url: "/transaction-monitor",
+  },
+  {
+    icon: "fa fa-cog", // Font Awesome class for CMS icon
+    text: "CMS",
+    url: "/cms",
+  },
+  {
+    icon: "fa fa-chart-pie", // Font Awesome class for Analytics & Reporting icon
+    text: "Analytics & Reporting",
+    url: "/analytics-reporting",
+  },
+  {
+    icon: "fa fa-bullhorn", // Font Awesome class for Marketing Tools icon
+    text: "Marketing Tools",
+    url: "/marketing-tools",
+  },
+  {
+    icon: "fa fa-ticket-alt", // Font Awesome class for Support & Ticketing icon
+    text: "Support & Ticketing",
+    url: "/support-ticketing",
+  },
+  {
+    icon: "fa fa-lock", // Font Awesome class for Rights Management icon
+    text: "Rights Management",
+    url: "/rights-management",
+  },
+  {
+    icon: "fa fa-trash", // Font Awesome class for Trash icon
+    text: "Trash",
+    url: "/trash",
+  },
+];
+
+function Sidebar({ items = SidebarItems, onSelect, activeItem }) {
+  const [active, setActive] = useState(activeItem || items[0].text);
+
+  const handleSelect = (item) => {
+    setActive(item.text);
+    if (item.url) {
+      window.location.href = item.url;
+    }
+    onSelect(item.text);
+  };
+
   return (
     <aside className="flex flex-col max-md:ml-0 max-md:w-full dash-sidebar">
       <div className="flex flex-col items-center py-8 pr-5 mx-auto w-full bg-stone-950 dash-sidebar-content">
@@ -23,12 +75,18 @@ function Sidebar({ items, onSelect, activeItem }) {
         <nav className="flex gap-6 self-start mt-5 text-xl text-white ml-7">
           <div className="flex flex-col items-start">
             {items.map((item, index) => (
-              <SidebarItem
+              <div
                 key={index}
-                {...item}
-                onClick={() => onSelect(item.text)}
-                isActive={activeItem === item.text}
-              />
+                className={`flex gap-2 items-center dash-item mt-6 ${active === item.text ? "dash-item-active" : ""}`}
+                onClick={() => handleSelect(item)}
+                role="button"
+                tabIndex="0"
+              >
+                <i className={`${item.icon} w-6 aspect-square`}></i>
+                <div>
+                  {item.text}
+                </div>
+              </div>
             ))}
           </div>
         </nav>
@@ -44,9 +102,9 @@ function Sidebar({ items, onSelect, activeItem }) {
 Sidebar.propTypes = {
   items: PropTypes.arrayOf(
     PropTypes.shape({
-      icon: PropTypes.string,
-      text: PropTypes.string,
-      subtext: PropTypes.string,
+      icon: PropTypes.string.isRequired,
+      text: PropTypes.string.isRequired,
+      url: PropTypes.string,
       isActive: PropTypes.bool,
     })
   ),
