@@ -73,13 +73,12 @@ body {
 }
 
 .dash-sidebar.collapsed {
-
 }
 .dash-sidebar.collapsed nav {
   margin: 0;
-    justify-content: center;
-    /* align-items: center; */
-    width: 100%;
+  justify-content: center;
+  /* align-items: center; */
+  width: 100%;
 }
 
 .main-container {
@@ -114,9 +113,10 @@ body {
   margin-top: 65px;
 }
 
-input:focus, textarea:focus {
-outline:none;
-border-color: #84cc16;
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: #84cc16;
 }
 
 /* Tailwind custom styles or your global CSS */
@@ -131,12 +131,13 @@ border-color: #84cc16;
   padding: 15px 30px;
 }
 
-.sidebar-expanded +.main-container {
+.sidebar-expanded + .main-container {
   width: calc(100% - 20%); /* Adjust this based on the expanded sidebar width */
 }
 
 /* Optionally, add styles for collapsed sidebar */
 .sidebar-collapsed + .main-container {
-  width: calc(100% - 85px); /* Adjust this to match your collapsed sidebar width */
+  width: calc(
+    100% - 85px
+  ); /* Adjust this to match your collapsed sidebar width */
 }
-
