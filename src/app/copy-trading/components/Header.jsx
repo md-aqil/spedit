@@ -1,3 +1,4 @@
+'use client'
 import React, { useState } from "react";
 import cogIcon from "../../../assets/cog.svg";
 import Image from "next/image";
