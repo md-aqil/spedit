@@ -4,6 +4,7 @@ import PortfolioCard from "./PortfolioCard";
 const portfolioData = [
   {
     name: "Karishma",
+    id: "firstTour",
     rating: "502",
     pnl: "74,100.23",
     roi: "5.71%",

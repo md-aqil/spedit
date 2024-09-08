@@ -2,23 +2,26 @@
 import React, { useState } from "react";
 import cogIcon from "../../../assets/cog.svg";
 import Image from "next/image";
-import ArrowIcon from './ArrowIcon'; // Adjust the path as needed
+import ArrowIcon from "./ArrowIcon"; // Adjust the path as needed
 
 function Header() {
   const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false);
 
   const toggleSidebar = () => {
-    setIsSidebarCollapsed(prevState => !prevState);
+    setIsSidebarCollapsed((prevState) => !prevState);
   };
 
   return (
     <header className="fixed top-0 left-0 right-0 z-20 flex flex-wrap items-center px-8 pt-3 pb-3.5 w-full border-b border-solid bg-stone-950 border-b-neutral-800 max-md:px-5 max-md:max-w-full dash-header">
       <div className="flex items-center">
-        <div className="text-2xl font-black text-lime-500 w-[58px]">
-          SPEDIT
-        </div>
-        <div className="ml-48"> {/* Adjust space as needed */}
-          <ArrowIcon isCollapsed={isSidebarCollapsed} toggleSidebar={toggleSidebar} />
+        <div className="text-2xl font-black text-lime-500 w-[58px]">SPEDIT</div>
+        <div className="ml-48">
+          {" "}
+          {/* Adjust space as needed */}
+          <ArrowIcon
+            isCollapsed={isSidebarCollapsed}
+            toggleSidebar={toggleSidebar}
+          />
         </div>
       </div>
 

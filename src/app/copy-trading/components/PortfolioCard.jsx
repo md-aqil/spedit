@@ -1,8 +1,11 @@
 import React from "react";
 
-const PortfolioCard = ({ name, rating, pnl, roi, aum, mdd, chartSrc }) => {
+const PortfolioCard = ({ name, rating, pnl, roi, aum, mdd, chartSrc, id }) => {
   return (
-    <article className="flex flex-col grow shrink justify-center px-4 py-5 w-72 bg-white rounded-md shadow-sm min-h-[200px] min-w-[240px]">
+    <article
+      id={id}
+      className="flex flex-col grow shrink justify-center px-4 py-5 w-72 bg-white rounded-md shadow-sm min-h-[200px] min-w-[240px]"
+    >
       <div className="flex flex-col w-full">
         <header className="flex gap-10 justify-between items-center w-full whitespace-nowrap">
           <div className="flex gap-2.5 items-start self-stretch my-auto h-[43px]">
@@ -33,7 +36,10 @@ const PortfolioCard = ({ name, rating, pnl, roi, aum, mdd, chartSrc }) => {
               className="object-contain shrink-0 self-stretch my-auto aspect-[1.2] stroke-[1px] stroke-stone-950 w-[18px]"
             />
             <button className="gap-2 self-stretch p-3 my-auto bg-lime-500 rounded min-h-[38px] w-[76px]">
-              <a href="/copy-trading/StartegyDescription"> Copy</a>
+              <a href="/copy-trading/leader-board/?startegy-description/">
+                {" "}
+                Copy
+              </a>
             </button>
           </div>
         </header>
