@@ -1,9 +1,6 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 import "../assets/icons/style.css";
-// import "@sjmc11/tourguidejs/src/scss/tour.scss";
-// import { TourGuideClient } from "@sjmc11/tourguidejs/src/Tour";
-// import { TourGuideClient } from "@sjmc11/tourguidejs";
 
 const inter = Inter({ subsets: ["latin"] });
 

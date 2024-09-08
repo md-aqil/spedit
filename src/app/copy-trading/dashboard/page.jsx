@@ -7,10 +7,7 @@ import Onboarding from "../components/Onboarding";
 
 function OnboardingPage() {
   return (
-    <div
-      style={{ marginTop: "-0.5rem" }}
-      className="flex overflow-hidden flex-col pb-20 bg-stone-50"
-    >
+    <div className="flex overflow-hidden flex-col pb-20 bg-stone-50">
       <Header />
 
       <div className="z-10 w-full max-md:max-w-full main-body">
@@ -21,9 +18,8 @@ function OnboardingPage() {
             style={{ width: "100%" }}
             className="flex flex-col main-container"
           >
-             <span className="icon-carbon_view"></span>
+            <span className="icon-carbon_view"></span>
             <MainContent />;
-            
           </main>
         </div>
       </div>

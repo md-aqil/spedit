@@ -1,76 +1,59 @@
-"use client";
+// app/target-page/page.jsx
 
-import React, { useEffect } from "react";
+"use client"; // Ensure this file runs on the client side
+
+import React, { useEffect, useRef } from "react";
+import { useRouter } from "next/navigation"; // Use next/navigation for App Router
 import { TourGuideClient } from "@sjmc11/tourguidejs";
+import "@sjmc11/tourguidejs/src/scss/tour.scss"; // Ensure styles are imported
 
-const TourComponent = () => {
+const TargetPage = () => {
+  const router = useRouter();
+  const clientRef = useRef(null);
+
   useEffect(() => {
-    // Initialize the TourGuideClient with options
-    const tourGuide = new TourGuideClient({
+    const shouldStartTour =
+      new URLSearchParams(window.location.search).get("startTour") === "true";
+
+    // Initialize tour
+    const options = {
       steps: [
         {
-          target: "#step1",
-          content: "This is the first step.",
-          dialog: {
-            showNext: true, // Enable the "Next" button
-            showPrevious: false, // Disable the "Previous" button on the first step
-            buttonText: {
-              next: "Next", // Text for the "Next" button
-            },
-          },
+          content: "Welcome to the homepage.",
+          title: "Home",
+          target: "#home", // Ensure this element exists
+          order: 1,
+          group: "basic",
         },
-        {
-          target: "#step2",
-          content: "This is the second step.",
-          dialog: {
-            showNext: true,
-            showPrevious: true, // Enable the "Previous" button on this step
-            buttonText: {
-              previous: "Previous",
-              next: "Next",
-            },
-          },
-        },
-        {
-          target: "#step3",
-          content: "This is the final step.",
-          dialog: {
-            showNext: false, // Disable the "Next" button on the last step
-            showPrevious: true,
-            buttonText: {
-              previous: "Previous",
-              end: "Finish", // Text for the "End" button
-            },
-          },
-        },
+        // Add other steps here
       ],
-    });
-
-    // Start the tour
-    tourGuide.start();
-
-    return () => {
-      // End the tour when the component unmounts
-      if (tourGuide && typeof tourGuide.end === "function") {
-        tourGuide.end();
-      }
+      dialog: {
+        showNavigationButtons: true,
+      },
     };
-  }, []);
+
+    if (!clientRef.current) {
+      clientRef.current = new TourGuideClient(options);
+    }
+
+    if (shouldStartTour) {
+      clientRef.current
+        .start()
+        .then(() => {
+          console.log("Tour started.");
+        })
+        .catch((error) => {
+          console.error("Error starting the tour:", error);
+        });
+    }
+  }, [router.query]);
 
   return (
     <div>
-      {/* Content to guide through */}
-      <div id="step1" className="p-4 bg-blue-500 text-white rounded">
-        Step 1: Introduction
-      </div>
-      <div id="step2" className="p-4 bg-green-500 text-white rounded mt-4">
-        Step 2: Features
-      </div>
-      <div id="step3" className="p-4 bg-purple-500 text-white rounded mt-4">
-        Step 3: Conclusion
-      </div>
+      <h1 id="home">Home Section</h1>
+      {/* Other content */}
     </div>
   );
 };
 
-export default TourComponent;
+export default TargetPage;
