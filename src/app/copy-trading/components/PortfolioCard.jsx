@@ -36,10 +36,7 @@ const PortfolioCard = ({ name, rating, pnl, roi, aum, mdd, chartSrc, id }) => {
               className="object-contain shrink-0 self-stretch my-auto aspect-[1.2] stroke-[1px] stroke-stone-950 w-[18px]"
             />
             <button className="gap-2 self-stretch p-3 my-auto bg-lime-500 rounded min-h-[38px] w-[76px]">
-              <a href="/copy-trading/leader-board/?startegy-description/">
-                {" "}
-                Copy
-              </a>
+              <a href="/copy-trading/startegy-description/"> Copy</a>
             </button>
           </div>
         </header>

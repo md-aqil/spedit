@@ -11,7 +11,7 @@ import CopytraderCard from "../components/CopytraderCard";
 import React, { useEffect, useState, useRef } from "react";
 import { useRouter } from "next/navigation"; // Correct import for useRouter
 
-import StartegyDescription from "../startegy-description/Spage";
+import StartegyDescription from "../startegy-description/page";
 
 import { useSearchParams } from "next/navigation";
 
@@ -20,7 +20,7 @@ import "@sjmc11/tourguidejs/src/scss/tour.scss"; // Import the SCSS file
 
 function LeaderBoard() {
   const [toggleList, setToggleList] = useState(false);
-  const [searcP, setSearchP] = useState(null);
+  const [isTour, setIstour] = useState(null);
   const [tourGuideClientValue, setTourGuideClientValue] = useState(null);
 
   const [fav, setFav] = useState(false);
@@ -34,13 +34,11 @@ function LeaderBoard() {
 
   const clientRef = useRef(null);
   // Use a ref to hold the client instance
-  const currentPath = new URL(window.location.href).search;
+  // const currentPath = new URL(window.location.href).search;
 
   useEffect(() => {
-    setSearchP(currentPath);
-    console.log(searcP, currentPath, "sdfa sfass");
     if (!clientRef.current) {
-      const options = {
+      const client = new TourGuideClient({
         steps: [
           {
             content:
@@ -61,52 +59,54 @@ function LeaderBoard() {
           {
             content: "Here is the contact page.",
             title: "Contact",
-            target: "#contact", // Ensure this ID exists on the contact page
+            target: "#copyAmountSection",
             order: 3,
             group: "basic",
-            url: "/contact", // Page URL
+          },
+          {
+            content: "Here is the contact page.",
+            title: "Contact",
+            target: "#tourConfirmButton",
+            order: 4,
+            group: "basic",
           },
         ],
+
         dialog: {
           showNavigationButtons: true,
         },
-      };
-      const client = new TourGuideClient(options);
+      });
 
-      clientRef.current = client;
+      client.onFinish(() => {
+        setIstour(false);
+        console.log("Tour finished successfully.");
+      });
+
+      client.onBeforeStepChange(() => {
+        setIstour(true);
+      });
+      clientRef.current = client; // Save the instance to the ref
+
+      // Ensure that the client is available when needed
       setTourGuideClientValue(client);
     }
+
+    startTour();
   }, []);
 
-  // useEffect(() => {
-  //   if (!tourGuideRef.current) {
-  //     tourGuideRef.current = new TourGuideClient({
-  //       steps: [
-  //         {
-  //           content: "Final step of the tour. Wrap up here.",
-  //           title: "Step 3: Conclusion",
-  //           target: "#step3",
-  //           order: 3,
-  //           group: "basic",
-  //         },
-  //       ],
-  //       dialog: {
-  //         showNavigationButtons: true,
-  //       },
-  //     });
-  //     setTourGuideClient(client);
-  //   }
-  // }, []);
-
   const startTour = () => {
-    // Navigate to another page with a query parameter
-    clientRef.current.start();
-    // window.location.href = "/testing?startTour=true";
+    if (clientRef.current) {
+      // setIstour(true);
+      clientRef.current.start(); // Start the tour
+      console.log("Tour started");
+    } else {
+      console.log("Tour client is not initialized");
+    }
   };
 
   return (
     <>
-      {(searcP === "?startegy-description/" && <StartegyDescription />) || (
+      {(isTour && <StartegyDescription />) || (
         <div className="flex overflow-hidden flex-col pb-20 bg-stone-50">
           <Header />
 
@@ -116,7 +116,7 @@ function LeaderBoard() {
 
               <main className="flex flex-col main-container">
                 <DashboardIcons />
-                <button onClick={startTour}>Start Tour</button>
+                {/* <button onClick={startTour}>Start Tour</button> */}
 
                 <div className="z-10 shrink-0 self-center mt-8 max-w-full" />
                 <div className="flex flex-col items-center mt-0 w-full max-md:max-w-full">
