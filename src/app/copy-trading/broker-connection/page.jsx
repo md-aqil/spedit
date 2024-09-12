@@ -12,14 +12,12 @@ function LeaderBoard() {
       <Header />
 
       <div className="z-10 w-full max-md:max-w-full main-body">
-        <div className="flex gap-5 max-md:flex-col">
-          <Sidebar />
+      <Sidebar />
 
-          <main className="flex flex-col main-container">
-            <DashboardIcons />
-            <BrokerConnection />
-          </main>
-        </div>
+<main className="flex flex-col main-container">
+  <DashboardIcons />
+  <BrokerConnection />
+</main>
       </div>
     </div>
   );

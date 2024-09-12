@@ -151,6 +151,7 @@ function LeaderBoard() {
                           </span>
                         </div>
                       </div>
+
                       <div className="flex justify-end flex-1 gap-6 items-start text-xs text-right text-stone-400">
                         <form className="flex gap-1 justify-center items-center">
                           <label htmlFor="searchInput" className="sr-only">
@@ -171,6 +172,7 @@ function LeaderBoard() {
                             />
                           </button>
                         </form>
+                        
                         <button onClick={handleToggleListing}>
                           {(toggleList && (
                             <svg

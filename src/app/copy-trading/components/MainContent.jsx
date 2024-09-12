@@ -11,11 +11,11 @@ import TopTraders from "./TopTraders";
 
 function MainContent() {
   return (
-    <main style={{ marginTop: "-2rem" }} className="main-container">
+    <main className="main-container">
       <div className="my-5">
         <DashboardIcons />
 
-        <div className="flex flex-wrap gap-5 justify-between items-center self-center mt-10">
+        <div className="flex  gap-5 justify-between items-center self-center mt-10">
           <PnLCurve />
           <CurrentLivePosition />
         </div>

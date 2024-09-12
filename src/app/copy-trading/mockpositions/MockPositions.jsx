@@ -92,18 +92,8 @@ function MockPositions() {
           Mock Positions
         </h1>
         <nav className="flex gap-4 items-center self-stretch my-auto">
-          <img
-            loading="lazy"
-            src="https://cdn.builder.io/api/v1/image/assets/TEMP/2c23c252a82c4b3d72b9d986f90a9d6d35d16df5a1db53d7e62e504e44dc1e49?apiKey=b4d1b9e87b084579b1e2475047caf617&"
-            alt=""
-            className="object-contain shrink-0 self-stretch my-auto w-6 aspect-square"
-          />
-          <img
-            loading="lazy"
-            src="https://cdn.builder.io/api/v1/image/assets/TEMP/ab4c0238bc26e17161b431e88dc8d5042544a7c477a432ac1c348087106c9bad?apiKey=b4d1b9e87b084579b1e2475047caf617&"
-            alt=""
-            className="object-contain shrink-0 self-stretch my-auto w-6 aspect-square"
-          />
+     <span className="aspect-square cursor-pointer icon-firstline text-2xl arrow"></span>
+           
         </nav>
       </header>
       <section className="flex flex-wrap gap-3.5 justify-center items-center mt-6 leading-none">

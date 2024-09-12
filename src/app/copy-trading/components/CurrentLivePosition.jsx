@@ -31,7 +31,7 @@ const positionItems = [
 
 function CurrentLivePosition() {
   return (
-    <div className="flex overflow-hidden flex-col self-stretch my-auto bg-white rounded-xl shadow-sm min-w-[240px] w-[347px]">
+    <div className="flex overflow-hidden flex-col self-stretch my-auto bg-white rounded-xl shadow-sm  w-[547px]">
       <div className="flex flex-col pt-5">
         <div className="flex flex-col px-5 max-md:px-5">
           <div className="self-start text-xl font-bold text-neutral-800">

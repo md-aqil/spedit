@@ -11,17 +11,9 @@ function OnboardingPage() {
       <Header />
 
       <div className="z-10 w-full max-md:max-w-full main-body">
-        <div className="flex gap-5 max-md:flex-col">
-          <Sidebar />
+      <Sidebar />
 
-          <main
-            style={{ width: "100%" }}
-            className="flex flex-col main-container"
-          >
-            <span className="icon-carbon_view"></span>
-            <MainContent />;
-          </main>
-        </div>
+<MainContent />;
       </div>
     </div>
   );

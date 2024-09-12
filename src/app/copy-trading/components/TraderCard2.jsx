@@ -2,9 +2,9 @@ import React from 'react';
 
 const TraderCard = ({ traderId, name, rating, daysTrading, currentCopiers, allTimeCopiers, mockCopiers, leadingMarginBalance, aum, minInvestmentReqd, risk, copierPnL, roiPercent }) => {
   return (
-    <div className="flex flex-col py-3.5 pr-3.5 pl-4 rounded-lg min-w-[240px] shadow-[0px_0px_4px_rgba(0,0,0,0.1)] w-[462px]">
+    <div className="flex flex-col p-10 rounded-lg  bg-none w-[400px]">
       <div className="flex gap-10 justify-between items-start w-full">
-        <div className="flex flex-col leading-none whitespace-nowrap w-[210px]">
+        <div className="flex flex-col leading-none whitespace-nowrap w-[280px]">
           <div className="flex flex-col w-full">
             <div className="flex relative gap-4 items-start">
               <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/4174d01cf8d0b9d29cea119a8b30d1a15ff406b4bf81b081887bfb5de49f078b?apiKey=b4d1b9e87b084579b1e2475047caf617&" alt={`${name}'s profile picture`} className="object-contain z-0 shrink-0 rounded-xl aspect-[0.84] w-[53px]" />

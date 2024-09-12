@@ -12,17 +12,17 @@ function LeaderBoard() {
       <Header />
 
       <div className="z-10 w-full max-md:max-w-full main-body">
-        <div className="flex gap-5 max-md:flex-col">
+       
           <Sidebar />
 
           <main
-            style={{ marginLeft: "20rem" }}
+           
             className="flex flex-col main-container"
           >
             <DashboardIcons />
             <TradeHistoryTable />
           </main>
-        </div>
+      
       </div>
     </div>
   );

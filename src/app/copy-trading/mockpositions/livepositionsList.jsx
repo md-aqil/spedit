@@ -6,9 +6,9 @@ import JoinedUsers from "../../../assets/JoinedUsers.png";
 
 const LivePositionsList = ({ positions }) => {
   return (
-    <div className="flex flex-col gap-4">
+    <div className="flex flex-col gap-4 w-full">
       {positions.map((position, index) => (
-        <div key={index} className="flex items-center justify-between gap-4 p-4 bg-white rounded-lg shadow-md">
+        <div key={index} className="flex items-center w-full justify-between gap-4 p-4 bg-white rounded-lg shadow-md">
           <div className="flex items-center gap-4">
             <Image
               loading="lazy"
@@ -48,11 +48,11 @@ const LivePositionsList = ({ positions }) => {
             </div>
           </div>
           <div className="flex gap-2">
-            <button className="py-2 px-4 bg-pink-700 text-white rounded-sm">
-              Stop Copy
+            <button className="py-2 px-4 border border-pink-700 text-white rounded-sm">
+              Stop Mock Copy
             </button>
-            <button className="py-2 px-4 bg-white border border-stone-400 text-stone-600 rounded-sm">
-              Pause Copy
+            <button className="py-2 px-4 border  bg-lime-500 text-stone-600 rounded-sm">
+               Copy
             </button>
           </div>
         </div>
