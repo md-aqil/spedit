@@ -90,6 +90,8 @@ function LeaderBoard() {
       // Ensure that the client is available when needed
       setTourGuideClientValue(client);
     }
+
+    startTour();
   }, []);
 
   const startTour = () => {
@@ -114,7 +116,7 @@ function LeaderBoard() {
 
               <main className="flex flex-col main-container">
                 <DashboardIcons />
-                <button onClick={startTour}>Start Tour</button>
+                {/* <button onClick={startTour}>Start Tour</button> */}
 
                 <div className="z-10 shrink-0 self-center mt-8 max-w-full" />
                 <div className="flex flex-col items-center mt-0 w-full max-md:max-w-full">
