@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import React, { useState } from "react";
 import Sidebar from "../components/Sidebar";
 import Header from "../components/Header";
@@ -7,8 +7,11 @@ import PerformanceCard from "../components/PerformanceCard";
 import PositionTable from "../components/PositionTable";
 import DashboardIcons from "../components/DashboardIcons";
 
-
-const StartegyDescription = () => {
+const StartegyDescription = ({
+  handleCopyClick,
+  showParameters,
+  showConfirmTour,
+}) => {
   // State to track the active tab
   const [activeTab, setActiveTab] = useState("positions");
 
@@ -62,11 +65,13 @@ const StartegyDescription = () => {
 
             <div className="flex gap-10 justify-between items-start w-full max-md:max-w-full">
               <TraderCard2 {...traderData} />
-              <PerformanceCard {...performanceData} />
+              <PerformanceCard
+                handleCopyClick={handleCopyClick}
+                showParameters={showParameters}
+                showConfirmTour={showConfirmTour}
+                {...performanceData}
+              />
             </div>
-
-
-            
 
             {/* Tabs Section */}
             <div className="flex flex-col mt-10">
@@ -75,7 +80,9 @@ const StartegyDescription = () => {
                 <ul className="flex gap-6 items-center pl-6 pb-2 text-sm font-medium text-neutral-500 max-md:pl-4">
                   <li
                     className={`relative px-4 py-3 cursor-pointer ${
-                      activeTab === "positions" ? "text-neutral-800 font-bold" : "text-neutral-500"
+                      activeTab === "positions"
+                        ? "text-neutral-800 font-bold"
+                        : "text-neutral-500"
                     }`}
                     onClick={() => setActiveTab("positions")}
                   >
@@ -87,7 +94,9 @@ const StartegyDescription = () => {
 
                   <li
                     className={`relative px-4 py-3 cursor-pointer ${
-                      activeTab === "history" ? "text-neutral-800 font-bold" : "text-neutral-500"
+                      activeTab === "history"
+                        ? "text-neutral-800 font-bold"
+                        : "text-neutral-500"
                     }`}
                     onClick={() => setActiveTab("history")}
                   >
@@ -99,7 +108,9 @@ const StartegyDescription = () => {
 
                   <li
                     className={`relative px-4 py-3 cursor-pointer ${
-                      activeTab === "copiers" ? "text-neutral-800 font-bold" : "text-neutral-500"
+                      activeTab === "copiers"
+                        ? "text-neutral-800 font-bold"
+                        : "text-neutral-500"
                     }`}
                     onClick={() => setActiveTab("copiers")}
                   >
@@ -111,7 +122,9 @@ const StartegyDescription = () => {
 
                   <li
                     className={`relative px-4 py-3 cursor-pointer ${
-                      activeTab === "mock-copiers" ? "text-neutral-800 font-bold" : "text-neutral-500"
+                      activeTab === "mock-copiers"
+                        ? "text-neutral-800 font-bold"
+                        : "text-neutral-500"
                     }`}
                     onClick={() => setActiveTab("mock-copiers")}
                   >
@@ -125,11 +138,11 @@ const StartegyDescription = () => {
 
               {/* Tab Content */}
               <div className="">
-                {activeTab === "positions" && <PositionTable positions={positionsData} />}
+                {activeTab === "positions" && (
+                  <PositionTable positions={positionsData} />
+                )}
 
-                {activeTab === "history" &&  "history"  } 
-               
-
+                {activeTab === "history" && "history"}
               </div>
             </div>
           </div>

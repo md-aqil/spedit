@@ -1,4 +1,3 @@
-
 import React from "react";
 import StrategyItem from "./StrategyItem";
 
@@ -49,25 +48,22 @@ function StrategiesFollowed() {
   return (
     <section className="my-10">
       <div className="flex align-center justify-between mb-5">
-      <div className="self-start text-xl font-bold leading-none text-neutral-800">
-        Strategies you follow
-      </div>
+        <div className="self-start text-xl font-bold leading-none text-neutral-800">
+          Strategies you follow
+        </div>
 
-      <div className="overflow-hidden z-10 gap-1.5 self-end px-3 py-1.5 -mt-6 text-xs font-semibold rounded border border-solid border-neutral-800 min-h-[24px] text-neutral-800">
-        View More
-      </div>
-
-      </div>
-      
-      <div className="flex flex-col mt-0 leading-none max-md:max-w-full">
-        <div className="flex flex-col w-full max-md:max-w-full">
-          {strategies.map((strategy, index) => (
-            <StrategyItem key={index} {...strategy} />
-          ))}
+        <div className="overflow-hidden z-10 gap-1.5 self-end px-3 py-1.5 -mt-6 text-xs font-semibold rounded border border-solid border-neutral-800 min-h-[24px] text-neutral-800">
+          View More
         </div>
       </div>
 
-
+      <div className="flex flex-col mt-0 leading-none max-md:max-w-full">
+        <div className="flex flex-col w-full max-md:max-w-full">
+          {strategies.map((strategy, index) => (
+            <StrategyItem index={index} key={index} {...strategy} />
+          ))}
+        </div>
+      </div>
     </section>
   );
 }

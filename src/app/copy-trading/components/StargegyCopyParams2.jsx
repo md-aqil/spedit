@@ -3,11 +3,11 @@
 import React, { useState } from "react";
 import Link from "next/link";
 
-const StartegyCopyParameters = () => {
+const StartegyCopyParameters2 = ({ showParameters, showConfirmTour }) => {
   const [isFixedRatio, setIsFixedRatio] = useState(true);
-  const [copyAmount, setCopyAmount] = useState("");
-  const [totalStopLoss, setTotalStopLoss] = useState("");
-  const [isAgreed, setIsAgreed] = useState(false);
+  const [copyAmount, setCopyAmount] = useState("1");
+  const [totalStopLoss, setTotalStopLoss] = useState("1");
+  const [isAgreed, setIsAgreed] = useState(true);
   const [isPopupVisible, setIsPopupVisible] = useState(false);
 
   const handleToggle = (isRatio) => {
@@ -201,9 +201,12 @@ const StartegyCopyParameters = () => {
 
       {/* Full-Page Popup */}
 
-      {isPopupVisible && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
-          <main className="flex overflow-hidden flex-col px-9 py-9 rounded-xl shadow-md bg-neutral-900  max-md:px-5">
+      {showConfirmTour && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center ">
+          <main
+            id="showConfirmTourModal"
+            className="flex overflow-hidden flex-col px-9 py-9 rounded-xl shadow-md bg-neutral-900  max-md:px-5"
+          >
             <nav className="flex flex-wrap gap-6 items-start pb-5 text-base font-bold leading-none text-white border-b border-solid border-b-neutral-800 max-md:max-w-full">
               {tabItems.map((item, index) => (
                 <TabItem key={index} icon={item.icon} text={item.text} />
@@ -258,4 +261,4 @@ const StartegyCopyParameters = () => {
   );
 };
 
-export default StartegyCopyParameters;
+export default StartegyCopyParameters2;
