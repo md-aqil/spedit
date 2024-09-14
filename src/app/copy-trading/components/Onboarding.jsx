@@ -8,6 +8,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import processIcon from "../../../assets/process.svg";
 import arrowupsquare from "../../../assets/arrow-up-square.svg";
 import logo from "../../../assets/logo.svg";
+import whychoose from "../../../assets/whychoose.svg";
+
 
 // Import Swiper styles
 import "swiper/css";
@@ -76,7 +78,7 @@ function Onboarding() {
                 spaceBetween={50}
                 slidesPerView={1}
                 autoplay={{
-                  delay: 2500,
+                  delay: 250000,
                   disableOnInteraction: false,
                 }}
                 navigation={{
@@ -116,41 +118,7 @@ function Onboarding() {
                     <h2 className="text-3xl font-medium text-stone-950 mt-10 ml-8">
                       <span className="font-bold">Why </span>use our platform?
                     </h2>
-                    <div className="flex flex-wrap gap-4 items-start py-7 pr-6 pl-7 bg-stone-50 rounded-2xl">
-                      {/* User Friendly */}
-                      <article className="flex flex-col px-6 py-12 rounded-xl bg-neutral-900 min-h-[318px] w-[187px]">
-                        <Image
-                          loading="lazy"
-                          src="https://cdn.builder.io/api/v1/image/assets/TEMP/2cb124447fd3694c7139ae5106998d584a8e7b1d6e70263ca975f2448bce8a02?apiKey=b4d1b9e87b084579b1e2475047caf617&"
-                          alt="User-friendly interface icon"
-                          width={80}
-                          height={80}
-                          className="object-contain"
-                        />
-                        <h3 className="mt-8 text-base font-bold text-white">User Friendly</h3>
-                        <p className="mt-2 text-base text-stone-300">
-                          Our platform is designed with simplicity in mind, making it easy for anyone to start copy trading.
-                        </p>
-                      </article>
-
-                      {/* Real Time */}
-                      <article className="flex flex-col px-6 py-12 bg-white rounded-xl min-h-[318px] w-[187px]">
-                        <Image
-                          loading="lazy"
-                          src="https://cdn.builder.io/api/v1/image/assets/TEMP/047c1bf422da010299f257d8e460156f83dfaf40d61a98859e761166bf2c8738?apiKey=b4d1b9e87b084579b1e2475047caf617&"
-                          alt="Real-time trade execution icon"
-                          width={80}
-                          height={80}
-                          className="object-contain"
-                        />
-                        <h3 className="mt-8 text-base font-bold text-black">Real Time</h3>
-                        <p className="mt-2 text-base text-neutral-500">
-                          Lead traders' trades will be copied to your account in real time.
-                        </p>
-                      </article>
-
-                      {/* Add more articles as needed */}
-                    </div>
+                    <Image src={whychoose} className='w-full' />
                   </section>
                 </SwiperSlide>
 
@@ -163,8 +131,7 @@ function Onboarding() {
                     <Image
                       src={processIcon}
                       alt="Process visualization"
-                      width={500}
-                      height={500}
+                     
                       className="object-contain"
                     />
                   </div>

@@ -14,8 +14,8 @@ function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 z-20 flex flex-wrap items-center px-8 pt-3 pb-3.5 w-full border-b border-solid bg-stone-950 border-b-neutral-800 max-md:px-5 max-md:max-w-full dash-header">
       <div className="flex items-center">
-        <div className="text-2xl font-black text-lime-500 w-[58px]">SPEDIT</div>
-        <div className="ml-48">
+        <div className="text-2xl font-black text-lime-500 mr-5">SPEDIT</div>
+        <div className="">
           {" "}
           {/* Adjust space as needed */}
           <ArrowIcon
@@ -25,7 +25,7 @@ function Header() {
         </div>
       </div>
 
-      <div className="flex flex-col flex-1 shrink justify-center items-center self-stretch pl-8 my-auto text-base whitespace-nowrap basis-0 min-w-[240px] text-neutral-500 max-md:max-w-full">
+      <div className="flex flex-col flex-1 shrink justify-center items-center self-stretch pl-8 my-auto text-base whitespace-nowrap basis-0 min-w-[240px] text-neutral-500 max-md:max-w-full header-search">
         <div className="w-full max-w-md">
           <div className="relative">
             <input

@@ -141,3 +141,19 @@ textarea:focus {
     100% - 85px
   ); /* Adjust this to match your collapsed sidebar width */
 }
+
+
+
+@media not all and (min-width: 768px) {
+  .dash-sidebar {
+    display:none;
+  }
+  .header-search {
+    display:none;
+  }
+  .dash-header {
+    display:flex;
+    justify-content: space-between;
+  }
+}
+
