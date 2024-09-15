@@ -9,20 +9,15 @@ import TradeHistoryTable from "./TradeHistoryTable";
 function LeaderBoard() {
   return (
     <div className="flex overflow-hidden flex-col pb-20 bg-stone-50">
-      <Header />
+      {/* <Header /> */}
 
       <div className="z-10 w-full max-md:max-w-full main-body">
-       
-          <Sidebar />
+        <Sidebar />
 
-          <main
-           
-            className="flex flex-col main-container"
-          >
-            <DashboardIcons />
-            <TradeHistoryTable />
-          </main>
-      
+        <main className="flex flex-col main-container">
+          <DashboardIcons />
+          <TradeHistoryTable />
+        </main>
       </div>
     </div>
   );

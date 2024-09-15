@@ -8,7 +8,7 @@ const HeroSection = () => {
 
   return (
     <section className="flex flex-col items-center w-[100%]">
-      <Header />
+      {/* <Header /> */}
 
       <h2 className="text-6xl font-semibold text-center text-white leading-[67px] max-md:max-w-full max-md:text-4xl max-md:leading-[54px]">
         <span className="text-6xl font-extrabold leading-[77px]">
