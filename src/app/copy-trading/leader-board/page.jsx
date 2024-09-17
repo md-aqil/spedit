@@ -185,13 +185,8 @@ function LeaderBoard() {
             showConfirmTour={showConfirmTour}
           />
         )) || (
-<<<<<<< HEAD
           <div className="flex flex-col pb-20 bg-stone-50">
             <Header />
-=======
-          <div className="flex overflow-hidden flex-col pb-20 bg-stone-50">
-            {/* <Header /> */}
->>>>>>> e9ba8641e13d4b3dda2f0af8f8b0bf75cfc819e9
 
             <div className="z-10 w-full max-md:max-w-full main-body">
               <div className="flex gap-5 w-full">
