@@ -141,3 +141,43 @@ textarea:focus {
     100% - 85px
   ); /* Adjust this to match your collapsed sidebar width */
 }
+
+.header-collapse-menu {
+  display: none;
+}
+
+.dash-sidebar {
+  display: block;
+}
+.mobile-view {
+  display: none;
+}
+@media not all and (min-width: 768px) {
+  .desktop-view {
+    display: none;
+  }
+  .dash-sidebar {
+    display: none;
+  }
+  .display-block {
+    display: block;
+  }
+  .display-none {
+    display: none;
+  }
+  .header-collapse-menu {
+    display: block;
+    color: #84cc18;
+  }
+
+  .header-arro-collapse {
+    display: none;
+  }
+  .header-search {
+    display: none;
+  }
+  .dash-header {
+    display: flex;
+    justify-content: space-between;
+  }
+}

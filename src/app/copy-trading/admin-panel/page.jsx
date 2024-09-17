@@ -1,5 +1,5 @@
 // AdminDashboard.jsx
-'use client'
+"use client";
 import React, { useState } from "react";
 import Sidebar from "../components/Sidebar";
 import Header from "../components/Header";
@@ -72,7 +72,6 @@ function AdminDashboard() {
         return <RightManagement />;
 
       case "Trash":
-
         return <Trash />;
       default:
         return <div>Select a menu item</div>;
@@ -81,7 +80,7 @@ function AdminDashboard() {
 
   return (
     <div className="flex flex-col pb-20 bg-[#F8FAF5]">
-      <Header />
+      {/* <Header /> */}
       <div className="z-10 w-full max-md:max-w-full main-body">
         <div className="flex gap-5 max-md:flex-col">
           <Sidebar
