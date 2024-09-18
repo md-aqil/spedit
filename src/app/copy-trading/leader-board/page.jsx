@@ -1,7 +1,7 @@
 "use client";
 
 import Sidebar from "../components/Sidebar";
-import Header from "../components/Header";
+// import Header from "../components/Header";
 import PortfolioList from "../components/PortfolioList";
 import DashboardIcons from "../components/DashboardIcons";
 import ListFilter from "../components/ListFilter";
@@ -186,7 +186,7 @@ function LeaderBoard() {
           />
         )) || (
           <div className="flex flex-col pb-20 bg-stone-50">
-            <Header />
+            {/* <Header /> */}
 
             <div className="z-10 w-full max-md:max-w-full main-body">
               <div className="flex gap-5 w-full">

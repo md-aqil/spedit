@@ -211,10 +211,10 @@ z-index: 10;
 
 @media not all and (min-width: 768px) {
   .desktop-view {
-    display: none;
+    /* display: none; */
   }
   .dash-sidebar {
-    display: none;
+    /* display: none; */
   }
   .display-block {
     display: block;
@@ -231,10 +231,71 @@ z-index: 10;
     display: none;
   }
   .header-search {
-    display: none;
+    /* display: none; */
   }
   .dash-header {
     display: flex;
     justify-content: space-between;
   }
+
+  .dash-item-wrap {
+    flex-direction: row;
+  width: 100%;
+
+}
+
+.dash-item {
+  cursor: pointer;
+  flex-direction: column;
+  font-size: 14px;
+  flex-grow: 1;
+  margin-top: 15px;
+  gap: 2px;
+}
+.dash-item i{
+ font-size: 24px;
+}
+
+.dash-item.Live {
+  display:none;
+}
+.dash-item.Code {
+  display:none;
+}
+.dash-item.Learn {
+  display:none;
+}
+.dash-sidebar nav {
+  margin: 0;
+  width: 100%;
+}
+
+.dash-sidebar-content {
+  overflow-x: auto;
+  height: 100%;
+  padding: 0;
+  padding-bottom: 10px;
+}
+.side-profile {
+  display:none;
+}
+
+.dash-sidebar {
+  bottom: 0px;
+  z-index: 100;
+  border-top: 1px solid;
+}
+
+.header-credit {
+  display:none;
+}
+
+.header-search {
+  margin: 0;
+  padding: 0;
+  min-width: 150px;
+  width: 100%;
+  margin-right: 15px;
+}
+
 }

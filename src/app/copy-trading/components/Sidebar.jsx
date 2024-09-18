@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import cogIcon from "../../../assets/cog.svg";
+import avatar from "../../../assets/avatar-f.png";
 import Image from "next/image";
 import ArrowIcon from "./ArrowIcon"; // Adjust the path as needed
 
@@ -85,17 +86,12 @@ function Sidebar({ items = SidebarItems, onSelect, activeItem }) {
                 placeholder="Search..."
               />
               <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-                <img
-                  loading="lazy"
-                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/236c2f2a224a9f91bae67ba81d33f8bda2f0f7291e9fff1454bf2f90daf16dfc?apiKey=b4d1b9e87b084579b1e2475047caf617&"
-                  alt="Search Icon"
-                  className="object-contain w-5 h-5"
-                />
+                <i className="icon-search-normal-1"></i>
               </div>
             </div>
           </div>
         </div>
-        <div className="flex gap-4 justify-center items-center self-stretch my-auto text-sm leading-none text-center text-white">
+        <div className="flex gap-4 justify-center items-center self-stretch my-auto text-sm leading-none text-center text-white header-credit">
           <div className="overflow-hidden gap-2 self-stretch px-3 py-1 my-auto rounded-md shadow-lg bg-lime-500 bg-opacity-30">
             50 Credits
           </div>
@@ -105,13 +101,22 @@ function Sidebar({ items = SidebarItems, onSelect, activeItem }) {
             className="object-contain shrink-0 self-stretch my-auto w-4 aspect-square"
             src={cogIcon}
           />
+         
         </div>
+       
+        <Image
+            loading="lazy"
+            alt="User Icon"
+            className="object-contain shrink-0 self-stretch my-auto  aspect-square"
+            src={avatar}
+          />
+          
       </header>
 
       {/* desktop view */}
       <aside
         className={`flex flex-col desktop-view max-md:ml-0 max-md:w-full dash-sidebar ${
-          isActiveMenu ? "display-block" : "display-none"
+          isActiveMenu ? "" : ""
         } ${
           isCollapsed
             ? "w-[85px] sidebar-collapsed"
@@ -119,7 +124,7 @@ function Sidebar({ items = SidebarItems, onSelect, activeItem }) {
         } transition-all duration-300`}
       >
         <div className="flex flex-col items-center py-8 pr-5 mx-auto w-full bg-stone-950 dash-sidebar-content">
-          <div className="flex items-between justify-between text-xl leading-7 text-neutral-500 px-3 w-full">
+          <div className="flex items-between justify-between text-xl leading-7 text-neutral-500 px-3 w-full side-profile">
             {!isActiveMenu && (
               <span
                 className={`icon-arrow-circle-right text-lime-500 cursor-pointer absolute z-50 right-[15px] text-2xl top-10 ${
@@ -157,13 +162,15 @@ function Sidebar({ items = SidebarItems, onSelect, activeItem }) {
 
           
           </div>
+
+
           <nav className="flex  gap-6 self-start mt-5 text-xl text-white ml-7">
-            <div className="flex flex-col items-start">
+            <div className="flex flex-col items-start dash-item-wrap">
               {items.map((item, index) => (
                 <div
                   key={index}
-                  className={`flex gap-2 items-center dash-item mt-6 ${
-                    active === item.text ? "dash-item-active" : ""
+                  className={`${item.text} flex gap-2 items-center dash-item mt-6 ${
+                    active === item.text ? "dash-item-active " : ""
                   }`}
                   onClick={() => handleSelect(item)}
                   role="button"
