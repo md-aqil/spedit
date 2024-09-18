@@ -31,16 +31,20 @@ function LoginPage({ logoSrc, illustrationSrc }) {
   };
 
   return (
-    <main className="overflow-hidden px-9 py-6 bg-white max-md:px-5">
-           <Image
+    <main className="px-6 py-6 bg-white max-md:px-5 justify-between">
+      <div className="flex justify-between items-center absolute left-10 w-[45%]">
+      <Image
                 src={logo}
                 alt="Logo"
                 
-                className="object-contain w-100 absolute"
+                className="object-contain w-100 "
               />
+              <span className="icon-arrow-left text-2xl"></span>
+      </div>
+         
       <div className="flex gap-5 max-md:flex-col">
         <section className="flex flex-col w-[46%] max-md:ml-0 max-md:w-full px-20">
-          <div className="flex flex-col items-center mt-1.5 w-full max-md:mt-10">
+          <div className="flex flex-col  mt-10">
            
             <div className="flex flex-col my-10">
               <h1 className="text-3xl font-bold text-stone-950">
@@ -50,7 +54,7 @@ function LoginPage({ logoSrc, illustrationSrc }) {
                 Enter your credentials to get started with your trading journey.
               </p>
             </div>
-            <div className="flex gap-5 justify-center items-center w-full">
+            <div className="flex gap-5  w-full">
               <button
                 className="flex gap-2 justify-center items-center px-4 py-4 rounded border border-neutral-800 text-sm font-bold"
                 aria-label="Log in with Google"
@@ -154,12 +158,12 @@ function LoginPage({ logoSrc, illustrationSrc }) {
                     I agree to the <span className="font-semibold underline">Terms and Policy</span>
                   </label>
                 </div>
-                <button
+                <a href="/copy-trading/lead-trader-management/"
                   type="submit"
                   className="mt-4 px-3 py-5 w-full text-sm font-bold text-center bg-lime-500 rounded-md"
                 >
                   Login/Signup
-                </button>
+                </a>
               </div>
             </form>
             <div className="mt-5 text-xs text-center text-neutral-500 max-md:mt-10">

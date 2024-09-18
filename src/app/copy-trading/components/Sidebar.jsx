@@ -122,27 +122,40 @@ function Sidebar({ items = SidebarItems, onSelect, activeItem }) {
           <div className="flex items-between justify-between text-xl leading-7 text-neutral-500 px-3 w-full">
             {!isActiveMenu && (
               <span
-                className={`icon-arrow-circle-right text-lime-500 cursor-pointer absolute z-50 ${
-                  isCollapsed ? "rotate-180" : ""
+                className={`icon-arrow-circle-right text-lime-500 cursor-pointer absolute z-50 right-[15px] text-2xl top-10 ${
+                  isCollapsed ? "rotate-180 right-[-13px] rounded-full bg-gray-950" : ""
                 }`}
                 onClick={toggleSidebar}
               ></span>
             )}
 
-            {!isCollapsed && (
-              <div className="relative">
-                <span className="">Welcome,</span>
-                <br />
-                Joe
-              </div>
-            )}
 
-            <img
+<div className="flex gap-3">
+
+
+<img
               loading="lazy"
               src="https://cdn.builder.io/api/v1/image/assets/TEMP/e5ef3aad35b9b309f96c51485aeb383b8010a2d643048f6a86a12143295fa997?apiKey=b4d1b9e87b084579b1e2475047caf617&"
               alt="User avatar"
               className="object-contain shrink-0 w-14 rounded-xl aspect-square "
             />
+
+
+            {!isCollapsed && (
+
+
+              <div className="relative">
+                <span className="">Welcome,</span>
+                <br />
+                Joe
+              </div>
+
+
+            )}
+</div>
+
+
+          
           </div>
           <nav className="flex  gap-6 self-start mt-5 text-xl text-white ml-7">
             <div className="flex flex-col items-start">

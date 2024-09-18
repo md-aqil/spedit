@@ -136,6 +136,8 @@ const dashboardItems = [
       </svg>
     ),
     text: "Lead Trader Login",
+    link: "/login",
+
   },
   {
     icon: (

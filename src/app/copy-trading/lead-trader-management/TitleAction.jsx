@@ -31,12 +31,7 @@ function TitleAction() {
               />
               <span>Saved Strategy type</span>
             </div>
-            <img
-              loading="lazy"
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/7eb69ebdb4249788d042e10755045c36fd5fc43880af74d278a4876707cb0c90?apiKey=b4d1b9e87b084579b1e2475047caf617&"
-              alt=""
-              className="object-contain w-3.5 aspect-square"
-            />
+           <i className="icon-arrow-square-down text-2xl"></i>
           </button>
 
           {/* Dropdown Menu */}
@@ -67,15 +62,9 @@ function TitleAction() {
         </div>
 
         {/* Create Strategy Button */}
-        <button className="flex gap-2 justify-center items-center px-4 py-4 font-bold bg-lime-500 rounded-md text-stone-950">
-          <img
-            loading="lazy"
-            src="https://cdn.builder.io/api/v1/image/assets/TEMP/2373b3e30b68cb5cbddd9e1c81772bb396a0285cae73c4a2590ba64bbc4c092b?apiKey=b4d1b9e87b084579b1e2475047caf617&"
-            alt=""
-            className="object-contain w-3 aspect-square"
-          />
-          <span>Create Strategy</span>
-        </button>
+        <a href="./update-strategy" className="flex gap-2 justify-center items-center px-4 py-4 font-bold bg-lime-500 rounded-md text-stone-950">
+          <span>+ Create Strategy</span>
+        </a>
       </nav>
     </header>
   );

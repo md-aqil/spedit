@@ -1,6 +1,11 @@
 
 import React from "react";
 import PositionCard from "./PositionCard";
+import Image from 'next/image';
+import userIcon from "../../../assets/user1.png"; 
+import JoinedUsers from "../../../assets/JoinedUsers.png"; 
+import avatar from "../../../assets/avatar.jpg"; 
+
 
 const mockPositionsData = [
   {

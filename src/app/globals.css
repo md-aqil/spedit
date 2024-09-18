@@ -152,6 +152,63 @@ textarea:focus {
 .mobile-view {
   display: none;
 }
+
+.fade-enter {
+  opacity: 0;
+}
+
+.fade-enter-active {
+  opacity: 1;
+  transition: opacity 300ms;
+}
+
+.fade-exit {
+  opacity: 1;
+}
+
+.fade-exit-active {
+  opacity: 0;
+  transition: opacity 300ms;
+}
+
+.stop-label {
+background: #FDE900;
+border-radius: 4px;
+padding: 20px;
+height: 60px;
+display: flex;
+align-items: center;
+justify: center;
+width: 140px;
+position: absolute;
+left: 0;
+right:0;
+top:0;
+bottom:0;
+margin:auto;
+text-align:center;
+z-index: 10;
+
+}
+
+
+.profit-arrow {
+  background: #9BEC00;
+  color: #0F1209;
+  border-radius: 3px;
+  font-weight:bold;
+  font-size: 18px;
+  padding: 1px;
+}
+.loss-arrow {
+  background: #CD0070;
+  color: #0F1209;
+  border-radius: 3px;
+  font-weight:bold;
+  font-size: 18px;
+  padding: 1px;
+}
+
 @media not all and (min-width: 768px) {
   .desktop-view {
     display: none;

@@ -61,13 +61,17 @@ function LivePositions() {
                 Live Positions
               </h1>
               <nav className="flex gap-4 items-center self-stretch my-auto">
-                <span
+                {/* <span
                   onClick={() => setIsListView(!isListView)}
                   loading="lazy"
                   className="aspect-square cursor-pointer icon-firstline text-2xl"
-                />
+                /> */}
+          <span className="icon-refresh"></span>
+
               </nav>
             </header>
+
+            
 
             <main className="w-full flex w-full mt-5 ">
               {isListView ? (
