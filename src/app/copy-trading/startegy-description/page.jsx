@@ -1,11 +1,12 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Sidebar from "../components/Sidebar";
 import Header from "../components/Header";
 import TraderCard2 from "../components/TraderCard2";
 import PerformanceCard from "../components/PerformanceCard";
 import PositionTable from "../components/PositionTable";
 import DashboardIcons from "../components/DashboardIcons";
+import { useSearchParams } from "next/navigation";
 
 const StartegyDescription = ({
   handleCopyClick,
@@ -14,6 +15,9 @@ const StartegyDescription = ({
 }) => {
   // State to track the active tab
   const [activeTab, setActiveTab] = useState("positions");
+  const [handleCopy, setHandleCopy] = useState(false);
+
+  const params = useSearchParams();
 
   const traderData = {
     traderId: "16473i",
@@ -53,6 +57,11 @@ const StartegyDescription = ({
     // More position data...
   ];
 
+  useEffect(() => {
+    if (params.get("name") === "copyStepOpen") {
+      setHandleCopy(true);
+    }
+  }, []);
   return (
     <div className="flex overflow-hidden flex-col pb-20 bg-stone-50">
       {/* <Header /> */}
@@ -66,6 +75,7 @@ const StartegyDescription = ({
             <div className="flex gap-10 justify-between items-start w-full max-md:max-w-full">
               <TraderCard2 {...traderData} />
               <PerformanceCard
+                handleCopy={handleCopy}
                 handleCopyClick={handleCopyClick}
                 showParameters={showParameters}
                 showConfirmTour={showConfirmTour}

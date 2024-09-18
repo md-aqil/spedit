@@ -10,7 +10,7 @@ import FavTable from "../components/FavTable";
 import CopytraderCard from "../components/CopytraderCard";
 import StrategieCard from "../components/StrategieCard";
 import React, { useEffect, useState, useRef } from "react";
-import { useRouter } from "next/navigation"; 
+import { useRouter } from "next/navigation";
 
 import StartegyDescription from "../startegy-description/page";
 import OnboardingPage from "../dashboard/page";
@@ -191,11 +191,14 @@ function LeaderBoard() {
             <div className="z-10 w-full max-md:max-w-full main-body">
               <div className="flex gap-5 w-full">
                 <Sidebar />
-
                 <main className="flex flex-col main-container">
                   <DashboardIcons />
                   {/* <button onClick={startTour}>Start Tour</button> */}
-                  <StrategieFilter fav={fav} setFav={setFav} handleToggleListing={handleToggleListing} />
+                  <StrategieFilter
+                    fav={fav}
+                    setFav={setFav}
+                    handleToggleListing={handleToggleListing}
+                  />
 
                   {(toggleList && (
                     <section className="flex flex-col ">

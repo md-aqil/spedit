@@ -1,11 +1,13 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import StartegyCopyParameters from "./StartegyCopyParameters";
 import LineChart from "./LineChart"; // Import your LineChart component
+import { useSearchParams } from "next/navigation";
 
 import StartegyCopyParameters2 from "./StargegyCopyParams2";
 
 const PerformanceCard = ({
   handleCopyClick,
+  handleCopy,
   showParameters,
   showConfirmTour,
   mdd,
@@ -26,18 +28,26 @@ const PerformanceCard = ({
   const [showParametersa, setShowParametersA] = useState(false);
   const [selectedTab, setSelectedTab] = useState("ROI");
 
+  const params = useSearchParams();
+
   const handleCopyClickAgain = () => {
     console.log("hellow ");
     setShowParametersA(true);
   };
 
   const handleBackClick = () => {
-    setShowParameters(false);
+    setShowParametersA(false);
   };
 
   const handleTabClick = (tab) => {
     setSelectedTab(tab);
   };
+
+  useEffect(() => {
+    if (params.get("name") === "copyStepOpen") {
+      setShowParametersA(true);
+    }
+  }, []);
 
   // Determine which data to use for the LineChart based on the selected tab
   const currentChartData = selectedTab === "ROI" ? chartData : pnlChartData;
