@@ -28,7 +28,7 @@ function PositionCard({
   return (
     <>
       {/* Card with reduced opacity when stopped */}
-      <article className={`relative flex flex-col grow shrink self-stretch px-5 py-6 my-auto bg-white rounded-lg border border-solid border-stone-300 transition-opacity duration-300 ${isStopped ? 'opacity-50' : 'opacity-100'}`}>
+      <article className={`relative flex flex-col grow shrink self-stretch px-5 py-6 my-auto bg-white rounded-lg border border-solid border-stone-300 transition-opacity max-w-[388px] duration-300 ${isStopped ? 'opacity-50' : 'opacity-100'}`}>
         
         {/* Paused Label */}
         {isStopped && (

@@ -171,6 +171,7 @@ textarea:focus {
   transition: opacity 300ms;
 }
 
+
 .stop-label {
 background: #FDE900;
 border-radius: 4px;
@@ -207,6 +208,9 @@ z-index: 10;
   font-weight:bold;
   font-size: 18px;
   padding: 1px;
+}
+.use-mobile {
+  display:none;
 }
 
 @media not all and (min-width: 768px) {
@@ -297,5 +301,32 @@ z-index: 10;
   width: 100%;
   margin-right: 15px;
 }
+
+.use-mobile {
+  display:block;
+}
+
+.sidebar-expanded + .main-container {
+  width: 100%;
+}
+
+.dash-icons {
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  overflow-y: auto;
+  gap:1px;
+}
+
+
+.dash-icons-item {
+  flex-direction: row;
+    gap: 5px;
+}
+
+.main-container {
+  width: 100%;
+  padding: 15px 15px;
+}
+
 
 }

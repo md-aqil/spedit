@@ -1,6 +1,8 @@
 'use client'
 import React, { useState } from "react";
 import CardInput from "./CardInput";
+import Image from "next/image";
+import cards from "../../../../assets/cards.png";
 
 export default function UnSavedCardPayment() {
   const [isCollapsed, setIsCollapsed] = useState(false);
@@ -14,17 +16,15 @@ export default function UnSavedCardPayment() {
         onClick={() => setIsCollapsed(!isCollapsed)}
       >
         <h2 className="flex gap-2 items-center text-xl font-bold text-neutral-800">
-          <img
-            loading="lazy"
-            src="https://cdn.builder.io/api/v1/image/assets/TEMP/e83dfbda5d19489a5221744aa69e1273799a1c13ace3ca93243020c90d0b470a?apiKey=b4d1b9e87b084579b1e2475047caf617&"
-            alt="Pay by Unsaved Card Icon"
-            className="w-4 h-4"
-          />
+         
           <span>Pay by Unsaved Card</span>
+        
         </h2>
-        <span className="text-neutral-500">
-          {isCollapsed ? "▲" : "▼"}
+
+
+        <span className={`text-neutral-500 text-2xl ${isCollapsed ? "icon-arrow-up-2" : "icon-arrow-down-1"}`}>
         </span>
+
       </header>
 
       {/* Collapsible Content */}
@@ -56,6 +56,7 @@ export default function UnSavedCardPayment() {
             <span className="text-neutral-800">Debit Card</span>
           </label>
         </nav>
+        <Image className="my-5" src={cards}/>
         <form className="flex flex-col mt-8 gap-4 w-full max-md:max-w-full">
           <div className="flex gap-x-12 justify-between">
           <div className="flex-col">

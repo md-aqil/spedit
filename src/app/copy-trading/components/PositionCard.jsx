@@ -132,7 +132,7 @@ function PositionCard({ name, rating, netCopyAmount, unrealizedPnl, roi }) {
       {/* Paused Label */}
       {isCardDimmed && (
         <div className="absolute inset-0 flex items-center justify-center bg-white bg-opacity-80">
-          <span className="text-lg font-bold text-gray-700">Paused (12hrs ago)</span>
+          <span className=" stop-label">Paused (12hrs ago)</span>
         </div>
       )}
     </article>

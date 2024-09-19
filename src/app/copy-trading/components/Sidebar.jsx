@@ -10,7 +10,7 @@ const SidebarItems = [
   {
     icon: "icon-profile-tick",
     text: "Profile",
-    url: "/",
+    url: "/copy-trading/profile",
   },
   {
     icon: "icon-folder",
@@ -30,7 +30,7 @@ const SidebarItems = [
   {
     icon: "icon-copy",
     text: "Copy",
-    url: "/",
+    url: "/copy-trading",
   },
   {
     icon: "icon-setting-3",
@@ -107,10 +107,10 @@ function Sidebar({ items = SidebarItems, onSelect, activeItem }) {
         <Image
             loading="lazy"
             alt="User Icon"
-            className="object-contain shrink-0 self-stretch my-auto  aspect-square"
+            className="object-contain shrink-0 self-stretch my-auto  aspect-square use-mobile"
             src={avatar}
           />
-          
+
       </header>
 
       {/* desktop view */}

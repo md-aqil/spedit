@@ -19,7 +19,7 @@ const tradeData = [
     quantity: "703",
     instrument: "Nifty 24500 CE",
     strategyId: "33981",
-    profit: "-4349",
+    profit: "4349",
     profitClass: "text-pink-600",
   },
   // ... more trades
@@ -80,19 +80,19 @@ function TradeHistoryTable() {
       <div className="flex mb-4">
         <button
           onClick={() => setActiveTab("Trade")}
-          className={`py-2 px-4 text-sm font-medium ${activeTab === "Trade" ? "bg-blue-500 text-white" : "text-gray-600 hover:bg-gray-100"} border rounded-l`}
+          className={`py-2 px-4 text-sm font-medium ${activeTab === "Trade" ? "bg-[#CDE8A3] text-black" : "text-gray-600 hover:bg-gray-100"} border rounded-l`}
         >
           Trade
         </button>
         <button
           onClick={() => setActiveTab("Strategy")}
-          className={`py-2 px-4 text-sm font-medium ${activeTab === "Strategy" ? "bg-blue-500 text-white" : "text-gray-600 hover:bg-gray-100"} border rounded-r`}
+          className={`py-2 px-4 text-sm font-medium ${activeTab === "Strategy" ? "bg-[#CDE8A3] text-black" : "text-gray-600 hover:bg-gray-100"} border rounded-r`}
         >
           Strategy
         </button>
       </div>
 
-      <div className="relative overflow-x-auto p-6 bg-white shadow rounded-lg">
+      <div className="relative  p-6 bg-white shadow rounded-lg">
         <table className="w-full table-auto text-left text-gray-600 border-collapse">
           <thead>
             <tr className="border-b text-sm bg-gray-100">
@@ -116,7 +116,7 @@ function TradeHistoryTable() {
                         }
                         className="text-gray-500"
                       >
-                        <span className="icon-arrow-down-1"></span>
+                        <span className="icon-arrow-down-1 "></span>
                       </button>
                     )}
                   </div>
@@ -231,7 +231,7 @@ function TradeHistoryTable() {
                     <td className="px-4 py-2 text-sm">{item.strategyId}</td>
                     <td className="px-4 py-2 text-sm font-semibold">
                       <div className="flex items-center">
-                        <i className={`icon-arrow-up-3 ${item.profitClass} p-0.5 mr-2 rounded-sm`}></i>
+                        <i className={`icon-arrow-up-3 ${item.profitClass} p-0.5 mr-2 rounded-sm profit-arrow`}></i>
                         {item.profit}
                       </div>
                     </td>

@@ -25,7 +25,7 @@ function MyComponent() {
     <div className="flex overflow-hidden flex-col pb-20 bg-stone-50">
       {/* <Header /> */}
       <div className="z-10 w-full max-md:max-w-full main-body">
-        <div className="flex gap-5 max-md:flex-col">
+        <div className="flex gap-5 w-full">
           <Sidebar />
           <main className="flex flex-col main-container">
             <ProfileTab activeTab={selectedTab} onTabChange={handleTabChange} />

@@ -82,7 +82,7 @@ function AdminDashboard() {
     <div className="flex flex-col pb-20 bg-[#F8FAF5]">
       {/* <Header /> */}
       <div className="z-10 w-full max-md:max-w-full main-body">
-        <div className="flex gap-5 max-md:flex-col">
+        <div className="flex w-full">
           <Sidebar
             items={adminSidebarItems}
             onSelect={setActiveMenu}

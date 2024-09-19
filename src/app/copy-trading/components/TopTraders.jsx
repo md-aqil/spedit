@@ -102,9 +102,9 @@ function TopTraders() {
       <div className="flex align-center justify-between mb-5">
         <div className="self-start text-xl font-bold leading-none text-neutral-800">Top traders of the week</div>
 
-        <div className="overflow-hidden z-10 gap-1.5 self-end px-3 py-1.5 -mt-6 text-xs font-semibold rounded border border-solid border-neutral-800 min-h-[24px] text-neutral-800">
+        <a href="/copy-trading/top-traders" className="overflow-hidden z-10 gap-1.5 self-end px-3 py-1.5 -mt-6 text-xs font-semibold rounded border border-solid border-neutral-800 min-h-[24px] text-neutral-800">
           View All
-        </div>
+        </a>
       </div>
 
       <Swiper

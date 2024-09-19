@@ -106,12 +106,14 @@ const StrategieCard = () => {
               >
                 Cancel
               </button>
+
               <button
                 onClick={handleModalProceed}
                 className="px-4 py-2 bg-[#9BEC00] text-black rounded hover:bg-lime-600"
               >
                 Proceed
               </button>
+              
             </div>
           </div>
         </div>

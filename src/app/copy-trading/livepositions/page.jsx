@@ -35,6 +35,14 @@ const positionsData = [
     unrealizedPnl: 47.5654,
     roi: 0.47,
   },
+
+  {
+    name: "Aarti",
+    rating: 502,
+    netCopyAmount: 10000.0,
+    unrealizedPnl: 47.5654,
+    roi: 0.47,
+  },
   // Add additional positions as needed
 ];
 
@@ -49,11 +57,16 @@ function LivePositions() {
           <Sidebar />
           <main className="flex flex-col main-container">
             <DashboardIcons />
-            <header className="flex flex-wrap gap-10 justify-between items-center w-full max-w-[950px] max-md:max-w-full">
+            <header className="flex flex-wrap gap-10 justify-between items-center w-full max-w-[960px] max-md:max-w-full">
               <h1 className="self-stretch my-auto text-xl font-bold leading-none text-black">
                 Live Positions
               </h1>
               <nav className="flex gap-4 items-center self-stretch my-auto">
+              
+
+               
+                <span className="icon-refresh text-2xl"></span>
+                <span className="icon-eye-slash text-2xl"></span>
                 <span
                   onClick={() => setIsListView(!isListView)}
                   loading="lazy"

@@ -162,12 +162,13 @@ function DashboardIcons({}) {
 
   return (
     <div className="flex flex-col pt-6 w-full bg-stone-50 min-h-[127px] max-md:max-w-full">
-      <div className="flex flex-wrap gap-3.5 items-start self-center pb-1.5 max-md:max-w-full">
+      <div className="flex flex-wrap gap-3.5 items-start self-center pb-1.5 max-md:max-w-full dash-icons">
+
         {dashboardItems.map((item, index) => (
           <div key={index} className="flex flex-col pb-2">
             <a href={item?.link}>
               <div
-                className={`flex flex-col justify-center items-center p-2.5 rounded-md ${
+                className={`flex flex-col justify-center items-center p-2.5 rounded-md  dash-icons-item ${
                   pathname === item?.link && true
                     ? "bg-neutral-900"
                     : "border-0 border-solid border-stone-50"
