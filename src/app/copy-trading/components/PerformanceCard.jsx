@@ -181,7 +181,10 @@ const PerformanceCard = ({
               >
                 Copy
               </button>
-              <button className="gap-1 px-7 py-5 mt-4 max-w-full rounded border border-solid border-neutral-800 min-h-[50px] text-neutral-800 w-[150px] max-md:px-5">
+              <button
+                onClick={handleCopyClickAgain}
+                className="gap-1 px-7 py-5 mt-4 max-w-full rounded border border-solid border-neutral-800 min-h-[50px] text-neutral-800 w-[150px] max-md:px-5"
+              >
                 Mock
               </button>
             </div>
