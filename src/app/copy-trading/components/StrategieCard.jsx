@@ -1,6 +1,9 @@
+"use client";
+
 import React, { useState } from "react";
 import Image from "next/image";
-import { useRouter } from "next/router";
+
+import { useRouter } from "next/navigation";
 import chart from "../../../assets/chart.svg";
 import heartIcon from "../../../assets/heart.svg";
 import heartFullIcon from "../../../assets/heart-full.svg";
@@ -8,12 +11,12 @@ import userIcon from "../../../assets/user1.png";
 import JoinedUsers from "../../../assets/JoinedUsers.png";
 
 const StrategieCard = () => {
-  //   const router = useRouter();
   const [favorites, setFavorites] = useState([]);
   const [showModal, setShowModal] = useState(false);
   const [actionType, setActionType] = useState("");
   const [selectedCard, setSelectedCard] = useState(null);
   const [cardsStatus, setCardsStatus] = useState({});
+  const router = useRouter();
 
   const copytraderData = [
     {
@@ -83,6 +86,9 @@ const StrategieCard = () => {
     }
   };
 
+  const handleRedirect = () => {
+    router.push("/copy-trading/startegy-description");
+  };
   const handleModalCancel = () => {
     setShowModal(false);
   };
@@ -113,14 +119,13 @@ const StrategieCard = () => {
               >
                 Proceed
               </button>
-              
             </div>
           </div>
         </div>
       )}
 
       {/* Card List */}
-      <a href="/copy-trading/startegy-description">
+      <div style={{ cursor: "pointer" }} onClick={handleRedirect}>
         <div className="flex flex-wrap gap-5 items-start">
           {copytraderData.map((trader) => (
             <div
@@ -158,6 +163,7 @@ const StrategieCard = () => {
                   </div>
                   <div className="flex items-center gap-3">
                     <button
+                      style={{ position: "relative", zIndex: "1000" }}
                       className="relative focus:outline-none"
                       onClick={(e) => {
                         e.stopPropagation(); // Prevents redirect on click
@@ -266,7 +272,7 @@ const StrategieCard = () => {
             </div>
           ))}
         </div>
-      </a>
+      </div>
     </div>
   );
 };

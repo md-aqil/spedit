@@ -1,18 +1,14 @@
 import React, { useState } from "react";
-import Image from 'next/image';
+import Image from "next/image";
 import userIcon from "../../../assets/user1.png";
 import JoinedUsers from "../../../assets/JoinedUsers.png";
+import { useRouter } from "next/navigation";
 
-function PositionCard({
-  name,
-  rating,
-  netCopyAmount,
-  unrealizedPnl,
-  roi,
-}) {
+function PositionCard({ name, rating, netCopyAmount, unrealizedPnl, roi }) {
   const [isPopupVisible, setIsPopupVisible] = useState(false);
   const [isStopped, setIsStopped] = useState(false);
   const [showNotification, setShowNotification] = useState(false);
+  const router = useRouter();
 
   const handleStopClick = () => {
     setIsPopupVisible(true);
@@ -25,15 +21,23 @@ function PositionCard({
     setTimeout(() => setShowNotification(false), 3000); // Hide notification after 3 seconds
   };
 
+  const handleRedirect = () => {
+    router.push("/copy-trading/startegy-description");
+  };
+
   return (
-    <>
+    <div className="cursor-pointer" onClick={handleRedirect}>
       {/* Card with reduced opacity when stopped */}
-      <article className={`relative flex flex-col grow shrink self-stretch px-5 py-6 my-auto bg-white rounded-lg border border-solid border-stone-300 transition-opacity max-w-[388px] duration-300 ${isStopped ? 'opacity-50' : 'opacity-100'}`}>
-        
+      <article
+        className={`relative flex flex-col grow shrink self-stretch px-5 py-6 my-auto bg-white rounded-lg border border-solid border-stone-300 transition-opacity max-w-[388px] duration-300 ${
+          isStopped ? "opacity-50" : "opacity-100"
+        }`}
+      >
         {/* Paused Label */}
         {isStopped && (
           <div className="stop-label">
-            Paused<br /> (12 hrs ago)
+            Paused
+            <br /> (12 hrs ago)
           </div>
         )}
 
@@ -73,9 +77,16 @@ function PositionCard({
           </div>
           <div className="flex flex-col">
             <span className="text-xs text-neutral-500">Unrealized Pnl</span>
-            <div className={`flex gap-2 items-center mt-2 text-base font-bold whitespace-nowrap`}>
-              <span className={`text-white text-sm p-0.4 rounded-sm ${unrealizedPnl >= 0 ? 'bg-green-500 icon-arrow-up-3' : 'bg-[#CD0070] icon-arrow-down'}`}>
-              </span>
+            <div
+              className={`flex gap-2 items-center mt-2 text-base font-bold whitespace-nowrap`}
+            >
+              <span
+                className={`text-white text-sm p-0.4 rounded-sm ${
+                  unrealizedPnl >= 0
+                    ? "bg-green-500 icon-arrow-up-3"
+                    : "bg-[#CD0070] icon-arrow-down"
+                }`}
+              ></span>
               <span className="self-stretch my-auto">
                 {unrealizedPnl.toFixed(4)}
               </span>
@@ -84,8 +95,13 @@ function PositionCard({
           <div className="flex flex-col items-end whitespace-nowrap">
             <span className="text-xs text-neutral-500">ROI</span>
             <div className={`flex gap-2 items-center mt-2 text-base font-bold`}>
-              <span className={`text-white text-sm p-0.4 rounded-sm ${roi >= 0 ? 'bg-green-500 icon-arrow-up-3' : 'bg-[#CD0070] icon-arrow-down'}`}>
-              </span>
+              <span
+                className={`text-white text-sm p-0.4 rounded-sm ${
+                  roi >= 0
+                    ? "bg-green-500 icon-arrow-up-3"
+                    : "bg-[#CD0070] icon-arrow-down"
+                }`}
+              ></span>
               <span className="self-stretch my-auto">{roi.toFixed(2)}%</span>
             </div>
           </div>
@@ -98,7 +114,9 @@ function PositionCard({
             Stop Mock Copy
           </button>
           <button className="gap-1 self-stretch px-1.5 py-3.5 whitespace-nowrap bg-lime-500 rounded-sm min-h-[40px] text-stone-950 w-[132px]">
-            Copy
+            <a href="/copy-trading/startegy-description?name=copyStepOpen">
+              Copy
+            </a>{" "}
           </button>
         </div>
       </article>
@@ -109,7 +127,9 @@ function PositionCard({
           <div className="bg-gray-800 p-6 rounded-lg shadow-lg w-96">
             <h2 className="text-xl font-bold text-white mb-4">Wait</h2>
             <p className="text-white mb-4">
-              Pausing the copy will stop copying new trades from the lead trader's strategy. Existing trades will continue but must be managed manually.
+              Pausing the copy will stop copying new trades from the lead
+              trader's strategy. Existing trades will continue but must be
+              managed manually.
             </p>
             <div className="flex justify-end gap-2">
               <button
@@ -135,7 +155,7 @@ function PositionCard({
           Successfully stopped copying!
         </div>
       )}
-    </>
+    </div>
   );
 }
 
