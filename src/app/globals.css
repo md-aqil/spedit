@@ -193,6 +193,27 @@ z-index: 10;
 }
 
 
+.navigator-icon {
+  font-size: 24px;
+  margin-right:5px;
+}
+
+.navigator-item {
+  border-left: 1px solid #D3DEC8;
+  margin-left: 20px;
+}
+
+.navigator .cursor-pointer:hover .icon-arrow-square-down{
+  color:#000;
+}
+
+.monitor-card {
+  /* border: 1px solid #ddd; */
+  border-radius: 4px;
+}
+
+
+
 .profit-arrow {
   background: #9BEC00;
   color: #0F1209;

@@ -1,5 +1,7 @@
 import Image from 'next/image';
 import React, { useState } from 'react';
+import Navigator from "./Navigator"
+
 
 /**
  * ContentManagementSystem component
@@ -91,74 +93,9 @@ export default function ContentManagementSystem() {
             </div>
           </div>
         </div>
-        <div className="flex flex-col ml-5 w-[33%] max-md:ml-0 max-md:w-full">
-          <div className="flex flex-col px-7 pt-9 pb-16 mx-auto w-full bg-white rounded-xl shadow-lg max-md:pl-5 max-md:mt-10">
-            <div className="flex gap-10 justify-between items-center self-center max-w-full leading-none w-[293px]">
-              <div className="self-stretch my-auto text-xl font-bold whitespace-nowrap text-stone-950">
-                Pages
-              </div>
-              <div className="flex gap-1 justify-center items-center self-stretch my-auto text-xs text-right text-stone-400">
-                <div className="self-stretch my-auto rounded-none w-[74px]">
-                  Search Pages
-                </div>
-                <Image
-                  src="http://b.io/ext_20-"
-                  alt="Search Icon"
-                  className="object-contain w-6 h-6"
-                  width={24}
-                  height={24}
-                />
-              </div>
-            </div>
-            <div className="flex flex-col mt-16 mx-3 leading-none max-md:mx-2.5">
-              <div className="flex gap-10 justify-between items-center mb-8">
-                <div className="flex gap-2 items-center text-base font-bold text-neutral-800">
-                  <Image
-                    src="http://b.io/ext_21-"
-                    alt="Page Icon"
-                    className="object-contain w-6 h-6"
-                    width={24}
-                    height={24}
-                  />
-                  <span>Onboarding</span>
-                </div>
-                <div className="flex items-center text-xs text-neutral-500">
-                  <span>edited 18min ago</span>
-                  <Image
-                    src="http://b.io/ext_22-"
-                    alt="Edit Icon"
-                    className="object-contain w-4 h-4"
-                    width={16}
-                    height={16}
-                  />
-                </div>
-              </div>
-              <div className="flex gap-10 justify-between items-center mb-8">
-                <div className="flex gap-2 items-center text-base font-bold text-neutral-800">
-                  <Image
-                    src="http://b.io/ext_23-"
-                    alt="Page Icon"
-                    className="object-contain w-6 h-6"
-                    width={24}
-                    height={24}
-                  />
-                  <span>Profile</span>
-                </div>
-                <div className="flex items-center text-xs text-neutral-500">
-                  <span>edited 15min ago</span>
-                  <Image
-                    src="http://b.io/ext_22-"
-                    alt="Edit Icon"
-                    className="object-contain w-4 h-4"
-                    width={16}
-                    height={16}
-                  />
-                </div>
-              </div>
-              {/* Repeat similar structure for other pages */}
-            </div>
-          </div>
-        </div>
+
+        <Navigator />
+        
       </div>
     </div>
   );

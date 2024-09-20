@@ -23,15 +23,14 @@ function SideBar() {
           <div className="flex shrink-0 self-start w-1 h-10 bg-lime-500"></div>
           <ul className="flex flex-col">
             <li className="flex relative gap-2 items-center w-full text-lime-500">
-              <img
-                loading="lazy"
-                src="https://cdn.builder.io/api/v1/image/assets/TEMP/07cbebe704fd901358c9d93909d1995959480f0ec4374f673c7cf028202aa537?apiKey=b4d1b9e87b084579b1e2475047caf617&"
-                alt=""
-                className="object-contain z-0 shrink-0 self-stretch my-auto w-6 aspect-square"
-              />
+
+             <span className="icon-user"></span>
+             
               <div className="z-0 my-auto w-[145px]">User management</div>
               <div className="flex absolute top-2/4 z-0 shrink-0 self-start w-1 -translate-y-2/4 h-[43px] left-[-57px] translate-x-[0%]"></div>
             </li>
+
+
             <li className="flex gap-2 items-start mt-6">
               <img
                 loading="lazy"

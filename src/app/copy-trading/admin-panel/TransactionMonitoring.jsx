@@ -48,9 +48,11 @@ function TransactionMonitoring() {
                         <span className="self-stretch my-auto">Download All</span>
                     </button>
                 </div>
-                <div className="flex flex-wrap gap-10 justify-between mt-12 min-h-[142px] max-md:mt-10 max-md:max-w-full">
+
+
+                <div className="grid grid-cols-4 gap-16 mt-10">
                     {files.map((file, index) => (
-                        <div key={index} className="flex flex-col justify-between w-[163px]">
+                        <div key={index} className="flex flex-col justify-between monitor-card">
                             <div className="flex flex-col w-full">
                                 <div className="flex gap-10 justify-between items-start w-full text-xs text-neutral-800">
                                     <div className="opacity-80">{file.name}</div>
