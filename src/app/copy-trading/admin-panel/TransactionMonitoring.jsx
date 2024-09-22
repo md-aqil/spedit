@@ -24,8 +24,12 @@ function TransactionMonitoring() {
                             <div className="mt-2 text-xs text-neutral-500">Enter username or email to find transaction details of user{" "}</div>
                         </div>
                     </div>
-                    <input type="text" id="usernameEmail" className="px-6 py-2.5 text-base text-black whitespace-nowrap rounded-lg bg-stone-50 min-w-[240px] w-[393px] max-md:px-5" placeholder="Username/Email" aria-label="Username/Email" />
-                    <button className="gap-2 self-stretch px-3 py-4 text-sm font-bold leading-none text-center whitespace-nowrap bg-lime-500 rounded min-h-[44px] text-stone-950 w-[110px]">Find</button>
+
+                    <div className="flex gap-5">
+                    <input type="text" id="usernameEmail" className="px-6 py-2.5 text-base text-black whitespace-nowrap rounded-lg bg-stone-50 min-w-[240px] w-[393px] max-md:px-5 border shadow-md" placeholder="Username/Email" aria-label="Username/Email" />
+                    <button className="gap-2 self-stretch px-3 py-4 text-sm font-bold leading-none text-center whitespace-nowrap bg-lime-500 rounded min-h-[44px] text-stone-950 w-[110px] shadow-md hover:shadow-inner">Find</button>
+                    </div>
+                   
                 </form>
             </section>
             <section className="flex overflow-hidden flex-col px-14 py-10 mt-3 w-full leading-none bg-white rounded-xl shadow-sm  max-md:max-w-full">

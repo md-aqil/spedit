@@ -13,9 +13,9 @@ const PlanCard = ({ title, description, price, priceInterval, isHighlighted, fea
             <span className={`self-stretch my-auto text-${isHighlighted ? '4xl' : '5xl'} font-semibold ${isHighlighted ? 'text-white' : 'text-zinc-900'}`}>{price}</span>
             <span className={`self-stretch my-auto text-sm leading-none ${isHighlighted ? 'text-gray-50' : 'text-slate-600'}`}>/ {priceInterval}</span>
           </div>
-          <button className={`gap-1 self-stretch px-2 py-4 mt-4 w-full text-sm font-bold leading-none text-center ${isHighlighted ? 'bg-lime-500 rounded-sm min-h-[44px]' : 'border-solid border-[0.997px] border-neutral-800 min-h-[44px]'} ${isHighlighted ? 'text-stone-950' : 'text-neutral-800'}`}>
+          <a href="./order-summary" className={`gap-1 self-stretch px-2 py-4 mt-4 w-full text-sm font-bold leading-none text-center ${isHighlighted ? 'bg-lime-500 rounded-sm min-h-[44px]' : 'border-solid border-[0.997px] border-neutral-800 min-h-[44px]'} ${isHighlighted ? 'text-stone-950' : 'text-neutral-800'}`}>
             Get Started Now
-          </button>
+          </a>
         </div>
       </div>
       <ul className="flex flex-col mt-7 w-full space-y-2">

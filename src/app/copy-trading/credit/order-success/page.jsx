@@ -44,7 +44,9 @@ function CombinedComponent() {
         </h2>
         <PricingCard title="Enterprise" description="Ideal for businesses who need personalized services and security for large teams." price="2500" currency="Rs" frequency="Month" />
         <div className="flex gap-4 items-center mt-7 ml-3.5 min-h-[44px]">
-          <Button text="Start Exploring" primary={true} />
+          
+          <a href='/copy-trading' >Start Exploring</a>
+
           <Button text="Download Receipt" />
         </div>
       </div>

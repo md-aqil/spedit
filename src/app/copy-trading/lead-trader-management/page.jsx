@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import StrategyTable from './StrategyTable';
 import LivePositionsTable from './LivePositionsTable';
 import PositionsHistoryTable from './PositionsHistoryTable';
+import CopiersTable from "./CopiersTable"
 
 import Sidebar from '../components/Sidebar';
 import DashboardIcons from '../components/DashboardIcons';
@@ -45,6 +46,7 @@ function LeadTraderManagement() {
               {activeTab === 'Live Positions' && <LivePositionsTable />}
 
               {activeTab === 'Position History' && <PositionsHistoryTable />}
+              {activeTab === 'Current Copiers' && <CopiersTable />}
 
               {/* Placeholder for other tabs */}
               {activeTab !== 'Live Positions' && activeTab !== 'Position History' && (

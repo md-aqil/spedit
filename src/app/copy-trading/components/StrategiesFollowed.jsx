@@ -52,9 +52,9 @@ function StrategiesFollowed() {
           Strategies you follow
         </div>
 
-        <div className="overflow-hidden z-10 gap-1.5 self-end px-3 py-1.5 -mt-6 text-xs font-semibold rounded border border-solid border-neutral-800 min-h-[24px] text-neutral-800">
+        <a href="/copy-trading/leader-board/" className="overflow-hidden z-10 gap-1.5 self-end px-3 py-1.5 -mt-6 text-xs font-semibold rounded border border-solid border-neutral-800 min-h-[24px] text-neutral-800">
           View More
-        </div>
+        </a>
       </div>
 
       <div className="flex flex-col mt-0 leading-none max-md:max-w-full">

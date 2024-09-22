@@ -25,8 +25,9 @@ function PositionsHistoryTable() {
               <th className="px-6 py-3 text-left">Strategy ID</th>
               <th className="px-6 py-3 text-left">Time Data</th>
               <th className="px-6 py-3 text-left">Instrument</th>
-              <th className="px-6 py-3 text-left">Entry Price</th>
               <th className="px-6 py-3 text-left">Qty</th>
+
+              <th className="px-6 py-3 text-left">Entry Price</th>
               <th className="px-6 py-3 text-left">Exit Price</th>
               <th className="px-6 py-3 text-left">Realized PnL</th>
             </tr>

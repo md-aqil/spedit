@@ -47,7 +47,7 @@ function TradeHistoryTable() {
 
   const headers = [
     { title: "Trade ID", width: "w-[116px]", hasDropdown: true },
-    { title: "Time", width: "w-[162px]" },
+    { title: "Time", width: "w-[162px]" , hasDropdown: true },
     { title: "Price", width: "w-24", hasDropdown: true },
     { title: "Quantity", width: "w-[116px]" },
     { title: "Instrument", width: "w-[126px]" },
@@ -72,8 +72,9 @@ function TradeHistoryTable() {
           History
         </h1>
         <nav className="flex gap-4 items-center self-stretch my-auto">
-          <span className="icon-refresh"></span>
-          <span className="icon-eye-slash"></span>
+        <span className="icon-eye-slash text-2xl"></span>
+          <span className="icon-refresh text-2xl"></span>
+          <span className="icon-export text-2xl"></span>
         </nav>
       </header>
 

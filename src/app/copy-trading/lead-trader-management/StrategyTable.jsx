@@ -107,14 +107,14 @@ function StrategyTable() {
                   >
                     {strategy.status === 'LIVE' ? 'Stop Strategy' : 'Start Strategy'}
                   </button>
-                  <button className="px-3 py-2 border rounded border-neutral-800 text-neutral-800 hover:bg-neutral-100 transition">
+                  <a href='./update-strategy/' className="px-3 py-2 border rounded border-neutral-800 text-neutral-800 hover:bg-neutral-100 transition">
                     Update Strategy
-                  </button>
+                  </a>
                   <button className="px-3 py-2 border rounded border-neutral-800 text-neutral-800 hover:bg-neutral-100 transition">
                    Start
                   </button>
                   <button className="px-3 py-2 border rounded border-neutral-800 text-neutral-800 hover:bg-neutral-100 transition">
-                   Stop
+                  Manage
                   </button>
                 </td>
 

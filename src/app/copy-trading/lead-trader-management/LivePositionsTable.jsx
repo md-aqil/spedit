@@ -3,25 +3,28 @@ import React from 'react';
 // Dummy data for positions
 const positions = [
   {
-    orderId: 'ORD001',
-    strategyId: 'STRAT123',
-    timeData: '12:30 PM',
-    instrument: 'AAPL',
-    entryPrice: '150.00',
-    currentPrice: '155.00',
+    orderId: '1233467i',
+    strategyId: '150230si',
+    timeData: '12/12/2023 11:25:32',
+    instrument: 'BankNifty 24 JUL26400PE',
+    entryPrice: '700.70',
+    currentPrice: '700.70',
     qty: 10,
     runningPnL: '+19,423.5',
   },
+
   {
-    orderId: 'ORD002',
-    strategyId: 'STRAT456',
-    timeData: '01:00 PM',
-    instrument: 'GOOGL',
-    entryPrice: '2800.00',
-    currentPrice: '2790.00',
-    qty: 5,
-    runningPnL: '+19,423.5',
+    orderId: '1233467i',
+    strategyId: '150230si',
+    timeData: '12/12/2023 11:25:32',
+    instrument: 'BankNifty 24 JUL26400PE',
+    entryPrice: '700.70',
+    currentPrice: '700.70',
+    qty: 10,
+    runningPnL: '-19,423.5',
   },
+
+ 
 ];
 
 function LivePositionsTable() {
@@ -35,8 +38,9 @@ function LivePositionsTable() {
               <th className="px-6 py-3 text-left">StrategyID</th>
               <th className="px-6 py-3 text-left">Time Data</th>
               <th className="px-6 py-3 text-left">Instrument</th>
-              <th className="px-6 py-3 text-left">Entry Price</th>
               <th className="px-6 py-3 text-left">Qty</th>
+              <th className="px-6 py-3 text-left">Entry Price</th>
+          
               <th className="px-6 py-3 text-left">Current Price</th>
               <th className="px-6 py-3 text-left">Running PnL</th>
               <th className="px-6 py-3 text-left">Actions</th>
@@ -49,9 +53,11 @@ function LivePositionsTable() {
                 <td className="px-6 py-4 whitespace-nowrap">{position.strategyId}</td>
                 <td className="px-6 py-4 whitespace-nowrap">{position.timeData}</td>
                 <td className="px-6 py-4 whitespace-nowrap">{position.instrument}</td>
-                <td className="px-6 py-4 whitespace-nowrap">{position.entryPrice}</td>
                 <td className="px-6 py-4 whitespace-nowrap">{position.qty}</td>
+
+                <td className="px-6 py-4 whitespace-nowrap">{position.entryPrice}</td>
                 <td className="px-6 py-4 whitespace-nowrap">{position.currentPrice}</td>
+
                 <td className="px-6 py-4 whitespace-nowrap">
                   <span
                    

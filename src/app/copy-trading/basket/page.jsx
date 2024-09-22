@@ -35,13 +35,13 @@ function MyComponent() {
       {/* <Header /> */}
 
       <div className="z-10 w-full max-md:max-w-full main-body">
-        <div className="flex gap-5 max-md:flex-col">
+        <div className="flex w-full">
           <Sidebar />
 
           <main className="flex flex-col main-container">
             <BasketHeader />
             <section className="mt-2 w-full max-md:max-w-full">
-              <div className="flex gap-5 max-md:flex-col">
+              <div className="flex w-full">
                 <div className="flex flex-col w-[70%] max-md:ml-0 max-md:w-full">
                   <Chart />
                 </div>

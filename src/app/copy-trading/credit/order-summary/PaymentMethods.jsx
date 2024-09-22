@@ -96,9 +96,9 @@ export default function PaymentMethods() {
                   />
                 </div>
                 <div className="flex gap-3 text-sm font-bold leading-none text-center whitespace-nowrap min-w-[240px]">
-                  <button className="gap-1 self-stretch px-3 py-4 my-auto bg-lime-500 rounded min-h-[44px] text-stone-950 w-[122px]">
+                  <a href="/copy-trading/credit/order-success/" className="gap-1 self-stretch px-3 py-4 my-auto bg-lime-500 rounded min-h-[44px] text-stone-950 w-[122px]">
                     Pay
-                  </button>
+                  </a>
                   <button className="gap-1 self-stretch px-3 py-4 my-auto rounded border border-solid border-neutral-800 min-h-[44px] text-neutral-800 w-[126px]">
                     Cancel
                   </button>
