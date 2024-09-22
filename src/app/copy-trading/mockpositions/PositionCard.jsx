@@ -1,8 +1,11 @@
+"use client";
+
 import React, { useState } from "react";
 import Image from "next/image";
 import userIcon from "../../../assets/user1.png";
 import JoinedUsers from "../../../assets/JoinedUsers.png";
 import { useRouter } from "next/navigation";
+import { relative } from "path";
 
 function PositionCard({ name, rating, netCopyAmount, unrealizedPnl, roi }) {
   const [isPopupVisible, setIsPopupVisible] = useState(false);
@@ -10,7 +13,8 @@ function PositionCard({ name, rating, netCopyAmount, unrealizedPnl, roi }) {
   const [showNotification, setShowNotification] = useState(false);
   const router = useRouter();
 
-  const handleStopClick = () => {
+  const handleStopClick = (event) => {
+    event.stopPropagation();
     setIsPopupVisible(true);
   };
 
@@ -26,9 +30,10 @@ function PositionCard({ name, rating, netCopyAmount, unrealizedPnl, roi }) {
   };
 
   return (
-    <div className="cursor-pointer" onClick={handleRedirect}>
+    <div className="cursor-pointer">
       {/* Card with reduced opacity when stopped */}
       <article
+        onClick={handleRedirect}
         className={`relative flex flex-col grow shrink self-stretch px-5 py-6 my-auto bg-white rounded-lg border border-solid border-stone-300 transition-opacity max-w-[388px] duration-300 ${
           isStopped ? "opacity-50" : "opacity-100"
         }`}
@@ -109,15 +114,15 @@ function PositionCard({ name, rating, netCopyAmount, unrealizedPnl, roi }) {
         <div className="flex gap-6 justify-between mt-6 w-full text-sm font-bold text-center">
           <button
             className="gap-1 self-stretch px-6 py-3.5 text-pink-600 bg-white rounded-sm border border-pink-600 border-solid min-h-[40px] max-md:px-5"
-            onClick={handleStopClick}
+            onClick={(event) => handleStopClick(event)}
           >
             Stop Mock Copy
           </button>
-          <button className="gap-1 self-stretch px-1.5 py-3.5 whitespace-nowrap bg-lime-500 rounded-sm min-h-[40px] text-stone-950 w-[132px]">
-            <a href="/copy-trading/startegy-description?name=copyStepOpen">
+          <a href="/copy-trading/startegy-description?name=copyStepOpen">
+            <button className="gap-1 self-stretch px-1.5 py-3.5 whitespace-nowrap bg-lime-500 rounded-sm min-h-[40px] text-stone-950 w-[132px]">
               Copy
-            </a>{" "}
-          </button>
+            </button>
+          </a>{" "}
         </div>
       </article>
 

@@ -66,12 +66,9 @@ function LivePositions() {
                   loading="lazy"
                   className="aspect-square cursor-pointer icon-firstline text-2xl"
                 /> */}
-          <span className="icon-refresh"></span>
-
+                <span className="icon-refresh"></span>
               </nav>
             </header>
-
-            
 
             <main className="w-full flex w-full mt-5 ">
               {isListView ? (
