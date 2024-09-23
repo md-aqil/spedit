@@ -3,7 +3,7 @@ import React from "react";
 const Instrument = ({ instrumentName, price, lotSize, charges, margin }) => {
   return (
     <section className="mt-8 p-6 bg-white border border-stone-300 rounded-xl">
-      <div className="flex flex-col px-5 py-8 w-full bg-white rounded-xl shadow-md">
+      <div className="flex flex-col ">
         {/* Header Section */}
         <div className="flex justify-between">
           <div>

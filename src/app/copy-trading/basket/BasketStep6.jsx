@@ -28,12 +28,7 @@ const BasketStep6 = () => {
               role="button"
               aria-label={`Basket ${basketNumber} Info`}
             >
-              <img
-                loading="lazy"
-                src={`http://b.io/ext_${basketNumber}-`}
-                alt=""
-                className="object-contain self-stretch my-auto aspect-square w-[18px]"
-              />
+             <span className='icon-trash '></span>
             </div>
           </div>
         </section>
