@@ -3,7 +3,7 @@ import React from "react";
 
 function Chart() {
   return (
-    <div className="flex overflow-hidden flex-col grow pb-7 w-full text-xs leading-none whitespace-nowrap bg-white rounded-xl max-md:mt-1 max-md:max-w-full">
+    <div className="flex overflow-hidden flex-col grow pb-7 w-full text-xs leading-none whitespace-nowrap bg-white rounded-xl max-md:mt-1 max-md:max-w-full shadow-md" >
       <div className="flex overflow-hidden relative flex-col items-start px-16 pt-16 w-full min-h-[610px] pb-[529px] max-md:px-5 max-md:pb-24 max-md:max-w-full">
         <img
           loading="lazy"

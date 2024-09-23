@@ -28,8 +28,11 @@ function InfoSection() {
       </header>
 
       <div className="space-y-6">
-        <div className="flex flex-col space-y-2">
-          <label className="font-bold text-stone-800">Full Name*</label>
+
+    <div className="flex justify-between gap-52">
+      
+    <div className="flex flex-col space-y-2 w-full">
+          <label className="text-stone-800">Full Name*</label>
           <input
             type="text"
             placeholder="Eg: John Doe"
@@ -37,8 +40,20 @@ function InfoSection() {
             disabled={!isEditing}
           />
         </div>
-        
-        <div className="flex flex-col space-y-2">
+
+        <div className="flex flex-col space-y-2 w-full">
+          <label className="font-bold text-stone-800">Date of Birth</label>
+          <input
+            type="date"
+            className="px-3 py-2 border rounded bg-stone-50"
+            disabled={!isEditing}
+          />
+        </div>
+
+    </div>
+
+    <div className="flex justify-between gap-52">
+    <div className="flex flex-col space-y-2 w-full">
           <label className="font-bold text-stone-800">Phone Number</label>
           <div className="flex items-center border rounded bg-stone-50">
             <select
@@ -61,7 +76,8 @@ function InfoSection() {
           </div>
         </div>
 
-        <div className="flex flex-col space-y-2">
+
+        <div className="flex flex-col space-y-2 w-full">
           <label className="font-bold text-stone-800">Address</label>
           <input
             type="text"
@@ -71,17 +87,16 @@ function InfoSection() {
           />
         </div>
 
-        <div className="flex flex-col space-y-2">
-          <label className="font-bold text-stone-800">Date of Birth</label>
-          <input
-            type="date"
-            className="px-3 py-2 border rounded bg-stone-50"
-            disabled={!isEditing}
-          />
-        </div>
+      </div>
+
+      
+        
+       
+      
+       
 
         {isEditing && (
-          <div className="flex flex-col space-y-2">
+          <div className="flex flex-col space-y-2  w-[41%]">
             <label className="font-bold text-stone-800">Document Upload</label>
             <input
               type="file"

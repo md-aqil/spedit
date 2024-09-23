@@ -21,7 +21,7 @@ function OrderBook() {
   ];
 
   return (
-    <div className="flex overflow-hidden flex-col px-5 pt-7 pb-3.5 w-full bg-white rounded-xl">
+    <div className="flex flex-col px-5 pt-7 pb-3.5 w-full bg-white rounded-xl shadow-md">
       <div className="flex gap-5 justify-between w-full leading-none text-center max-md:mr-0.5">
         <div className="flex gap-2 items-center text-xs font-semibold">
           <button className="gap-2.5 self-stretch px-4 py-2 my-auto rounded bg-lime-500 bg-opacity-40 text-stone-950">

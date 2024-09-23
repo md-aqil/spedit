@@ -41,7 +41,7 @@ function MyComponent() {
           <main className="flex flex-col main-container">
             <BasketHeader />
             <section className="mt-2 w-full max-md:max-w-full">
-              <div className="flex w-full">
+              <div className="flex w-full gap-5">
                 <div className="flex flex-col w-[70%] max-md:ml-0 max-md:w-full">
                   <Chart />
                 </div>

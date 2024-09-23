@@ -57,16 +57,10 @@ function RightManagement() {
     return (
       <div className="flex flex-wrap gap-2 p-2 border border-gray-300 rounded-md bg-gray-50">
         {tags.map((tag, index) => (
-          <div key={index} className="flex items-center gap-2 p-2 bg-blue-200 rounded-md">
-            <span className="text-sm text-blue-800">{tag}</span>
-            <button onClick={() => onTagRemove(tag)} className="text-blue-500 hover:text-blue-700">
-              <Image
-                src="/images/remove-icon.svg"
-                alt="Remove tag"
-                width={12}
-                height={12}
-                className="w-3 h-3"
-              />
+          <div key={index} className="flex items-center gap-2 p-2 bg-[#C3FFB9] rounded-md">
+            <span className="text-sm text-black">{tag}</span>
+            <button onClick={() => onTagRemove(tag)} className="text-black">
+             <i className='icon-close-circle text-2xl'></i>
             </button>
           </div>
         ))}
@@ -86,13 +80,7 @@ function RightManagement() {
     <section className="flex flex-col mt-5 w-full max-md:max-w-full">
       <div className="flex flex-wrap gap-10 justify-between items-start w-full text-base font-bold text-neutral-800 max-md:max-w-full">
         <h2 className="opacity-80">{title}</h2>
-        <Image
-          src="/images/expand-icon.svg"
-          alt=""
-          width={18}
-          height={18}
-          className="object-contain shrink-0 aspect-square"
-        />
+       <i className='icon-trash text-2xl'></i>
       </div>
       <div className="flex flex-col items-start px-5 pt-4 pb-11 mt-3 w-full text-xs text-black rounded-lg bg-stone-50 max-md:pr-5 max-md:max-w-full">
         <MultiSelect
@@ -108,13 +96,7 @@ function RightManagement() {
     <div className="flex items-center gap-2 p-2 rounded-md border border-black bg-gray-100">
       <span className="text-sm text-gray-700">{email}</span>
       <button onClick={() => onRemove(email)} className="text-gray-500 hover:text-gray-700">
-        <Image
-          src="/images/remove-icon.svg"
-          alt="Remove user"
-          width={12}
-          height={12}
-          className="w-3 h-3"
-        />
+       <i className='icon-close-circle text-2xl'></i>
       </button>
     </div>
   );
@@ -122,25 +104,19 @@ function RightManagement() {
   return (
     <div className="mt-10">
       <div className="flex gap-5 max-md:flex-col">
-        <div className="flex flex-col w-[67%] max-md:ml-0 max-md:w-full">
+        <div className="flex flex-col w-[67%] max-md:ml-0 max-md:w-full ">
           <div className="flex flex-col grow leading-none max-md:mt-10 max-md:max-w-full">
-            <header className="flex flex-col justify-center items-start py-8 pr-20 pl-7 w-full bg-white rounded-xl max-md:px-5 max-md:max-w-full">
+            <header className="flex flex-col justify-center items-start py-8 pr-20 pl-7 w-full shadow-sm bg-white rounded-xl max-md:px-5 max-md:max-w-full">
               <h1 className="text-xl font-bold text-stone-950">Right Management</h1>
               <p className="mt-1.5 text-xs text-neutral-500">
                 Drag pages to provide rights to the assigned people via email Id.
               </p>
             </header>
-            <main className="flex flex-col px-7 pt-12 pb-8 mt-3 w-full bg-white rounded-xl max-md:px-5 max-md:max-w-full">
+            <main className="flex flex-col px-7 pt-12 pb-8 mt-3 w-full bg-white rounded-xl max-md:px-5 max-md:max-w-full shadow-md">
               <section className="flex flex-col w-full whitespace-nowrap max-md:max-w-full">
                 <div className="flex flex-wrap gap-10 justify-between items-start w-full text-base font-bold text-neutral-800 max-md:max-w-full">
                   <h2 className="opacity-80">Assign</h2>
-                  <Image
-                    src="/images/expand-icon.svg"
-                    alt=""
-                    width={18}
-                    height={18}
-                    className="object-contain shrink-0 aspect-square"
-                  />
+                 <i className='icon-trash text-2xl'></i>
                 </div>
                 <div className="flex flex-wrap gap-3 py-1 pr-20 pl-1.5 mt-3 w-full text-xs text-black rounded-lg bg-stone-50 max-w-[690px] max-md:pr-5 max-md:max-w-full">
                   {assignedUsers.map((user, index) => (
@@ -175,8 +151,8 @@ function RightManagement() {
             </main>
           </div>
         </div>
-        <aside className="flex flex-col ml-5 w-[33%] max-md:ml-0 max-md:w-full">
-          <div className="flex flex-col items-start px-9 pt-9 pb-96 mx-auto w-full text-xs leading-none text-black bg-white rounded-xl max-md:px-5 max-md:pb-24 max-md:mt-10">
+        <aside className="flex flex-col ml-5 w-[33%] max-md:ml-0 max-md:w-full ">
+          <div className="flex flex-col items-start px-9 pt-9 pb-96 mx-auto w-full text-x shadow-md leading-none text-black bg-white rounded-xl ">
             <h2 className="gap-10 self-stretch max-w-full text-xl font-bold leading-6 text-stone-950 w-[269px]">
               Pages that can be edited/viewed
             </h2>

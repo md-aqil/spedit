@@ -30,11 +30,11 @@ function PositionCard({ name, rating, netCopyAmount, unrealizedPnl, roi }) {
   };
 
   return (
-    <div className="cursor-pointer">
+    <>
       {/* Card with reduced opacity when stopped */}
       <article
         onClick={handleRedirect}
-        className={`relative flex flex-col grow shrink self-stretch px-5 py-6 my-auto bg-white rounded-lg border border-solid border-stone-300 transition-opacity max-w-[388px] duration-300 ${
+        className={`relative flex cursor-pointer flex-col grow shrink self-stretch px-5 py-6 my-auto bg-white rounded-lg border border-solid border-stone-300 transition-opacity max-w-[388px] min-w-[300px] duration-300 ${
           isStopped ? "opacity-50" : "opacity-100"
         }`}
       >
@@ -160,7 +160,7 @@ function PositionCard({ name, rating, netCopyAmount, unrealizedPnl, roi }) {
           Successfully stopped copying!
         </div>
       )}
-    </div>
+    </>
   );
 }
 

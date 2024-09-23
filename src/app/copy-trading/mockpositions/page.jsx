@@ -66,7 +66,8 @@ function LivePositions() {
                   loading="lazy"
                   className="aspect-square cursor-pointer icon-firstline text-2xl"
                 /> */}
-                <span className="icon-refresh"></span>
+                <span className="icon-refresh text-2xl"></span>
+                <span className="icon-export text-2xl"></span>
               </nav>
             </header>
 

@@ -1,23 +1,46 @@
-import * as React from "react";
-import Image from "next/image";
+import React, { useState } from 'react';
 
 /**
  * TrashContainer component displays the trash section with header, table, and trash items.
  * @returns {JSX.Element} The TrashContainer component
  */
 function TrashContainer() {
+  const [selectedAll, setSelectedAll] = useState(false);
+  const [checkedItems, setCheckedItems] = useState([]);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+
   const trashItems = [
     { username: "@tanya123", id: "id123", daysUntilDeletion: 28 },
-    { username: "@tanya123", id: "id123", daysUntilDeletion: 28 },
-    { username: "@tanya123", id: "id123", daysUntilDeletion: 28 },
-    { username: "@tanya123", id: "id123", daysUntilDeletion: 28 },
-    { username: "@tanya123", id: "id123", daysUntilDeletion: 28 },
-    { username: "@tanya123", id: "id123", daysUntilDeletion: 28 },
-    { username: "@tanya123", id: "id123", daysUntilDeletion: 28 },
+    { username: "@tanya123", id: "id124", daysUntilDeletion: 27 },
+    { username: "@tanya123", id: "id125", daysUntilDeletion: 26 },
+    { username: "@tanya123", id: "id126", daysUntilDeletion: 25 },
+    { username: "@tanya123", id: "id127", daysUntilDeletion: 24 },
+    { username: "@tanya123", id: "id128", daysUntilDeletion: 23 },
+    { username: "@tanya123", id: "id129", daysUntilDeletion: 22 },
   ];
 
+  const toggleSelectAll = (selectAll) => {
+    if (selectAll) {
+      const allItemIndexes = trashItems.map((_, index) => index);
+      setCheckedItems(allItemIndexes);
+      setSelectedAll(true);
+    } else {
+      setCheckedItems([]);
+      setSelectedAll(false);
+    }
+    setDropdownOpen(false);
+  };
+
+  const toggleCheckbox = (index) => {
+    setCheckedItems((prev) =>
+      prev.includes(index)
+        ? prev.filter((i) => i !== index)
+        : [...prev, index]
+    );
+  };
+
   return (
-    <section className="flex flex-col items-start px-16 py-10 bg-white rounded-xl max-md:px-5">
+    <section className="flex flex-col items-start px-10 py-10 bg-white rounded-xl max-md:px-5 shadow-md mt-5">
       <header className="flex flex-col self-stretch w-full max-md:max-w-full">
         <h1 className="self-start text-base font-bold leading-none whitespace-nowrap text-stone-950">
           Trash
@@ -27,76 +50,100 @@ function TrashContainer() {
         </p>
       </header>
 
-      <div className="flex  flex-wrap gap-10 justify-between items-center  mt-6 w-full bg-white rounded-lg border border-black border-solid shadow-sm w-full">
-        <div className="flex flex-wrap gap-10 items-start self-stretch py-0.5 pr-16 pl-5 my-auto  max-md:pr-5 max-md:max-w-full">
-          <div className="flex gap-5">
-            <div className="flex gap-1 items-center my-auto">
-              <div className="flex shrink-0 self-stretch my-auto bg-white rounded-sm border border-solid border-neutral-800 h-[18px] w-[18px]" />
-              <Image
-                src="https://cdn.builder.io/api/v1/image/assets/TEMP/72c08db302f3dc1b1cd84b3645c56859d1044155eb98752ac52890e38db29863?apiKey=b4d1b9e87b084579b1e2475047caf617&"
-                alt=""
-                width={6}
-                height={18}
-                className="object-contain shrink-0 self-stretch my-auto w-1.5 aspect-[0.6]"
-              />
-            </div>
-            <div className="py-3 text-xs font-bold leading-none whitespace-nowrap text-neutral-500">
-              Name
-            </div>
+{/* Table Header */}
+<div className="mt-6 w-full">
+  <table className="min-w-full table-auto text-left text-sm bg-white border border-black shadow-sm rounded-lg">
+    <thead>
+      <tr className="">
+        <th className="py-2 px-4 pl-5 w-[137px]">
+          <div className="relative flex items-center">
+            <input
+              type="checkbox"
+              className="form-checkbox h-5 w-5 bg-black"
+              checked={selectedAll}
+              onChange={() => toggleSelectAll(!selectedAll)}
+            />
+            <button
+              className="ml-2 relative py-2 text-sm text-gray-600 flex items-center"
+              onClick={() => setDropdownOpen(!dropdownOpen)}
+            >
+              <span className="icon-arrow-down-1"></span>
+            </button>
+            {dropdownOpen && (
+              <div className="absolute left-0 mt-1 bg-white border rounded shadow-lg">
+                <ul className="text-sm">
+                  <li
+                    className="px-4 py-2 hover:bg-gray-200 cursor-pointer"
+                    onClick={() => toggleSelectAll(true)}
+                  >
+                     All
+                  </li>
+                  <li
+                    className="px-4 py-2 hover:bg-gray-200 cursor-pointer"
+                    onClick={() => toggleSelectAll(false)}
+                  >
+                     None
+                  </li>
+                </ul>
+              </div>
+            )}
           </div>
-          <div className="flex gap-10 items-start mt-1 text-xs font-bold leading-none whitespace-nowrap text-neutral-500">
-            <div className="px-4 py-3">Username</div>
-            <div className="gap-2.5 px-4 py-3">ID</div>
-          </div>
-        </div>
-        <div className="flex gap-1 justify-center items-center self-stretch my-auto text-xs leading-none text-right text-stone-400">
-          <label htmlFor="searchInput" className="sr-only">
-            Search username, id
-          </label>
-          <input
-            id="searchInput"
-            type="text"
-            className="self-stretch my-auto w-28 rounded-none"
-            placeholder="Search username, id"
-            aria-label="Search username, id"
-          />
-          <Image
-            src="https://cdn.builder.io/api/v1/image/assets/TEMP/d2290c4f96e9479ad8edf54630605c9692b71c7d901f8659d84f0314f34751a3?apiKey=b4d1b9e87b084579b1e2475047caf617&"
-            alt="Search"
-            width={24}
-            height={24}
-            className="object-contain shrink-0 self-stretch my-auto w-6 aspect-square"
-          />
-        </div>
+        </th>
+        <th className="text-gray-500 py-2 px-6  w-[272px]">Username</th>
+        <th className="text-gray-500 py-2 px-6  w-[205px]">ID</th>
+        <th className="text-gray-500 py-2 px-6 ">Days Until Deletion</th>
+        <th className="relative py-2 px-6">
+        <div className="relative flex items-center mr-5">
+        <input
+          type="text"
+          placeholder="Search Setting options"
+          className="block w-full px-4 py-2 text-sm text-right text-gray-700 font-normal focus:outline-none bg-transparent"
+        />
+       
+        <i className="icon-search-normal-1 absolute right-[-20px] text-2xl"></i>
       </div>
+        </th>
+      </tr>
+    </thead>
+  </table>
+</div>
 
-      <div className="flex flex-col mt-6 max-w-full text-sm font-semibold leading-none text-stone-950 w-[991px]">
-        {trashItems.map((item, index) => (
-          <div key={index} className="flex flex-col mt-1 w-full max-md:max-w-full">
-            <div className="flex flex-wrap gap-10 justify-between items-center px-6 py-4 w-full bg-white rounded-lg border border-solid shadow-sm border-stone-50 max-md:px-5 max-md:max-w-full">
-              <Image
-                src="https://cdn.builder.io/api/v1/image/assets/TEMP/54ea9c144b4770c3c0e7d272f00e0ed30807487f3569729ce0e6dd20285dafdf?apiKey=b4d1b9e87b084579b1e2475047caf617&"
-                alt=""
-                width={18}
-                height={18}
-                className="object-contain shrink-0 self-stretch my-auto aspect-square w-[18px]"
-              />
-              <div className="self-stretch my-auto">{item.username}</div>
-              <div className="self-stretch my-auto text-blue-500">{item.id}</div>
-              <div className="self-stretch my-auto text-xs">
-                will delete in {item.daysUntilDeletion} days
-              </div>
-              <div className="flex gap-3 items-center self-stretch my-auto font-bold text-center text-neutral-800">
-                <button className="gap-1 self-stretch px-2 py-3 my-auto whitespace-nowrap bg-lime-500 rounded min-h-[36px]">
-                  Restore
-                </button>
-                <button className="gap-1 self-stretch px-2 py-3 my-auto rounded border border-solid border-neutral-800 min-h-[36px]">
-                  Delete Permanently
-                </button>
-              </div>
-            </div>
-          </div>
-        ))}
+      {/* Table Rows */}
+      <div className="mt-6 w-full">
+        <table className="min-w-full table-auto text-left text-sm">
+          <tbody>
+            {trashItems.map((item, index) => (
+              <tr
+                key={index}
+                className="border-b last:border-b-0 hover:bg-gray-50"
+              >
+                <td className="py-3 px-6">
+                  <input
+                    type="checkbox"
+                    className="form-checkbox h-5 w-5"
+                    checked={checkedItems.includes(index)}
+                    onChange={() => toggleCheckbox(index)}
+                  />
+                </td>
+                <td className="py-3 px-6 w-1/4 text-center">{item.username}</td>
+                <td className="py-3 px-6 w-1/4 text-center text-blue-500">{item.id}</td>
+                <td className="py-3 px-6 w-1/4 text-center">
+                  will delete in {item.daysUntilDeletion} days
+                </td>
+                <td className="py-3 px-6 w-1/4 text-center">
+                  <div className="flex justify-center gap-3">
+                    <button className="bg-lime-500 text-gray-900 px-3 py-2 rounded">
+                      Restore
+                    </button>
+                    <button className="border border-neutral-800 px-3 py-2 rounded whitespace-nowrap">
+                      Delete Permanently
+                    </button>
+                  </div>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
     </section>
   );

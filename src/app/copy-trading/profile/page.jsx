@@ -6,7 +6,7 @@ import Sidebar from "../components/Sidebar";
 import Header from "../components/Header";
 import Profile from "./profile";
 import CreditHistory from "./CreditHistory";
-import TransactionHistory from "../components/TransactionHistory";
+import CopyHistory from "./CopyHistory";
 import BrokerHistory from "../broker-connection/BrokerHistory";
 
 function MyComponent() {
@@ -32,7 +32,7 @@ function MyComponent() {
 
             {/* Conditionally render content based on selected tab */}
             {selectedTab === "Profile" && <Profile />}
-            {selectedTab === "Copy History" && <TransactionHistory />}
+            {selectedTab === "Copy History" && <CopyHistory />}
             {selectedTab === "Credit History" && <CreditHistory />}
             {selectedTab === "Broker Connect History" && <BrokerHistory />}
           </main>
