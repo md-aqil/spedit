@@ -20,20 +20,22 @@ const Card = ({ imageSrc, title, quests, categories }) => {
           className="object-contain self-stretch my-auto aspect-square w-[37px]"
         />
       </div>
-      <div className="mt-3 text-sm font-bold leading-none text-neutral-800 max-md:ml-2">
+      <div className="mb-2 mt-3 text-center font-bold leading-none text-neutral-800 ">
         {title}
       </div>
       <div className="self-center text-xs leading-none text-neutral-800">
         {quests} Quests
       </div>
+
       <div className="self-start mt-4 text-xs leading-none text-neutral-500">
         Categories
       </div>
+
       <div className="flex gap-0.5 items-center self-start mt-1.5 text-xs font-bold leading-none text-black whitespace-nowrap">
         {categories.map((category, index) => (
           <div
             key={index}
-            className="overflow-hidden gap-2 self-stretch px-1.5 py-1 my-auto bg-lime-500 rounded border border-black border-solid"
+            className=" gap-2 self-stretch px-1 py-1 my-auto bg-lime-500 rounded border border-black border-solid"
           >
             {category}
           </div>
@@ -69,14 +71,27 @@ const SpaceList = React.forwardRef((props, ref) => { // Accept ref as a prop
       quests: 25,
       categories: ["Art", "Creativity"]
     },
+    {
+      imageSrc: "https://cdn.builder.io/api/v1/image/assets/TEMP/911bca0958be6ba3300ea44e7e5b502d8100a5900c614607b49391ad2413be31",
+      title: "Space Name 4",
+      quests: 25,
+      categories: ["Art", "Creativity"]
+    },
+    {
+      imageSrc: "https://cdn.builder.io/api/v1/image/assets/TEMP/911bca0958be6ba3300ea44e7e5b502d8100a5900c614607b49391ad2413be31",
+      title: "Space Name 4",
+      quests: 25,
+      categories: ["Art", "Creativity"]
+    },
+
   ];
 
   return (
     <Swiper
       ref={ref} // Attach ref to Swiper
-      slidesPerView={6}
+      slidesPerView={5}
       spaceBetween={10}
-      navigation
+      
       modules={[Navigation]} 
       className="mySwiper3"
     >

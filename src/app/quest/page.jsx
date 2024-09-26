@@ -66,7 +66,8 @@ function Quest() {
     description: 'Complete the epic adventure to earn awesome rewards!',
     rewardPoints: 500,
     endDate: '2024-10-01',
-    multiplier: 2
+    boostMultiplier: 2,
+    brandName: "Brand Name"
   };
 
   return (
@@ -81,7 +82,7 @@ function Quest() {
      <UserDetails />
 
       <section className='w-full flex gap-5 max-md:flex-col'>
-        <main className='flex flex-col w-full w-[75%]'>
+        <main className='flex flex-col  w-[75%]'>
         <Image
                   loading="lazy"
                   src={QuestImg}
@@ -139,8 +140,8 @@ function Quest() {
      
     </div>
 
-    <div className="flex flex-col justify-center px-6 py-6 mt-6 w-full bg-white rounded-2xl shadow-sm">
-      <div className="flex flex-wrap gap-10 justify-between items-center w-full max-md:max-w-full">
+    <div className="flex flex-col justify-center px-6 py-6 mt-10 w-full bg-white rounded-2xl shadow-sm">
+      <div className="flex flex-wrap gap-10 justify-between items-center w-full max-md:max-w-full -mb-5 ">
         <div className="self-stretch my-auto text-base font-bold leading-none text-stone-950">
           New
         </div>
@@ -184,7 +185,8 @@ function Quest() {
               description={questData.description}
               rewardPoints={questData.rewardPoints}
               endDate={questData.endDate}
-              multiplier={questData.multiplier}
+              boostMultiplier={questData.boostMultiplier}
+              brandName={questData.brandName}
             />
           </SwiperSlide>
           <SwiperSlide>
@@ -197,7 +199,7 @@ function Quest() {
               description={questData.description}
               rewardPoints={questData.rewardPoints}
               endDate={questData.endDate}
-              multiplier={questData.multiplier}
+              boostMultiplier={questData.boostMultiplier}
             />
           </SwiperSlide>
           <SwiperSlide>
@@ -210,7 +212,7 @@ function Quest() {
               description={questData.description}
               rewardPoints={questData.rewardPoints}
               endDate={questData.endDate}
-              multiplier={questData.multiplier}
+              boostMultiplier={questData.boostMultiplier}
             />
           </SwiperSlide>
           <SwiperSlide>
@@ -223,7 +225,7 @@ function Quest() {
               description={questData.description}
               rewardPoints={questData.rewardPoints}
               endDate={questData.endDate}
-              multiplier={questData.multiplier}
+              boostMultiplier={questData.boostMultiplier}
             />
           </SwiperSlide>
           <SwiperSlide>
@@ -236,7 +238,7 @@ function Quest() {
               description={questData.description}
               rewardPoints={questData.rewardPoints}
               endDate={questData.endDate}
-              multiplier={questData.multiplier}
+              boostMultiplier={questData.boostMultiplier}
             />
           </SwiperSlide>
           <SwiperSlide>
@@ -249,7 +251,7 @@ function Quest() {
               description={questData.description}
               rewardPoints={questData.rewardPoints}
               endDate={questData.endDate}
-              multiplier={questData.multiplier}
+              boostMultiplier={questData.boostMultiplier}
             />
           </SwiperSlide>
 
@@ -276,26 +278,36 @@ function Quest() {
         </div>
       </div>
       <div className='mt-5'>
+
         <SpaceList ref={swiperRef} /> {/* Pass the ref to SpaceList */}
       </div>
     </div>
 
-    
-              <div className="flex  flex-col self-center px-6 py-5 mt-6 max-w-full bg-white rounded-2xl shadow-[0px_4px_6px_rgba(0,0,0,0.02)] w-[879px] max-md:px-5">
-        <div className="gap-10 self-stretch text-base font-bold leading-none text-stone-950 max-md:max-w-full">
-          Explore Quests{" "}
-        </div>
-        <div className="flex gap-4 self-start px-6 py-3 mt-6 text-sm rounded-lg bg-stone-50 text-neutral-800 max-md:px-5">
-          <img
-            loading="lazy"
-            src="https://cdn.builder.io/api/v1/image/assets/TEMP/a8fb6151794df7d7334a97c00fcc4d64d10ebb81005aff05044d43b863617c09?apiKey=b4d1b9e87b084579b1e2475047caf617&"
-            className="object-contain shrink-0 self-start aspect-square w-[18px]"
-          />
-          <div className="flex-auto opacity-40">Search Instruments</div>
-        </div>
-      </div>
+ 
+    <div className="flex flex-col self-center px-6 py-5 mt-6 max-w-full bg-white rounded-2xl shadow-md w-full">
 
-      <div className="flex  flex-col justify-center self-center px-6 py-5 mt-2 max-w-full bg-white rounded-2xl shadow-[0px_4px_6px_rgba(0,0,0,0.02)] w-[879px] max-md:px-5">
+  <div className="gap-10 self-stretch text-base font-bold leading-none text-stone-950 max-md:max-w-full">
+    Explore Quests
+  </div>
+
+
+  <div className="flex items-center gap-4 self-start px-6 py-3 mt-6 text-sm rounded-lg bg-stone-50 text-neutral-800 ">
+    <img
+      loading="lazy"
+      src="https://cdn.builder.io/api/v1/image/assets/TEMP/a8fb6151794df7d7334a97c00fcc4d64d10ebb81005aff05044d43b863617c09?apiKey=b4d1b9e87b084579b1e2475047caf617&"
+      className="object-contain shrink-0 aspect-square w-[18px]"
+    />
+    <input 
+      type="text" 
+      placeholder="Search Instruments" 
+      className="w-full bg-transparent focus:outline-none text-neutral-800 placeholder-opacity-40"
+    />
+  </div>
+</div>
+
+
+
+      <div className="flex  flex-col justify-center self-center px-6 py-5 max-w-full bg-white rounded-2xl shadow-md w-full mt-5">
         <div className="flex flex-col w-full max-md:max-w-full">
           <div className="flex flex-wrap gap-10 justify-between items-center w-full max-w-[814px] max-md:max-w-full">
             <div className="flex gap-4 items-center self-stretch my-auto">
@@ -324,9 +336,9 @@ function Quest() {
               </div>
             </div>
             <div className="flex gap-3.5 items-center self-stretch my-auto text-sm font-semibold leading-none text-neutral-800 w-[164px]">
-              <div className="self-stretch my-auto">50 Quests</div>
+              <div className="self-stretch my-auto whitespace-nowrap">50 Quests</div>
               <div className="flex flex-col self-stretch my-auto">
-                <div className="flex gap-1 items-center">
+                <div className="flex gap-1 items-center whitespace-nowrap">
                   <img
                     loading="lazy"
                     srcSet="https://cdn.builder.io/api/v1/image/assets/TEMP/654f3ccc2332feca1b5e059671826b1c87f3c1770af2cac118867dae66ce25ff?apiKey=b4d1b9e87b084579b1e2475047caf617&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/654f3ccc2332feca1b5e059671826b1c87f3c1770af2cac118867dae66ce25ff?apiKey=b4d1b9e87b084579b1e2475047caf617&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/654f3ccc2332feca1b5e059671826b1c87f3c1770af2cac118867dae66ce25ff?apiKey=b4d1b9e87b084579b1e2475047caf617&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/654f3ccc2332feca1b5e059671826b1c87f3c1770af2cac118867dae66ce25ff?apiKey=b4d1b9e87b084579b1e2475047caf617&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/654f3ccc2332feca1b5e059671826b1c87f3c1770af2cac118867dae66ce25ff?apiKey=b4d1b9e87b084579b1e2475047caf617&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/654f3ccc2332feca1b5e059671826b1c87f3c1770af2cac118867dae66ce25ff?apiKey=b4d1b9e87b084579b1e2475047caf617&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/654f3ccc2332feca1b5e059671826b1c87f3c1770af2cac118867dae66ce25ff?apiKey=b4d1b9e87b084579b1e2475047caf617&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/654f3ccc2332feca1b5e059671826b1c87f3c1770af2cac118867dae66ce25ff?apiKey=b4d1b9e87b084579b1e2475047caf617&"
@@ -351,7 +363,7 @@ function Quest() {
         description={questData.description}
         rewardPoints={questData.rewardPoints}
         endDate={questData.endDate}
-        multiplier={questData.multiplier}
+        boostMultiplier={questData.boostMultiplier}
       />
        <QuestCardSmall
         questName={questData.questName}
@@ -362,7 +374,7 @@ function Quest() {
         description={questData.description}
         rewardPoints={questData.rewardPoints}
         endDate={questData.endDate}
-        multiplier={questData.multiplier}
+        boostMultiplier={questData.boostMultiplier}
       />
        <QuestCardSmall
         questName={questData.questName}
@@ -373,7 +385,7 @@ function Quest() {
         description={questData.description}
         rewardPoints={questData.rewardPoints}
         endDate={questData.endDate}
-        multiplier={questData.multiplier}
+        boostMultiplier={questData.boostMultiplier}
       />
                 
                 </div>

@@ -37,7 +37,7 @@ function FeaturedCard() {
               Lorem ipsum dolor sit amet consectetur. In lorem diam ut sit et sed velit tincidunt.
             </p>
             <div className="flex gap-7 justify-between items-center mt-20 leading-none max-md:mt-10">
-              <div className="flex flex-col self-stretch my-auto w-[60px]">
+              <div className="flex flex-col self-stretch my-auto w-[60px] gap-2">
                 <div className="flex gap-1 items-center text-xs whitespace-nowrap text-neutral-500">
                   <Image
                     src="https://cdn.builder.io/api/v1/image/assets/TEMP/654f3ccc2332feca1b5e059671826b1c87f3c1770af2cac118867dae66ce25ff?apiKey=b4d1b9e87b084579b1e2475047caf617&"
@@ -53,20 +53,14 @@ function FeaturedCard() {
                 </div>
               </div>
               <div className="shrink-0 self-stretch my-auto w-0 h-7 border border-solid bg-stone-400 border-stone-400" />
-              <div className="flex flex-col self-stretch my-auto w-[184px]">
-                <div className="flex gap-1 items-center self-start text-xs text-neutral-500">
-                  <Image
-                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/9e797e2200780b3083010cd66f98881d2ea01891cbe036f77ec5a152f618bff6?apiKey=b4d1b9e87b084579b1e2475047caf617&"
-                    alt="Calendar icon"
-                    width={14}
-                    height={14}
-                    className="object-contain shrink-0 self-stretch my-auto"
-                  />
-                  <div className="self-stretch my-auto">
-                    23 July, 2024 | 15:30 IST
+              <div className="flex flex-col self-stretch my-auto gap-2">
+                <div className="flex gap-2 items-center self-start  text-neutral-500">
+                 
+                  <div className="self-stretch my-auto whitespace-nowrap text-xs">
+                   <span className="icon-calendar-1 text-[#FDB600] text-md "></span> 23 July, 2024 | 15:30 IST
                   </div>
                 </div>
-                <div className="gap-1 self-stretch w-full text-sm font-bold text-neutral-800">
+                <div className="gap-1 self-stretch w-full text-sm font-bold text-neutral-800 whitespace-nowrap">
                   till 23 July, 2024 | 15:30 IST
                 </div>
               </div>

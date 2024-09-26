@@ -277,6 +277,15 @@ z-index: 10;
   transform: rotate(-90deg);
 }
 
+.mySwiper2 .swiper-wrapper {
+  padding-top: 30px;
+  padding-bottom:30px;
+}
+
+.mySwiper .swiper-wrapper  {
+  padding-bottom:10px;
+
+}
 
 @media not all and (min-width: 768px) {
   .desktop-view {
