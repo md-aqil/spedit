@@ -115,7 +115,7 @@ function TopTraders() {
         }}
         navigation={true}
         modules={[Navigation, Pagination]}
-        className="mySwiper pb-44"
+        className="mySwipertraders pb-44"
       >
         {traders.map((trader, index) => (
           <SwiperSlide key={index}>

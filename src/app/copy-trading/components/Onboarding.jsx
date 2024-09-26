@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 
 // import Swiper core and required modules
-import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from "swiper/modules";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import processIcon from "../../../assets/process.svg";
 import arrowupsquare from "../../../assets/arrow-up-square.svg";
@@ -15,7 +15,6 @@ import whychoose from "../../../assets/whychoose.svg";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import "swiper/css/scrollbar";
 import Image from "next/image";
 
 function Onboarding() {
@@ -23,62 +22,24 @@ function Onboarding() {
 
   return (
     <div className="flex flex-col items-center justify-center">
-      <style jsx>{`
-        .swiper-pagination-vertical .swiper-pagination-bullet {
-          background: #a2ab9a;
-          opacity: 0.5;
-          margin: 12px 0 !important;
-          gap: 10px;
-        }
-
-        .swiper-pagination-vertical .swiper-pagination-bullet-active {
-          background: #9bec00 !important;
-        }
-
-        .swiper-pagination-vertical {
-          position: absolute;
-          left: 98%;
-          top: 50%;
-          transform: translateY(-50%);
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          gap: 5px;
-          justify-content: flex-end;
-        }
-
-        .swiper-button-prev,
-        .swiper-button-next {
-          border: 1px solid #a2ab9a;
-          color: #a2ab9a;
-          --swiper-navigation-size: 24px;
-          padding: 18px;
-          border-radius: 4px;
-        }
-
-        .swiper-button-bottom {
-          position: absolute;
-          top: 90%;
-        }
-      `}</style>
-
+    
       {/* Dialog */}
       {open && (
         <div
-          className="fixed inset-0 z-10 flex items-start justify-center bg-black bg-opacity-50 transition-transform duration-300 ease-out"
+          className="fixed inset-0 z-10 flex items-start justify-center bg-black bg-opacity-50 transition-transform duration-300 ease-out h-full"
         >
-          <div className="w-full bg-white shadow-lg">
-            <section className="container h-full">
-              <header className="mx-20 my-5">
+          <div className="w-full bg-white shadow-lg h-[90%] overflow-y-auto">
+            <section className="container mx-auto">
+              <header className="mx-16 my-5">
                 <Image src={logo} alt="Company Logo" />
               </header>
 
               <Swiper
-                modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
+                modules={[Navigation, Pagination, Autoplay]}
                 spaceBetween={50}
                 slidesPerView={1}
                 autoplay={{
-                  delay: 250000,
+                  delay: 2500,
                   disableOnInteraction: false,
                 }}
                 navigation={{
@@ -89,7 +50,7 @@ function Onboarding() {
               >
                 {/* Slide 1 */}
                 <SwiperSlide>
-                  <main className="flex flex-wrap justify-center items-center font-black text-stone-950 gap-28">
+                  <main className="flex flex-wrap justify-center items-center font-black text-stone-950 gap-15">
                     <section className="flex flex-col self-stretch my-auto min-w-[240px] w-[514px]">
                       <h1 className="text-5xl">
                         <span className="font-medium">Profit from the markets</span>
@@ -105,8 +66,8 @@ function Onboarding() {
                       loading="lazy"
                       src="https://cdn.builder.io/api/v1/image/assets/TEMP/175228524d2384ac782a1f57a3d2af2507639bdde6f9773338c6f0dc4aad7dbe?apiKey=b4d1b9e87b084579b1e2475047caf617&"
                       alt="Market strategy representation"
-                      width={500}
-                      height={500}
+                      width={400}
+                      height={400}
                       className="object-contain"
                     />
                   </main>
@@ -114,9 +75,9 @@ function Onboarding() {
 
                 {/* Slide 2 */}
                 <SwiperSlide>
-                  <section className="flex flex-col px-44">
-                    <h2 className="text-3xl font-medium text-stone-950 mt-10 ml-8">
-                      <span className="font-bold">Why </span>use our platform?
+                  <section className="flex flex-col px-16 w-[80%] mx-auto">
+                    <h2 className="text-3xl font-medium text-stone-950 mt-10  mb-5">
+                      <span className="font-bold ">Why </span>use our platform?
                     </h2>
                     <Image src={whychoose} className='w-full' />
                   </section>
