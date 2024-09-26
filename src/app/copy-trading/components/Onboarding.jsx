@@ -50,8 +50,9 @@ function Onboarding() {
               >
                 {/* Slide 1 */}
                 <SwiperSlide>
-                  <main className="flex flex-wrap justify-center items-center font-black text-stone-950 gap-15">
-                    <section className="flex flex-col self-stretch my-auto min-w-[240px] w-[514px]">
+
+                  <main className="flex justify-center items-center font-black text-stone-950 gap-15  w-[70%] mx-auto ">
+                    <section className="flex flex-col self-stretch my-auto ">
                       <h1 className="text-5xl">
                         <span className="font-medium">Profit from the markets</span>
                         <span> no matter the experience</span>
@@ -73,17 +74,22 @@ function Onboarding() {
                   </main>
                 </SwiperSlide>
 
-                {/* Slide 2 */}
+            
+                {/* Slide 3 */}
                 <SwiperSlide>
-                  <section className="flex flex-col px-16 w-[80%] mx-auto">
-                    <h2 className="text-3xl font-medium text-stone-950 mt-10  mb-5">
-                      <span className="font-bold ">Why </span>use our platform?
+                  <div className="mx-auto max-w-[1000px]">
+                    <h2 className="text-3xl font-medium text-stone-950 mt-10 ml-8 mb-10">
+                    Why <span className="font-bold">use our platform? </span>
                     </h2>
-                    <Image src={whychoose} className='w-full' />
-                  </section>
+                    <Image
+                      src={whychoose}
+                      alt="Process visualization"
+                     
+                      className="object-contain"
+                    />
+                  </div>
                 </SwiperSlide>
 
-                {/* Slide 3 */}
                 <SwiperSlide>
                   <div className="mx-auto max-w-[1000px]">
                     <h2 className="text-3xl font-medium text-stone-950 mt-10 ml-8 mb-10">
@@ -97,6 +103,7 @@ function Onboarding() {
                     />
                   </div>
                 </SwiperSlide>
+
               </Swiper>
 
               {/* Explore Button */}
