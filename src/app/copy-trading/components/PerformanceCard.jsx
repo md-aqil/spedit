@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useEffect, useState } from "react";
 import StartegyCopyParameters from "./StartegyCopyParameters";
 import LineChart from "./LineChart"; // Import your LineChart component
@@ -58,10 +60,7 @@ const PerformanceCard = ({
         {showParameters === true ||
           (showParametersa === true && (
             <div className="flex items-center gap-2">
-              <span
-                className="icon-arrow-square-left text-gray-600 text-xl cursor-pointer"
-                onClick={handleBackClick}
-              />
+              <span className="icon-arrow-square-left text-gray-600 text-xl cursor-pointer" onClick={handleBackClick} />
               <h2 className="text-xl font-bold leading-none">Performance</h2>
             </div>
           )) || <h2 className="text-xl font-bold leading-none">Performance</h2>}
@@ -70,12 +69,7 @@ const PerformanceCard = ({
           <span className="icon-arrow-square-down text-gray-600 text-xl" />
         </div>
       </div>
-      {showParameters && (
-        <StartegyCopyParameters2
-          showConfirmTour={showConfirmTour}
-          showParameters={showParameters}
-        />
-      )}
+      {showParameters && <StartegyCopyParameters2 showConfirmTour={showConfirmTour} showParameters={showParameters} />}
       {showParametersa ? (
         <StartegyCopyParameters />
       ) : (
@@ -104,16 +98,9 @@ const PerformanceCard = ({
                   width: "24",
                 },
               ].map(({ label, value, width }) => (
-                <div
-                  key={label}
-                  className={`flex flex-col self-stretch my-auto whitespace-nowrap w-[${width}]`}
-                >
-                  <span className="text-sm leading-none text-neutral-500">
-                    {label}
-                  </span>
-                  <span className="mt-2 text-base font-bold leading-none text-black">
-                    {value}
-                  </span>
+                <div key={label} className={`flex flex-col self-stretch my-auto whitespace-nowrap w-[${width}]`}>
+                  <span className="text-sm leading-none text-neutral-500">{label}</span>
+                  <span className="mt-2 text-base font-bold leading-none text-black">{value}</span>
                 </div>
               ))}
             </div>
@@ -130,13 +117,8 @@ const PerformanceCard = ({
                   width: "99px",
                 },
               ].map(({ label, value, width }) => (
-                <div
-                  key={label}
-                  className={`flex flex-col self-stretch my-auto w-[${width}]`}
-                >
-                  <span className="text-sm leading-none text-neutral-500">
-                    {label}
-                  </span>
+                <div key={label} className={`flex flex-col self-stretch my-auto w-[${width}]`}>
+                  <span className="text-sm leading-none text-neutral-500">{label}</span>
                   <div className="flex gap-2 items-center mt-2 text-xl font-bold leading-none text-stone-950">
                     <span className="self-stretch my-auto">{value}</span>
                   </div>
@@ -148,36 +130,25 @@ const PerformanceCard = ({
             <div className="flex flex-col px-5 py-5 font-semibold rounded-lg border border-solid border-stone-300 min-h-[246px] min-w-[240px] w-[400px]">
               <div className="flex gap-3 items-center self-start">
                 <button
-                  className={`gap-2.5 self-stretch px-4 py-2 my-auto rounded ${
-                    selectedTab === "ROI"
-                      ? "bg-lime-500 bg-opacity-40 text-stone-950"
-                      : "bg-white text-stone-400"
-                  }`}
+                  className={`gap-2.5 self-stretch px-4 py-2 my-auto rounded ${selectedTab === "ROI" ? "bg-lime-500 bg-opacity-40 text-stone-950" : "bg-white text-stone-400"}`}
                   onClick={() => handleTabClick("ROI")}
                 >
                   ROI
                 </button>
                 <button
-                  className={`gap-2.5 self-stretch px-4 py-2 my-auto rounded ${
-                    selectedTab === "PnL"
-                      ? "bg-lime-500 bg-opacity-40 text-stone-950"
-                      : "bg-white text-stone-400"
-                  }`}
+                  className={`gap-2.5 self-stretch px-4 py-2 my-auto rounded ${selectedTab === "PnL" ? "bg-lime-500 bg-opacity-40 text-stone-950" : "bg-white text-stone-400"}`}
                   onClick={() => handleTabClick("PnL")}
                 >
                   PnL
                 </button>
               </div>
-              <LineChart data={currentChartData} />{" "}
-              {/* Use LineChart component with selected tab's data */}
+              <LineChart data={currentChartData} /> {/* Use LineChart component with selected tab's data */}
             </div>
             <div className="flex flex-col">
               <button
                 id="copybuttonTour"
                 className="gap-1 px-7 py-5 max-w-full bg-lime-500 rounded min-h-[50px] mt-4 text-stone-950 w-[150px] max-md:px-5"
-                onClick={
-                  showParameters ? handleCopyClick : handleCopyClickAgain
-                }
+                onClick={showParameters ? handleCopyClick : handleCopyClickAgain}
               >
                 Copy
               </button>

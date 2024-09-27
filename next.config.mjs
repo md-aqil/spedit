@@ -7,13 +7,13 @@ const nextConfig = {
     unoptimized: true,
   },
   distDir: "out",
-  assetPrefix: "/spedit",
+  basePath: "/spedit",
   trailingSlash: true,
   eslint: {
     ignoreDuringBuilds: true,
   },
   experimental: {
-    transpilePackages: ["@sjmc11/tourguidejs"], // Ensure the package is transpiled
+    missingSuspenseWithCSRBailout: false,
   },
 };
 

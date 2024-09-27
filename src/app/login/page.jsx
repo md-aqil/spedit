@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import * as React from "react";
 import Image from "next/image";
 import PropTypes from "prop-types";
@@ -6,6 +6,7 @@ import logo from "../../assets/logo.svg";
 import illustration from "../../assets/illustrationSrc.png";
 import google from "../../assets/google.svg";
 import facebook from "../../assets/facebook.png";
+import Link from "next/link";
 
 /**
  * @typedef {Object} LoginPageProps
@@ -33,58 +34,28 @@ function LoginPage({ logoSrc, illustrationSrc }) {
   return (
     <main className="px-6 py-6 bg-white max-md:px-5 justify-between">
       <div className="flex justify-between items-center absolute left-10 w-[45%]">
-      <Image
-                src={logo}
-                alt="Logo"
-                
-                className="object-contain w-100 "
-              />
-              <span className="icon-arrow-left text-2xl"></span>
+        <Image src={logo} alt="Logo" className="object-contain w-100 " />
+        <span className="icon-arrow-left text-2xl"></span>
       </div>
-         
+
       <div className="flex gap-5 max-md:flex-col">
         <section className="flex flex-col w-[46%] max-md:ml-0 max-md:w-full px-20">
           <div className="flex flex-col  mt-10">
-           
             <div className="flex flex-col my-10">
-              <h1 className="text-3xl font-bold text-stone-950">
-                Connect with us
-              </h1>
-              <p className="mt-2 text-sm text-neutral-500">
-                Enter your credentials to get started with your trading journey.
-              </p>
+              <h1 className="text-3xl font-bold text-stone-950">Connect with us</h1>
+              <p className="mt-2 text-sm text-neutral-500">Enter your credentials to get started with your trading journey.</p>
             </div>
             <div className="flex gap-5  w-full">
-              <button
-                className="flex gap-2 justify-center items-center px-4 py-4 rounded border border-neutral-800 text-sm font-bold"
-                aria-label="Log in with Google"
-              >
-                <Image
-                  src={google}
-                  alt="Google Logo"
-                  width={14}
-                  height={14}
-                  className="w-3.5"
-                />
+              <button className="flex gap-2 justify-center items-center px-4 py-4 rounded border border-neutral-800 text-sm font-bold" aria-label="Log in with Google">
+                <Image src={google} alt="Google Logo" width={14} height={14} className="w-3.5" />
                 Log in with Google
               </button>
-              <button
-                className="flex gap-2 justify-center items-center px-4 py-4 rounded border border-neutral-800 text-sm font-bold"
-                aria-label="Log in with Facebook"
-              >
-                <Image
-                  src={facebook}
-                  alt="Facebook Logo"
-                  width={14}
-                  height={14}
-                  className="w-3.5"
-                />
+              <button className="flex gap-2 justify-center items-center px-4 py-4 rounded border border-neutral-800 text-sm font-bold" aria-label="Log in with Facebook">
+                <Image src={facebook} alt="Facebook Logo" width={14} height={14} className="w-3.5" />
                 Log in with Facebook
               </button>
             </div>
-            <div className="mt-9 text-xs text-center text-stone-300">
-              OR
-            </div>
+            <div className="mt-9 text-xs text-center text-stone-300">OR</div>
             <form onSubmit={handleSubmit} className="flex flex-col mt-9 w-full">
               <div className="flex flex-col text-base">
                 <label htmlFor="name" className="font-bold text-black opacity-80">
@@ -119,31 +90,25 @@ function LoginPage({ logoSrc, illustrationSrc }) {
                   <label htmlFor="password" className="font-bold text-black opacity-80">
                     Password
                   </label>
-                  <a href="#" className="text-xs text-blue-500">
+                  <Link href="#" className="text-xs text-blue-500">
                     Forgot Password?
-                  </a>
+                  </Link>
                 </div>
-                
-                <div className="flex items-center gap-2 px-5 py-2.5 mt-3 w-full text-black rounded-lg bg-stone-50">
-  <input
-    type={showPassword ? "text" : "password"}
-    id="password"
-    value={password}
-    onChange={(e) => setPassword(e.target.value)}
-    placeholder="Eg: XXXXXX"
-    className="w-full bg-transparent border-none outline-none"
-    required
-  />
-  <button
-    type="button"
-    onClick={() => setShowPassword(!showPassword)}
-    aria-label={showPassword ? "Hide password" : "Show password"}
-    className="focus:outline-none"
-  >
-    <i className={`fas ${showPassword ? 'fa-eye-slash' : 'fa-eye'} w-6 text-lg`}></i>
-  </button>
-</div>
 
+                <div className="flex items-center gap-2 px-5 py-2.5 mt-3 w-full text-black rounded-lg bg-stone-50">
+                  <input
+                    type={showPassword ? "text" : "password"}
+                    id="password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    placeholder="Eg: XXXXXX"
+                    className="w-full bg-transparent border-none outline-none"
+                    required
+                  />
+                  <button type="button" onClick={() => setShowPassword(!showPassword)} aria-label={showPassword ? "Hide password" : "Show password"} className="focus:outline-none">
+                    <i className={`fas ${showPassword ? "fa-eye-slash" : "fa-eye"} w-6 text-lg`}></i>
+                  </button>
+                </div>
               </div>
               <div className="flex flex-col mt-9 text-stone-950">
                 <div className="flex items-center text-xs">
@@ -158,17 +123,12 @@ function LoginPage({ logoSrc, illustrationSrc }) {
                     I agree to the <span className="font-semibold underline">Terms and Policy</span>
                   </label>
                 </div>
-                <a href="/copy-trading/lead-trader-management/"
-                  type="submit"
-                  className="mt-4 px-3 py-5 w-full text-sm font-bold text-center bg-lime-500 rounded-md"
-                >
+                <a href="/copy-trading/lead-trader-management/" type="submit" className="mt-4 px-3 py-5 w-full text-sm font-bold text-center bg-lime-500 rounded-md">
                   Login/Signup
                 </a>
               </div>
             </form>
-            <div className="mt-5 text-xs text-center text-neutral-500 max-md:mt-10">
-              Copyright @2024
-            </div>
+            <div className="mt-5 text-xs text-center text-neutral-500 max-md:mt-10">Copyright @2024</div>
           </div>
         </section>
         <aside className="flex flex-col ml-5 w-[54%] max-md:ml-0 max-md:w-full">
@@ -178,16 +138,8 @@ function LoginPage({ logoSrc, illustrationSrc }) {
               <br />
               <span className="font-semibold">Just Copy. Just Trade</span>
             </h2>
-            <p className="mt-2.5 text-sm text-neutral-800 max-md:ml-2.5">
-              Signup today for all trading needs.
-            </p>
-            <Image
-              src={illustration}
-              alt="Trading illustration"
-              width={500}
-              height={427}
-              className="object-contain self-stretch mt-14 max-md:mt-10"
-            />
+            <p className="mt-2.5 text-sm text-neutral-800 max-md:ml-2.5">Signup today for all trading needs.</p>
+            <Image src={illustration} alt="Trading illustration" width={500} height={427} className="object-contain self-stretch mt-14 max-md:mt-10" />
           </div>
         </aside>
       </div>

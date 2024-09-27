@@ -1,7 +1,4 @@
-// app/target-page/page.jsx
-
 "use client"; // Ensure this file runs on the client side
-
 import React, { useEffect, useRef } from "react";
 import { useRouter } from "next/navigation"; // Use next/navigation for App Router
 import { TourGuideClient } from "@sjmc11/tourguidejs";
@@ -10,11 +7,8 @@ import "@sjmc11/tourguidejs/src/scss/tour.scss"; // Ensure styles are imported
 const TargetPage = () => {
   const router = useRouter();
   const clientRef = useRef(null);
-
   useEffect(() => {
-    const shouldStartTour =
-      new URLSearchParams(window.location.search).get("startTour") === "true";
-
+    const shouldStartTour = new URLSearchParams(window.location.search).get("startTour") === "true";
     // Initialize tour
     const options = {
       steps: [
@@ -51,7 +45,6 @@ const TargetPage = () => {
   return (
     <div>
       <h1 id="home">Home Section</h1>
-      {/* Other content */}
     </div>
   );
 };

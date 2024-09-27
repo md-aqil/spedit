@@ -1,16 +1,17 @@
 import React from "react";
 import logo from "../../assets/logo.svg";
 import Image from "next/image";
+import Link from "next/link";
+
 const Header = () => {
   return (
     <header className="container mb-12">
-      {/* lg+ */}
       <div className="bg-transparent border-b border-gray-800">
         <div className="px-4 mx-auto sm:px-6 lg:px-8">
           <nav className="relative flex items-center justify-between h-16 lg:h-20">
-            <a href="#" title="" className="flex">
+            <Link href="#" title="" className="flex">
               <Image className="w-auto h-8 lg:h-10" src={logo} alt="Logo" />
-            </a>
+            </Link>
 
             <div className="hidden lg:flex lg:items-center lg:space-x-10">
               <a href="#" title="" className="text-base  text-gray-400 hover:text-[#9BEC00]">
@@ -101,5 +102,4 @@ const Header = () => {
     </header>
   );
 };
-
 export default Header;

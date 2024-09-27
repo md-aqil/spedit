@@ -8,11 +8,7 @@ import PositionTable from "../components/PositionTable";
 import DashboardIcons from "../components/DashboardIcons";
 import { useSearchParams } from "next/navigation";
 
-const StartegyDescription = ({
-  handleCopyClick,
-  showParameters,
-  showConfirmTour,
-}) => {
+export default function StrategyDescription({ handleCopyClick, showParameters, showConfirmTour }) {
   // State to track the active tab
   const [activeTab, setActiveTab] = useState("positions");
   const [handleCopy, setHandleCopy] = useState(false);
@@ -74,13 +70,7 @@ const StartegyDescription = ({
 
             <div className="flex gap-10 justify-between items-start w-full max-md:max-w-full">
               <TraderCard2 {...traderData} />
-              <PerformanceCard
-                handleCopy={handleCopy}
-                handleCopyClick={handleCopyClick}
-                showParameters={showParameters}
-                showConfirmTour={showConfirmTour}
-                {...performanceData}
-              />
+              <PerformanceCard handleCopy={handleCopy} handleCopyClick={handleCopyClick} showParameters={showParameters} showConfirmTour={showConfirmTour} {...performanceData} />
             </div>
 
             {/* Tabs Section */}
@@ -89,68 +79,42 @@ const StartegyDescription = ({
               <nav className="flex flex-col w-full bg-white rounded-lg shadow-sm">
                 <ul className="flex gap-6 items-center pl-6 pb-2 text-sm font-medium text-neutral-500 max-md:pl-4">
                   <li
-                    className={`relative px-4 py-3 cursor-pointer ${
-                      activeTab === "positions"
-                        ? "text-neutral-800 font-bold"
-                        : "text-neutral-500"
-                    }`}
+                    className={`relative px-4 py-3 cursor-pointer ${activeTab === "positions" ? "text-neutral-800 font-bold" : "text-neutral-500"}`}
                     onClick={() => setActiveTab("positions")}
                   >
                     Positions
-                    {activeTab === "positions" && (
-                      <span className="absolute left-0 bottom-0 w-full h-1 bg-lime-500 rounded-t-md" />
-                    )}
+                    {activeTab === "positions" && <span className="absolute left-0 bottom-0 w-full h-1 bg-lime-500 rounded-t-md" />}
                   </li>
 
                   <li
-                    className={`relative px-4 py-3 cursor-pointer ${
-                      activeTab === "history"
-                        ? "text-neutral-800 font-bold"
-                        : "text-neutral-500"
-                    }`}
+                    className={`relative px-4 py-3 cursor-pointer ${activeTab === "history" ? "text-neutral-800 font-bold" : "text-neutral-500"}`}
                     onClick={() => setActiveTab("history")}
                   >
                     Position History
-                    {activeTab === "history" && (
-                      <span className="absolute left-0 bottom-0 w-full h-1 bg-lime-500 rounded-t-md" />
-                    )}
+                    {activeTab === "history" && <span className="absolute left-0 bottom-0 w-full h-1 bg-lime-500 rounded-t-md" />}
                   </li>
 
                   <li
-                    className={`relative px-4 py-3 cursor-pointer ${
-                      activeTab === "copiers"
-                        ? "text-neutral-800 font-bold"
-                        : "text-neutral-500"
-                    }`}
+                    className={`relative px-4 py-3 cursor-pointer ${activeTab === "copiers" ? "text-neutral-800 font-bold" : "text-neutral-500"}`}
                     onClick={() => setActiveTab("copiers")}
                   >
                     Copiers
-                    {activeTab === "copiers" && (
-                      <span className="absolute left-0 bottom-0 w-full h-1 bg-lime-500 rounded-t-md" />
-                    )}
+                    {activeTab === "copiers" && <span className="absolute left-0 bottom-0 w-full h-1 bg-lime-500 rounded-t-md" />}
                   </li>
 
                   <li
-                    className={`relative px-4 py-3 cursor-pointer ${
-                      activeTab === "mock-copiers"
-                        ? "text-neutral-800 font-bold"
-                        : "text-neutral-500"
-                    }`}
+                    className={`relative px-4 py-3 cursor-pointer ${activeTab === "mock-copiers" ? "text-neutral-800 font-bold" : "text-neutral-500"}`}
                     onClick={() => setActiveTab("mock-copiers")}
                   >
                     Mock Copiers
-                    {activeTab === "mock-copiers" && (
-                      <span className="absolute left-0 bottom-0 w-full h-1 bg-lime-500 rounded-t-md" />
-                    )}
+                    {activeTab === "mock-copiers" && <span className="absolute left-0 bottom-0 w-full h-1 bg-lime-500 rounded-t-md" />}
                   </li>
                 </ul>
               </nav>
 
               {/* Tab Content */}
               <div className="">
-                {activeTab === "positions" && (
-                  <PositionTable positions={positionsData} />
-                )}
+                {activeTab === "positions" && <PositionTable positions={positionsData} />}
 
                 {activeTab === "history" && "history"}
               </div>
@@ -160,6 +124,4 @@ const StartegyDescription = ({
       </div>
     </div>
   );
-};
-
-export default StartegyDescription;
+}

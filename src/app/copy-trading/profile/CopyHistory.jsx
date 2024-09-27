@@ -47,7 +47,7 @@ function TradeHistoryTable() {
 
   const headers = [
     { title: "Trade ID", width: "w-[116px]", hasDropdown: true },
-    { title: "Time", width: "w-[162px]" , hasDropdown: true },
+    { title: "Time", width: "w-[162px]", hasDropdown: true },
     { title: "Price", width: "w-24", hasDropdown: true },
     { title: "Quantity", width: "w-[116px]" },
     { title: "Instrument", width: "w-[126px]" },
@@ -67,39 +67,31 @@ function TradeHistoryTable() {
 
   return (
     <section className="w-full mt-5">
-      
-
       <header className="w-full flex justify-between mb-10">
         <div>
-        <h1 className="text-xl font-semibold text-black">
-                  Copy Transaction History
-                </h1>
-                <p className="mt-1 text-sm text-neutral-500">
-                  This page only shows your copy history. To View Live positions -{" "}
-                  <a href="#" className="font-semibold text-blue-500">
-                    Click Here
-                  </a>
-                </p>
+          <h1 className="text-xl font-semibold text-black">Copy Transaction History</h1>
+          <p className="mt-1 text-sm text-neutral-500">
+            This page only shows your copy history. To View Live positions -{" "}
+            <a href="#" className="font-semibold text-blue-500">
+              Click Here
+            </a>
+          </p>
         </div>
-  <div class="relative">
-    <input
-      type="date"
-      id="date"
-      class="block w-full px-3  py-2 border border-gray-300 rounded-md text-gray-900 focus:outline-none focus:ring-lime-500 focus:border-lime-500 sm:text-sm appearance-none"
-    />
-   
-  </div>
-
-
-              </header>
-
+        <div className="relative">
+          <input
+            type="date"
+            id="date"
+            className="block w-full px-3  py-2 border border-gray-300 rounded-md text-gray-900 focus:outline-none focus:ring-lime-500 focus:border-lime-500 sm:text-sm appearance-none"
+          />
+        </div>
+      </header>
 
       <div className="flex mb-4">
         <button
           onClick={() => setActiveTab("Trade")}
           className={`py-2 px-4 text-sm font-medium ${activeTab === "Trade" ? "bg-[#CDE8A3] text-black" : "text-gray-600 hover:bg-gray-100"} border rounded-l`}
         >
-          Live 
+          Live
         </button>
         <button
           onClick={() => setActiveTab("Strategy")}
@@ -114,17 +106,16 @@ function TradeHistoryTable() {
           <thead>
             <tr className="border-b text-sm bg-gray-100">
               {(activeTab === "Trade" ? headers : strategyHeaders).map((header, index) => (
-                <th
-                  key={index}
-                  className={`px-4 py-2 ${header.width} border-r border-b font-bold text-gray-700 relative`}
-                >
+                <th key={index} className={`px-4 py-2 ${header.width} border-r border-b font-bold text-gray-700 relative`}>
                   <div className="flex items-center justify-between">
                     {header.title}
                     {header.hasDropdown && (
                       <button
                         onClick={() =>
                           header.title === "Trade ID"
-                            ? (activeTab === "Trade" ? setIsTradeIdDropdownOpen(!isTradeIdDropdownOpen) : setIsStrategyIdDropdownOpen(!isStrategyIdDropdownOpen))
+                            ? activeTab === "Trade"
+                              ? setIsTradeIdDropdownOpen(!isTradeIdDropdownOpen)
+                              : setIsStrategyIdDropdownOpen(!isStrategyIdDropdownOpen)
                             : header.title === "Price"
                             ? setIsPriceDropdownOpen(!isPriceDropdownOpen)
                             : header.title === "Amount"
@@ -138,19 +129,11 @@ function TradeHistoryTable() {
                     )}
                   </div>
                   {/* Dropdowns */}
-                  {(header.title === "Trade ID" && (activeTab === "Trade" ? isTradeIdDropdownOpen : isStrategyIdDropdownOpen)) && (
+                  {header.title === "Trade ID" && (activeTab === "Trade" ? isTradeIdDropdownOpen : isStrategyIdDropdownOpen) && (
                     <div className="absolute top-full left-0 mt-2 w-80 bg-white border border-gray-200 rounded shadow-lg">
                       <div className="p-4 flex flex-col">
-                        <input
-                          type="date"
-                          className="border border-gray-300 rounded w-full px-2 py-1 mb-2"
-                          placeholder="From"
-                        />
-                        <input
-                          type="date"
-                          className="border border-gray-300 rounded w-full px-2 py-1 mb-2"
-                          placeholder="To"
-                        />
+                        <input type="date" className="border border-gray-300 rounded w-full px-2 py-1 mb-2" placeholder="From" />
+                        <input type="date" className="border border-gray-300 rounded w-full px-2 py-1 mb-2" placeholder="To" />
                         <div className="flex justify-end gap-2 mt-2">
                           <button
                             onClick={() => (activeTab === "Trade" ? setIsTradeIdDropdownOpen(false) : setIsStrategyIdDropdownOpen(false))}
@@ -168,60 +151,32 @@ function TradeHistoryTable() {
                       </div>
                     </div>
                   )}
-                  {(header.title === "Price" && isPriceDropdownOpen) && (
+                  {header.title === "Price" && isPriceDropdownOpen && (
                     <div className="absolute top-full left-0 mt-2 w-80 bg-white border border-gray-200 rounded shadow-lg">
                       <div className="p-4 flex flex-col">
-                        <input
-                          type="number"
-                          className="border border-gray-300 rounded w-full px-2 py-1 mb-2"
-                          placeholder="Min Amount"
-                        />
-                        <input
-                          type="number"
-                          className="border border-gray-300 rounded w-full px-2 py-1 mb-2"
-                          placeholder="Max Amount"
-                        />
+                        <input type="number" className="border border-gray-300 rounded w-full px-2 py-1 mb-2" placeholder="Min Amount" />
+                        <input type="number" className="border border-gray-300 rounded w-full px-2 py-1 mb-2" placeholder="Max Amount" />
                         <div className="flex justify-end gap-2 mt-2">
-                          <button
-                            onClick={() => setIsPriceDropdownOpen(false)}
-                            className="bg-gray-200 text-gray-700 px-3 py-1 rounded"
-                          >
+                          <button onClick={() => setIsPriceDropdownOpen(false)} className="bg-gray-200 text-gray-700 px-3 py-1 rounded">
                             Clear
                           </button>
-                          <button
-                            onClick={() => setIsPriceDropdownOpen(false)}
-                            className="bg-blue-500 text-white px-3 py-1 rounded"
-                          >
+                          <button onClick={() => setIsPriceDropdownOpen(false)} className="bg-blue-500 text-white px-3 py-1 rounded">
                             Apply
                           </button>
                         </div>
                       </div>
                     </div>
                   )}
-                  {(header.title === "Amount" && isAmountDropdownOpen) && (
+                  {header.title === "Amount" && isAmountDropdownOpen && (
                     <div className="absolute top-full left-0 mt-2 w-80 bg-white border border-gray-200 rounded shadow-lg">
                       <div className="p-4 flex flex-col">
-                        <input
-                          type="number"
-                          className="border border-gray-300 rounded w-full px-2 py-1 mb-2"
-                          placeholder="Min Amount"
-                        />
-                        <input
-                          type="number"
-                          className="border border-gray-300 rounded w-full px-2 py-1 mb-2"
-                          placeholder="Max Amount"
-                        />
+                        <input type="number" className="border border-gray-300 rounded w-full px-2 py-1 mb-2" placeholder="Min Amount" />
+                        <input type="number" className="border border-gray-300 rounded w-full px-2 py-1 mb-2" placeholder="Max Amount" />
                         <div className="flex justify-end gap-2 mt-2">
-                          <button
-                            onClick={() => setIsAmountDropdownOpen(false)}
-                            className="bg-gray-200 text-gray-700 px-3 py-1 rounded"
-                          >
+                          <button onClick={() => setIsAmountDropdownOpen(false)} className="bg-gray-200 text-gray-700 px-3 py-1 rounded">
                             Clear
                           </button>
-                          <button
-                            onClick={() => setIsAmountDropdownOpen(false)}
-                            className="bg-blue-500 text-white px-3 py-1 rounded"
-                          >
+                          <button onClick={() => setIsAmountDropdownOpen(false)} className="bg-blue-500 text-white px-3 py-1 rounded">
                             Apply
                           </button>
                         </div>
@@ -234,10 +189,7 @@ function TradeHistoryTable() {
           </thead>
           <tbody>
             {(activeTab === "Trade" ? tradeData : strategyData).map((item, index) => (
-              <tr
-                key={index}
-                className={`border-t ${index % 2 ? 'bg-gray-50' : 'bg-white'} hover:bg-gray-100`}
-              >
+              <tr key={index} className={`border-t ${index % 2 ? "bg-gray-50" : "bg-white"} hover:bg-gray-100`}>
                 {activeTab === "Trade" ? (
                   <>
                     <td className="px-4 py-2 text-sm">{item.id}</td>

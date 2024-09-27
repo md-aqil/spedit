@@ -1,7 +1,5 @@
 "use client";
-
-import React, { useState, useEffect } from 'react';
-
+import React, { useState, useEffect } from "react";
 // import Swiper core and required modules
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -9,7 +7,7 @@ import processIcon from "../../../assets/process.svg";
 import arrowupsquare from "../../../assets/arrow-up-square.svg";
 import logo from "../../../assets/logo.svg";
 import whychoose from "../../../assets/whychoose.svg";
-
+import Link from "next/link";
 
 // Import Swiper styles
 import "swiper/css";
@@ -22,12 +20,9 @@ function Onboarding() {
 
   return (
     <div className="flex flex-col items-center justify-center">
-    
       {/* Dialog */}
       {open && (
-        <div
-          className="fixed inset-0 z-10 flex items-start justify-center bg-black bg-opacity-50 transition-transform duration-300 ease-out h-full"
-        >
+        <div className="fixed inset-0 z-10 flex items-start justify-center bg-black bg-opacity-50 transition-transform duration-300 ease-out h-full">
           <div className="w-full bg-white shadow-lg h-[90%] overflow-y-auto">
             <section className="container mx-auto">
               <header className="mx-16 my-5">
@@ -50,7 +45,6 @@ function Onboarding() {
               >
                 {/* Slide 1 */}
                 <SwiperSlide>
-
                   <main className="flex justify-center items-center font-black text-stone-950 gap-15  w-[70%] mx-auto ">
                     <section className="flex flex-col self-stretch my-auto ">
                       <h1 className="text-5xl">
@@ -74,19 +68,13 @@ function Onboarding() {
                   </main>
                 </SwiperSlide>
 
-            
                 {/* Slide 3 */}
                 <SwiperSlide>
                   <div className="mx-auto max-w-[1000px]">
                     <h2 className="text-3xl font-medium text-stone-950 mt-10 ml-8 mb-10">
-                    Why <span className="font-bold">use our platform? </span>
+                      Why <span className="font-bold">use our platform? </span>
                     </h2>
-                    <Image
-                      src={whychoose}
-                      alt="Process visualization"
-                     
-                      className="object-contain"
-                    />
+                    <Image src={whychoose} alt="Process visualization" className="object-contain" />
                   </div>
                 </SwiperSlide>
 
@@ -95,33 +83,17 @@ function Onboarding() {
                     <h2 className="text-3xl font-medium text-stone-950 mt-10 ml-8 mb-10">
                       The process is <span className="font-bold">quick and easy </span>
                     </h2>
-                    <Image
-                      src={processIcon}
-                      alt="Process visualization"
-                     
-                      className="object-contain"
-                    />
+                    <Image src={processIcon} alt="Process visualization" className="object-contain" />
                   </div>
                 </SwiperSlide>
-
               </Swiper>
 
               {/* Explore Button */}
               <div className="flex justify-center my-5">
-                <a
-                  href="/copy-trading/leader-board"
-                  className="flex gap-4 justify-center items-center px-9 py-3.5 text-base bg-lime-500 rounded-md"
-                >
-                  <Image
-                    loading="lazy"
-                    src={arrowupsquare}
-                    alt="Explore button"
-                    width={22}
-                    height={22}
-                    className="object-contain"
-                  />
+                <Link href="/copy-trading/leader-board" className="flex gap-4 justify-center items-center px-9 py-3.5 text-base bg-lime-500 rounded-md">
+                  <Image loading="lazy" src={arrowupsquare} alt="Explore button" width={22} height={22} className="object-contain" />
                   <span>Explore</span>
-                </a>
+                </Link>
               </div>
             </section>
 
