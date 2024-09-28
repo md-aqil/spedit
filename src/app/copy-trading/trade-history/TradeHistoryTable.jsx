@@ -96,11 +96,11 @@ function TradeHistoryTable() {
       <div className="relative  p-6 bg-white shadow rounded-lg">
         <table className="w-full table-auto text-left text-gray-600 border-collapse">
           <thead>
-            <tr className="border-b text-sm bg-gray-100">
+            <tr className="border-b text-sm bg-slate-900 py-5">
               {(activeTab === "Trade" ? headers : strategyHeaders).map((header, index) => (
                 <th
                   key={index}
-                  className={`px-4 py-2 ${header.width} border-r border-b font-bold text-gray-700 relative`}
+                  className={`px-4 py-4 ${header.width} border-r border-b font-bold text-primary mb-4 relative`}
                 >
                   <div className="flex items-center justify-between">
                     {header.title}
@@ -115,7 +115,7 @@ function TradeHistoryTable() {
                             ? setIsAmountDropdownOpen(!isAmountDropdownOpen)
                             : null
                         }
-                        className="text-gray-500"
+                        className="text-primary"
                       >
                         <span className="icon-arrow-down-1 "></span>
                       </button>

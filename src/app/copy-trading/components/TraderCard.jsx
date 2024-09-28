@@ -1,84 +1,170 @@
+"use client";
 
+import React, { useState } from "react";
 import Image from "next/image";
-import React from "react";
+import { useRouter } from "next/navigation";
+import chart from "../../../assets/chart.svg";
+import heartIcon from "../../../assets/heart.svg";
+import heartFullIcon from "../../../assets/heart-full.svg";
+import userIcon from "../../../assets/user1.png";
+import JoinedUsers from "../../../assets/JoinedUsers.png";
+import Link from "next/link";
 
-function TraderCard({ name, rating, avatar, pnl, roi, aum, mdd, chart }) {
+const TraderCard = ({ copytraderData }) => { // Accepting an array with one trader object
+  const trader = copytraderData[0]; // Get the first (and only) trader object
+  const [favorites, setFavorites] = useState([]);
+  const [showModal, setShowModal] = useState(false);
+  const [actionType, setActionType] = useState("");
+  const [selectedCard, setSelectedCard] = useState(null);
+  const [cardsStatus, setCardsStatus] = useState({});
+  const router = useRouter();
+
+  const handleFavoriteToggle = (id) => {
+    setFavorites((prev) =>
+      prev.includes(id) ? prev.filter((favId) => favId !== id) : [...prev, id]
+    );
+  };
+
+  const handleCardClick = (id) => {
+    router.push("/copy-trading/strategy-description/" + id);
+  };
+
+  const handleStopPauseClick = (type, id) => {
+    setShowModal(true);
+    setActionType(type);
+    setSelectedCard(id);
+  };
+
+  const handleModalProceed = () => {
+    setShowModal(false);
+    if (selectedCard) {
+      const timestamp = new Date().toLocaleTimeString([], {
+        hour: "2-digit",
+        minute: "2-digit",
+      });
+      setCardsStatus((prev) => ({
+        ...prev,
+        [selectedCard]: `${actionType === "stop" ? "Stopped" : "Paused"} (${timestamp})`,
+      }));
+    }
+  };
+
+  const handleRedirect = () => {
+    router.push("/copy-trading/startegy-description");
+  };
+
+  const handleModalCancel = () => {
+    setShowModal(false);
+  };
+
   return (
-    <div className="flex flex-col grow shrink justify-center self-stretch px-4 py-5 my-auto  bg-white rounded-md shadow-sm min-h-[200px] min-w-[240px]">
-      <div className="flex flex-col w-full">
-        <div className="flex gap-10 justify-between items-center w-full whitespace-nowrap">
-          <div className="flex gap-2.5 items-start self-stretch my-auto h-[43px]">
-            <Image loading="lazy" src={avatar} alt={`${name}'s avatar`} className="object-contain shrink-0 w-10 rounded-full aspect-square" />
-            <div className="flex flex-col py-1 w-[85px]">
-              <div className="text-base font-bold text-neutral-800">{name}</div>
-              <div className="flex gap-1.5 items-center self-start mt-1.5 text-xs text-neutral-500">
-                <img
-                  loading="lazy"
-                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/baa6c5e4a3143b4b57b60de913356ec4c87f6a0b4b09b832b07a65edb0feb4d5?apiKey=b4d1b9e87b084579b1e2475047caf617&"
-                  alt=""
-                  className="object-contain shrink-0 gap-0 self-stretch my-auto w-12 aspect-[2.67]"
-                />
-                <div className="self-stretch my-auto">{rating}</div>
-              </div>
+    <div className="relative">
+      {/* Popup Modal */}
+      {showModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+          <div className="bg-gray-800 p-6 rounded-lg shadow-lg w-96">
+            <h2 className="text-xl font-bold text-white mb-4">Wait</h2>
+            <p className="text-white mb-4">
+              Pausing the copy will stop copying new trades from the lead trader's strategy. Existing trades will continue but must be managed manually.
+            </p>
+            <div className="flex justify-end gap-2">
+              <button onClick={handleModalCancel} className="px-4 py-2 border border-gray-300 text-white rounded hover:bg-gray-700">
+                Cancel
+              </button>
+              <button onClick={handleModalProceed} className="px-4 py-2 bg-[#9BEC00] text-black rounded hover:bg-lime-600">
+                Proceed
+              </button>
             </div>
-          </div>
-          <div className="flex gap-4 items-center self-stretch my-auto text-sm font-bold text-center text-stone-950">
-            <img
-              loading="lazy"
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/d8960c60d1f98cb6d89deb33aca8dcd75deb84880490b180214a301e987b2d45?apiKey=b4d1b9e87b084579b1e2475047caf617&"
-              alt=""
-              className="object-contain shrink-0 self-stretch my-auto aspect-[1.2] stroke-[1px] stroke-stone-950 w-[18px]"
-            />
-            <button className="gap-2 self-stretch p-3 my-auto bg-lime-500 rounded min-h-[38px] w-[76px]">Copy</button>
           </div>
         </div>
-        <div className="flex gap-4 justify-between items-end mt-5 w-full">
-          <div className="flex flex-col w-[207px]">
-            <div className="flex gap-5 items-center w-full">
-              <div className="flex flex-col self-stretch my-auto w-28">
-                <div className="text-xs text-neutral-500">7D PnL</div>
-                <div className="flex gap-1.5 justify-center items-center py-1.5 mt-1 w-full text-xl font-bold whitespace-nowrap rounded text-stone-950">
-                  <img
-                    loading="lazy"
-                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/c69492dab47c2d7412310c5076ec2966b027098210811324db02b8c8a51e28d1?apiKey=b4d1b9e87b084579b1e2475047caf617&"
-                    alt=""
-                    className="object-contain shrink-0 self-stretch my-auto w-3.5 aspect-square fill-lime-500"
-                  />
-                  <div className="self-stretch my-auto">{pnl.toFixed(2)}</div>
+      )}
+
+      {/* Card Content */}
+      <div style={{ cursor: "pointer" }} onClick={handleRedirect}>
+        <div className="flex flex-wrap gap-5 items-start">
+          <div key={trader.id} className={`flex flex-col grow shrink justify-center px-4 py-5 w-72 bg-white rounded-md shadow-sm min-h-[200px] min-w-[240px] transition-opacity ${cardsStatus[trader.id] ? "opacity-50" : "opacity-100"}`} onClick={() => handleCardClick(trader.id)}>
+            <div className="flex flex-col w-full">
+              <div className="flex gap-10 justify-between items-center w-full whitespace-nowrap">
+                <div className="flex gap-2.5 items-start my-auto h-[43px]">
+                  <Image src={userIcon} alt={`${trader.name}'s profile picture`} width={40} height={40} className="rounded-full" />
+                  <div className="flex flex-col py-1">
+                    <div className="text-base font-bold text-neutral-800">{trader.name}</div>
+                    <div className="flex gap-1.5 items-center mt-1.5 text-xs text-neutral-500">
+                      <Image src={JoinedUsers} alt="Followers icon" width={48} height={18} />
+                      <span>{trader.followers}</span>
+                    </div>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3">
+                  <button style={{ position: "relative", zIndex: "1000" }} className="relative focus:outline-none w-6" onClick={(e) => { e.stopPropagation(); handleFavoriteToggle(trader.id); }}>
+                    <Image src={favorites.includes(trader.id) ? heartFullIcon : heartIcon} alt="Heart icon" width={24} height={24} className={`transition-transform duration-200 ${favorites.includes(trader.id) ? "scale-125" : ""}`} />
+                  </button>
+                  {trader.actionType === "copy" ? (
+                    <button className="btn" onClick={(e) => e.stopPropagation()}>
+                      <Link href="/copy-trading/startegy-description?name=copyStepOpen">Copy</Link>
+                    </button>
+                  ) : (
+                    <div className="flex gap-2">
+                      <button className="btn btn-danger" onClick={(e) => { e.stopPropagation(); handleStopPauseClick("stop", trader.id); }}>
+                        Stop
+                      </button>
+                      <button className="border btn btn-outline border-neutral-800 rounded px-3 py-2" onClick={(e) => { e.stopPropagation(); handleStopPauseClick("pause", trader.id); }}>
+                        Pause
+                      </button>
+                    </div>
+                  )}
                 </div>
               </div>
-              <div className="flex flex-col self-stretch my-auto w-[79px]">
-                <div className="text-xs text-neutral-500">7D ROI</div>
-                <div className="flex gap-1.5 justify-center items-center mt-1.5 w-full text-xl font-bold whitespace-nowrap rounded text-stone-950">
-                  <img
-                    loading="lazy"
-                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/c69492dab47c2d7412310c5076ec2966b027098210811324db02b8c8a51e28d1?apiKey=b4d1b9e87b084579b1e2475047caf617&"
-                    alt=""
-                    className="object-contain shrink-0 self-stretch my-auto w-3.5 aspect-square fill-lime-500"
-                  />
-                  <div className="self-stretch my-auto">{roi}%</div>
+
+              {/* Trader's performance data */}
+              <div className="flex justify-between">
+                <div className="w-full">
+                  <div className="flex justify-between mt-5">
+                    <div>
+                      <div className="text-xs text-neutral-500">7D PnL</div>
+                      <div className="flex items-center gap-1 text-xl font-bold text-stone-950">
+                        <span className="text-gray-900 text-sm p-0.5 rounded-sm bg-lime-500 icon-arrow-up-3 mr-1"></span>
+                        {trader.pnl}
+                      </div>
+                    </div>
+                    <div>
+                      <div className="text-xs text-neutral-500">7D ROI</div>
+                      <div className="flex items-center gap-1 text-xl font-bold text-stone-950">
+                        <span className="text-gray-900 text-sm p-0.5 rounded-sm bg-lime-500 icon-arrow-up-3 mr-1"></span>
+                        {trader.roi}
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="flex justify-between mt-4">
+                    <div>
+                      <div className="text-xs text-neutral-500">AUM</div>
+                      <div className="text-sm font-semibold">{trader.aum}</div>
+                    </div>
+                    <div>
+                      <div className="text-xs text-neutral-500">7D MDD</div>
+                      <div className="text-sm font-semibold">{trader.mdd}</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="flex justify-between items-end w-[150px] ml-5">
+                  <Image src={chart} alt={`Performance chart for last ${trader.period}`} />
                 </div>
               </div>
+
+              {/* Status update after Stop/Pause */}
+              {cardsStatus[trader.id] && (
+                <div className="mt-4 text-xs text-gray-500">
+                  {cardsStatus[trader.id]}
+                </div>
+              )}
             </div>
-            <div className="flex gap-10 mt-6 max-w-full w-[190px]">
-              <div className="flex flex-col justify-center whitespace-nowrap rounded">
-                <div className="text-xs text-neutral-500">AUM</div>
-                <div className="mt-1.5 text-sm font-semibold text-neutral-800">₹{aum.toFixed(2)}</div>
-              </div>
-              <div className="flex flex-col">
-                <div className="text-xs text-stone-400">7D MDD</div>
-                <div className="mt-1.5 text-sm font-semibold text-neutral-800">{mdd}%</div>
-              </div>
-            </div>
-          </div>
-          <div className="flex flex-col text-xs text-center text-stone-400 w-[105px]">
-            <img loading="lazy" src={chart} alt="7 day performance chart" className="object-contain self-center rounded-sm aspect-[1.86] w-[89px]" />
-            <div className="mt-3.5">Last 7 day</div>
           </div>
         </div>
       </div>
     </div>
   );
-}
+};
 
 export default TraderCard;

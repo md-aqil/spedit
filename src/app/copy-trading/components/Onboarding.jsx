@@ -23,9 +23,9 @@ function Onboarding() {
       {/* Dialog */}
       {open && (
         <div className="fixed inset-0 z-10 flex items-start justify-center bg-black bg-opacity-50 transition-transform duration-300 ease-out h-full">
-          <div className="w-full bg-white shadow-lg h-[90%] overflow-y-auto">
-            <section className="container mx-auto">
-              <header className="mx-16 my-5">
+          <div className="w-full bg-white shadow-lg h-90 overflow-y-auto ">
+            <section className="mx-auto w-[70%]">
+              <header className="mx-0 my-5">
                 <Image src={logo} alt="Company Logo" />
               </header>
 
@@ -45,7 +45,7 @@ function Onboarding() {
               >
                 {/* Slide 1 */}
                 <SwiperSlide>
-                  <main className="flex justify-center items-center font-black text-stone-950 gap-15  w-[70%] mx-auto ">
+                  <main className="flex justify-center items-center font-black text-stone-950 gap-15 ">
                     <section className="flex flex-col self-stretch my-auto ">
                       <h1 className="text-5xl">
                         <span className="font-medium">Profit from the markets</span>
@@ -70,8 +70,8 @@ function Onboarding() {
 
                 {/* Slide 3 */}
                 <SwiperSlide>
-                  <div className="mx-auto max-w-[1000px]">
-                    <h2 className="text-3xl font-medium text-stone-950 mt-10 ml-8 mb-10">
+                  <div className="mx-auto">
+                    <h2 className="text-3xl font-medium text-stone-950 mt-10  mb-10">
                       Why <span className="font-bold">use our platform? </span>
                     </h2>
                     <Image src={whychoose} alt="Process visualization" className="object-contain" />
@@ -79,7 +79,7 @@ function Onboarding() {
                 </SwiperSlide>
 
                 <SwiperSlide>
-                  <div className="mx-auto max-w-[1000px]">
+                  <div className="mx-auto">
                     <h2 className="text-3xl font-medium text-stone-950 mt-10 ml-8 mb-10">
                       The process is <span className="font-bold">quick and easy </span>
                     </h2>

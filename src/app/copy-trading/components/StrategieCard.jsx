@@ -9,6 +9,7 @@ import heartIcon from "../../../assets/heart.svg";
 import heartFullIcon from "../../../assets/heart-full.svg";
 import userIcon from "../../../assets/user1.png";
 import JoinedUsers from "../../../assets/JoinedUsers.png";
+import Link from "next/link";
 
 const StrategieCard = () => {
   const [favorites, setFavorites] = useState([]);
@@ -164,7 +165,7 @@ const StrategieCard = () => {
                   <div className="flex items-center gap-3">
                     <button
                       style={{ position: "relative", zIndex: "1000" }}
-                      className="relative focus:outline-none"
+                      className="relative focus:outline-none w-6"
                       onClick={(e) => {
                         e.stopPropagation(); // Prevents redirect on click
                         handleFavoriteToggle(trader.id);
@@ -185,18 +186,20 @@ const StrategieCard = () => {
                       />
                     </button>
                     {trader.actionType === "copy" ? (
+                      
                       <button
-                        className="bg-lime-500 rounded px-3 py-2  text-black"
+                        className="btn"
                         onClick={(e) => e.stopPropagation()} // Prevents redirect on click
                       >
-                        <a href="/copy-trading/startegy-description?name=copyStepOpen">
+                        <Link href="/copy-trading/startegy-description?name=copyStepOpen">
                           Copy
-                        </a>
+                        </Link>
                       </button>
+                      
                     ) : (
-                      <div className="flex gap-1">
+                      <div className="flex gap-2">
                         <button
-                          className="bg-pink-700 text-white rounded px-3 py-2"
+                          className="btn btn-danger"
                           onClick={(e) => {
                             e.stopPropagation(); // Prevents redirect on click
                             handleStopPauseClick("stop", trader.id);
@@ -205,7 +208,7 @@ const StrategieCard = () => {
                           Stop
                         </button>
                         <button
-                          className="border border-neutral-800 rounded px-3 py-2"
+                          className="border btn btn-outline border-neutral-800 rounded px-3 py-2"
                           onClick={(e) => {
                             e.stopPropagation(); // Prevents redirect on click
                             handleStopPauseClick("pause", trader.id);

@@ -2,6 +2,7 @@
 import React from "react";
 
 import WeekFilter from './WeekFilter'; // Import the new component
+import Link from "next/link";
 
 
 function TransactionHistory() {
@@ -17,9 +18,9 @@ function TransactionHistory() {
                 </h1>
                 <p className="mt-1 text-sm text-neutral-500">
                   This page only shows your copy history. To View Live positions -{" "}
-                  <a href="#" className="font-semibold text-blue-500">
+                  <Link href="/copy-trading/livepositions" className="font-semibold text-blue-500">
                     Click Here
-                  </a>
+                  </Link>
                 </p>
               </header>
              

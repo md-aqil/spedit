@@ -123,9 +123,9 @@ function LoginPage({ logoSrc, illustrationSrc }) {
                     I agree to the <span className="font-semibold underline">Terms and Policy</span>
                   </label>
                 </div>
-                <a href="/copy-trading/lead-trader-management/" type="submit" className="mt-4 px-3 py-5 w-full text-sm font-bold text-center bg-lime-500 rounded-md">
+                <Link href="/copy-trading/lead-trader-management/" type="submit" className="mt-4 px-3 py-5 w-full text-sm font-bold text-center bg-lime-500 rounded-md">
                   Login/Signup
-                </a>
+                </Link>
               </div>
             </form>
             <div className="mt-5 text-xs text-center text-neutral-500 max-md:mt-10">Copyright @2024</div>

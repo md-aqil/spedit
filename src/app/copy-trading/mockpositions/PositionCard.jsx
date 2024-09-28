@@ -113,13 +113,13 @@ function PositionCard({ name, rating, netCopyAmount, unrealizedPnl, roi }) {
         </div>
         <div className="flex gap-6 justify-between mt-6 w-full text-sm font-bold text-center">
           <button
-            className="gap-1 self-stretch px-6 py-3.5 text-pink-600 bg-white rounded-sm border border-pink-600 border-solid min-h-[40px] max-md:px-5"
+            className="btn btn-danger-outline"
             onClick={(event) => handleStopClick(event)}
           >
             Stop Mock Copy
           </button>
           <a href="/copy-trading/startegy-description?name=copyStepOpen">
-            <button className="gap-1 self-stretch px-1.5 py-3.5 whitespace-nowrap bg-lime-500 rounded-sm min-h-[40px] text-stone-950 w-[132px]">
+            <button className="btn w-[132px]">
               Copy
             </button>
           </a>{" "}

@@ -1,10 +1,10 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import cogIcon from "../../../assets/cog.svg";
 import avatar from "../../../assets/avatar-f.png";
 import Image from "next/image";
-import ArrowIcon from "./ArrowIcon"; // Adjust the path as needed
+import Link from "next/link"; // Import Link from Next.js
 
 const SidebarItems = [
   {
@@ -40,7 +40,7 @@ const SidebarItems = [
   {
     icon: "icon-game",
     text: "Quest",
-    url: "/",
+    url: "/quest", // Quest tab with correct URL
   },
   {
     icon: "icon-message-question",
@@ -49,16 +49,23 @@ const SidebarItems = [
   },
 ];
 
-function Sidebar({ items = SidebarItems, onSelect, activeItem }) {
-  const [active, setActive] = useState(activeItem || items[0].text);
+function Sidebar({ items = SidebarItems, onSelect = () => {}, activeItem }) {
+  const [active, setActive] = useState(activeItem || "Copy"); // Default active to "Copy"
   const [isCollapsed, setIsCollapsed] = useState(false);
   const [isActiveMenu, setIsActiveMenu] = useState(false);
+
+  // Load the active tab from localStorage on component mount
+  useEffect(() => {
+    const savedTab = localStorage.getItem("activeTab");
+    if (savedTab) {
+      setActive(savedTab);
+    }
+  }, []);
+
   const handleSelect = (item) => {
     setActive(item.text);
-    if (item.url) {
-      window.location.href = item.url;
-    }
-    onSelect(item.text);
+    localStorage.setItem("activeTab", item.text); // Store the active tab in localStorage
+    onSelect(item.text); // Ensure onSelect is called safely
   };
 
   const toggleSidebar = () => {
@@ -74,7 +81,6 @@ function Sidebar({ items = SidebarItems, onSelect, activeItem }) {
       <header className="fixed top-0 left-0 right-0 z-20 flex flex-wrap items-center px-8 pt-3 pb-3.5 w-full border-b border-solid bg-stone-950 border-b-neutral-800 max-md:px-5 max-md:max-w-full dash-header">
         <div className="flex items-center">
           <div className="text-2xl font-black text-lime-500 mr-5">SPEDIT</div>
-         
         </div>
 
         <div className="flex flex-col flex-1 shrink justify-center items-center self-stretch pl-8 my-auto text-base whitespace-nowrap basis-0 min-w-[240px] text-neutral-500 max-md:max-w-full header-search">
@@ -101,16 +107,14 @@ function Sidebar({ items = SidebarItems, onSelect, activeItem }) {
             className="object-contain shrink-0 self-stretch my-auto w-4 aspect-square"
             src={cogIcon}
           />
-         
         </div>
-       
-        <Image
-            loading="lazy"
-            alt="User Icon"
-            className="object-contain shrink-0 self-stretch my-auto  aspect-square use-mobile"
-            src={avatar}
-          />
 
+        <Image
+          loading="lazy"
+          alt="User Icon"
+          className="object-contain shrink-0 self-stretch my-auto aspect-square use-mobile"
+          src={avatar}
+        />
       </header>
 
       {/* desktop view */}
@@ -128,66 +132,53 @@ function Sidebar({ items = SidebarItems, onSelect, activeItem }) {
             {!isActiveMenu && (
               <span
                 className={`icon-arrow-circle-right text-lime-500 cursor-pointer absolute z-50 right-[15px] text-2xl top-10 ${
-                  isCollapsed ? "rotate-180 right-[-13px] rounded-full bg-gray-950" : ""
+                  isCollapsed
+                    ? "rotate-180 right-[-13px] rounded-full bg-gray-950"
+                    : ""
                 }`}
                 onClick={toggleSidebar}
               ></span>
             )}
 
+            <div className="flex gap-3">
+              <img
+                loading="lazy"
+                src="https://cdn.builder.io/api/v1/image/assets/TEMP/e5ef3aad35b9b309f96c51485aeb383b8010a2d643048f6a86a12143295fa997?apiKey=b4d1b9e87b084579b1e2475047caf617&"
+                alt="User avatar"
+                className="object-contain shrink-0 w-14 rounded-xl aspect-square "
+              />
 
-<div className="flex gap-3">
-
-
-<img
-              loading="lazy"
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/e5ef3aad35b9b309f96c51485aeb383b8010a2d643048f6a86a12143295fa997?apiKey=b4d1b9e87b084579b1e2475047caf617&"
-              alt="User avatar"
-              className="object-contain shrink-0 w-14 rounded-xl aspect-square "
-            />
-
-
-            {!isCollapsed && (
-
-
-              <div className="relative">
-                <span className="">Welcome,</span>
-                <br />
-                Joe
-              </div>
-
-
-            )}
-</div>
-
-
-          
+              {!isCollapsed && (
+                <div className="relative">
+                  <span className="">Welcome,</span>
+                  <br />
+                  Joe
+                </div>
+              )}
+            </div>
           </div>
 
-
-          <nav className="flex  gap-6 self-start mt-5 text-xl text-white ml-7">
+          <nav className="flex gap-6 self-start mt-5 text-xl text-white ml-7">
             <div className="flex flex-col items-start dash-item-wrap">
               {items.map((item, index) => (
-                <div
-                  key={index}
-                  className={`${item.text} flex gap-2 items-center dash-item mt-6 ${
-                    active === item.text ? "dash-item-active " : ""
-                  }`}
-                  onClick={() => handleSelect(item)}
-                  role="button"
-                  tabIndex="0"
-                >
-                  <i className={`${item.icon} w-6 aspect-square`}></i>
-
-                  {!isCollapsed && <div>{item.text}</div>}
-                </div>
+                <Link href={item.url} key={index}>
+                  <div
+                    className={`${item.text} flex gap-2 items-center dash-item mt-6 ${
+                      active === item.text ? "dash-item-active " : ""
+                    }`}
+                    onClick={() => handleSelect(item)}
+                    role="button"
+                    tabIndex="0"
+                  >
+                    <i className={`${item.icon} w-6 aspect-square`}></i>
+                    {!isCollapsed && <div>{item.text}</div>}
+                  </div>
+                </Link>
               ))}
             </div>
           </nav>
-       
         </div>
       </aside>
-
-     
     </>
   );
 }
@@ -198,10 +189,9 @@ Sidebar.propTypes = {
       icon: PropTypes.string.isRequired,
       text: PropTypes.string.isRequired,
       url: PropTypes.string,
-      isActive: PropTypes.bool,
     })
   ),
-  onSelect: PropTypes.func.isRequired,
+  onSelect: PropTypes.func, // Optional onSelect function
   activeItem: PropTypes.string,
 };
 

@@ -83,13 +83,14 @@ function PositionCard({ name, rating, netCopyAmount, unrealizedPnl, roi }) {
         <div className="flex gap-2 mt-6">
           <button
             onClick={handleStopCopyClick}
-            className="flex-1 py-3 px-4 text-white bg-pink-700 rounded-md border border-pink-700 hover:bg-pink-800 transition-colors"
+            className="btn btn-danger"
           >
             Stop Copy
           </button>
+
           <button
             onClick={handlePauseCopyClick}
-            className="flex-1 py-3 px-4 bg-white border border-stone-950 text-stone-950 rounded-md hover:bg-stone-100 transition-colors"
+            className="btn btn-outline"
           >
             Pause Copy
           </button>

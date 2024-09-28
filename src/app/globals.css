@@ -7,6 +7,7 @@
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
   --theme-color: #9bec00;
+  --danger-color: #be185d;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -286,6 +287,161 @@ z-index: 10;
   padding-bottom:10px;
 
 }
+
+
+
+.btn {
+  position: relative;
+  display: inline-block;
+  padding: 8px 16px; /* Equivalent to py-3.5 and px-7 */
+  background-color: var(--theme-color);
+  border-radius: 4px;
+  color: #3c3c3c; /* Darker color for text */
+  font-size: 16px;
+  letter-spacing: 1px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  overflow: hidden;
+  border: 1px solid #7dbd02;
+  font-weight:normal
+}
+
+.btn.btn-danger {
+  background: var(--danger-color);
+  border-color: var(--danger-color);
+  
+  color:#fff;
+}
+.btn.btn-danger::before, 
+.btn.btn-danger::after {
+  background: linear-gradient(to right, rgba(0, 0, 0, 0), #a10b49); /* Lime border color */
+}
+
+.btn.btn-danger-outline::before, 
+.btn.btn-danger-outline::after {
+  background: linear-gradient(to right, rgba(0, 0, 0, 0), #a10b49); /* Lime border color */
+}
+
+
+.btn-danger-outline {
+  background:none;
+  border-color:var(--danger-color);
+  color:var(--danger-color);
+  
+}
+
+
+.btn-danger-outline:hover {
+  background:var(--danger-color);
+}
+
+.btn.btn-danger-outline:hover {
+  background:none;
+  color:var(--danger-color);
+  border-color:var(--danger-color);
+
+}
+
+
+.btn::before, 
+.btn::after {
+  content: '';
+  position: absolute;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0), #7dbd02); /* Lime border color */
+  transition: all 0.5s ease;
+}
+
+.btn::before {
+  height: 3px;
+  width: 200px;
+  top: 0;
+  left: -200px;
+  /* animation: slide-right 2s linear infinite 1s; */
+}
+
+.btn::after {
+  height: 3px;
+  width: 200px;
+  bottom: 0;
+  right: -200px;
+  background: linear-gradient(to left, rgba(0, 0, 0, 0), #7dbd02); /* Lime border color */
+ 
+}
+
+
+.btn:hover {
+  transform: rotate(-1deg) scale(1.03);
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.3);
+}
+
+.btn:hover::before,
+.btn:hover::after {
+  /* animation-play-state: paused; */
+  /* border-color:red; */
+   animation: slide-left 2s linear infinite;
+}
+
+.btn:hover::before {
+  animation: slide-right 2s linear infinite;
+}
+
+
+.btn:hover {
+  background:none;
+  color:var(--theme-color)
+
+}
+
+.btn.btn-danger:hover {
+  background:none;
+  color:var(--danger-color);
+  border-color:var(--danger-color);
+
+}
+
+.btn.btn-outline {
+  background:none;
+  color:#262626;
+  border-color:#262626;
+
+}
+
+.btn.btn-outline:hover {
+  background:#262626;
+  color:#fff;
+
+}
+
+.btn-outline::before, 
+.btn-outline::after {
+  content: '';
+  position: absolute;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0), #262626); /* Lime border color */
+  transition: all 0.5s ease;
+}
+
+
+
+@keyframes slide-right {
+  0% {
+    left: -200px;
+  }
+  100% {
+    left: 200px;
+  }
+}
+
+@keyframes slide-left {
+  0% {
+    right: -200px;
+  }
+  100% {
+    right: 200px;
+  }
+}
+
 
 @media not all and (min-width: 768px) {
   .desktop-view {

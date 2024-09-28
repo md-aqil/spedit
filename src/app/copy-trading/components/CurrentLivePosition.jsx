@@ -1,6 +1,8 @@
 
 import React from "react";
 import PositionItem from "./PositionItem";
+import Link from "next/link";
+
 
 const positionItems = [
   {
@@ -43,10 +45,13 @@ function CurrentLivePosition() {
             ))}
           </div>
         </div>
-        <div className="flex flex-col justify-center px-16 py-8 mt-1.5 w-full text-sm font-bold bg-white rounded-lg text-neutral-800 max-md:px-5">
-          <div className="overflow-hidden self-stretch px-2 text-center py-6 bg-white rounded-lg border border-solid border-neutral-800">
-            Login to Replace Mock Data
-          </div>
+
+        <div className="flex flex-col justify-center px-12 py-8 ">
+          
+          <Link rel="stylesheet" className="btn btn-outline whitespace-nowrap  px-2 text-center py-6 rounded-lg" href="/login" >
+          Login to Replace Mock Data
+          </Link>
+        
         </div>
       </div>
     </div>
