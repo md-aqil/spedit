@@ -1,7 +1,7 @@
 // AdminDashboard.jsx
 "use client";
 import React, { useState } from "react";
-import Sidebar from "../components/Sidebar";
+import Sidebar from "./SideBar";
 import Header from "../components/Header";
 import AdminPanelHeader from "./AdminPanelHeader";
 import UserTable from "./UserTable";
