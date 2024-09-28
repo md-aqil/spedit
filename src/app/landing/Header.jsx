@@ -14,9 +14,9 @@ const Header = () => {
             </Link>
 
             <div className="hidden lg:flex lg:items-center lg:space-x-10">
-              <a href="#" title="" className="text-base  text-gray-400 hover:text-[#9BEC00]">
+              <Link href="/copy-trading" title="" className="text-base  text-gray-400 hover:text-[#9BEC00]">
                 Copy Traders
-              </a>
+              </Link>
               <a href="#" title="" className="text-base  text-gray-400 hover:text-[#9BEC00]">
                 About
               </a>

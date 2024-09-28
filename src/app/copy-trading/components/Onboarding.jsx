@@ -90,8 +90,10 @@ function Onboarding() {
 
               {/* Explore Button */}
               <div className="flex justify-center my-5">
-                <Link href="/copy-trading/leader-board" className="flex gap-4 justify-center items-center px-9 py-3.5 text-base bg-lime-500 rounded-md">
-                  <Image loading="lazy" src={arrowupsquare} alt="Explore button" width={22} height={22} className="object-contain" />
+                <Link href="/copy-trading/leader-board" className="!flex gap-4 justify-center items-center px-9 py-3.5 text-base btn">
+
+                   <span className="icon-arrow-square-up text-lg"></span>
+
                   <span>Explore</span>
                 </Link>
               </div>

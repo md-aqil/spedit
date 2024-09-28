@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 const TraderCard = ({
   traderId,
@@ -59,7 +60,7 @@ const TraderCard = ({
         Our goal is to achieve consistent capital appreciation with a target
         annual return of 6-8%, while maintaining a risk level{" "}
         <span className="font-semibold leading-4 text-lime-500">
-          <a href="/copy-trading/startegy-description/readmore">Read more</a>
+          <Link href="/copy-trading/startegy-description/readmore">Read more</Link>
         </span>
       </p>
       <div className="flex flex-col justify-center mt-5 w-full">

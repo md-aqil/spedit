@@ -8,7 +8,7 @@ const HeroSection = () => {
 
   return (
     <section className="flex flex-col items-center w-[100%]">
-      {/* <Header /> */}
+      <Header />
 
       <h2 className="text-6xl font-semibold text-center text-white leading-[67px] max-md:max-w-full max-md:text-4xl max-md:leading-[54px]">
         <span className="text-6xl font-extrabold leading-[77px]">Elevate Wealth, </span>
@@ -21,13 +21,13 @@ const HeroSection = () => {
       </p>
       <div className="flex mt-10 gap-5">
         <Link href="/copy-trading" className="flex flex-col justify-center p-1 rounded-md border border-lime-500 border-solid">
-          <span className="overflow-hidden z-10 px-12 py-3 mt-0 bg-lime-500 rounded-md max-md:px-5 font-semibold">Copy</span>
+          <span className="!px-12 !py-3 mt-0  btn !font-semibold !text-black">Copy</span>
         </Link>
         <a href="" className="flex flex-col justify-center p-1 rounded-md border border-lime-500 border-solid">
-          <div className="overflow-hidden z-10 px-12 py-3 mt-0 bg-lime-500 rounded-md max-md:px-5 font-semibold">Build</div>
+          <div className="overflow-hidden z-10 px-12 py-3 mt-0 bg-primary rounded-md max-md:px-5 font-semibold">Build</div>
         </a>
         <a href="" className="flex flex-col justify-center p-1 rounded-md border border-lime-500 border-solid">
-          <div className="overflow-hidden z-10 px-12 py-3 mt-0 bg-lime-500 rounded-md max-md:px-5 font-semibold">Code</div>
+          <div className="overflow-hidden z-10 px-12 py-3 mt-0 bg-primary rounded-md max-md:px-5 font-semibold">Code</div>
         </a>
       </div>
 

@@ -7,6 +7,10 @@ import PerformanceCard from "../components/PerformanceCard";
 import PositionTable from "../components/PositionTable";
 import DashboardIcons from "../components/DashboardIcons";
 import { useSearchParams } from "next/navigation";
+import TradeHistoryTable from "../trade-history/TradeHistoryTable";
+import CopiersTable from "../lead-trader-management/CopiersTable"
+
+
 
 export default function StrategyDescription({ handleCopyClick, showParameters, showConfirmTour }) {
   // State to track the active tab
@@ -115,9 +119,15 @@ export default function StrategyDescription({ handleCopyClick, showParameters, s
               {/* Tab Content */}
               <div className="">
                 {activeTab === "positions" && <PositionTable positions={positionsData} />}
+                
+      
+                {activeTab === "history" && <TradeHistoryTable />}
 
-                {activeTab === "history" && "history"}
+                {activeTab === "copiers" && <CopiersTable />}
+                {activeTab === "mock-copiers" && "mock-copiers"}
               </div>
+
+              
             </div>
           </div>
         </div>

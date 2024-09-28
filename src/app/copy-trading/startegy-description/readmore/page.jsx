@@ -5,12 +5,14 @@ import Image from "next/image";
 import Sidebar from "../../components/Sidebar";
 import Header from "../../components/Header";
 import DashboardIcons from "../../components/DashboardIcons";
+import Link from "next/link";
+
 
 const TraderStrategyDetails = () => {
   const router = useRouter();
 
   const handleBackClick = () => {
-    router.push("/copy-trading/startegy-description");
+    router.push("/copy-trading/startegy-description/");
   };
 
   return (
@@ -22,21 +24,16 @@ const TraderStrategyDetails = () => {
           <div className="flex flex-col main-container">
             <DashboardIcons />
             <div className="flex flex-col rounded-none">
-              <div
-                onClick={handleBackClick}
-                className="flex cursor-pointer gap-0.5 items-center self-start text-sm font-semibold leading-none text-neutral-500"
-              >
-                <Image
-                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/7b66b1d35b539cee75af5c51aa054135a0481171b5c24f2a216347dc4eb28a8b?apiKey=b4d1b9e87b084579b1e2475047caf617&"
-                  alt="Back arrow"
-                  width={14}
-                  height={14}
-                  className="object-contain shrink-0 self-stretch my-auto w-3.5 aspect-square cursor-pointer"
-                />
-                <div className="self-stretch my-auto">
-                  <span className="text-neutral-500">Back</span>
-                </div>
-              </div>
+
+             
+            <Link
+              href="/copy-trading/startegy-description/"
+              className="flex items-center gap-2 text-sm font-semibold text-neutral-500 hover:text-neutral-700 transition-colors"
+            >
+              <span className="icon-arrow-square-left text-lg"></span>
+              <span>Back</span>
+            </Link>
+
               <div className="flex flex-col items-start px-2 mt-6 w-full text-black max-md:max-w-full">
                 <div className="text-xl font-bold leading-none">
                   Trader Strategy Details

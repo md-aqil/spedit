@@ -4,6 +4,8 @@ import HowItWorksSection from './HowItWorksSection';
 import TestimonialsSection from './TestimonialsSection';
 import HeroSection from './HeroSection'
 import Footer from './Footer';
+import Header from './Header';
+
 
 function Home() {
   return (
