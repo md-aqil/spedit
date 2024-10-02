@@ -127,17 +127,21 @@ const StrategieCard = () => {
 
       {/* Card List */}
       <div style={{ cursor: "pointer" }} onClick={handleRedirect}>
-        <div className="flex flex-wrap gap-5 items-start">
+        <div className="flex flex-wrap gap-5 items-start relative">
           {copytraderData.map((trader) => (
             <div
               key={trader.id}
               id={`${trader.name === "Karishma" && "firstTour"}`}
-              className={`flex  flex-col grow shrink justify-center px-4 py-5 w-72 bg-white rounded-md shadow-sm min-h-[200px] min-w-[240px] transition-opacity ${
-                cardsStatus[trader.id] ? "opacity-50" : "opacity-100"
+
+              className={`flex  flex-col relative grow shrink justify-center px-4 py-5 w-72 bg-white rounded-md shadow-sm min-h-[200px] min-w-[240px] transition-opacity ${
+                cardsStatus[trader.id] ? "" : ""
               }`}
               onClick={() => handleCardClick(trader.id)}
             >
-              <div className="flex flex-col w-full">
+              <div  className={`flex flex-col w-full ${
+                cardsStatus[trader.id] ? "opacity-50" : "opacity-100"
+              }`}>
+                
                 <div className="flex gap-10 justify-between items-center w-full whitespace-nowrap">
                   <div className="flex gap-2.5 items-start my-auto h-[43px]">
                     <Image
@@ -164,7 +168,7 @@ const StrategieCard = () => {
                   </div>
                   <div className="flex items-center gap-3">
                     <button
-                      style={{ position: "relative", zIndex: "1000" }}
+                      style={{ position: "relative"}}
                       className="relative focus:outline-none w-6"
                       onClick={(e) => {
                         e.stopPropagation(); // Prevents redirect on click
@@ -265,13 +269,16 @@ const StrategieCard = () => {
                   </div>
                 </div>
 
-                {/* Status update after Stop/Pause */}
-                {cardsStatus[trader.id] && (
-                  <div className="mt-4 text-xs text-gray-500">
+            
+                
+              </div>
+                  {/* Status update after Stop/Pause */}
+                  {cardsStatus[trader.id] && (
+                  <div className="mt-4  text-black stop-label">
                     {cardsStatus[trader.id]}
                   </div>
                 )}
-              </div>
+
             </div>
           ))}
         </div>

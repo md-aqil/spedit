@@ -22,7 +22,7 @@ function Onboarding() {
     <div className="flex flex-col items-center justify-center">
       {/* Dialog */}
       {open && (
-        <div className="fixed inset-0 z-10 flex items-start justify-center bg-black bg-opacity-50 transition-transform duration-300 ease-out h-full">
+        <div className="fixed inset-0 z-10 flex items-start justify-center bg-black bg-opacity-50 transition-transform duration-300 ease-out h-full overflow-y-auto">
           <div className="w-full bg-white shadow-lg h-90 overflow-y-auto ">
             <section className="mx-auto w-[70%]">
               <header className="mx-0 my-5">
@@ -33,8 +33,9 @@ function Onboarding() {
                 modules={[Navigation, Pagination, Autoplay]}
                 spaceBetween={50}
                 slidesPerView={1}
+                
                 autoplay={{
-                  delay: 2500,
+                  delay: 25000,
                   disableOnInteraction: false,
                 }}
                 navigation={{
@@ -45,7 +46,7 @@ function Onboarding() {
               >
                 {/* Slide 1 */}
                 <SwiperSlide>
-                  <main className="flex justify-center items-center font-black text-stone-950 gap-15 ">
+                  <main className="flex justify-center items-center font-black text-stone-950 gap-15 onb1">
                     <section className="flex flex-col self-stretch my-auto ">
                       <h1 className="text-5xl">
                         <span className="font-medium">Profit from the markets</span>

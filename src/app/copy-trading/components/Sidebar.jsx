@@ -130,10 +130,11 @@ function Sidebar({ items = SidebarItems, onSelect = () => {}, activeItem }) {
         <div className="flex flex-col items-center py-8 pr-5 mx-auto w-full bg-stone-950 dash-sidebar-content">
           <div className="flex items-between justify-between text-xl leading-7 text-neutral-500 px-3 w-full side-profile">
             {!isActiveMenu && (
+              
               <span
-                className={`icon-arrow-circle-right text-lime-500 cursor-pointer absolute z-50 right-[15px] text-2xl top-10 ${
+                className={`icon-arrow-circle-right  text-lime-500 cursor-pointer absolute z-50 right-[25px] rotate-180 text-2xl top-10 ${
                   isCollapsed
-                    ? "rotate-180 right-[-13px] rounded-full bg-gray-950"
+                    ? "!right-[6px] !rotate-0 rounded-full bg-gray-950"
                     : ""
                 }`}
                 onClick={toggleSidebar}

@@ -2,17 +2,21 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import userIcon from "../../../assets/user1.png"; 
 import JoinedUsers from "../../../assets/JoinedUsers.png"; 
+import ConfirmationModal from './ConfirmationModal'; // Adjust the import path as needed
 
 function PositionCard({ name, rating, netCopyAmount, unrealizedPnl, roi }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isSuccessNotificationVisible, setIsSuccessNotificationVisible] = useState(false);
   const [isCardDimmed, setIsCardDimmed] = useState(false);
+  const [actionType, setActionType] = useState(null); // to track the action type (pause or stop)
 
   const handleStopCopyClick = () => {
+    setActionType('stop');
     setIsModalOpen(true);
   };
 
   const handlePauseCopyClick = () => {
+    setActionType('pause');
     setIsModalOpen(true);
   };
 
@@ -24,7 +28,7 @@ function PositionCard({ name, rating, netCopyAmount, unrealizedPnl, roi }) {
     setIsModalOpen(false);
     setIsSuccessNotificationVisible(true);
     setIsCardDimmed(true);
-
+    
     // Hide the success notification after a few seconds
     setTimeout(() => {
       setIsSuccessNotificationVisible(false);
@@ -97,43 +101,34 @@ function PositionCard({ name, rating, netCopyAmount, unrealizedPnl, roi }) {
         </div>
       </div>
 
-      {/* Modal */}
+      {/* Confirmation Modal */}
       {isModalOpen && (
-        <div className="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-75 z-10">
-          <div className="bg-gray-800 p-6 rounded-lg shadow-lg w-96">
-            <h2 className="text-xl font-bold text-white mb-4">Wait</h2>
-            <p className="text-white mb-4">
-              Pausing the copy will stop copying new trades from the lead trader's strategy. Existing trades will continue but must be managed manually.
-            </p>
-            <div className="flex justify-end gap-2">
-              <button
-                onClick={handleModalCancel}
-                className="px-4 py-2 border border-gray-300 text-white rounded hover:bg-gray-700"
-              >
-                Cancel
-              </button>
-              <button
-                onClick={handleModalProceed}
-                className="px-4 py-2 bg-[#9BEC00] text-black rounded hover:bg-lime-600"
-              >
-                Proceed
-              </button>
-            </div>
-          </div>
-        </div>
+        <ConfirmationModal
+          isOpen={isModalOpen}
+          title={actionType === 'pause' ? "Pause Copy" : "Stop Copy"}
+          message={actionType === 'pause'
+            ? "Are you sure you want to pause copying this strategy?"
+            : "Are you sure you want to stop copying this strategy?"}
+          onCancel={handleModalCancel}
+          onConfirm={handleModalProceed}
+          confirmText="Confirm"
+          confirmButtonClass="btn-danger"
+        />
       )}
 
       {/* Success Notification */}
       {isSuccessNotificationVisible && (
         <div className="fixed bottom-4 right-4 flex items-center justify-center bg-black text-white p-4 rounded-md shadow-lg z-20">
-          <p className="text-green-600 font-bold">Paused Successfully!</p>
+          <p className="text-green-600 font-bold">{actionType === 'pause' ? "Paused Successfully!" : "Stopped Successfully!"}</p>
         </div>
       )}
 
-      {/* Paused Label */}
+      {/* Paused or Stopped Label */}
       {isCardDimmed && (
         <div className="absolute inset-0 flex items-center justify-center bg-white bg-opacity-80">
-          <span className=" stop-label">Paused (12hrs ago)</span>
+          <span className={`stop-label ${actionType === 'pause' ? 'text-black' : 'text-black'}`}>
+            {actionType === 'pause' ? "Paused" : "Stopped"} (12hrs ago)
+          </span>
         </div>
       )}
     </article>

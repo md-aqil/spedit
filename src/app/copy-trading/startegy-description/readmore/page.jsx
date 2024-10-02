@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
 import { useRouter } from "next/navigation";
-import Image from "next/image";
 import Sidebar from "../../components/Sidebar";
 import Header from "../../components/Header";
 import DashboardIcons from "../../components/DashboardIcons";

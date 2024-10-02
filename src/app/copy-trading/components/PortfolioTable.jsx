@@ -2,6 +2,7 @@ import React from 'react';
 import TraderCardList from './TraderCardList';
 
 const CopyTradingList = () => {
+  
   const traders = [
     { name: 'Tanya', pnl: '74,100.23', roi: '+5.71%', mdd: '1.27%', aum: '₹74, 100.23', copiers: '502' },
     { name: 'Tanya', pnl: '74,100.23', roi: '+5.71%', mdd: '1.27%', aum: '₹74, 100.23', copiers: '502' },

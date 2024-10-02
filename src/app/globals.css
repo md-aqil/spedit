@@ -422,7 +422,12 @@ z-index: 10;
   transition: all 0.5s ease;
 }
 
-
+.bor-filter {
+  border-bottom: 1px solid #242620;
+}
+.bor-filter button {
+  padding-bottom: 7px;
+}
 
 @keyframes slide-right {
   0% {
@@ -442,7 +447,22 @@ z-index: 10;
   }
 }
 
+.custom-bullet {
+  background-color: black;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  opacity: 0.5;
+}
 
+.custom-bullet-active {
+  opacity: 1;
+}
+
+.sp-wrapper {
+  width: 200px;
+  margin:auto;
+}
 @media not all and (min-width: 768px) {
   .desktop-view {
     /* display: none; */
@@ -557,6 +577,11 @@ z-index: 10;
   width: 100%;
   padding: 15px 15px;
 }
-
+.onb1 {
+  flex-direction:column;
+}
+.onb1 h1 {
+  font-size:24px;
+}
 
 }

@@ -11,6 +11,7 @@ import CopytraderCard from "../components/CopytraderCard";
 import StrategieCard from "../components/StrategieCard";
 import React, { useEffect, useState, useRef } from "react";
 import { useRouter } from "next/navigation";
+import userIcon from "../../../assets/user1.png";
 
 import StrategyDescription from "../startegy-description/page";
 import OnboardingPage from "../dashboard/page";
@@ -18,6 +19,14 @@ import OnboardingPage from "../dashboard/page";
 import { TourGuideClient } from "@sjmc11/tourguidejs";
 import "@sjmc11/tourguidejs/src/scss/tour.scss"; // Import the SCSS file
 import StrategieFilter from "../components/StrategieFilter";
+
+import StrategiesFollowed from "../components/StrategiesFollowed";
+import StrategyList from "../components/StrategyList";
+
+import Image from "next/image";
+
+import heartIcon from "../../../assets/heart.svg";
+import heartFullIcon from "../../../assets/heart-full.svg";
 
 export function LeaderBoard() {
   const [toggleList, setToggleList] = useState(false);
@@ -30,17 +39,53 @@ export function LeaderBoard() {
 
   const [isLastTour, setIsLastTour] = useState(false);
   const [fav, setFav] = useState(false);
+  const [viewType, setViewType] = useState("card"); // State to manage the view type
 
   const handleToggleListing = () => {
     setToggleList(!toggleList);
   };
+
   const handleFav = () => {
     setFav(true);
   };
 
   const clientRef = useRef(null);
-  // Use a ref to hold the client instance
-  // const currentPath = new URL(window.location.href).search;
+
+  const copytraderData = [
+    {
+      name: "Karishma",
+      followers: 502,
+      actionType: "copy",
+      pnl: "₹74,100.23",
+      roi: "5.71%",
+      aum: "₹74,100.23",
+      mdd: "1.27%",
+      id: 1,
+      avatar: userIcon
+    },
+    {
+      name: "Kareena",
+      followers: 502,
+      actionType: "stopPause",
+      pnl: "₹74,100.23",
+      roi: "5.71%",
+      aum: "₹74,100.23",
+      mdd: "1.27%",
+      avatar: userIcon,
+      id: 2,
+    },
+    {
+      name: "Raj",
+      followers: 600,
+      actionType: "stopPause",
+      pnl: "₹50,000.00",
+      roi: "4.50%",
+      aum: "₹50,000.00",
+      mdd: "0.90%",
+      id: 3,
+      avatar: userIcon
+    },
+  ];
 
   useEffect(() => {
     if (!clientRef.current) {
@@ -70,7 +115,6 @@ export function LeaderBoard() {
           {
             title: "Check order details and Confirm COPY order",
             content: "Confirm your order to start copying the selected strategy.",
-
             target: "#tourConfirmButton",
             order: 4,
             group: "basic4",
@@ -85,7 +129,6 @@ export function LeaderBoard() {
           {
             title: "You can see your current live positions, portfolio curve, favourite lead traders, and trade history.",
             content: "Your copy order (Order No: 12345) was successful!",
-
             target: "#lastTourStepId",
             order: 5,
             group: "basic5",
@@ -99,18 +142,15 @@ export function LeaderBoard() {
 
       clientRef.current = client; // Save the instance to the ref
 
-      // Navigate to the next step
-
       client.onFinish(() => {
         setIstour(false);
         setIsLastTour(false);
         console.log("Tour finished successfully.");
       });
 
-      // Manually call the function on an interval or similar if needed
       client.onBeforeStepChange((step) => {
         setIstour(true);
-        console.log(step, clientRef.current, clientRef.current.activeStep, "checking current active spten");
+        console.log(step, clientRef.current, clientRef.current.activeStep, "checking current active step");
         if (clientRef.current.activeStep === 1) {
           handleCopyClick();
         }
@@ -124,19 +164,11 @@ export function LeaderBoard() {
           setIsLastTour(true);
           console.log("active last step");
         }
-        // clientRef.current.getCurrentStep();
 
         setCurrentStep(currentStep + 1);
         console.log(currentStep, "checking");
-
-        // setIstour(true);
       });
 
-      // client.onBeforeStepChange(() => {
-      //   setIstour(true);
-      // });
-
-      // Ensure that the client is available when needed
       setTourGuideClientValue(client);
     }
 
@@ -147,7 +179,6 @@ export function LeaderBoard() {
 
   const startTour = () => {
     if (clientRef.current) {
-      // setIstour(true);
       clientRef.current.start(); // Start the tour
       console.log("Tour started");
     } else {
@@ -162,35 +193,79 @@ export function LeaderBoard() {
   const hadleConfirmTour = () => {
     setShowConfirmTour(true);
   };
+
+  const [favorites, setFavorites] = useState([]);
+
+  const handleFavoriteToggle = (index) => {
+    setFavorites((prevFavorites) =>
+      prevFavorites.includes(index)
+        ? prevFavorites.filter((favIndex) => favIndex !== index)
+        : [...prevFavorites, index]
+    );
+  };
+
+  // Function to switch view type
+  const handleViewToggle = () => {
+    setViewType((prev) => (prev === "card" ? "list" : "card"));
+  };
+
   return (
     <>
       {(isLastTour && <OnboardingPage />) ||
         (isTour && <StrategyDescription handleCopyClick={handleCopyClick} showParameters={showParameters} showConfirmTour={showConfirmTour} />) || (
           <div className="flex flex-col pb-20 bg-stone-50">
-            {/* <Header /> */}
-
             <div className="z-10 w-full max-md:max-w-full main-body">
               <div className="flex gap-5 w-full">
                 <Sidebar />
                 <main className="flex flex-col main-container">
                   <DashboardIcons />
                   {/* <button onClick={startTour}>Start Tour</button> */}
-                  <StrategieFilter fav={fav} setFav={setFav} handleToggleListing={handleToggleListing} />
-
-                  {(toggleList && (
-                    <section className="flex flex-col ">
-                      <ListFilter />
-                      <PortfolioTable />
-                    </section>
-                  )) || (
+                  <StrategieFilter 
+                    fav={fav} 
+                    setFav={setFav} 
+                    handleToggleListing={handleToggleListing} 
+                    handleViewToggle={handleViewToggle} // Pass toggle function to filter
+                    viewType={viewType} // Pass the current view type
+                  />
+                  
+                 
+                  {/* Render based on view type */}
+                  {viewType === "card" ? (
+                    <StrategieCard />
+                  ) : (
                     <div>
-                      &nbsp;
-                      {(fav && "fav item") || <StrategieCard />}
+                      {copytraderData.map((trader, index) => (
+                        <StrategyList
+                          key={trader.id}
+                          index={index}
+                          {...trader}
+                          favorites={favorites}
+                          handleFavoriteToggle={handleFavoriteToggle}
+                          heartIcon={heartIcon}
+                          heartFullIcon={heartFullIcon}
+                        />
+                      ))}
                     </div>
                   )}
+
+
+
+                  
+            {/* Favorites Section */}
+            <div className="favorites-section mt-10 p-4 bg-white shadow-md rounded-md">
+              <h2 className="text-xl font-semibold mb-2">My Favorites</h2>
+              <div className="empty-state text-center text-gray-500">
+                  <p>You don’t have any favorite strategies yet.</p>
+                  <p className="mt-2">Start exploring the leaderboard!</p>
+                </div>
+            </div>
+            
                 </main>
               </div>
+
+              
             </div>
+
           </div>
         )}
     </>
