@@ -17,6 +17,9 @@ function CreditHistory() {
         <h1 className="my-auto text-xl font-semibold text-black">
           Credit History
         </h1>
+
+      
+
         <div className="flex gap-6 items-center text-base text-neutral-800">
           <div className="flex flex-col self-stretch my-auto rounded-md border border-solid border-stone-400 w-[216px]">
             <div className="flex flex-col w-full rounded-lg max-w-[216px]">
@@ -37,31 +40,54 @@ function CreditHistory() {
           </div>
         </div>
       </div>
+
+      <div className="flex mb-4">
+        <button
+         
+          className={`py-2 px-4 text-sm font-medium hover:bg-gray-100 border rounded-l bg-[#CDE8A3] text-black`}
+        >
+          All
+        </button>
+
+        
+        <button
+          className={`py-2 px-4 text-sm font-medium  "text-gray-600 hover:bg-gray-100 border rounded-r`}
+        >
+          Top Ups
+        </button>
+        <button
+          className={`py-2 px-4 text-sm font-medium  "text-gray-600 hover:bg-gray-100 border rounded-r`}
+        >
+        Debit
+        </button>
+
+      </div>
+
       <div className="overflow-x-auto">
         <table className="w-full text-sm font-semibold leading-none rounded-lg text-neutral-800">
           <thead>
             <tr className="text-xl font-bold text-lime-500 bg-neutral-800">
-              <th className="p-6 text-left border-r border-b border-zinc-300 w-[168px]">
+              <th className="px-6 text-left border-r border-b border-zinc-300 w-[168px]">
                 <div className="flex gap-2.5 items-center">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/22e203044bfa430877c38de78d03db29dd544d9964b26dcb50ec6238d2806a5b?apiKey=b4d1b9e87b084579b1e2475047caf617&" alt="" className="w-[21px] aspect-[1.05]" />
+                 <span className='icon-calendar-1'></span>
                   <span>ID</span>
                 </div>
               </th>
-              <th className="p-6 text-left border-r border-b border-zinc-300 w-[290px]">
+              <th className="px-6 text-left border-r border-b border-zinc-300 w-[290px]">
                 <div className="flex gap-2.5 items-center">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/8d338e9cda974e36dacaac114b1c740cb5cf1e9affd584d26c456da4e0f83f6a?apiKey=b4d1b9e87b084579b1e2475047caf617&" alt="" className="w-[21px] aspect-[1.05]" />
+                 <span className='icon-textalign-justifyleft'></span>
                   <span>Type</span>
                 </div>
               </th>
-              <th className="p-6 text-left border-r border-b border-zinc-300 w-[272px]">
+              <th className="px-6 text-left border-r border-b border-zinc-300 w-[272px]">
                 <div className="flex gap-2.5 items-center">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/6947642d632e6821c16c80c2be376544dcd6fc787ad1519685107435abdaa82c?apiKey=b4d1b9e87b084579b1e2475047caf617&" alt="" className="w-[21px] aspect-[1.05]" />
+                 <span className='icon-user'></span>
                   <span>Credits</span>
                 </div>
               </th>
-              <th className="p-6 text-left border-r border-b border-zinc-300 w-[396px]">
+              <th className="px-6 py-3 text-left border-r border-b border-zinc-300 w-[396px]">
                 <div className="flex gap-2.5 items-center">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/8f404b679bf01bd07876e366e3a1934aa9c79c5ec7bcaddefd4ea15158ab0b8b?apiKey=b4d1b9e87b084579b1e2475047caf617&" alt="" className="w-5 aspect-square" />
+                  <span className='icon-clock'></span>
                   <span>Date Time</span>
                 </div>
               </th>
