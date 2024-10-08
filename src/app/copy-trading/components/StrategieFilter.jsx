@@ -21,7 +21,7 @@ const StrategieFilter = ({ fav, setFav, setIsCardView , handleViewToggle, viewTy
               <button
                 onClick={() => setFav(false)}
                 className={`self-stretch my-auto w-[75px] ${
-                  !fav ? "text-stone-950 border-b-2 border-lime-500" : "text-stone-400"
+                  !fav ? "text-stone-950 border-b-2 border-lime-500 is-fav" : "text-stone-400"
                 }`}
               >
                 Portfolios
@@ -30,7 +30,7 @@ const StrategieFilter = ({ fav, setFav, setIsCardView , handleViewToggle, viewTy
               <button
                 onClick={() => setFav(true)}
                 className={`self-stretch my-auto w-[97px] ${
-                  fav ? "text-stone-950 pb-2 border-b-2 border-lime-500" : "text-stone-400"
+                  fav ? "text-stone-950 pb-2 border-b-2 border-lime-500 is-fav" : "text-stone-400"
                 }`}
               >
                 My Favorites
@@ -41,7 +41,7 @@ const StrategieFilter = ({ fav, setFav, setIsCardView , handleViewToggle, viewTy
             </div>
           </div>
 
-          <div className="flex justify-end flex-1 gap-6 items-center text-xs text-right text-stone-600">
+          <div className="flex justify-end flex-1 gap-6 items-center text-xs text-right text-stone-600 hidden-xs">
             <div className="w-full max-w-md">
               <div className="relative flex items-center">
                 <input
@@ -66,7 +66,7 @@ const StrategieFilter = ({ fav, setFav, setIsCardView , handleViewToggle, viewTy
         </nav>
 
         {/* Filter Buttons */}
-        <div className="flex flex-wrap gap-3 items-center mt-4 max-w-full text-sm font-semibold text-center h-[30px]">
+        <div className="flex flex-wrap gap-3 items-center mt-4 max-w-full text-sm font-semibold text-center h-[30px] f-scroll">
           {["PnL", "ROI", "MDD", "AUM", "Copy Traders", "Copy Traders PnL"].map((filter) => (
             <button
               key={filter}

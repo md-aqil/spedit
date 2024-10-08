@@ -107,12 +107,12 @@ const LivePositionsList = ({ positions }) => {
           {pausedPositions.has(index) && (
             
          
-              <div class="mt-4  text-black stop-label">Paused (01:57 AM)</div>
+              <div className="mt-4  text-black stop-label">Paused (01:57 AM)</div>
           
           )}
           {stoppedPositions.has(index) && (
            
-           <div class="mt-4  text-black stop-label">Stopped (01:57 AM)</div>
+           <div className="mt-4  text-black stop-label">Stopped (01:57 AM)</div>
           
           )}
         </div>

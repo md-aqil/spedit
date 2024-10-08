@@ -133,7 +133,7 @@ const StrategieCard = () => {
               key={trader.id}
               id={`${trader.name === "Karishma" && "firstTour"}`}
 
-              className={`flex  flex-col relative grow shrink justify-center px-4 py-5 w-72 bg-white rounded-md shadow-sm min-h-[200px] min-w-[240px] transition-opacity ${
+              className={`flex  flex-col relative grow shrink justify-center px-4 py-5 w-72 bg-white card rounded-md shadow-sm min-h-[200px] min-w-[240px] transition-opacity ${
                 cardsStatus[trader.id] ? "" : ""
               }`}
               onClick={() => handleCardClick(trader.id)}
@@ -185,7 +185,7 @@ const StrategieCard = () => {
                         width={24}
                         height={24}
                         className={`transition-transform duration-200 ${
-                          favorites.includes(trader.id) ? "scale-125" : ""
+                          favorites.includes(trader.id) ? "scale-125" : "heart-empty"
                         }`}
                       />
                     </button>

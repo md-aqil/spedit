@@ -8,6 +8,7 @@ import CurrentLivePosition from "./CurrentLivePosition";
 import StrategiesFollowed from "./StrategiesFollowed";
 import TransactionHistory from "./TransactionHistory";
 import TopTraders from "./TopTraders";
+import Link from "next/link";
 
 function MainContent() {
   return (
@@ -15,7 +16,7 @@ function MainContent() {
       <div className="my-5">
         <DashboardIcons />
 
-        <div className="flex  gap-5 justify-between items-center self-center mt-10">
+        <div className="flex  gap-5 justify-between items-center self-center mt-10 pnlcrnt">
           <PnLCurve />
           <CurrentLivePosition />
         </div>
@@ -23,13 +24,13 @@ function MainContent() {
 
       <div className="my-5">
       <div className="flex align-center justify-between mt-10 mb-5">
-        <div className="self-start text-xl font-bold leading-none text-neutral-800">
+        <div className="self-start text-xl font-bold text-neutral-800 m-white">
           Strategies you follow
         </div>
 
-        <a href="/copy-trading/leader-board/" className="overflow-hidden z-10 gap-1.5 self-end px-3 py-1.5 -mt-6 text-xs font-semibold rounded border border-solid border-neutral-800 min-h-[24px] text-neutral-800">
-          View More
-        </a>
+        <Link href="/copy-trading/leader-board/" className="m-white z-10 gap-1.5  px-3 py-2 text-xs font-semibold rounded border flex items-center border-solid border-neutral-800  text-neutral-800">
+          View More <span className="icon-arrow-right text-lg"></span>
+        </Link>
       </div>
 
         <StrategiesFollowed />

@@ -80,6 +80,7 @@ function MyComponent() {
                   <BaketTitleAction />
                   {steps[activeStep].component}{" "}
                   {/* Render component based on active step */}
+                  
                 </div>
                 <div className="flex flex-col w-[30%] max-md:w-full">
                   <PendingOrders />

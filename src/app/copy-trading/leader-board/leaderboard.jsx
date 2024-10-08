@@ -220,6 +220,7 @@ export function LeaderBoard() {
                 <main className="flex flex-col main-container">
                   <DashboardIcons />
                   {/* <button onClick={startTour}>Start Tour</button> */}
+                  
                   <StrategieFilter 
                     fav={fav} 
                     setFav={setFav} 

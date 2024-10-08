@@ -64,7 +64,7 @@ function TopTraders() {
         }
       `}</style>
 
-      <div className="flex align-center justify-between mb-5">
+      <div className="flex align-center justify-between mb-5 mt-10">
         <div className="self-start text-xl font-bold leading-none text-neutral-800">
           Top traders of the week
         </div>
@@ -78,21 +78,39 @@ function TopTraders() {
       </div>
 
       <Swiper
-        slidesPerView={3}
-        spaceBetween={25}
-        pagination={{
-          clickable: true,
-        }}
-        autoplay={true}
-        modules={[Navigation, Pagination]}
-        className="mySwipertraders pb-44"
-      >
-        {copytraderData.map((trader) => (
-          <SwiperSlide key={trader.id}> {/* Use trader.id as the key */}
-            <TraderCard copytraderData={[trader]} /> {/* Pass only the current trader's data */}
-          </SwiperSlide>
-        ))}
-      </Swiper>
+  slidesPerView={3} // Default slides per view on larger screens
+  spaceBetween={25} // Space between slides
+  pagination={{
+    clickable: true,
+  }}
+  autoplay={true}
+  modules={[Navigation, Pagination]}
+  className="mySwipertraders"
+  breakpoints={{
+    // When the window width is >= 0px (mobile), show 1 slide
+    0: {
+      slidesPerView: 1,
+      spaceBetween: 10, // Adjust space for mobile
+    },
+    // When the window width is >= 768px (tablet and larger), show 2 slides
+    768: {
+      slidesPerView: 2,
+      spaceBetween: 20, // Adjust space for tablet
+    },
+    // When the window width is >= 1024px (desktop and larger), show 3 slides
+    1024: {
+      slidesPerView: 3,
+      spaceBetween: 25, // Adjust space for desktop
+    },
+  }}
+>
+  {copytraderData.map((trader) => (
+    <SwiperSlide key={trader.id}> {/* Use trader.id as the key */}
+      <TraderCard copytraderData={[trader]} /> {/* Pass only the current trader's data */}
+    </SwiperSlide>
+  ))}
+</Swiper>
+
     </div>
   );
 }

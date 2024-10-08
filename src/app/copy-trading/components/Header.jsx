@@ -25,12 +25,12 @@ function Header() {
         </div>
       </div>
 
-      <div className="flex flex-col flex-1 shrink justify-center items-center self-stretch pl-8 my-auto text-base whitespace-nowrap basis-0 min-w-[240px] text-neutral-500 max-md:max-w-full header-search">
+      <div className="flex flex-col flex-1 shrink justify-center items-center self-stretch pl-8 my-auto text-base whitespace-nowrap basis-0 min-w-[240px] text-[#A2AB9A] max-md:max-w-full header-search">
         <div className="w-full max-w-md">
           <div className="relative">
             <input
               type="text"
-              className="w-full py-2 pl-10 pr-4 text-sm border border-neutral-700 rounded-lg bg-stone-900 text-white focus:outline-none focus:ring-2 focus:ring-lime-500"
+              className="w-full py-2 pl-10 pr-4 text-sm border border-[#A2AB9A] rounded-lg  text-white focus:outline-none focus:ring-2 focus:ring-lime-500"
               placeholder="Search..."
             />
             <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">

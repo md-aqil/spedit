@@ -11,12 +11,12 @@ function TransactionHistory() {
 
 <div className="flex align-center justify-between mb-5">
 
-<main className="flex gap-10 items-start p-6" id='week-filter'>
-              <header className="w-full">
-                <h1 className="text-xl font-semibold text-black">
+<main className="flex gap-10 items-start py-6" id='week-filter'>
+              <header className="w-full ">
+                <h1 className="text-xl font-semibold text-black m-white">
                   Copy Transaction History
                 </h1>
-                <p className="mt-1 text-sm text-neutral-500">
+                <p className="mt-1 text-sm text-neutral-500 m-white">
                   This page only shows your copy history. To View Live positions -{" "}
                   <Link href="/copy-trading/livepositions" className="font-semibold text-blue-500">
                     Click Here
@@ -28,7 +28,7 @@ function TransactionHistory() {
 
  
       </div>
-      <div className="flex overflow-hidden flex-col w-full text-sm leading-none bg-white rounded-xl shadow-sm text-neutral-800 max-md:mr-1.5 max-md:max-w-full">
+      <div className="flex overflow-y-auto flex-col w-full text-sm leading-none bg-white rounded-xl shadow-sm text-neutral-800 max-md:mr-1.5 max-md:max-w-full">
   <table className="w-full text-left border-collapse">
     <thead>
       <tr className="bg-neutral-800 text-lime-500">

@@ -33,10 +33,10 @@ const positionItems = [
 
 function CurrentLivePosition() {
   return (
-    <div className="flex overflow-hidden flex-col self-stretch my-auto bg-white rounded-xl shadow-sm  w-[547px]">
+    <div className="flex flex-col self-stretch my-auto card clp-side">
       <div className="flex flex-col pt-5">
-        <div className="flex flex-col px-5 max-md:px-5">
-          <div className="self-start text-xl font-bold text-neutral-800">
+        <div className="flex flex-col">
+          <div className="self-start text-xl font-bold text-neutral-800 m-white">
             Current Live Position
           </div>
           <div className="flex flex-col justify-center px-1.5 mt-5 min-h-[336px]">
@@ -46,9 +46,9 @@ function CurrentLivePosition() {
           </div>
         </div>
 
-        <div className="flex flex-col justify-center px-12 py-8 ">
+        <div className="flex flex-col justify-center px-12 py-8 lpd">
           
-          <Link rel="stylesheet" className="btn btn-outline whitespace-nowrap  px-2 text-center py-6 rounded-lg" href="/login" >
+          <Link rel="stylesheet" className="btn btn-outline whitespace-nowrap  px-2 text-center py-6 rounded-lg mobile-fill" href="/login" >
           Login to Replace Mock Data
           </Link>
         

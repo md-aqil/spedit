@@ -1,12 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 
-function EmptyBasket() {
-
-
+function EmptyBasket({ setActiveStep }) {
   return (
     <div className="flex overflow-hidden flex-col px-16 pt-6 pb-12 mx-auto w-full leading-none bg-white rounded-xl max-md:px-5 max-md:mt-1 max-md:max-w-full">
-    
-
       <div className="flex flex-col self-center -mt-1 max-w-full font-bold text-neutral-800 w-[373px]">
         <img
           loading="lazy"
@@ -16,14 +12,12 @@ function EmptyBasket() {
         />
         <div className="flex flex-col items-center self-center mt-1.5 w-full max-w-[355px]">
           <p className="text-base">Aww! Your Baskets are empty.</p>
-          <button className="flex gap-2 justify-center items-center px-3 py-1.5 mt-4 text-sm text-center bg-lime-500 rounded min-h-[36px]">
-            <img
-              loading="lazy"
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/9c6aed60c432afdbe78ae9a90192b75f38db83b93baea32b6881e682c493a34b?apiKey=b4d1b9e87b084579b1e2475047caf617&"
-              className="object-contain shrink-0 self-stretch my-auto w-6 aspect-square"
-              alt=""
-            />
-            <span className="self-stretch my-auto" onClick={() => setActiveStep('Basket Step 2')}>Add new Basket</span>
+          <button
+            className="flex gap-2 justify-center items-center px-3 py-1.5 mt-4 text-sm text-center bg-lime-500 rounded min-h-[36px]"
+            onClick={() => setActiveStep("Basket Step 2")}
+          >
+          +
+            <span className="self-stretch my-auto">Add new Basket</span>
           </button>
         </div>
       </div>

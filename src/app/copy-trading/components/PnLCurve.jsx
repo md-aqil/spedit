@@ -76,9 +76,9 @@ const PnLCurve = () => {
   };
 
   return (
-    <div className="flex flex-col self-stretch p-5 text-xl font-bold bg-white rounded-xl shadow-sm w-full">
-      <div className="gap-2 self-start px-9 max-md:px-5">PnL Curve</div>
-      <div className="mt-6 w-full">
+    <div className="flex flex-col self-stretch p-5 text-xl font-bold card w-full">
+      <div className="gap-2 self-start px-9 max-md:px-5 pntitle">PnL Curve</div>
+      <div className="w-full">
         <Line data={data} options={options} />
       </div>
     </div>

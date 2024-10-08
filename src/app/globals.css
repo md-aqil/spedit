@@ -463,7 +463,51 @@ z-index: 10;
   width: 200px;
   margin:auto;
 }
+
+.dash-icons {
+  width: 100%;
+   
+    justify-content: center;
+    border-bottom: 1px solid #ddd;
+    margin-bottom:30px;
+}
+
+.mySwipertraders {
+  padding-bottom:40px !important;
+}
+
+.card {
+ 
+  padding: 1.25rem 1rem; 
+  background-color: white;
+  border-radius: 6px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); 
+ 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @media not all and (min-width: 768px) {
+
+  .dash-icons {
+    justify-content: start;
+
+  }
   .desktop-view {
     /* display: none; */
   }
@@ -567,15 +611,28 @@ z-index: 10;
   gap:1px;
 }
 
+.dash-icons-item {
+  flex-direction: row;
+  gap: 5px;
+  padding: 2px 10px;
+  padding-top: 5px;
+}
+
 
 .dash-icons-item {
   flex-direction: row;
     gap: 5px;
 }
+.dash-icons-item .text-neutral-800 {
+  color: #A2AB9A;
+
+}
 
 .main-container {
   width: 100%;
   padding: 15px 15px;
+  background: #242620;
+
 }
 .onb1 {
   flex-direction:column;
@@ -584,4 +641,112 @@ z-index: 10;
   font-size:24px;
 }
 
+.dash-icons .d-icon {
+  display:none;
+}
+
+.dash-icons-item {
+  background:none;
+}
+
+.pnlcrnt {
+  flex-direction: column;
+  margin-top:10px;
+}
+.pntitle {
+  display:none;
+}
+
+.clp-side {
+  width: 100%;
+}
+
+.lpd {
+  padding:20px;
+}
+
+.header-search input {
+  border-top:none;
+  border-left:none;
+  border-right:none;
+  border-radius:0;
+  background:none;
+}
+
+.header-search .pl-3 {
+  padding-left: 0;
+}
+
+.stia {
+  flex-direction:column;
+  min-width: auto;
+}
+.hidden-xs {
+  display:none;
+}
+
+.st-wrap {
+  gap:5px;
+}
+.st-wrap .gap-20 {
+  gap: 10px;
+}
+
+.st-top {
+  gap:5px;
+}
+
+.swiper-pagination-bullet:not(.swiper-pagination-bullet-active) {
+  background:#fff !important;
+}
+
+.card {
+  background: #181916;
+  color:#fff;
+} 
+.card * {
+  color:#fff;
+}
+
+.card .text-neutral-500 {
+  color: #A2AB9A;
+
+}
+
+.m-white {
+  color:#fff;
+} 
+
+.mobile-fill {
+  background-color: var(--theme-color) !important;
+  color: #3c3c3c;
+
+  border: 1px solid #7dbd02;
+
+}
+
+.card .border-neutral-800, .card .btn-outline {
+  border-color:#fff;
+  color:#fff;
+}
+
+.f-scroll {
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  overflow-y: auto;
+  gap: 1px;
+}
+
+.dash-icons {
+  margin-bottom: 15px;
+}
+
+.is-fav {
+  color:#fff;
+}
+
+.card .heart-empty {
+    filter: invert(1);
+    margin-left: 8px;
+}
 }

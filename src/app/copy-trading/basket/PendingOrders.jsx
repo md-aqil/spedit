@@ -63,7 +63,7 @@ function PendingOrders() {
   ];
 
   return (
-    <div className="flex overflow-hidden flex-col items-start px-6 pt-6 pb-20 mx-auto w-full bg-white rounded-xl max-md:pl-5 max-md:mt-1">
+    <div className="flex overflow-hidden flex-col items-start px-6 py-5 mx-auto w-full bg-white rounded-xl max-md:pl-5 max-md:mt-1">
       {/* Tabs for Pending and Completed Orders */}
       <div className="flex gap-2 items-center text-xs font-semibold leading-none text-center">
         <button
@@ -92,25 +92,25 @@ function PendingOrders() {
           <table className="w-full text-left text-xs">
             <thead className="text-neutral-500">
               <tr>
-                <th className="px-2 py-2">Time</th>
+                <th className="px-1 py-2">Time</th>
                 <th className="px-2 py-2">Instrument</th>
-                <th className="px-2 py-2">Lot</th>
-                <th className="px-2 py-2">Price(Rs)</th>
-                <th className="px-2 py-2"></th>
-                <th className="px-2 py-2"></th>
+                <th className="px-1 py-2">Lot</th>
+                <th className="px-1 py-2">Price(Rs)</th>
+                <th className="px-1 py-2"></th>
+                <th className="px-1 py-2"></th>
               </tr>
             </thead>
             <tbody className="text-neutral-800">
               {orders.map((order, index) => (
                 <tr key={index} className="">
-                  <td className="px-2 py-2">
+                  <td className="px-1 py-2">
                     {order.date}
                     <br />
                     {order.time}
                   </td>
                   <td className="px-2 py-2">{order.instrument}</td>
-                  <td className="px-2 py-2">{order.lot}</td>
-                  <td className="px-2 py-2">{order.price}</td>
+                  <td className="px-1 py-2">{order.lot}</td>
+                  <td className="px-1 py-2">{order.price}</td>
 
                   <td className="py-2">
                     <button className="flex justify-center items-center w-[22px] h-[22px] border border-neutral-800 rounded">
