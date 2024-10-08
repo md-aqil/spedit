@@ -49,7 +49,7 @@ const LivePositionsList = ({ positions }) => {
     <div className="flex flex-col gap-4">
       {positions.map((position, index) => (
 
-<div key={index} className={`flex items-center justify-between gap-4 p-4 bg-white rounded-lg shadow-md transition-opacity duration-500 `}>
+<div key={index} className={`flex items-center relative justify-between gap-4 p-4 bg-white rounded-lg shadow-md transition-opacity duration-500 `}>
 
           <div className="flex items-center gap-4">
             <Image

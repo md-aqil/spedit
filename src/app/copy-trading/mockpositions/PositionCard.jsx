@@ -6,6 +6,8 @@ import userIcon from "../../../assets/user1.png";
 import JoinedUsers from "../../../assets/JoinedUsers.png";
 import { useRouter } from "next/navigation";
 import { relative } from "path";
+import Link from "next/link";
+
 
 function PositionCard({ name, rating, netCopyAmount, unrealizedPnl, roi }) {
   const [isPopupVisible, setIsPopupVisible] = useState(false);
@@ -118,11 +120,16 @@ function PositionCard({ name, rating, netCopyAmount, unrealizedPnl, roi }) {
           >
             Stop Mock Copy
           </button>
-          <a href="/copy-trading/startegy-description?name=copyStepOpen">
-            <button className="btn w-[132px]">
-              Copy
-            </button>
-          </a>{" "}
+
+          <button
+                        className="btn w-[130px]"
+                        onClick={(e) => e.stopPropagation()} // Prevents redirect on click
+                      >
+                        <Link href="/copy-trading/startegy-description?name=copyStepOpen">
+                          Copy
+                        </Link>
+                      </button>
+                      
         </div>
       </article>
 

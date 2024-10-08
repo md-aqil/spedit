@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import CardInput from "./CardInput";
 import Image from "next/image";
 import cards from "../../../../assets/cards.png";
+import Link from "next/link"; 
 
 export default function UnSavedCardPayment() {
   const [isCollapsed, setIsCollapsed] = useState(false);
@@ -83,10 +84,10 @@ export default function UnSavedCardPayment() {
      
         {/* Buttons Container */}
         <div className="flex justify-end gap-3 mt-6">
-          <button className="px-6 py-2 bg-lime-500 rounded text-white font-bold min-w-[100px] hover:bg-lime-600 transition">
-            Pay
-          </button>
-          <button className="px-6 py-2 border border-neutral-800 rounded text-neutral-800 font-bold min-w-[100px] hover:bg-neutral-100 transition">
+        <Link href="/copy-trading/credit/order-success/" className="btn !px-10">
+                    Pay
+                  </Link>
+          <button className="btn btn-outline">
             Cancel
           </button>
         </div>

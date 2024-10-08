@@ -5,7 +5,7 @@ import React from "react";
 
 export default function PayWithOptions() {
   return (
-    <section className="flex flex-col mt-9 w-full max-w-[720px] max-md:max-w-full">
+    <section className="flex flex-col mt-9 w-full  mx-auto">
       <button className="overflow-hidden gap-1 self-stretch px-4 py-3.5 w-full text-xs italic tracking-tight leading-none text-white bg-indigo-600 rounded min-h-[44px]">
         Pay with <span className="italic font-extrabold">UPI</span>
       </button>

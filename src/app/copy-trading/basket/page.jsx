@@ -30,6 +30,8 @@ function MyComponent() {
     { title: "Basket Step 7", component: <BasketStep7 /> },
   ];
 
+  
+
   return (
     <div className="flex flex-col overflow-hidden pb-20 bg-stone-50">
       {/* <Header /> */}

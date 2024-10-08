@@ -1,15 +1,23 @@
 'use client'
 import React, { useState } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import 'swiper/css';
-import 'swiper/css/pagination';
-import 'swiper/css/autoplay';
+
 import Image from "next/image";
 import cardBlack from "../../../../assets/card-black.png";
 
-import { Navigation, Pagination } from "swiper/modules";
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
 
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/effect-coverflow";
 
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+import "swiper/css/effect-cards";
+
+import { Autoplay, Pagination, Navigation, EffectCoverflow, EffectCards } from "swiper/modules";
+
+import Link from "next/link"; 
 
 
 // Initialize Swiper modules
@@ -55,27 +63,39 @@ export default function PaymentMethods() {
         {isDropdownOpen && (
           <>
             <div className="flex flex-col self-center mt-6 w-full">
-              {/* Swiper Slider with Pagination and Autoplay */}
+        
               <Swiper
                 grabCursor={true}
                 centeredSlides={true}
-                slidesPerView={3}
+                loop={true}
+                pagination={true}
+                slidesPerView={2}
                 autoplay={{ delay: 2500, disableOnInteraction: false }}
+
+                effect={'coverflow'}
+                coverflowEffect={{
+                  rotate: -10,
+        stretch: 50,
+        depth: 100,
+        modifier: 2,
+        slideShadows: true,
+                }}
+
           
                 className="w-full"
-                modules={[Navigation, Pagination]}
+                modules={[Navigation, Pagination, EffectCoverflow]}
               >
                 <SwiperSlide className="rounded-xl shadow-lg bg-white">
-                  <Image src={cardBlack} alt="Card Black" />
+                  <Image className="w-full" src={cardBlack} alt="Card Black" />
                 </SwiperSlide>
                 <SwiperSlide className="rounded-xl shadow-lg bg-white">
-                  <Image src={cardBlack} alt="Card Black" />
+                  <Image className="w-full" src={cardBlack} alt="Card Black" />
                 </SwiperSlide>
                 <SwiperSlide className="rounded-xl shadow-lg bg-white">
-                  <Image src={cardBlack} alt="Card Black" />
+                  <Image className="w-full" src={cardBlack} alt="Card Black" />
                 </SwiperSlide>
                 <SwiperSlide className="rounded-xl shadow-lg bg-white">
-                  <Image src={cardBlack} alt="Card Black" />
+                  <Image className="w-full" src={cardBlack} alt="Card Black" />
                 </SwiperSlide>
               </Swiper>
 
@@ -95,11 +115,12 @@ export default function PaymentMethods() {
                     placeholder="Eg: 243"
                   />
                 </div>
-                <div className="flex gap-3 text-sm font-bold leading-none text-center whitespace-nowrap min-w-[240px]">
-                  <a href="/copy-trading/credit/order-success/" className="gap-1 self-stretch px-3 py-4 my-auto bg-lime-500 rounded min-h-[44px] text-stone-950 w-[122px]">
+                <div className="flex gap-3 h-12">
+                  <Link href="/copy-trading/credit/order-success/" className="btn !px-10">
                     Pay
-                  </a>
-                  <button className="gap-1 self-stretch px-3 py-4 my-auto rounded border border-solid border-neutral-800 min-h-[44px] text-neutral-800 w-[126px]">
+                  </Link>
+
+                  <button className="btn btn-outline">
                     Cancel
                   </button>
                 </div>
