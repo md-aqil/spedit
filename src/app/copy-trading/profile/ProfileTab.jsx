@@ -37,8 +37,8 @@ function NavItem({ icon, label, isActive, onClick }) {
 
 function ProfileTab({ activeTab, onTabChange }) {
   return (
-    <nav className="flex flex-col items-center pt-8 bg-stone-50 border-b border-neutral-200 pb-5">
-      <div className="flex flex-wrap justify-center gap-4 max-w-full">
+    <nav className="flex flex-col items-center pt-8 bg-stone-50 border-b border-neutral-200 pb-5 profile-tab">
+      <div className="flex flex-wrap justify-center gap-4 max-w-full p-tab-list">
         {navItems.map((item, index) => (
           <NavItem
             key={index}

@@ -17,7 +17,7 @@ const TraderCard = ({
   roiPercent,
 }) => {
   return (
-    <div className="flex flex-col p-10 rounded-lg  bg-none w-[400px]">
+    <div className="flex flex-col p-5 rounded-lg  bg-none w-[400px] trader-card2" >
       <div className="flex gap-10 justify-between items-start w-full">
         <div className="flex flex-col leading-none whitespace-nowrap w-[280px]">
           <div className="flex flex-col w-full">
@@ -28,9 +28,9 @@ const TraderCard = ({
                 alt={`${name}'s profile picture`}
                 className="object-contain z-0 shrink-0 rounded-xl aspect-[0.84] w-[53px]"
               />
-              <div className="flex z-0 flex-col justify-center w-48">
-                <div className="text-xs text-blue-600">{traderId}</div>
-                <h2 className="mt-1.5 text-xl font-bold text-zinc-900">
+              <div className="flex z-0 flex-col justify-center w-48 ">
+                <div className="text-xs mb-2 text-blue-600 h-id">{traderId}</div>
+                <h2 className=" text-xl font-bold text-zinc-900">
                   {name}
                 </h2>
                 <div className="flex gap-1.5 items-center self-start mt-1.5 text-sm font-semibold text-stone-950">

@@ -10,27 +10,21 @@ export default function UnSavedCardPayment() {
   const [selectedCardType, setSelectedCardType] = useState("credit");
 
   return (
-    <section className="flex flex-col mt-10 w-full  max-md:max-w-full">
+    <section className="flex flex-col mt-5 w-full  max-md:max-w-full">
       {/* Collapsible Header */}
+      <div className="flex justify-between">
       <header
         className="flex justify-between items-center cursor-pointer"
         onClick={() => setIsCollapsed(!isCollapsed)}
       >
         <h2 className="flex gap-2 items-center text-xl font-bold text-neutral-800">
-         
-          <span>Pay by Unsaved Card</span>
-        
+        <i className={`text-neutral-500 text-2xl ${isCollapsed ? "icon-arrow-square-up" : "icon-arrow-square-down"}`}>
+        </i>
+
+  <span>Pay by Unsaved Card</span>
         </h2>
-
-
-        <span className={`text-neutral-500 text-2xl ${isCollapsed ? "icon-arrow-up-2" : "icon-arrow-down-1"}`}>
-        </span>
-
+      
       </header>
-
-      {/* Collapsible Content */}
-      {!isCollapsed && (
-        <>
         <nav className="flex gap-5 mt-4">
           <label className="flex items-center gap-2 cursor-pointer">
             <input
@@ -44,6 +38,7 @@ export default function UnSavedCardPayment() {
            
             <span className="text-neutral-800">Credit Card</span>
           </label>
+
           <label className="flex items-center gap-2 cursor-pointer">
             <input
               type="radio"
@@ -57,41 +52,56 @@ export default function UnSavedCardPayment() {
             <span className="text-neutral-800">Debit Card</span>
           </label>
         </nav>
-        <Image className="my-5" src={cards}/>
-        <form className="flex flex-col mt-8 gap-4 w-full max-md:max-w-full">
-          <div className="flex gap-x-12 justify-between">
-          <div className="flex-col">
-          <CardInput
-          label="Name on Card"
-          id="nameOnCard"
-          placeholder="Eg: John Doe"
-        />
-        <CardInput
-          label="Card Number"
-          id="cardNumber"
-          placeholder="Eg: 1234 5678 9012 3456"
-          withIcon
-        />
-          </div>
-          <div className="flex-col">
-          <CardInput label="Expiry" id="cardExpiry" placeholder="Eg: 06/22" />
-        <CardInput label="CVV" id="unsavedCvv" placeholder="Eg: 243" />
 
-          </div>
-       
-          </div>
-         
+      </div>
      
-        {/* Buttons Container */}
-        <div className="flex justify-end gap-3 mt-6">
-        <Link href="/copy-trading/credit/order-success/" className="btn !px-10">
-                    Pay
-                  </Link>
-          <button className="btn btn-outline">
-            Cancel
-          </button>
-        </div>
-      </form>
+  {/* Collapsible Content */}
+  {!isCollapsed && (
+        <>
+        
+        <Image className="my-5" src={cards}/>
+       
+        <form className="grid grid-cols-2 gap-x-10 w-full max-md:grid-cols-1">
+  {/* First column: Name on Card */}
+  <CardInput
+    label="Name on Card"
+    id="nameOnCard"
+    placeholder="Eg: John Doe"
+  />
+
+  {/* Second column: Card Number */}
+  <CardInput
+    label="Card Number"
+    id="cardNumber"
+    placeholder="Eg: 1234 5678 9012 3456"
+    withIcon=""
+  />
+
+  {/* Third column: Expiry */}
+  <CardInput
+    label="Expiry"
+    id="cardExpiry"
+    placeholder="Eg: 06/22"
+  />
+
+  {/* Fourth column: CVV */}
+  <CardInput
+    label="CVV"
+    id="unsavedCvv"
+    placeholder="Eg: 243"
+  />
+
+  {/* Buttons Container - Span both columns */}
+  <div className="col-span-2 flex justify-end gap-3 mt-6">
+    <Link href="/copy-trading/credit/order-success/" className="btn !px-10">
+      Pay
+    </Link>
+    <button className="btn btn-outline">
+      Cancel
+    </button>
+  </div>
+</form>
+
         </>
       )}
 

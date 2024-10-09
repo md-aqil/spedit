@@ -553,16 +553,6 @@ z-index: 10;
 .dash-item i{
  font-size: 24px;
 }
-
-.dash-item.Live {
-  display:none;
-}
-.dash-item.Code {
-  display:none;
-}
-.dash-item.Learn {
-  display:none;
-}
 .dash-sidebar nav {
   margin: 0;
   width: 100%;
@@ -704,7 +694,7 @@ z-index: 10;
   background: #181916;
   color:#fff;
 } 
-.card * {
+.card *:not(input) {
   color:#fff;
 }
 
@@ -712,7 +702,9 @@ z-index: 10;
   color: #A2AB9A;
 
 }
-
+.card input {
+  color: #333 !important;
+}
 .m-white {
   color:#fff;
 } 
@@ -748,5 +740,209 @@ z-index: 10;
 .card .heart-empty {
     filter: invert(1);
     margin-left: 8px;
+}
+
+.btn {
+  padding: 6px 12px;
+}
+.dash-item-wrap {
+
+}
+
+.dash-item-wrap a {
+  flex-grow: 1;
+  width: 50px;
+}
+
+.strat-row {
+  flex-direction:column;
+}
+
+.trader-card2 {
+  color:#fff;
+  width:100%;
+}
+.trader-card2 .text-neutral-500 {
+  color: #A2AB9A;
+
+  
+}
+
+.trader-card2 .text-stone-950 {
+  color:#f7f7f7;
+}
+.trader-card2 .text-zinc-800 {
+  color:#f7f7f7;
+}
+
+.trader-card2 .text-zinc-900 {
+  color:#f7f7f7;
+}
+.back-link {
+  color:#f7f7f7;
+
+}
+
+
+
+.h-id {
+  display:none;
+}
+
+
+.PerformanceCard {
+  padding: 1.25rem;
+  background:none;
+  border-top: 1.5px dashed #bfbfbf;
+  border-radius:0;
+}
+
+.PerformanceCard .text-neutral-500 {
+  color:#A2AB9A;
+}
+.PerformanceCard .text-black {
+  color:#f7f7f7;
+}
+
+.PerformanceCard .text-stone-950 {
+  color:#f7f7f7;
+}
+
+
+
+
+
+.per-header {
+  border:none;
+}
+
+.roi-copy {
+  flex-direction: column;
+}
+
+.btn.btn-outline {
+  background: none;
+  color: #fff;
+  border-color: #f7f7f7;
+}
+
+.per-act {
+  flex-direction: row;
+  width: 100%;
+  gap:15px;
+}
+.per-act .btn {
+  width: 100%;
+  height: 50px;
+}
+
+.pstable {
+  background: #242620;
+  padding:10px 0;
+}
+.card-table p {
+  display:flex;
+  justify-content: space-between;
+}
+.card-table {
+  padding-bottom: 19px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    border-color: #6c6f67;
+}
+.tb-tab-active {
+  color: var(--theme-color);
+}
+.tb-tab {
+  background:none;
+}
+
+.tb-tab ul {
+  gap: 2px;
+  padding: 0;
+  overflow-x: auto;
+  padding-bottom: 0px;
+}
+
+
+.tb-tab ul li {
+  white-space: nowrap;
+}
+
+.stra-copy {
+  background:none;
+}
+
+#copyAmountSection {
+  flex-direction: column;
+}
+#copyAmountSection .flex-col {
+  width: 100%;
+}
+.stra-copy .text-zinc-800 {
+  color: #f7f7f7;
+}
+#tourConfirmButton {
+  width: 76%;
+    margin-top: 25px;
+}
+
+.PerformanceCard input {
+  color:#333 !important;
+}
+
+.check-popup {
+  border: 1px solid #ffff;
+  width: 92%;
+}
+.check-label {
+  font-size: 12px;
+  font-weight:normal;
+  gap: 1px;
+}
+.check-label img {
+  width: 16px;
+}
+.login-sec {
+  padding: 10px;
+}
+.login-header {
+  position: static;
+}
+
+.profile-tab {
+  background:none;
+  padding:0;
+}
+
+.profile-tab .text-neutral-800 {
+  color:#A2AB9A;;
+}
+.profile-tab span {
+  display:none;
+}
+
+.p-tab-list {
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  justify-content: start;
+  overflow-x: auto;
+}
+
+.p-label {
+  position: absolute;
+  right: 5px;
+  padding: 2px;
+  background: none;
+  top: 0;
+  font-size: 12px;
+}
+.card select {
+  color:#333;
+}
+
+.Live, .Code, .Learn {
+  display:none;
 }
 }

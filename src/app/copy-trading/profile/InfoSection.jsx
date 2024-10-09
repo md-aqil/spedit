@@ -13,7 +13,7 @@ function InfoSection() {
   };
 
   return (
-    <section className="p-8 bg-white rounded-xl shadow-md">
+    <section className="p-8 bg-white rounded-xl shadow-md card">
       <header className="flex justify-between items-center mb-6">
         <div className="flex flex-col">
           <h1 className="text-xl font-bold text-stone-950">Personal Information</h1>
@@ -29,7 +29,7 @@ function InfoSection() {
 
       <div className="space-y-6">
 
-    <div className="flex justify-between gap-52">
+    <div className="flex justify-between gap-32 max-md:gap-5 max-md:flex-col">
       
     <div className="flex flex-col space-y-2 w-full">
           <label className="text-stone-800">Full Name*</label>
@@ -52,7 +52,7 @@ function InfoSection() {
 
     </div>
 
-    <div className="flex justify-between gap-52">
+    <div className="flex justify-between gap-32">
     <div className="flex flex-col space-y-2 w-full">
           <label className="font-bold text-stone-800">Phone Number</label>
           <div className="flex items-center border rounded bg-stone-50">
@@ -96,7 +96,7 @@ function InfoSection() {
        
 
         {isEditing && (
-          <div className="flex flex-col space-y-2  w-[41%]">
+          <div className="flex flex-col space-y-2  w-[45%] max-md:w-full">
             <label className="font-bold text-stone-800">Document Upload</label>
             <input
               type="file"

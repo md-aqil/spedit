@@ -162,7 +162,7 @@ function Sidebar({ items = SidebarItems, onSelect = () => {}, activeItem }) {
           <nav className="flex gap-6 self-start mt-5 text-xl text-white ml-7">
             <div className="flex flex-col items-start dash-item-wrap">
               {items.map((item, index) => (
-                <Link href={item.url} key={index}>
+                <Link href={item.url} key={index} className={`${item.text}`}> 
                   <div
                     className={`${item.text} flex gap-2 items-center dash-item mt-6 ${
                       active === item.text ? "dash-item-active " : ""

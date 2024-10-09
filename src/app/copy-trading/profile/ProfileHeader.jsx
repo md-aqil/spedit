@@ -2,7 +2,7 @@ import React from 'react';
 
 function ProfileHeader() {
   return (
-    <header className="flex overflow-hidden relative flex-col px-10 py-6 w-full leading-none bg-white rounded-xl shadow-sm mb-5">
+    <header className="flex card relative flex-col px-10 py-6 w-full leading-none bg-white rounded-xl shadow-sm mb-5 ">
       <div className="flex z-0 flex-col w-full">
         <div className="flex flex-wrap gap-10 justify-between items-center w-full max-md:max-w-full">
           <div className="flex gap-4 self-stretch my-auto">
@@ -20,7 +20,7 @@ function ProfileHeader() {
               </div>
             </div>
           </div>
-          <div className="flex gap-2 justify-center items-center self-stretch py-4 pr-2.5 pl-2.5 my-auto w-24 text-sm font-bold text-center text-lime-500 whitespace-nowrap rounded-xl bg-neutral-800 min-h-[44px]">
+          <div className="flex gap-2 justify-center items-center self-stretch py-4 pr-2.5 pl-2.5 my-auto w-24 text-sm font-bold text-center text-lime-500 whitespace-nowrap rounded-xl bg-neutral-800 min-h-[44px] p-label">
             <div className="flex shrink-0 self-stretch my-auto w-2 h-2 bg-lime-500 rounded-full fill-lime-500" />
             <div className="self-stretch my-auto">Essential</div>
           </div>

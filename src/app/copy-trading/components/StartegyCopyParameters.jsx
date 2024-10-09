@@ -34,11 +34,12 @@ const StartegyCopyParameters = () => {
   };
 
   const TabItem = ({ icon, text }) => (
-    <div className="flex gap-2 justify-center items-center">
+    <div className="flex gap-2 justify-center items-center check-label">
       <img loading="lazy" src={icon} alt="" className="object-contain shrink-0 self-stretch my-auto w-6 aspect-square" />
-      <div className="self-stretch my-auto  whitespace-nowrap">{text}</div>
+      <p className="self-stretch my-auto  whitespace-nowrap">{text}</p>
     </div>
   );
+
 
   const InfoItem = ({ label, value, className = "" }) => (
     <div className={`flex flex-col leading-none ${className}`}>
@@ -63,7 +64,7 @@ const StartegyCopyParameters = () => {
   ];
 
   return (
-    <main className="flex flex-col justify-center  bg-white rounded-lg shadow-sm">
+    <main className="flex flex-col justify-center  bg-white rounded-lg shadow-sm stra-copy">
       <section className="flex flex-col mt-16 w-full max-md:mt-10">
         {/* Tabs for Fixed Ratio and Fixed Amount */}
         <div className="flex gap-3 justify-center w-full text-sm font-semibold">
@@ -156,15 +157,15 @@ const StartegyCopyParameters = () => {
       {/* Full-Page Popup */}
 
       {isPopupVisible && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
-          <main className="flex overflow-hidden flex-col px-9 py-9 rounded-xl shadow-md bg-neutral-900  max-md:px-5">
-            <nav className="flex flex-wrap gap-6 items-start pb-5 text-base font-bold leading-none text-white border-b border-solid border-b-neutral-800 max-md:max-w-full">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-gray-700 bg-opacity-50">
+          <main className="flex flex-col px-9 py-9 rounded-xl shadow-md bg-neutral-900  max-md:px-5 check-popup">
+            <nav className="flex gap-6 items-start pb-5 text-base font-bold leading-none text-white border-b border-solid border-b-neutral-800 max-md:max-w-full">
               {tabItems.map((item, index) => (
                 <TabItem key={index} icon={item.icon} text={item.text} />
               ))}
             </nav>
             <section className="mt-7 max-md:max-w-full">
-              <div className="flex gap-5 max-md:flex-col">
+              <div className="flex gap-5">
                 <div className="flex flex-col w-[77%] max-md:ml-0 max-md:w-full">
                   <div className="flex flex-col items-start w-full max-md:mt-3.5">
                     <InfoItem label="Strategy Amount" value="50000 INR" />

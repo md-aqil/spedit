@@ -33,13 +33,13 @@ function LoginPage({ logoSrc, illustrationSrc }) {
 
   return (
     <main className="px-6 py-6 bg-white max-md:px-5 justify-between">
-      <div className="flex justify-between items-center absolute left-10 w-[45%]">
+      <div className="flex justify-between items-center absolute left-10 w-[45%] max-md:w-full login-header">
         <Image src={logo} alt="Logo" className="object-contain w-100 " />
-        <span className="icon-arrow-square-left text-2xl mr-5"></span>
+        <span className="icon-arrow-square-left text-2xl mr-5 max-md:mr-0"></span>
       </div>
 
       <div className="flex gap-5 max-md:flex-col">
-        <section className="flex flex-col w-[46%] max-md:ml-0 max-md:w-full px-28">
+        <section className="flex flex-col w-[46%] max-md:ml-0 max-md:w-full px-28 login-sec">
           <div className="flex flex-col  mt-5">
             <div className="flex flex-col my-10">
               <h1 className="text-3xl font-bold text-stone-950">Connect with us</h1>
@@ -147,7 +147,7 @@ function LoginPage({ logoSrc, illustrationSrc }) {
             <div className="mt-5 text-xs text-center text-neutral-500 max-md:mt-10">Copyright @2024</div>
           </div>
         </section>
-        <aside className="flex flex-col ml-5 w-[54%] max-md:ml-0 max-md:w-full">
+        <aside className="flex flex-col ml-5 w-[54%] max-md:ml-0 max-md:w-full hidden-xs">
           <div className="flex overflow-hidden flex-col grow items-start px-20 pt-16 pb-6 w-full bg-lime-500 rounded-xl shadow-lg max-md:px-5 max-md:mt-10">
             <h2 className="text-3xl text-black max-md:max-w-full">
               Start your Trading journey with us.

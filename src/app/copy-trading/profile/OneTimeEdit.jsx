@@ -15,17 +15,19 @@ const OneTimeEdit = () => {
   };
 
   return (
-    <section className="flex flex-col px-10 py-9 bg-white rounded-xl shadow-sm max-md:px-5 mt-5">
-      <header className="flex flex-wrap gap-10 justify-between items-center w-full">
-        <div className="flex flex-col self-stretch my-auto min-w-[240px]">
-          <div className="flex gap-2 items-end text-xl font-bold text-stone-950">
+    <section className="flex flex-col px-10 py-9 bg-white rounded-xl shadow-sm max-md:px-5 mt-5 card">
+
+      <header className="flex gap-10 justify-between items-center w-full">
+
+        <div className="flex flex-col self-stretch my-auto">
+          <div className="flex gap-2 items-center text-xl font-bold text-stone-950">
             <img
               loading="lazy"
               src="https://cdn.builder.io/api/v1/image/assets/TEMP/ab9ba563070792525f8c7e0e57fdbb559144abbd2492eca14f695b96ddff6619?apiKey=b4d1b9e87b084579b1e2475047caf617&"
               className="object-contain w-6"
               alt="Icon"
             />
-            <h1 className="opacity-80">One time editable Information</h1>
+            <h1 className="opacity-80 max-md:text-lg">One time editable Information</h1>
           </div>
           <p className="mt-2 text-xs text-neutral-500">
             This Section can be edited only once and will be unique only to you.
@@ -42,7 +44,7 @@ const OneTimeEdit = () => {
           {isEditing ? "Save" : "Edit"}
         </button>
       </header>
-      <div className="flex flex-wrap gap-10 mt-20 text-base">
+      <div className="flex flex-wrap gap-10 mt-20 text-base max-md:flex-col">
         <div className="flex flex-col flex-1">
           <label htmlFor="username" className="font-bold text-black opacity-80">
             Username*

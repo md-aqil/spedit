@@ -55,8 +55,8 @@ const PerformanceCard = ({
   const currentChartData = selectedTab === "ROI" ? chartData : pnlChartData;
 
   return (
-    <div className="flex flex-col justify-center items-center py-10 bg-white rounded-lg shadow-sm w-full px-10">
-      <div className="flex flex-wrap gap-10 justify-between items-start w-full text-black border-b border-neutral-200 pb-4">
+    <div className="flex flex-col justify-center items-center py-10 bg-white rounded-lg shadow-sm w-full px-10 PerformanceCard">
+      <div className="flex flex-wrap gap-10 justify-between items-start w-full text-black border-b border-neutral-200 pb-4 per-header">
         {showParameters === true ||
           (showParametersa === true && (
             <div className="flex items-center gap-2">
@@ -74,60 +74,42 @@ const PerformanceCard = ({
         <StartegyCopyParameters />
       ) : (
         <div className="flex flex-col w-full">
-          <div className="flex flex-col justify-center self-center mt-6 w-full w-full">
-            <div className="flex flex-wrap gap-10 justify-between items-center w-full">
-              {[
-                {
-                  label: "MDD",
-                  value: mdd,
-                  width: "50px",
-                },
-                {
-                  label: "Win Rate",
-                  value: winRate,
-                  width: "82px",
-                },
-                {
-                  label: "Profitable Positions",
-                  value: profitablePositions,
-                  width: "127px",
-                },
-                {
-                  label: "Total Positions",
-                  value: totalPositions,
-                  width: "24",
-                },
-              ].map(({ label, value, width }) => (
-                <div key={label} className={`flex flex-col self-stretch my-auto whitespace-nowrap w-[${width}]`}>
-                  <span className="text-sm leading-none text-neutral-500">{label}</span>
-                  <span className="mt-2 text-base font-bold leading-none text-black">{value}</span>
-                </div>
-              ))}
-            </div>
-            <div className="flex flex-wrap gap-10 justify-between items-center mt-8 w-full whitespace-nowrap max-md:max-w-full">
-              {[
-                {
-                  label: "ROI",
-                  value: roi,
-                  width: "79px",
-                },
-                {
-                  label: "Pnl",
-                  value: pnl,
-                  width: "99px",
-                },
-              ].map(({ label, value, width }) => (
-                <div key={label} className={`flex flex-col self-stretch my-auto w-[${width}]`}>
-                  <span className="text-sm leading-none text-neutral-500">{label}</span>
-                  <div className="flex gap-2 items-center mt-2 text-xl font-bold leading-none text-stone-950">
-                    <span className="self-stretch my-auto">{value}</span>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-          <div className="flex gap-5 justify-between items-end mt-9 max-w-full text-sm leading-none text-center whitespace-nowrap w-[569px]">
-            <div className="flex flex-col px-5 py-5 font-semibold rounded-lg border border-solid border-stone-300 min-h-[246px] min-w-[240px] w-[400px]">
+
+
+          
+<div className="flex flex-col justify-center self-center mt-6 w-full">
+  <div className="grid grid-cols-2 md:grid-cols-4 gap-6 items-center w-full">
+    {[
+      { label: "MDD", value: mdd },
+      { label: "Win Rate", value: winRate },
+      { label: "Profitable Positions", value: profitablePositions },
+      { label: "Total Positions", value: totalPositions },
+    ].map(({ label, value }) => (
+      <div key={label} className="flex flex-col text-left">
+        <span className="text-sm leading-none text-neutral-500">{label}</span>
+        <span className="mt-2 text-base font-bold leading-none text-black">{value}</span>
+      </div>
+    ))}
+  </div>
+
+  {/* ROI and PnL section with space-between */}
+  <div className="flex justify-between items-center mt-8 w-full pr-5">
+    {[
+      { label: "ROI", value: roi },
+      { label: "PnL", value: pnl },
+    ].map(({ label, value }) => (
+      <div key={label} className="flex flex-col text-left">
+        <span className="text-sm leading-none text-neutral-500">{label}</span>
+        <span className="mt-2 text-xl font-bold leading-none text-stone-950"><i class="icon-arrow-up-3 bg-lime-500 p-0.5 bold mr-1 rounded-sm shadow-sm text-sm"></i> {value}</span>
+      </div>
+    ))}
+  </div>
+</div>
+
+
+
+          <div className="flex gap-5 justify-between items-end mt-9 max-w-full text-sm leading-none text-center whitespace-nowrap roi-copy">
+            <div className="flex flex-col px-5 py-5 font-semibold rounded-lg border border-solid border-stone-300 w-full">
               <div className="flex gap-3 items-center self-start">
                 <button
                   className={`gap-2.5 self-stretch px-4 py-2 my-auto rounded ${selectedTab === "ROI" ? "bg-lime-500 bg-opacity-40 text-stone-950" : "bg-white text-stone-400"}`}
@@ -144,17 +126,17 @@ const PerformanceCard = ({
               </div>
               <LineChart data={currentChartData} /> {/* Use LineChart component with selected tab's data */}
             </div>
-            <div className="flex flex-col">
+            <div className="flex flex-col per-act">
               <button
                 id="copybuttonTour"
-                className="gap-1 px-7 py-5 max-w-full bg-lime-500 rounded min-h-[50px] mt-4 text-stone-950 w-[150px] max-md:px-5"
+                className="px-7 py-5 btn mt-4 text-stone-950 w-[150px]"
                 onClick={showParameters ? handleCopyClick : handleCopyClickAgain}
               >
                 Copy
               </button>
               <button
                 onClick={handleCopyClickAgain}
-                className="gap-1 px-7 py-5 mt-4 max-w-full rounded border border-solid border-neutral-800 min-h-[50px] text-neutral-800 w-[150px] max-md:px-5"
+                className="btn btn-outline px-10 py-10 mt-4"
               >
                 Mock
               </button>

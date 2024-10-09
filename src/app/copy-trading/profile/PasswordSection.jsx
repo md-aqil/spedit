@@ -25,8 +25,8 @@ function PasswordSection() {
   };
 
   return (
-    <section className="flex flex-col px-12 py-9 mt-6 w-full bg-white rounded-xl shadow-md">
-      <div className="flex flex-wrap gap-10 justify-between items-center w-full leading-none max-md:max-w-full">
+    <section className="flex flex-col px-12 py-9 mt-6 w-full bg-white rounded-xl shadow-md card">
+      <div className="flex  gap-10 justify-between items-center w-full leading-none max-md:max-w-full">
         <div className="flex flex-col self-stretch my-auto max-md:max-w-full">
           <h2 className="text-xl font-bold opacity-80 text-stone-950">Password</h2>
           <p className="mt-2 text-xs text-neutral-500 max-md:max-w-full">
@@ -40,7 +40,7 @@ function PasswordSection() {
           {isSaved ? 'Change Password' : 'Save'}
         </button>
       </div>
-      <div className="flex gap-10 mt-20 text-base max-md:mt-10 max-md:max-w-full">
+      <div className="flex gap-10 mt-20 text-base max-md:mt-10 max-md:max-w-full max-md:flex-col max-md:gap-4">
         {displayFields.map((field, index) => (
           <div key={index} className="flex flex-col mb-4 w-full">
             <label className="mb-2 text-sm font-semibold text-stone-700">{field.label}</label>

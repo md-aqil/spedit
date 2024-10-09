@@ -26,23 +26,17 @@ export default function PaymentMethods() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(true);
 
   return (
-    <section className="flex overflow-hidden flex-col items-center py-14 mx-auto w-full bg-white">
+    <section className="flex overflow-hidden flex-col items-center py-8 mx-auto w-full bg-white">
       <header className="flex flex-col justify-center self-stretch w-full max-md:max-w-full">
         <div className="flex flex-wrap gap-10 justify-between w-full leading-none max-md:max-w-full">
           <h2 className="flex gap-2 items-center my-auto text-xl font-bold text-neutral-800">
-           
+
+           <i className={`text-neutral-500 text-2xl ${isDropdownOpen ? "icon-arrow-square-down" : "icon-arrow-square-up"}`}>
+           </i>
             <span className="self-stretch my-auto cursor-pointer" onClick={() => setIsDropdownOpen(!isDropdownOpen)}>
               Saved Card
             </span>
-            <svg
-              className={`w-4 h-4 ml-2 transition-transform ${isDropdownOpen ? 'rotate-180' : ''}`}
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-            </svg>
+            
           </h2>
 
           <div className="flex gap-4">
