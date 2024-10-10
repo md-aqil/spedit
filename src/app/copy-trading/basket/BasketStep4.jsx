@@ -7,15 +7,15 @@ import InstrumentList from './InstrumentList';
 
 const BasketStep4 = () => {
   return (
-    <div className="flex flex-col px-5 py-5  bg-white rounded-xl max-md:px-5">
+    <div className="flex flex-col px-5 py-5  bg-white rounded-xl max-md:p-0">
      
-      <div className="flex overflow-hidden flex-col px-5 py-4  w-full rounded-xl border border-solid bg-stone-50 border-stone-300 max-md:px-5 max-md:mr-0.5 max-md:max-w-full">
+      <div className="flex flex-col px-5 py-4  w-full rounded-xl border border-solid bg-stone-50 border-stone-300 card max-md:!bg-[#242620]">
         <div className="flex flex-wrap gap-5 justify-between w-full max-md:max-w-full">
           <div className="my-auto text-base font-bold leading-none text-black">
             Basket 1
           </div>
           <div className="flex gap-2.5 items-start max-md:max-w-full">
-            <div className="grow px-4 py-1.5 text-base bg-white rounded-md text-neutral-800 w-fit max-md:pr-5">
+            <div className="grow px-4 py-1.5 text-base bg-white rounded-md !text-neutral-800 w-fit max-md:pr-5">
               BANKNIFTY 24th JUL 52400 CE
             </div>
             <div className="gap-2 self-stretch px-3 py-3 text-sm font-bold leading-none text-center text-white rounded-md bg-neutral-800 min-h-[36px]">

@@ -2,7 +2,7 @@ import React from "react";
 
 function TradeForm() {
   return (
-    <div className="flex flex-col px-5 py-8 mt-1.5 w-full bg-white rounded-xl shadow-md">
+    <div className="flex flex-col px-5 py-8 mt-1.5 w-full bg-white rounded-xl shadow-md card">
       <h2 className="self-start text-xl font-bold text-black">Nifty Commodity</h2>
 
       <div className="flex justify-between gap-5 mt-6">

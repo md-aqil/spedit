@@ -43,7 +43,7 @@ function MyComponent() {
           <main className="flex flex-col main-container">
             <BasketHeader />
             <section className="mt-2 w-full max-md:max-w-full">
-              <div className="flex w-full gap-5">
+              <div className="flex w-full gap-5 max-md:flex-wrap">
                 <div className="flex flex-col w-[70%] max-md:ml-0 max-md:w-full">
                   <Chart />
                 </div>
@@ -55,15 +55,15 @@ function MyComponent() {
             </section>
 
             {/* Step Bar */}
-            <div className="flex justify-center mt-4">
-              <div className="flex gap-4">
+            <div className="flex  mt-4">
+              <div className="flex gap-4 my-3 flex-nowrap overflow-x-auto justify-start">
                 {steps.map((step, index) => (
                   <button
                     key={index}
-                    className={`px-4 py-2 rounded-full cursor-pointer ${
+                    className={`px-2 whitespace-nowrap rounded-full cursor-pointer ${
                       activeStep === index
-                        ? "bg-blue-500 text-white"
-                        : "bg-gray-200 text-gray-800"
+                        ? "text-blue-500"
+                        : "text-gray-500"
                     }`}
                     onClick={() => setActiveStep(index)} // Update the active step when clicked
                   >

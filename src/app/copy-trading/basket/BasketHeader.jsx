@@ -5,8 +5,8 @@ import React from "react";
 
 function BasketHeader() {
   return (
-    <header className="flex overflow-hidden px-4 py-4 bg-white rounded-xl shadow-sm mb-5">
-      <div className="flex  gap-10 justify-between items-center mr-0 w-full">
+    <header className="flex overflow-hidden px-4 py-4 bg-white rounded-xl shadow-sm mb-5 basket-header">
+      <div className="flex  gap-10 justify-between items-center mr-0 w-full max-md:flex-col-reverse">
         <div className="flex gap-7 self-stretch my-auto text-black min-h-[56px] min-w-[240px]">
           <div className="flex gap-3 h-full min-w-[240px]">
             <div className="flex shrink-0 my-auto h-14 bg-red-500 rounded-md w-[55px]" />
@@ -39,7 +39,7 @@ function BasketHeader() {
           </div>
         </div>
 
-        <form className="flex gap-3.5 self-start px-6 py-3.5 mt-1.5 text-base rounded-lg bg-stone-50 text-neutral-800 max-md:px-5">
+        <form className="flex gap-3.5 self-start px-6 py-3.5 mt-1.5 text-base rounded-lg bg-stone-50 text-neutral-800 max-md:px-5 hidden-xs">
         <img
           loading="lazy"
           src="https://cdn.builder.io/api/v1/image/assets/TEMP/d2290c4f96e9479ad8edf54630605c9692b71c7d901f8659d84f0314f34751a3?apiKey=b4d1b9e87b084579b1e2475047caf617&"
@@ -58,7 +58,7 @@ function BasketHeader() {
       </form>
 
         <div className="flex gap-1 items-center self-stretch my-auto min-w-[240px] max-md:max-w-full">
-          <div className="flex flex-wrap gap-3 items-center self-stretch my-auto min-w-[240px] max-md:max-w-full">
+          <div className="flex flex-wrap gap-3 items-center self-stretch my-auto min-w-[240px] max-md:max-w-full bstatus">
             <div className="flex gap-1 items-center self-stretch my-auto">
               <span className="self-stretch my-auto text-xs text-neutral-500">
                 Prev. Closed

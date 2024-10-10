@@ -15,7 +15,7 @@ const InstrumentList = () => {
   };
 
   return (
-    <div className="flex flex-col justify-center px-5 py-3 mt-2 w-full leading-none bg-white rounded-lg max-md:max-w-full shadow-md">
+    <div className="flex flex-col justify-center px-5 py-3 mt-2 w-full leading-none bg-white rounded-lg max-md:max-w-full !shadow-md card">
       <div className="flex flex-wrap gap-4 items-center w-full max-md:max-w-full">
         {/* Replace Drag handle image with span icon */}
         <span className="icon-menu text-2xl fill-neutral-500"></span>
@@ -31,14 +31,14 @@ const InstrumentList = () => {
             </div>
           </div>
 
-          <div className="flex overflow-hidden gap-2 items-center self-stretch px-2 py-1.5 my-auto text-xs text-black whitespace-nowrap bg-red-200 rounded border border-black border-solid min-h-[19px]">
-            <div className="gap-2.5 self-stretch my-auto">Market</div>
+          <div className="flex overflow-hidden gap-2 items-center self-stretch px-2 py-1.5 my-auto text-xs !text-black whitespace-nowrap bg-red-200 rounded border border-black border-solid min-h-[19px]">
+            <div className="gap-2.5 self-stretch my-auto !text-black">Market</div>
           </div>
 
           <div className="flex flex-col self-stretch my-auto text-xs text-black whitespace-nowrap w-[82px]">
             <div className="flex flex-col items-start w-full max-w-[82px]">
-              <div className="flex overflow-hidden gap-2 items-center px-2 py-1.5 bg-green-200 rounded border border-black border-solid min-h-[19px]">
-                <div className="gap-2.5 self-stretch my-auto">NRML</div>
+              <div className="flex gap-2 items-center px-2 py-1.5 bg-green-200 rounded border !border-black border-solid min-h-[19px]">
+                <div className="gap-2.5 self-stretch my-auto !text-black">NRML</div>
               </div>
             </div>
           </div>

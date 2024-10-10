@@ -2,7 +2,7 @@ import React from "react";
 
 function EmptyBasket({ setActiveStep }) {
   return (
-    <div className="flex overflow-hidden flex-col px-16 pt-6 pb-12 mx-auto w-full leading-none bg-white rounded-xl max-md:px-5 max-md:mt-1 max-md:max-w-full">
+    <div className="flex card flex-col px-16 pt-6 pb-12 mx-auto w-full leading-none bg-white rounded-xl max-md:px-5 max-md:mt-1 max-md:max-w-full">
       <div className="flex flex-col self-center -mt-1 max-w-full font-bold text-neutral-800 w-[373px]">
         <img
           loading="lazy"

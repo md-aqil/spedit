@@ -11,22 +11,28 @@ const BasketStep7 = () => {
   };
 
   return (
-    <div className="flex flex-col overflow-hidden px-5 py-5 bg-white rounded-xl">
+    <div className="flex flex-col px-5 py-5 bg-white rounded-xl max-md:p-0 max-md:!bg-[#242620]">
       {[1, 2].map((basketId) => (
         <div key={basketId} className="flex flex-col mb-5">
           <div
-            className={`flex flex-col px-5 py-5 w-full rounded-xl border border-solid bg-stone-50 border-stone-300 cursor-pointer ${expandedBasketId === basketId ? 'border-lime-500' : ''}`}
+            className={`flex flex-col px-5 py-5 w-full rounded-xl border border-solid card bg-stone-50  cursor-pointer ${expandedBasketId === basketId ? 'border-lime-500' : 'border-stone-300'}`}
             onClick={() => toggleExpand(basketId)}
           >
             <div className="flex justify-between items-center">
-              <div className="my-auto text-base font-bold leading-none text-black">
-                Basket {basketId}
+              <div className="flex items-center">
+              <div className="flex items-center gap-2 text-base font-bold  text-black">
+                Basket {basketId} <span className={`text-2xl icon-arrow-${expandedBasketId === basketId ? 'down-1' : 'up-2'}`}></span>
               </div>
+
+              </div>
+             
+
               <div
                 className="flex gap-1 justify-center items-center self-stretch px-2 my-auto w-9 h-9 rounded border border-solid border-neutral-800 cursor-pointer"
                 role="button"
                 aria-label={`Basket ${basketId} Info`}
               >
+
                 <span className="icon-trash"></span>
               </div>
             </div>
@@ -80,14 +86,8 @@ const BasketStep7 = () => {
             )}
           </div>
 
-          {/* Collapse arrow button */}
-          <div
-            className="flex gap-2 justify-center items-center self-center px-3 py-2.5 mt-2 text-sm font-bold leading-none text-lime-500 cursor-pointer"
-            onClick={() => toggleExpand(basketId)}
-          >
-            <span className={`icon-arrow-${expandedBasketId === basketId ? 'down' : 'up'}`}></span>
-            <div className="self-stretch my-auto">{expandedBasketId === basketId ? 'Collapse' : 'Expand'}</div>
-          </div>
+
+        
         </div>
       ))}
     </div>

@@ -2,15 +2,15 @@ import React from "react";
 
 const Instrument = ({ instrumentName, price, lotSize, charges, margin }) => {
   return (
-    <section className="mt-8 p-6 bg-white border border-stone-300 rounded-xl">
+    <section className="mt-8 p-6 bg-white border border-stone-300 rounded-xl card max-md:border-none mb-5 max-md:p-0 max-md:!bg-[#242620]">
       <div className="flex flex-col ">
         {/* Header Section */}
         <div className="flex justify-between">
           <div>
-            <h2 className="text-xl font-bold text-black">{instrumentName}</h2>
+            <h2 className="text-xl font-bold text-black max-md:text-lg">{instrumentName}</h2>
             <p className="my-1">NFO Rs. {price}</p>
           </div>
-          <div className="gap-10 flex items-center">
+          <div className="gap-10 flex items-center max-md:gap-2">
             <span className="icon-trash text-2xl"></span>
             <button className="flex items-center gap-6 py-1 h-[30px] px-3 text-xs font-bold text-black bg-lime-500 rounded-2xl border border-black">
               <span>Buy</span>
@@ -29,12 +29,12 @@ const Instrument = ({ instrumentName, price, lotSize, charges, margin }) => {
             <span className="icon-arrow-square-down"></span>
           </div>
           <p>
-            <i className="icon-tags"></i> Tags
+            <i className="icon-tag text-lg"></i> Tags
           </p>
         </div>
 
         {/* Inputs Section */}
-        <div className="flex gap-5 mt-6">
+        <div className="flex gap-5 mt-6 max-md:flex-col">
           <div className="flex-1">
             <label htmlFor="lotQty" className="flex justify-between items-end">
               <span className="text-xs font-semibold text-neutral-800">
@@ -120,14 +120,14 @@ const Instrument = ({ instrumentName, price, lotSize, charges, margin }) => {
 
           <button
             type="submit"
-            className="mt-6 px-6 py-1.5 bg-lime-500 text-black rounded-md hover:bg-lime-600"
+            className="mt-6 px-6 py-1.5 bg-lime-500 text-black rounded-md hover:bg-lime-600 max-md:mt-0"
           >
             Save
           </button>
         </div>
 
         {/* Stop Loss/Target and Charges Section */}
-        <div className="flex gap-40 mt-5">
+        <div className="flex gap-40 mt-5 max-md:flex-col max-md:gap-0">
           <div className="flex gap-5">
             <div className="flex-1">
               <label className="flex items-center gap-0.5 cursor-pointer">

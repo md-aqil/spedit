@@ -20,7 +20,7 @@ function OrderBook() {
   ];
 
   return (
-    <div className="flex flex-col px-5 pt-7 pb-3.5 w-full bg-white rounded-xl shadow-md">
+    <div className="flex flex-col px-5 pt-7 pb-3.5 w-full bg-white rounded-xl shadow-md card" >
       {/* Tabs */}
       <div className="flex gap-5 justify-between w-full leading-none text-center max-md:mr-0.5">
         <div className="flex gap-2 items-center text-xs font-semibold">
@@ -28,16 +28,17 @@ function OrderBook() {
             onClick={() => setActiveTab("orderBook")}
             className={`gap-2.5 px-4 py-2 my-auto rounded ${
               activeTab === "orderBook"
-                ? "bg-lime-500 bg-opacity-40 text-stone-950"
+                ? "tb-active bg-lime-500 bg-opacity-40 text-stone-400"
                 : "text-stone-400"
             }`}
           >
             Order Book
           </button>
+
           <button
             onClick={() => setActiveTab("recentTrades")}
             className={`my-auto ${
-              activeTab === "recentTrades" ? "text-stone-950" : "text-stone-400"
+              activeTab === "recentTrades" ? "text-stone-950 tb-active" : "text-stone-400"
             }`}
           >
             Recent Trades

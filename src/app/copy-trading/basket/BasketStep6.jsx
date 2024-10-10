@@ -6,7 +6,7 @@ const BasketStep6 = () => {
   const baskets = [1, 2, 3, 4];
 
   return (
-    <main className="flex overflow-hidden flex-col px-5  py-5 bg-white rounded-xl">
+    <main className="flex flex-col px-5  py-5 bg-white rounded-xl max-md:!bg-[#242620] max-md:p-0 space-y-5">
       {baskets.map((basketNumber) => (
         <section
           key={basketNumber}
@@ -15,7 +15,7 @@ const BasketStep6 = () => {
           <p className="my-auto text-base font-bold leading-none text-black">
             Basket {basketNumber}
           </p>
-          <div className="flex gap-4 items-center">
+          <div className="flex gap-4 items-center max-md:w-full max-md:justify-between">
             <button
               className="gap-1 self-stretch px-7 py-3 my-auto text-sm font-bold leading-none text-center bg-lime-500 rounded min-h-[36px] text-stone-950 max-md:px-5"
               aria-label={`Execute Basket ${basketNumber} Order`}

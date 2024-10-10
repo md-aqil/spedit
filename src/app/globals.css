@@ -700,9 +700,13 @@ z-index: 10;
 .card *:not(input) {
   color:#fff;
 }
-.card button ,.card span{
-  color:#333;
+
+
+.card button ,.card [class^="icon-"]{
+  /* color:#333; */
 }
+
+
 .card .text-neutral-500 {
   color: #A2AB9A;
 
@@ -961,11 +965,15 @@ z-index: 10;
   color: #A2AB9A;
   border-bottom: 1px solid transparent;
   border-radius:0;
+  padding: 6px 10px;
 }
 
-.mobile-filter button.tb-active {
+ button.tb-active {
  border-color:  var(--theme-color);
  color:#fff;
+ border-bottom: 1px solid var(--theme-color);
+ background:none;
+ padding-bottom: 5px;
 }
 
 .card-table .text-neutral-800{
@@ -984,5 +992,26 @@ z-index: 10;
 
 .ftimg {
   width: 60px;
+}
+
+.basket-header {
+  background:none;
+  color: #A2AB9A;
+  padding:0;
+
+}
+.basket-header * {
+  color: #A2AB9A;
+
+}
+.basket-header h1 {
+  color: #fff;
+}
+
+.bstatus {
+  border-bottom: 1px solid #A2AB9A;
+  padding-bottom: 10px;
+  border-radius:0;
+
 }
 }
