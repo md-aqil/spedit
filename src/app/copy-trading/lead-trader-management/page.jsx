@@ -26,6 +26,8 @@ function LeadTraderManagement() {
             <StrategyTable />
 
             {/* Tabs Navigation */}
+
+            
             <nav className="flex gap-3 items-center py-3 px-6 bg-gray-100 text-xs font-medium text-neutral-500 mt-10">
               {['Live Positions', 'Position History', 'Current Copiers', 'Mock Copiers'].map((tab) => (
                 <div
@@ -39,6 +41,8 @@ function LeadTraderManagement() {
                 </div>
               ))}
             </nav>
+
+
             <div className="border-b-2 border-lime-500 mx-6" />
 
             {/* Content based on Active Tab */}

@@ -21,7 +21,7 @@ function InfoSection() {
         </div>
         <button
           onClick={handleSaveClick}
-          className={`px-6 py-3 text-sm font-bold rounded ${isEditing ? 'bg-lime-500 text-stone-950' : 'border border-gray-500 text-gray-500 bg-transparent'} transition-colors`}
+          className={`px-6 py-3  text-sm font-bold rounded ${isEditing ? 'bg-lime-500 text-stone-950' : 'border border-gray-500 text-gray-500 bg-transparent'} transition-colors`}
         >
           {isEditing ? 'Save' : 'Edit'}
         </button>
@@ -52,7 +52,7 @@ function InfoSection() {
 
     </div>
 
-    <div className="flex justify-between gap-32">
+    <div className="flex justify-between gap-32 max-md:gap-5 max-md:flex-col">
     <div className="flex flex-col space-y-2 w-full">
           <label className="font-bold text-stone-800">Phone Number</label>
           <div className="flex items-center border rounded bg-stone-50">
@@ -90,11 +90,6 @@ function InfoSection() {
       </div>
 
       
-        
-       
-      
-       
-
         {isEditing && (
           <div className="flex flex-col space-y-2  w-[45%] max-md:w-full">
             <label className="font-bold text-stone-800">Document Upload</label>

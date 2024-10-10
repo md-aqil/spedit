@@ -40,7 +40,7 @@ const EditProfile = () => {
           </div>
           <button
             onClick={handleSave}
-            className="px-7 py-2.5 my-auto text-base text-black whitespace-nowrap bg-lime-500 rounded-lg max-md:px-5"
+            className=" my-auto text-base btn text-black whitespace-nowrap bg-lime-500 rounded-lg max-md:px-5"
           >
             Save
           </button>

@@ -485,6 +485,9 @@ z-index: 10;
  
 }
 
+.visible-xs {
+  display:none;
+}
 
 
 
@@ -697,7 +700,9 @@ z-index: 10;
 .card *:not(input) {
   color:#fff;
 }
-
+.card button ,.card span{
+  color:#333;
+}
 .card .text-neutral-500 {
   color: #A2AB9A;
 
@@ -944,5 +949,40 @@ z-index: 10;
 
 .Live, .Code, .Learn {
   display:none;
+}
+
+.visible-xs {
+  display:block;
+}
+
+.mobile-filter button {
+  border:none;
+  background:none;
+  color: #A2AB9A;
+  border-bottom: 1px solid transparent;
+  border-radius:0;
+}
+
+.mobile-filter button.tb-active {
+ border-color:  var(--theme-color);
+ color:#fff;
+}
+
+.card-table .text-neutral-800{
+  color: #A2AB9A;
+
+}
+
+.dash-item-active:before {
+  content:none;
+}
+
+.ltm-header h1{
+  font-size: 18px;
+  color:#fff;
+}
+
+.ftimg {
+  width: 60px;
 }
 }

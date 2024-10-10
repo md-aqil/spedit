@@ -11,15 +11,15 @@ function TitleAction() {
   };
 
   return (
-    <header className="flex flex-wrap gap-10 justify-between items-center leading-none mt-5">
+    <header className="flex  gap-10 justify-between items-center leading-none mt-5 ltm-header">
       <h1 className="self-stretch my-auto text-xl font-bold text-black">
         Lead Trader Management
       </h1>
-      <nav className="flex gap-3 justify-center items-center self-stretch my-auto text-sm min-w-[240px] relative">
+      <nav className="flex gap-3 justify-center items-center self-stretch my-auto text-sm relative">
         {/* Saved Strategy Type Button */}
         <div className="relative">
           <button
-            className="flex overflow-hidden gap-6 items-center px-5 py-2.5 font-semibold bg-white rounded-md border border-black text-neutral-800 min-w-[240px]"
+            className="flex overflow-hidden gap-6 items-center px-5 py-2.5 font-semibold bg-white rounded-md border border-black text-neutral-800"
             onClick={toggleDropdown}
           >
             <div className="flex gap-1 items-center">
@@ -27,11 +27,11 @@ function TitleAction() {
                 loading="lazy"
                 src="https://cdn.builder.io/api/v1/image/assets/TEMP/351730186382ab58220b1dd5fc1f368b690b96176a9590e56e357b9b3f1abf0c?apiKey=b4d1b9e87b084579b1e2475047caf617&"
                 alt=""
-                className="object-contain w-6 aspect-square"
+                className="object-contain w-6 aspect-square ftimg"
               />
-              <span>Saved Strategy type</span>
+              <span className="hidden-xs">Saved Strategy type</span>
             </div>
-           <i className="icon-arrow-square-down text-2xl"></i>
+           <i className="icon-arrow-square-down text-2xl hidden-xs"></i>
           </button>
 
           {/* Dropdown Menu */}
@@ -62,8 +62,8 @@ function TitleAction() {
         </div>
 
         {/* Create Strategy Button */}
-        <a href="./update-strategy" className="flex gap-2 justify-center items-center px-4 py-4 font-bold bg-lime-500 rounded-md text-stone-950">
-          <span>+ Create Strategy</span>
+        <a href="./update-strategy" className="flex gap-2 justify-center items-center px-3 py-3 font-bold bg-lime-500 rounded-md text-stone-950">
+          <span className="icon-add text-2xl"></span> <span className="hidden-xs">Create Strategy</span>
         </a>
       </nav>
     </header>

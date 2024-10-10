@@ -7,7 +7,7 @@ import InputField from "./InputField";
 
 function EmbedVideoSection() {
   return (
-    <section className="flex overflow-hidden flex-col px-12 py-9 mt-3 w-full bg-white rounded-xl max-md:px-5 max-md:max-w-full">
+    <section className="flex card flex-col px-12 py-9 mt-3 w-full bg-white rounded-xl max-md:px-5 max-md:max-w-full">
       <SectionHeader
         title="Embed Video"
         description="Share from Adobe XD, Vimeo, YouTube, GIPHY, SoundCloud, Spotify and more"

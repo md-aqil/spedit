@@ -35,7 +35,7 @@ function PasswordSection() {
         </div>
         <button
           onClick={handleSaveClick}
-          className={`px-3 py-4 my-auto w-[200px] text-sm font-bold text-center whitespace-nowrap ${isSaved ? 'border border-gray-500 text-gray-500 bg-transparent' : 'bg-lime-500 rounded min-h-[44px] text-stone-950'} transition-all duration-300 ease-in-out`}
+          className={`px-3 py-4 my-auto  text-sm font-bold text-center whitespace-nowrap ${isSaved ? 'border border-gray-500 text-gray-500 bg-transparent' : 'bg-lime-500 rounded min-h-[44px] text-stone-950'} transition-all duration-300 ease-in-out`}
         >
           {isSaved ? 'Change Password' : 'Save'}
         </button>

@@ -20,12 +20,12 @@ function ImportantFactsSection() {
   ];
 
   return (
-    <section className="flex overflow-hidden flex-col px-12 py-9 mt-3 w-full bg-white rounded-xl max-md:px-5 max-md:max-w-full">
+    <section className="flex overflow-hidden flex-col card px-12 py-9 mt-3 w-full bg-white rounded-xl max-md:px-5 max-md:max-w-full">
       <SectionHeader
         title="Important Facts"
         description="Key detail points of your Strategy"
       />
-      <div className="flex flex-wrap gap-10 mt-12 text-base text-neutral-800 max-md:mt-10 max-md:max-w-full">
+      <div className="flex flex-wrap gap-10 mt-12 text-base text-neutral-800 max-md:mt-10 max-md:flex-col">
         <div className="flex flex-col flex-1">
           {leftColumnFields.map((field, index) => (
             <InputField
@@ -35,7 +35,7 @@ function ImportantFactsSection() {
             />
           ))}
         </div>
-        <div className="flex flex-col flex-1 self-start">
+        <div className="flex flex-col flex-1 self-start w-full">
           {rightColumnFields.map((field, index) => (
             <InputField
               key={index}
