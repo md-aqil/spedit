@@ -56,18 +56,18 @@ function LivePositions() {
           <Sidebar />
           <main className="flex flex-col main-container">
             <DashboardIcons />
-            <header className="flex flex-wrap gap-10 justify-between items-center w-full">
-              <h1 className="self-stretch my-auto text-xl font-bold leading-none text-black">
-                Live Positions
+            <header className="flex flex-wrap gap-10 justify-between items-center w-full mt-5">
+              <h1 className="self-stretch my-auto text-xl font-bold leading-none text-black max-md:text-white">
+                Mock Positions
               </h1>
-              <nav className="flex gap-4 items-center self-stretch my-auto">
+              <nav className="flex gap-4 items-center self-stretch my-auto ">
                 {/* <span
                   onClick={() => setIsListView(!isListView)}
                   loading="lazy"
                   className="aspect-square cursor-pointer icon-firstline text-2xl"
                 /> */}
-                <span className="icon-refresh text-2xl"></span>
-                <span className="icon-export text-2xl"></span>
+                <span className="icon-refresh text-2xl max-md:text-gray-300"></span>
+                <span className="icon-export text-2xl max-md:text-gray-300"></span>
               </nav>
             </header>
 

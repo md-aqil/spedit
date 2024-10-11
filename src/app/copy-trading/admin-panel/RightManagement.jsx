@@ -57,10 +57,10 @@ function RightManagement() {
     return (
       <div className="flex flex-wrap gap-2 p-2 border border-gray-300 rounded-md bg-gray-50">
         {tags.map((tag, index) => (
-          <div key={index} className="flex items-center gap-2 p-2 bg-[#C3FFB9] rounded-md">
-            <span className="text-sm text-black">{tag}</span>
-            <button onClick={() => onTagRemove(tag)} className="text-black">
-             <i className='icon-close-circle text-2xl'></i>
+          <div key={index} className="flex items-center gap-2 p-1 bg-[#C3FFB9] rounded-md">
+            <span className="text-sm !text-black">{tag}</span>
+            <button onClick={() => onTagRemove(tag)} className="!text-black">
+             <i className='icon-close-circle text-2xl !text-black'></i>
             </button>
           </div>
         ))}
@@ -93,32 +93,32 @@ function RightManagement() {
   );
 
   const AssignTag = ({ email, onRemove }) => (
-    <div className="flex items-center gap-2 p-2 rounded-md border border-black bg-gray-100">
-      <span className="text-sm text-gray-700">{email}</span>
+    <div className="flex items-center gap-2 p-1 rounded-md border border-black bg-gray-100">
+      <span className="text-sm !text-gray-700">{email}</span>
       <button onClick={() => onRemove(email)} className="text-gray-500 hover:text-gray-700">
-       <i className='icon-close-circle text-2xl'></i>
+       <i className='icon-close-circle text-2xl !text-gray-700'></i>
       </button>
     </div>
   );
 
   return (
-    <div className="mt-10">
+    <div className="mt-10 max-md:mt-0">
       <div className="flex gap-5 max-md:flex-col">
         <div className="flex flex-col w-[67%] max-md:ml-0 max-md:w-full ">
           <div className="flex flex-col grow leading-none max-md:mt-10 max-md:max-w-full">
-            <header className="flex flex-col justify-center items-start py-8 pr-20 pl-7 w-full shadow-sm bg-white rounded-xl max-md:px-5 max-md:max-w-full">
+            <header className="flex flex-col justify-center items-start py-8 pr-20 pl-7 card w-full shadow-sm bg-white rounded-xl max-md:px-5 max-md:max-w-full">
               <h1 className="text-xl font-bold text-stone-950">Right Management</h1>
               <p className="mt-1.5 text-xs text-neutral-500">
                 Drag pages to provide rights to the assigned people via email Id.
               </p>
             </header>
-            <main className="flex flex-col px-7 pt-12 pb-8 mt-3 w-full bg-white rounded-xl max-md:px-5 max-md:max-w-full shadow-md">
+            <main className="flex flex-col px-7 pt-12 pb-8 mt-3 w-full bg-white card rounded-xl max-md:px-5 max-md:max-w-full shadow-md">
               <section className="flex flex-col w-full whitespace-nowrap max-md:max-w-full">
                 <div className="flex flex-wrap gap-10 justify-between items-start w-full text-base font-bold text-neutral-800 max-md:max-w-full">
                   <h2 className="opacity-80">Assign</h2>
                  <i className='icon-trash text-2xl'></i>
                 </div>
-                <div className="flex flex-wrap gap-3 py-1 pr-20 pl-1.5 mt-3 w-full text-xs text-black rounded-lg bg-stone-50 max-w-[690px] max-md:pr-5 max-md:max-w-full">
+                <div className="flex flex-wrap gap-3 py-1 pr-20 pl-1.5 mt-3 w-full text-xs text-black rounded-lg  max-w-[690px] max-md:pr-5 max-md:max-w-full">
                   {assignedUsers.map((user, index) => (
                     <AssignTag key={index} email={user.email} onRemove={removeUser} />
                   ))}
@@ -143,7 +143,7 @@ function RightManagement() {
               <footer className="flex flex-wrap gap-10 justify-between items-center mt-7 w-full text-sm font-bold text-center whitespace-nowrap text-stone-950 max-md:max-w-full">
                 <div className="flex self-stretch my-auto min-h-[14px]" />
                 <div className="flex gap-2.5 items-center self-stretch my-auto w-[110px]">
-                  <button className="gap-2 self-stretch px-3 py-4 my-auto bg-lime-500 rounded min-h-[44px] w-[110px]">
+                  <button className="btn2">
                     Save
                   </button>
                 </div>
@@ -152,7 +152,7 @@ function RightManagement() {
           </div>
         </div>
         <aside className="flex flex-col ml-5 w-[33%] max-md:ml-0 max-md:w-full ">
-          <div className="flex flex-col items-start px-9 pt-9 pb-96 mx-auto w-full text-x shadow-md leading-none text-black bg-white rounded-xl ">
+          <div className="flex flex-col items-start px-9 pt-9 pb-96 mx-auto w-full card text-x shadow-md leading-none text-black bg-white rounded-xl ">
             <h2 className="gap-10 self-stretch max-w-full text-xl font-bold leading-6 text-stone-950 w-[269px]">
               Pages that can be edited/viewed
             </h2>

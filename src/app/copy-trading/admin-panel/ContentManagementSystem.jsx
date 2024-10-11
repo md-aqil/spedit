@@ -18,11 +18,11 @@ export default function ContentManagementSystem() {
   };
 
   return (
-    <div className="bg-stone-50 mt-10">
+    <div className="mt-10 max-md:mt-0">
       <div className="flex gap-5 max-md:flex-col">
         <div className="flex flex-col w-[67%] max-md:ml-0 max-md:w-full">
           <div className="flex flex-col grow max-md:mt-10 max-md:max-w-full">
-            <div className="flex flex-col items-start py-8 pr-20 pl-7 w-full leading-none bg-white rounded-xl shadow-lg max-md:px-5 max-md:max-w-full">
+            <div className="flex flex-col items-start py-8 pr-20 pl-7 card w-full leading-none bg-white rounded-xl shadow-lg max-md:px-5 max-md:max-w-full">
               <div className="text-xl font-bold text-stone-950">
                 Content Management System (CMS)
               </div>
@@ -30,16 +30,16 @@ export default function ContentManagementSystem() {
                 Enter metadata, Alt text, Keywords{" "}
               </div>
             </div>
-            <div className="flex flex-col px-7 pt-6 pb-3.5 mt-3 w-full bg-white rounded-xl shadow-lg max-md:px-5 max-md:max-w-full">
+            <div className="flex flex-col px-7 pt-6 pb-3.5 mt-3 w-full card bg-white rounded-xl shadow-lg max-md:px-5 max-md:max-w-full">
               <div className="flex flex-wrap gap-10 justify-between items-center w-full text-sm leading-none max-md:max-w-full">
                 <div className="self-stretch my-auto font-bold text-neutral-800">
                   Copy &gt; <span className="text-neutral-800"> Leaderboard</span>
                 </div>
                 <div className="flex gap-2.5 items-center self-stretch my-auto whitespace-nowrap">
-                  <button className="flex items-center px-5 py-4 font-semibold bg-white border border-black rounded-md shadow-sm">
+                  <button className="btn btn-outline min-h-[44px]">
                     Preview
                   </button>
-                  <button className="gap-2 px-3 py-4 font-bold text-center bg-lime-500 rounded min-h-[44px] text-stone-950 w-[110px]">
+                  <button className="btn2">
                     Save
                   </button>
                 </div>
@@ -86,8 +86,8 @@ export default function ContentManagementSystem() {
                     </div>
                   )}
                 </div>
-                <div className="flex gap-2 items-start self-start mt-3">
-                  <input type="text" className="block w-[240px] p-3 rounded-lg bg-stone-50 border border-stone-300 shadow-sm" placeholder="Alt Text" />
+                <div className="flex gap-2 items-start self-start mt-3 max-md:w-full">
+                  <input type="text" className="block w-[240px] max-md:w-full p-3 rounded-lg bg-stone-50 border border-stone-300 shadow-sm" placeholder="Alt Text" />
                 </div>
               </div>
             </div>

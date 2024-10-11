@@ -127,13 +127,13 @@ const StrategieCard = () => {
 
       {/* Card List */}
       <div style={{ cursor: "pointer" }} onClick={handleRedirect}>
-        <div className="flex flex-wrap gap-5 items-start relative">
+        <div className="grid-container relative">
           {copytraderData.map((trader) => (
             <div
               key={trader.id}
               id={`${trader.name === "Karishma" && "firstTour"}`}
 
-              className={`flex  flex-col relative grow shrink justify-center px-4 py-5 w-72 bg-white card rounded-md shadow-sm min-h-[200px] min-w-[240px] transition-opacity ${
+              className={`col-span-4 relative grow w-full shrink justify-center px-4 py-5 w-72 bg-white card rounded-md shadow-sm  transition-opacity ${
                 cardsStatus[trader.id] ? "" : ""
               }`}
               onClick={() => handleCardClick(trader.id)}

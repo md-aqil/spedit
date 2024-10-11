@@ -2,7 +2,7 @@ import React from "react";
 import Sidebar from "../components/Sidebar";
 import Header from "../components/Header";
 import DashboardIcons from "../components/DashboardIcons";
-import TradeHistoryTable from "./TradeHistoryTable";
+import TradeHistoryTable from "../trade-history/TradeHistoryTable";
 
 function LeaderBoard() {
   return (

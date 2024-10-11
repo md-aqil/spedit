@@ -47,7 +47,7 @@ function TradeHistoryTable() {
 
   const headers = [
     { title: "Trade ID", width: "w-[116px]", hasDropdown: true },
-    { title: "Time", width: "w-[162px]" , hasDropdown: true },
+    { title: "Time", width: "w-[162px]", hasDropdown: true },
     { title: "Price", width: "w-24", hasDropdown: true },
     { title: "Quantity", width: "w-[116px]" },
     { title: "Instrument", width: "w-[126px]" },
@@ -67,41 +67,45 @@ function TradeHistoryTable() {
 
   return (
     <section className="w-full mt-5">
-      <header className="flex flex-wrap gap-10 justify-between items-center w-full mb-5">
-        <h1 className="self-stretch my-auto text-xl font-bold leading-none text-black">
+      
+      <div className="w-full max-md:flex justify-between max-md:flex-row-reverse">
+      <header className="flex flex-wrap gap-10 justify-between items-center w-full mb-5 max-md:justify-end">
+        <h1 className="self-stretch my-auto text-xl font-bold leading-none text-black hidden-xs">
           History
         </h1>
-        <nav className="flex gap-4 items-center self-stretch my-auto">
-        <span className="icon-eye-slash text-2xl"></span>
+        <nav className="flex gap-4 items-center self-stretch my-auto max-md:text-white">
+          <span className="icon-eye-slash text-2xl"></span>
           <span className="icon-refresh text-2xl"></span>
           <span className="icon-export text-2xl"></span>
         </nav>
+
       </header>
 
+      {/* Tabs for Trade and Strategy */}
       <div className="flex mb-4">
         <button
           onClick={() => setActiveTab("Trade")}
-          className={`py-2 px-4 text-sm font-medium ${activeTab === "Trade" ? "bg-[#CDE8A3] text-black" : "text-gray-600 hover:bg-gray-100"} border rounded-l`}
+          className={`py-2 px-4 text-sm font-medium ${activeTab === "Trade" ? "tab-active" : "tab"} border rounded-l`}
         >
           Trade
         </button>
         <button
           onClick={() => setActiveTab("Strategy")}
-          className={`py-2 px-4 text-sm font-medium ${activeTab === "Strategy" ? "bg-[#CDE8A3] text-black" : "text-gray-600 hover:bg-gray-100"} border rounded-r`}
+          className={`py-2 px-4 text-sm font-medium ${activeTab === "Strategy" ? "tab-active" : "tab"} border rounded-r`}
         >
           Strategy
         </button>
       </div>
 
-      <div className="relative  p-6 bg-white shadow rounded-lg">
+      </div>
+
+      {/* Table for Desktop */}
+      <div className="relative p-6 bg-white shadow rounded-lg hidden lg:block">
         <table className="w-full table-auto text-left text-gray-600 border-collapse">
           <thead>
             <tr className="border-b text-sm bg-slate-900 py-5">
               {(activeTab === "Trade" ? headers : strategyHeaders).map((header, index) => (
-                <th
-                  key={index}
-                  className={`px-4 py-4 ${header.width} border-r border-b font-bold text-primary mb-4 relative`}
-                >
+                <th key={index} className={`px-4 py-4 ${header.width} border-r border-b font-bold text-primary mb-4 relative`}>
                   <div className="flex items-center justify-between">
                     {header.title}
                     {header.hasDropdown && (
@@ -121,107 +125,13 @@ function TradeHistoryTable() {
                       </button>
                     )}
                   </div>
-                  {/* Dropdowns */}
-                  {(header.title === "Trade ID" && (activeTab === "Trade" ? isTradeIdDropdownOpen : isStrategyIdDropdownOpen)) && (
-                    <div className="absolute top-full left-0 mt-2 w-80 bg-white border border-gray-200 rounded shadow-lg">
-                      <div className="p-4 flex flex-col">
-                        <input
-                          type="date"
-                          className="border border-gray-300 rounded w-full px-2 py-1 mb-2"
-                          placeholder="From"
-                        />
-                        <input
-                          type="date"
-                          className="border border-gray-300 rounded w-full px-2 py-1 mb-2"
-                          placeholder="To"
-                        />
-                        <div className="flex justify-end gap-2 mt-2">
-                          <button
-                            onClick={() => (activeTab === "Trade" ? setIsTradeIdDropdownOpen(false) : setIsStrategyIdDropdownOpen(false))}
-                            className="bg-gray-200 text-gray-700 px-3 py-1 rounded"
-                          >
-                            Clear
-                          </button>
-                          <button
-                            onClick={() => (activeTab === "Trade" ? setIsTradeIdDropdownOpen(false) : setIsStrategyIdDropdownOpen(false))}
-                            className="bg-blue-500 text-white px-3 py-1 rounded"
-                          >
-                            Apply
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  )}
-                  {(header.title === "Price" && isPriceDropdownOpen) && (
-                    <div className="absolute top-full left-0 mt-2 w-80 bg-white border border-gray-200 rounded shadow-lg">
-                      <div className="p-4 flex flex-col">
-                        <input
-                          type="number"
-                          className="border border-gray-300 rounded w-full px-2 py-1 mb-2"
-                          placeholder="Min Amount"
-                        />
-                        <input
-                          type="number"
-                          className="border border-gray-300 rounded w-full px-2 py-1 mb-2"
-                          placeholder="Max Amount"
-                        />
-                        <div className="flex justify-end gap-2 mt-2">
-                          <button
-                            onClick={() => setIsPriceDropdownOpen(false)}
-                            className="bg-gray-200 text-gray-700 px-3 py-1 rounded"
-                          >
-                            Clear
-                          </button>
-                          <button
-                            onClick={() => setIsPriceDropdownOpen(false)}
-                            className="bg-blue-500 text-white px-3 py-1 rounded"
-                          >
-                            Apply
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  )}
-                  {(header.title === "Amount" && isAmountDropdownOpen) && (
-                    <div className="absolute top-full left-0 mt-2 w-80 bg-white border border-gray-200 rounded shadow-lg">
-                      <div className="p-4 flex flex-col">
-                        <input
-                          type="number"
-                          className="border border-gray-300 rounded w-full px-2 py-1 mb-2"
-                          placeholder="Min Amount"
-                        />
-                        <input
-                          type="number"
-                          className="border border-gray-300 rounded w-full px-2 py-1 mb-2"
-                          placeholder="Max Amount"
-                        />
-                        <div className="flex justify-end gap-2 mt-2">
-                          <button
-                            onClick={() => setIsAmountDropdownOpen(false)}
-                            className="bg-gray-200 text-gray-700 px-3 py-1 rounded"
-                          >
-                            Clear
-                          </button>
-                          <button
-                            onClick={() => setIsAmountDropdownOpen(false)}
-                            className="bg-blue-500 text-white px-3 py-1 rounded"
-                          >
-                            Apply
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  )}
                 </th>
               ))}
             </tr>
           </thead>
           <tbody>
             {(activeTab === "Trade" ? tradeData : strategyData).map((item, index) => (
-              <tr
-                key={index}
-                className={`border-t ${index % 2 ? 'bg-gray-50' : 'bg-white'} hover:bg-gray-100`}
-              >
+              <tr key={index} className={`border-t ${index % 2 ? 'bg-gray-50' : 'bg-white'} hover:bg-gray-100`}>
                 {activeTab === "Trade" ? (
                   <>
                     <td className="px-4 py-2 text-sm">{item.id}</td>
@@ -252,6 +162,23 @@ function TradeHistoryTable() {
             ))}
           </tbody>
         </table>
+      </div>
+
+      {/* Card Layout for Mobile */}
+      <div className="block lg:hidden">
+        {(activeTab === "Trade" ? tradeData : strategyData).map((item, index) => (
+          <div key={index} className="text-[#A2AB9A] border-b bg-[#242620] card-table my-4">
+            <div className="flex justify-between items-center">
+              <h3 className="font-bold text-white">Trade ID: {item.id}</h3>
+              <span className={`font-semibold ${item.profitClass}`}>{item.profit}</span>
+            </div>
+            <p className="text-sm"><span>Time:</span> {item.time}</p>
+            <p className="text-sm"><span>Price:</span> {item.price}</p>
+            <p className="text-sm"><span>Quantity: </span>{item.quantity}</p>
+            <p className="text-sm"><span>Instrument: </span>{item.instrument}</p>
+            <p className="text-sm"><span>Strategy ID:</span> {item.strategyId}</p>
+          </div>
+        ))}
       </div>
     </section>
   );

@@ -60,11 +60,11 @@ function UserTable() {
   };
 
   return (
-    <main className="flex flex-col rounded-xl p-10 shadow-md bg-white mt-5">
-      <h1 className="text-base font-bold leading-none text-stone-950">
+    <main className="flex flex-col rounded-xl p-10 shadow-md bg-white mt-5 max-md:p-0 max-md:bg-transparent">
+      <h1 className="text-base font-bold leading-none text-stone-950 max-md:text-white">
         User management
       </h1>
-      <div className="flex flex-wrap gap-10 justify-between items-center py-1.5 pr-5 pl-1.5 mt-6 w-full bg-white rounded-lg border border-black border-solid shadow-sm max-md:max-w-full">
+      <div className="max-md:hidden flex flex-wrap gap-10 justify-between items-center py-1.5 pr-5 pl-1.5 mt-6 w-full bg-white rounded-lg border border-black border-solid shadow-sm max-md:max-w-full">
         <div className="flex flex-wrap gap-10 self-stretch pr-10 pb-2 pl-5 my-auto min-w-[240px] w-[603px] max-md:pr-5 max-md:max-w-full">
           <div className="flex flex-auto gap-3.5 max-md:max-w-full items-center">
             {/* Checkbox with Dropdown */}
@@ -117,6 +117,8 @@ function UserTable() {
                 </div>
               )}
             </div>
+
+
             <div className="py-3 text-xs font-bold leading-none whitespace-nowrap text-neutral-500">
               Name
             </div>
@@ -153,7 +155,8 @@ function UserTable() {
       </div>
         </div>
       </div>
-      <section className="flex flex-col mt-6 w-full max-md:max-w-full">
+
+      <section className="flex flex-col mt-6 w-full max-md:hidden">
         {users.map((user) => (
           <div
             key={user.id}
@@ -221,6 +224,84 @@ function UserTable() {
           </div>
         ))}
       </section>
+      <section className="mt-6 w-full md:hidden">
+      <div className="relative flex items-center gap-2 mb-4">
+              <input
+                type="checkbox"
+                className="form-checkbox h-4 w-4 text-lime-500 border-gray-300 rounded"
+                checked={selectAll}
+                onChange={handleSelectAll}
+                onClick={() => setDropdownOpen(!dropdownOpen)}
+              />
+              {/* Dropdown Arrow */}
+              <svg
+                className="w-4 h-4 text-gray cursor-pointer"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                onClick={() => setDropdownOpen(!dropdownOpen)}
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+              <span className="text-white">Select Options</span>
+              
+              {dropdownOpen && (
+                <div className="absolute z-10 mt-2 w-32 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
+                  <ul className="py-1 text-sm text-gray-700" aria-labelledby="options-menu">
+                    <li
+                      className="block px-4 py-2 hover:bg-gray-100 cursor-pointer"
+                      onClick={() => handleDropdownSelect("All")}
+                    >
+                      All
+                    </li>
+                    <li
+                      className="block px-4 py-2 hover:bg-gray-100 cursor-pointer"
+                      onClick={() => handleDropdownSelect("None")}
+                    >
+                      None
+                    </li>
+                    <li
+                      className="block px-4 py-2 hover:bg-gray-100 cursor-pointer"
+                      onClick={() => handleDropdownSelect("Lead Trader")}
+                    >
+                      Lead Trader
+                    </li>
+                  </ul>
+                </div>
+              )}
+            </div>
+
+        {users.map((user) => (
+          <div
+            key={user.id}
+            className="card-table border-b text-gray py-3 my-2"
+          >
+            <div className="flex justify-between">
+              <div className="font-bold text-white">{user.name}</div>
+              <input
+                type="checkbox"
+                className="form-checkbox h-4 w-4 text-lime-500 border-gray-300 rounded"
+                checked={selectedUsers.includes(user.id)}
+                onChange={() => handleUserSelect(user.id)}
+              />
+            </div>
+            <p className="text-sm"><span>ID:</span> {user.id}</p>
+            <p className="text-sm"><span>Contact No.:</span> {user.contactNo}</p>
+            <p className="text-sm"><span>Username:</span> {user.username}</p>
+            <p className="text-sm"> <span>Email:</span> {user.email}</p>
+            <p className="text-sm">
+             <span>Premium:</span> {user.isPremium ? 'Premium' : 'Basic'}
+            </p>
+          </div>
+        ))}
+      </section>
+
     </main>
   );
 }

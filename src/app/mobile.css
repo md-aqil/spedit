@@ -1,0 +1,571 @@
+
+
+@media not all and (min-width: 768px) {
+
+    .dash-icons {
+      justify-content: start;
+  
+    }
+    .desktop-view {
+      /* display: none; */
+    }
+    .dash-sidebar {
+      /* display: none; */
+    }
+    .display-block {
+      display: block;
+    }
+    .display-none {
+      display: none;
+    }
+    .header-collapse-menu {
+      display: block;
+      color: #84cc18;
+    }
+  
+    .header-arro-collapse {
+      display: none;
+    }
+    .header-search {
+      /* display: none; */
+    }
+    .dash-header {
+      display: flex;
+      justify-content: space-between;
+    }
+  
+    .dash-item-wrap {
+      flex-direction: row;
+    width: 100%;
+  
+  }
+  
+  .dash-item {
+    cursor: pointer;
+    flex-direction: column;
+    font-size: 12px;
+    flex-grow: 1;
+    margin-top: 15px;
+    gap: 2px;
+  }
+  .dash-item i{
+   font-size: 24px;
+  }
+  .dash-sidebar nav {
+    margin: 0;
+    width: 100%;
+  }
+  
+  .dash-sidebar-content {
+    overflow-x: auto;
+    height: 100%;
+    padding: 0;
+    padding-bottom: 10px;
+  }
+  .side-profile {
+    display:none;
+  }
+  
+  .dash-sidebar {
+    bottom: 0px;
+    z-index: 100;
+    border-top: 1px solid;
+  }
+  
+  .header-credit {
+    display:none;
+  }
+  
+  .header-search {
+    margin: 0;
+    padding: 0;
+    min-width: 150px;
+    width: 100%;
+    margin-right: 15px;
+  }
+  
+  .use-mobile {
+    display:block;
+  }
+  
+  .sidebar-expanded + .main-container {
+    width: 100%;
+  }
+  
+  .dash-icons {
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    overflow-y: auto;
+    gap:1px;
+  }
+  
+  .dash-icons-item {
+    flex-direction: row;
+    gap: 5px;
+    padding: 2px 10px;
+    padding-top: 5px;
+  }
+  
+  
+  .dash-icons-item {
+    flex-direction: row;
+      gap: 5px;
+  }
+  .dash-icons-item .text-neutral-800 {
+    color: #A2AB9A;
+  
+  }
+  
+  .main-container {
+    width: 100%;
+    padding: 15px 15px;
+    background: #242620;
+  
+  }
+  .onb1 {
+    flex-direction:column;
+  }
+  .onb1 h1 {
+    font-size:24px;
+  }
+  
+  .dash-icons .d-icon {
+    display:none;
+  }
+  
+  .dash-icons-item {
+    background:none;
+  }
+  
+  .pnlcrnt {
+    flex-direction: column;
+    margin-top:10px;
+  }
+  .pntitle {
+    display:none;
+  }
+  
+  .clp-side {
+    width: 100%;
+  }
+  
+  .lpd {
+    padding:20px;
+  }
+  
+  .header-search input {
+    border-top:none;
+    border-left:none;
+    border-right:none;
+    border-radius:0;
+    background:none;
+  }
+  
+  .header-search .pl-3 {
+    padding-left: 0;
+  }
+  
+  .stia {
+    flex-direction:column;
+    min-width: auto;
+  }
+  .hidden-xs {
+    display:none;
+  }
+  
+  .st-wrap {
+    gap:5px;
+  }
+  .st-wrap .gap-20 {
+    gap: 10px;
+  }
+  
+  .st-top {
+    gap:5px;
+  }
+  
+  .swiper-pagination-bullet:not(.swiper-pagination-bullet-active) {
+    background:#fff !important;
+  }
+  
+  .card {
+    background: #181916;
+    color:#fff;
+  } 
+  .card *:not(input) {
+    color:#fff;
+  }
+  
+  
+  .card button ,.card [class^="icon-"]{
+    /* color:#333; */
+  }
+  
+  
+  .card .text-neutral-500 {
+    color: #A2AB9A;
+  
+  }
+  .card input {
+    color: #333 !important;
+  }
+  .m-white {
+    color:#fff;
+  } 
+  
+  .mobile-fill {
+    background-color: var(--theme-color) !important;
+    color: #3c3c3c;
+  
+    border: 1px solid #7dbd02;
+  
+  }
+  
+  .card .border-neutral-800, .card .btn-outline {
+    border-color:#fff;
+    color:#fff;
+  }
+  
+  .f-scroll {
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    overflow-y: auto;
+    gap: 1px;
+  }
+  
+  .dash-icons {
+    margin-bottom: 15px;
+  }
+  
+  .is-fav {
+    color:#fff;
+  }
+  
+  .card .heart-empty {
+      filter: invert(1);
+      margin-left: 8px;
+  }
+  
+  .btn {
+    padding: 6px 12px;
+  }
+  .dash-item-wrap {
+  
+  }
+  
+  .dash-item-wrap a {
+    flex-grow: 1;
+    width: 50px;
+  }
+  
+  .strat-row {
+    flex-direction:column;
+  }
+  
+  .trader-card2 {
+    color:#fff;
+    width:100%;
+  }
+  .trader-card2 .text-neutral-500 {
+    color: #A2AB9A;
+  
+    
+  }
+  
+  .trader-card2 .text-stone-950 {
+    color:#f7f7f7;
+  }
+  .trader-card2 .text-zinc-800 {
+    color:#f7f7f7;
+  }
+  
+  .trader-card2 .text-zinc-900 {
+    color:#f7f7f7;
+  }
+  .back-link {
+    color:#f7f7f7;
+  
+  }
+  
+  
+  
+  .h-id {
+    display:none;
+  }
+  
+  
+  .PerformanceCard {
+    padding: 1.25rem;
+    background:none;
+    border-top: 1.5px dashed #bfbfbf;
+    border-radius:0;
+  }
+  
+  .PerformanceCard .text-neutral-500 {
+    color:#A2AB9A;
+  }
+  .PerformanceCard .text-black {
+    color:#f7f7f7;
+  }
+  
+  .PerformanceCard .text-stone-950 {
+    color:#f7f7f7;
+  }
+  
+  
+  
+  
+  
+  .per-header {
+    border:none;
+  }
+  
+  .roi-copy {
+    flex-direction: column;
+  }
+  
+  .btn.btn-outline {
+    background: none;
+    color: #fff;
+    border-color: #f7f7f7;
+  }
+  
+  .per-act {
+    flex-direction: row;
+    width: 100%;
+    gap:15px;
+  }
+  .per-act .btn {
+    width: 100%;
+    height: 50px;
+  }
+  
+  .pstable {
+    background: #242620;
+    padding:10px 0;
+  }
+  .card-table p {
+    display:flex;
+    justify-content: space-between;
+  }
+  .card-table {
+    padding-bottom: 19px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      border-color: #6c6f67;
+  }
+  .tb-tab-active {
+    color: #fff;
+  }
+  .tb-tab {
+    background:none;
+  }
+  
+  .tb-tab ul {
+    gap: 2px;
+    padding: 0;
+    overflow-x: auto;
+    padding-bottom: 0px;
+  }
+  
+  
+  .tb-tab ul li {
+    white-space: nowrap;
+  }
+  
+  .stra-copy {
+    background:none;
+  }
+  
+  #copyAmountSection {
+    flex-direction: column;
+  }
+  #copyAmountSection .flex-col {
+    width: 100%;
+  }
+  .stra-copy .text-zinc-800 {
+    color: #f7f7f7;
+  }
+  #tourConfirmButton {
+    width: 76%;
+      margin-top: 25px;
+  }
+  
+  .PerformanceCard input {
+    color:#333 !important;
+  }
+  
+  .check-popup {
+    border: 1px solid #ffff;
+    width: 92%;
+  }
+  .check-label {
+    font-size: 12px;
+    font-weight:normal;
+    gap: 1px;
+  }
+  .check-label img {
+    width: 16px;
+  }
+  .login-sec {
+    padding: 10px;
+  }
+  .login-header {
+    position: static;
+  }
+  
+  .profile-tab {
+    background:none;
+    padding:0;
+  }
+  
+  .profile-tab .text-neutral-800 {
+    color:#A2AB9A;;
+  }
+  .profile-tab span {
+    display:none;
+  }
+  
+  .p-tab-list {
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    justify-content: start;
+    overflow-x: auto;
+  }
+  
+  .p-label {
+    position: absolute;
+    right: 5px;
+    padding: 2px;
+    background: none;
+    top: 0;
+    font-size: 12px;
+  }
+  .card select {
+    color:#333;
+  }
+  
+  .Live, .Code, .Learn {
+    display:none;
+  }
+  
+  .visible-xs {
+    display:block;
+  }
+  
+  .mobile-filter button {
+    border:none;
+    background:none;
+    color: #A2AB9A;
+    border-bottom: 1px solid transparent;
+    border-radius:0;
+    padding: 6px 10px;
+  }
+  
+   button.tb-active {
+   border-color:  var(--theme-color);
+   color:#fff;
+   border-bottom: 1px solid var(--theme-color);
+   background:none;
+   padding-bottom: 5px;
+  }
+  
+  .card-table .text-neutral-800{
+    color: #A2AB9A;
+  
+  }
+  
+  .dash-item-active:before {
+    content:none;
+  }
+  
+  .ltm-header h1{
+    font-size: 18px;
+    color:#fff;
+  }
+  
+  .ftimg {
+    width: 60px;
+  }
+  
+  .basket-header {
+    background:none;
+    color: #A2AB9A;
+    padding:0;
+  
+  }
+  .basket-header * {
+    color: #A2AB9A;
+  
+  }
+  .basket-header h1 {
+    color: #fff;
+  }
+  
+  .bstatus {
+    border-bottom: 1px solid #A2AB9A;
+    padding-bottom: 10px;
+    border-radius:0;
+  
+  }
+
+  .tab {
+    color: #A2AB9A;
+    border:none;
+    background:none; 
+    border-radius:0;
+  }
+
+  
+  .tab-active {
+    color: #A2AB9A;
+    border:none;
+    background:none; 
+    border-bottom: 2px solid var(--theme-color);
+    border-radius:0;
+    color:#fff;
+  }
+
+  .text-gray {
+    color: #A2AB9A;
+  }
+
+  .cta-banner {
+    padding: 20px;
+  }
+  .isHighlighted-plan {
+    background:var(--theme-color) !important;
+    order: -1;
+    color:#000 !important
+}
+.isHighlighted-plan * {
+    color:#000 !important
+
+}
+
+.admin-items {
+    flex-wrap: nowrap !important;
+        overflow-x: auto;
+        gap: 20px;
+        justify-content: flex-start;
+        padding: 4px 14px;
+}
+
+.admin-items .dash-item {
+    white-space: nowrap;
+}
+
+.tm-download-grid {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.tm-download-grid .monitor-card {
+    border-bottom: 1px solid #6c6f67;
+    padding: 20px 0;
+    border-radius:0;
+
+}
+  }
+  

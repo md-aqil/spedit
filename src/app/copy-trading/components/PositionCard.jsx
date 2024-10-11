@@ -37,7 +37,7 @@ function PositionCard({ name, rating, netCopyAmount, unrealizedPnl, roi }) {
 
   return (
     <article
-      className={`relative flex flex-col p-5 bg-white rounded-lg shadow-sm min-w-[310px] justify-between transition-opacity duration-500 ${isCardDimmed ? 'opacity-70' : ''}`}
+      className={`relative flex flex-col p-5 bg-white rounded-lg shadow-sm min-w-[310px] max-md:w-full justify-between card transition-opacity duration-500 ${isCardDimmed ? 'opacity-70' : ''}`}
     >
       <div className={`relative ${isCardDimmed ? '' : ''}`}>
         <div className="flex gap-4 items-start">

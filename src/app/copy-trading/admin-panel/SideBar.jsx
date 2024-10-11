@@ -144,7 +144,7 @@ function Sidebar({ items = SidebarItems, onSelect = () => {}, activeItem }) {
           </div>
 
           <nav className="flex gap-6 self-start mt-5 text-xl text-white ml-7">
-            <div className="flex flex-col items-start dash-item-wrap">
+            <div className="flex flex-col items-start dash-item-wrap admin-items">
               {items.map((item, index) => (
                 <div
                   key={index}

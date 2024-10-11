@@ -57,7 +57,7 @@ function Navigator() {
   };
 
   return (
-    <div className="flex flex-col  items-center px-5 pt-9 pb-16 mx-auto w-full bg-white rounded-xl max-w-[480px] navigator">
+    <div className="flex flex-col  items-center px-5 pt-9 pb-16 mx-auto w-full bg-white rounded-xl max-w-[480px] navigator max-md:w-full">
 
       <div className="flex gap-10 justify-between items-center w-full px-5 pb-5 mb-5 border-b ">
         <div className="self-stretch my-auto text-xl font-bold text-stone-950">
@@ -68,7 +68,7 @@ function Navigator() {
           <input
             type="text"
             placeholder="Search Pages"
-            className="w-[200px] py-1 px-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#9BEC00]"
+            className="w-[200px] max-md:w-[150px] py-1 px-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#9BEC00]"
           />
           <span className="icon-search-normal-1 text-2xl"></span>
         </div>

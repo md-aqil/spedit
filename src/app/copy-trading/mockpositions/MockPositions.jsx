@@ -101,7 +101,7 @@ function MockPositions() {
            
         </nav>
       </header>
-      <section className="flex flex-wrap gap-3.5 justify-center items-center mt-6 leading-none">
+      <section className=" mt-6 grid-container">
         {mockPositionsData.map((position, index) => (
           <PositionCard key={index} {...position} />
         ))}

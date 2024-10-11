@@ -5,14 +5,14 @@ import * as React from "react";
 
 function Pagination() {
   return (
-    <nav className="flex gap-6 items-center self-end mt-5 text-sm font-bold leading-none text-stone-950 tracking-[14px]">
+    <nav className="flex gap-6 items-center self-end mt-5 text-sm font-bold leading-none text-stone-950 tracking-[14px] my-5">
       <img
         loading="lazy"
         src="https://cdn.builder.io/api/v1/image/assets/TEMP/8d127158042c8634c33162815062f943f2fc6289dbdf2fb2ae58da35d3821293?apiKey=b4d1b9e87b084579b1e2475047caf617&"
         alt=""
         className="object-contain shrink-0 self-stretch my-auto w-5 rounded-none aspect-square"
       />
-      <div className="self-stretch my-auto">
+      <div className="self-stretch my-auto text-gray">
         <span className="text-lime-500">1</span> 2 3 4...10
       </div>
       <img

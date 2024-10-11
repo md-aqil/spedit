@@ -36,7 +36,7 @@ function PositionCard({ name, rating, netCopyAmount, unrealizedPnl, roi }) {
       {/* Card with reduced opacity when stopped */}
       <article
         onClick={handleRedirect}
-        className={`relative flex cursor-pointer flex-col grow shrink self-stretch px-5 py-6 my-auto bg-white rounded-lg border border-solid border-stone-300 transition-opacity max-w-[388px] min-w-[300px] duration-300 ${
+        className={`relative flex cursor-pointer flex-col card grow shrink self-stretch px-5 col-span-4 py-6 my-auto bg-white rounded-lg border border-solid border-stone-300 transition-opacity max-w-[388px] min-w-[300px] duration-300 ${
           isStopped ? "opacity-50" : "opacity-100"
         }`}
       >
@@ -115,7 +115,7 @@ function PositionCard({ name, rating, netCopyAmount, unrealizedPnl, roi }) {
         </div>
         <div className="flex gap-6 justify-between mt-6 w-full text-sm font-bold text-center">
           <button
-            className="btn btn-danger-outline"
+            className="btn btn-danger-outline max-md:text-sm"
             onClick={(event) => handleStopClick(event)}
           >
             Stop Mock Copy
@@ -125,7 +125,7 @@ function PositionCard({ name, rating, netCopyAmount, unrealizedPnl, roi }) {
                         className="btn w-[130px]"
                         onClick={(e) => e.stopPropagation()} // Prevents redirect on click
                       >
-                        <Link href="/copy-trading/startegy-description?name=copyStepOpen">
+                        <Link className=" !text-black" href="/copy-trading/startegy-description?name=copyStepOpen">
                           Copy
                         </Link>
                       </button>

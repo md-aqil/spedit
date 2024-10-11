@@ -74,16 +74,10 @@ export default function StrategyDescription({ handleCopyClick, showParameters, s
             <DashboardIcons />
 
             <div className="flex gap-10 justify-between items-start w-full strat-row">
-              <div className="w-full"> 
-              <Link
-              href="/copy-trading/leader-board"
-              className="flex items-center gap-1 text-md font-semibold text-neutral-500 hover:text-neutral-700 transition-colors px-5 back-link"
-            >
-              <span className="icon-arrow-left text-lg"></span>
-              <span>Back</span>
-            </Link>
+             
+            
             <TraderCard2 {...traderData} />
-              </div>
+            
              
               <PerformanceCard handleCopy={handleCopy} handleCopyClick={handleCopyClick} showParameters={showParameters} showConfirmTour={showConfirmTour} {...performanceData} />
             </div>
@@ -92,9 +86,9 @@ export default function StrategyDescription({ handleCopyClick, showParameters, s
             <div className="flex flex-col mt-10">
               {/* Navigation Tabs */}
               <nav className="flex flex-col w-full bg-white rounded-lg shadow-sm tb-tab">
-                <ul className="flex gap-6 items-center pl-6 pb-2 text-sm font-medium text-neutral-500 tb-tab-list">
+                <ul className="flex gap-6 items-center pl-6 pb-2 text-sm font-medium text-neutral-500 tb-tab-list max-md:mb-5">
                   <li
-                    className={`relative px-4 py-3 cursor-pointer ${activeTab === "positions" ? "text-neutral-800 font-bold tb-tab-active" : "text-neutral-500"}`}
+                    className={`relative px-4 py-3 cursor-pointer ${activeTab === "positions" ? "text-neutral-800  tb-tab-active" : "text-neutral-500"}`}
                     onClick={() => setActiveTab("positions")}
                   >
                     Positions
@@ -102,7 +96,7 @@ export default function StrategyDescription({ handleCopyClick, showParameters, s
                   </li>
 
                   <li
-                    className={`relative px-4 py-3 cursor-pointer ${activeTab === "history" ? "text-neutral-800 font-bold" : "text-neutral-500"}`}
+                    className={`relative px-4 py-3 cursor-pointer ${activeTab === "history" ? "text-neutral-800  tb-tab-active" : "text-neutral-500"}`}
                     onClick={() => setActiveTab("history")}
                   >
                     Position History
@@ -110,7 +104,7 @@ export default function StrategyDescription({ handleCopyClick, showParameters, s
                   </li>
 
                   <li
-                    className={`relative px-4 py-3 cursor-pointer ${activeTab === "copiers" ? "text-neutral-800 font-bold" : "text-neutral-500"}`}
+                    className={`relative px-4 py-3 cursor-pointer ${activeTab === "copiers" ? "text-neutral-800  tb-tab-active" : "text-neutral-500"}`}
                     onClick={() => setActiveTab("copiers")}
                   >
                     Copiers
@@ -118,7 +112,7 @@ export default function StrategyDescription({ handleCopyClick, showParameters, s
                   </li>
 
                   <li
-                    className={`relative px-4 py-3 cursor-pointer ${activeTab === "mock-copiers" ? "text-neutral-800 font-bold" : "text-neutral-500"}`}
+                    className={`relative px-4 py-3 cursor-pointer ${activeTab === "mock-copiers" ? "text-neutral-800 tb-tab-active" : "text-neutral-500"}`}
                     onClick={() => setActiveTab("mock-copiers")}
                   >
                     Mock Copiers

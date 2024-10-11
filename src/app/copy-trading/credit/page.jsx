@@ -8,18 +8,18 @@ import PlanCard from "./PlanCard";
 const MyComponent = () => {
   return (
     <div
-      style={{ marginTop: "-0.5rem" }}
-      className="flex overflow-hidden flex-col pb-20 bg-[#F8FAF5]"
+      
+      className="flex flex-col pb-20 bg-[#F8FAF5]"
     >
       {/* <Header /> */}
 
       <div className="z-10 w-full max-md:max-w-full main-body">
-        <div className="flex gap-5 max-md:flex-col">
+        <div className="flex gap-5 max-md:flex-col w-full">
           <Sidebar />
 
           <main className="flex flex-col main-container">
             <section className="flex flex-col py-10">
-              <div className="flex flex-col justify-center px-8 py-10 w-full bg-white rounded-xl shadow-md">
+              <div className="flex flex-col justify-center  w-full bg-white rounded-xl shadow-md card">
                 <header className="flex flex-wrap gap-10 justify-between items-center max-md:max-w-full">
                   <div className="flex flex-col self-stretch my-auto min-w-[240px] w-[495px] max-md:max-w-full">
                     <h1 className="text-xl font-bold leading-none text-zinc-800 max-md:max-w-full">
@@ -34,23 +34,18 @@ const MyComponent = () => {
                     </p>
                   </div>
                   <div className="flex flex-col self-stretch my-auto leading-none ">
-                    <div className="flex gap-2 items-center self-end text-3xl font-bold whitespace-nowrap text-neutral-800">
-                      <img
-                        loading="lazy"
-                        src="https://cdn.builder.io/api/v1/image/assets/TEMP/66b0b18132518c73720c6d6d5d8e20697da6c276caf5f6f2b22e176ff559d278?apiKey=b4d1b9e87b084579b1e2475047caf617&"
-                        alt="Credit Icon"
-                        className="object-contain shrink-0 self-stretch my-auto w-6 aspect-square"
-                      />
-                      <span className="self-stretch my-auto">360</span>
+                    <div className="flex gap-2 items-center self-end text-3xl font-bold whitespace-nowrap text-neutral-800 max-md:w-full ">
+                     <i className="icon-coin-1 max-md:!text-lime-500"></i>
+                      <span className="self-stretch my-auto max-md:!text-lime-500">360</span>
                     </div>
-                    <time className="mt-2.5 text-xs text-center text-pink-700">
+                    <time className="mt-2.5 text-xs text-center !text-pink-700">
                       Expire on: 09-04-2025
                     </time>
                   </div>
                 </header>
               </div>
 
-              <section className="px-8 py-10 mt-5 max-w-full bg-white rounded-xl shadow-md">
+              <section className=" mt-5 max-w-full bg-white rounded-xl shadow-md card">
                 <div className="flex gap-5 max-md:flex-col">
                   <div className="flex flex-col">
                     <div className="flex flex-wrap gap-5 justify-center items-start min-h-[181px] max-md:mt-10 max-md:max-w-full">
@@ -98,9 +93,9 @@ const MyComponent = () => {
                 </div>
               </section>
 
-              <section className="flex flex-col justify-center px-72 py-9 mt-20 w-full text-center bg-lime-500 rounded-xl shadow-md">
+              <section className="cta-banner">
                 <div className="flex flex-col justify-center w-full max-md:max-w-full">
-                  <h2 className="flex flex-col items-center w-full max-md:max-w-full text-5xl font-bold text-black leading-[53px] w-[449px] max-md:max-w-full">
+                  <h2 className="flex flex-col items-center w-full max-md:max-w-full text-5xl max-md:text-2xl font-bold text-black">
                     <span className="text-zinc-900">
                       Powerful features <span className="font-light">for</span>
                     </span>
@@ -113,7 +108,7 @@ const MyComponent = () => {
                 </div>
               </section>
 
-              <section className="flex flex-col justify-center p-10 mt-6 w-full bg-white rounded-xl shadow-md">
+              <section className="flex flex-col justify-center p-10 mt-6 w-full bg-white rounded-xl shadow-md max-md:p-0 card">
                 <div className="flex flex-wrap gap-4 justify-center items-center w-full  max-md:max-w-full">
                   <PlanCard
                     title="Freebie"

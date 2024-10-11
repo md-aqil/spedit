@@ -40,7 +40,7 @@ function TrashContainer() {
   };
 
   return (
-    <section className="flex flex-col items-start px-10 py-10 bg-white rounded-xl max-md:px-5 shadow-md mt-5">
+    <section className="flex flex-col items-start px-10 py-10 bg-white rounded-xl max-md:px-5 !shadow-md mt-5 card">
       <header className="flex flex-col self-stretch w-full max-md:max-w-full">
         <h1 className="self-start text-base font-bold leading-none whitespace-nowrap text-stone-950">
           Trash
@@ -48,10 +48,46 @@ function TrashContainer() {
         <p className="mt-1 text-xs leading-none text-neutral-500 max-md:max-w-full">
           Items that have been in Trash more than 30 days will be automatically deleted.
         </p>
+        <div className="relative flex items-center md:hidden mt-3">
+       
+            <input
+              type="checkbox"
+              className="form-checkbox h-5 w-5 bg-black"
+              checked={selectedAll}
+              onChange={() => toggleSelectAll(!selectedAll)}
+            />
+            <button
+              className="ml-2 relative py-2 text-sm text-gray-600 flex items-center"
+              onClick={() => setDropdownOpen(!dropdownOpen)}
+            >
+               
+              <span className="icon-arrow-down-1 mr-2"></span>
+              Select
+            </button>
+            {dropdownOpen && (
+              <div className="absolute left-0 mt-1 bg-white border rounded shadow-lg">
+                <ul className="text-sm">
+                  <li
+                    className="px-4 py-2 hover:bg-gray-200 cursor-pointer max-md:!text-black"
+                    onClick={() => toggleSelectAll(true)}
+                  >
+                     All
+                  </li>
+                  <li
+                    className="px-4 py-2 hover:bg-gray-200 cursor-pointer max-md:!text-black"
+                    onClick={() => toggleSelectAll(false)}
+                  >
+                     None
+                  </li>
+                </ul>
+              </div>
+            )}
+          </div>
+
       </header>
 
 {/* Table Header */}
-<div className="mt-6 w-full">
+<div className="mt-6 w-full max-md:hidden">
   <table className="min-w-full table-auto text-left text-sm bg-white border border-black shadow-sm rounded-lg">
     <thead>
       <tr className="">
@@ -109,7 +145,7 @@ function TrashContainer() {
 </div>
 
       {/* Table Rows */}
-      <div className="mt-6 w-full">
+      <div className="mt-6 w-full hidden md:block">
         <table className="min-w-full table-auto text-left text-sm">
           <tbody>
             {trashItems.map((item, index) => (
@@ -144,7 +180,45 @@ function TrashContainer() {
             ))}
           </tbody>
         </table>
+
+        
       </div>
+
+        {/* Mobile Cards */}
+        <div className="w-full md:hidden">
+        {trashItems.map((item, index) => (
+          <div
+            key={index}
+            className="border-b my-2 py-5 max-md:rounded-none rounded-lg shadow-md hover:bg-gray-50"
+          >
+            <div className="flex items-center justify-between mb-2">
+            <span className="text-blue-500">{item.id}</span>
+              <input
+                type="checkbox"
+                className="form-checkbox h-5 w-5"
+                checked={checkedItems.includes(index)}
+                onChange={() => toggleCheckbox(index)}
+              />
+             
+            </div>
+
+
+            <div className="text-gray-500 mb-1">Username: {item.username}</div>
+            <div className="text-gray-500 mb-1">
+              Days Until Deletion: {item.daysUntilDeletion}
+            </div>
+            <div className="flex justify-between gap-2 mt-5">
+              <button className="btn2 text-xs !text-black">
+                Restore
+              </button>
+              <button className="btn btn-outline !text-xs">
+                Delete Permanently
+              </button>
+            </div>
+          </div>
+        ))}
+      </div>
+
     </section>
   );
 }

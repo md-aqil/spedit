@@ -12,7 +12,7 @@ const brokers = [
 
 function BrokerList() {
   return (
-    <ul className="mt-7">
+    <ul className="mt-7 max-md:bg-[#181916] max-md:mt-0">
       {brokers.map((broker) => (
         <li key={broker.id} className="mt-1 first:mt-0">
           <BrokerItem {...broker} />

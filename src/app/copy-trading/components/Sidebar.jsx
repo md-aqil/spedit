@@ -165,7 +165,7 @@ function Sidebar({ items = SidebarItems, onSelect = () => {}, activeItem }) {
                 <Link href={item.url} key={index} className={`${item.text}`}> 
                   <div
                     className={`${item.text} flex gap-2 items-center dash-item mt-6 ${
-                      active === item.text ? "dash-item-active " : ""
+                      active === item.text ? "dash-item-active" : ""
                     }`}
                     onClick={() => handleSelect(item)}
                     role="button"

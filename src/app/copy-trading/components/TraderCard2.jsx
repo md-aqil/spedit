@@ -18,6 +18,14 @@ const TraderCard = ({
 }) => {
   return (
     <div className="flex flex-col p-5 rounded-lg  bg-none w-[400px] trader-card2" >
+        <Link
+              href="/copy-trading/leader-board"
+              className="flex items-center gap-1 text-md font-semibold text-neutral-500 hover:text-neutral-700 transition-colors pb-4 back-link"
+            >
+              <span className="icon-arrow-left text-lg"></span>
+              <span>Back</span>
+            </Link>
+
       <div className="flex gap-10 justify-between items-start w-full">
         <div className="flex flex-col leading-none whitespace-nowrap w-[280px]">
           <div className="flex flex-col w-full">

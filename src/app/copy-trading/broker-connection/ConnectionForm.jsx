@@ -5,7 +5,7 @@ import React from "react";
 
 function ConnectionForm() {
   return (
-    <form className="flex flex-col grow px-5 py-4 w-full text-base text-black bg-white rounded-lg  max-md:mt-10 max-md:max-w-full shadow-md">
+    <form className="flex flex-col grow px-5 py-4 w-full text-base text-black bg-white rounded-lg  max-md:mt-10 max-md:max-w-full shadow-md card">
       <div className="flex flex-col w-full">
         <label htmlFor="apiKey">Api Key</label>
         <input

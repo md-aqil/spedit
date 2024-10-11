@@ -5,7 +5,7 @@ const PlanCard = ({ title, description, price, priceInterval, isHighlighted, fea
   return (
 
 
-    <article className={`flex flex-col self-stretch px-6 py-5 my-auto ${isHighlighted ? 'bg-neutral-800 py-16' : 'bg-white'} rounded-xl ${isHighlighted ? 'shadow-lg' : 'border border-solid border-stone-300'} min-h-[${isHighlighted ? '100%' : '100%'}px] min-w-[240px] w-[300px] `}>
+    <article className={`flex flex-col self-stretch px-6 py-5 card border border-solid border-stone-300 my-auto ${isHighlighted ? '!bg-neutral-800 !py-12 isHighlighted-plan' : 'bg-white'} rounded-xl ${isHighlighted ? 'shadow-lg' : ''} min-h-[${isHighlighted ? '100%' : '100%'}px] min-w-[240px] w-[300px] max-md:w-full`}>
       <div className="flex flex-col w-full">
         <header className="flex flex-col w-full">
           <h3 className={`text-base font-bold ${isHighlighted ? 'text-white' : 'text-stone-950'}`}>{title}</h3>
