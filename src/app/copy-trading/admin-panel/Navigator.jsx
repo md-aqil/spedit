@@ -5,7 +5,7 @@ const NavigatorItem = ({ title, iconSrc, children, editedTime, isOpen, onClick }
   return (
     <div className={`w-full transition-colors duration-300`}>
       <div
-        className={`flex justify-between items-center cursor-pointer px-4 py-3 ${
+        className={`flex justify-between items-center cursor-pointer px-4 n-active py-3 ${
           isOpen ? "bg-[#D9F89E] rounded-lg" : ""
         }`}
         onClick={onClick} // Handle item click

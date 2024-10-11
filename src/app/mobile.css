@@ -567,5 +567,9 @@
     border-radius:0;
 
 }
+
+.n-active  {
+    color: #000 !important;
+}
   }
   
