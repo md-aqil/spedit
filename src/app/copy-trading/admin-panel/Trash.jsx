@@ -64,6 +64,7 @@ function TrashContainer() {
               <span className="icon-arrow-down-1 mr-2"></span>
               Select
             </button>
+            
             {dropdownOpen && (
               <div className="absolute left-0 mt-1 bg-white border rounded shadow-lg">
                 <ul className="text-sm">
@@ -189,7 +190,7 @@ function TrashContainer() {
         {trashItems.map((item, index) => (
           <div
             key={index}
-            className="border-b my-2 py-5 max-md:rounded-none rounded-lg shadow-md hover:bg-gray-50"
+            className="border-b my-2 py-5 max-md:rounded-none rounded-lg shadow-md "
           >
             <div className="flex items-center justify-between mb-2">
             <span className="text-blue-500">{item.id}</span>

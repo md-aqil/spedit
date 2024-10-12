@@ -49,9 +49,9 @@ function TransactionMonitoring() {
                             <div className="mt-8 text-xs text-stone-500">DOJ: <span className="font-semibold">01-01-1994</span></div>
                         </div>
                     </div>
-                    <button className="flex gap-1 justify-center items-center self-stretch px-2 py-2.5 my-auto text-sm font-bold text-center rounded border border-solid border-neutral-800 min-h-[36px] text-neutral-800">
+                    <button className="flex gap-2 items-center btn btn-outline">
                     <span className="icon-direct-inbox text-lg"></span>
-                        <span className="self-stretch my-auto">Download All</span>
+                        Download All
                     </button>
                 </div>
 
@@ -62,7 +62,7 @@ function TransactionMonitoring() {
                             <div className="flex flex-col w-full">
                                 <div className="flex gap-10 justify-between items-start w-full text-xs text-neutral-800">
                                     <div className="opacity-80">{file.name}</div>
-                    <a href="#" download={file.fileName} className="icon-direct-inbox text-lg"></a>
+                    <a href="#" download={file.fileName} className="icon-direct-inbox text-lg hover:text-lime-500"></a>
                                     
                                 </div>
                                 <div className="mt-3 text-sm font-semibold text-blue-500">{file.fileName}</div>

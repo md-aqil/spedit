@@ -82,7 +82,7 @@ function RightManagement() {
         <h2 className="opacity-80">{title}</h2>
        <i className='icon-trash text-2xl'></i>
       </div>
-      <div className="flex flex-col items-start px-5 pt-4 pb-11 mt-3 w-full text-xs text-black rounded-lg bg-stone-50 max-md:pr-5 max-md:max-w-full">
+      <div className="flex flex-col items-start px-5 pt-4 pb-11 mt-3 w-full text-xs text-black rounded-lg bg-stone-50 max-md:p-0 max-md:max-w-full">
         <MultiSelect
           tags={rights}
           onTagAdd={(right) => handleAddRight(right, type)}

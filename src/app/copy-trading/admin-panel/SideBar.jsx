@@ -4,39 +4,57 @@ import PropTypes from "prop-types";
 import cogIcon from "../../../assets/cog.svg";
 import avatar from "../../../assets/avatar-f.png";
 import Image from "next/image";
+import Link from "next/link"; 
+
 
 const SidebarItems = [
   {
-    icon: "icon-profile-tick",
-    text: "Profile",
+    icon: "icon-user",
+    text: "User Management",
+    url: "/copy-trading/admin-panel/user-management",
+  
   },
   {
-    icon: "icon-folder",
-    text: "Portfolio",
+    icon: "icon-money-send",
+    text: "Transaction Monitor",
+    url: "/copy-trading/admin-panel/transaction-monitor",
+
   },
   {
-    icon: "icon-code",
-    text: "Build",
+    icon: "icon-data",
+    text: "CMS",
+    url: "/copy-trading/admin-panel/cms",
+
   },
   {
-    icon: "icon-code-1",
-    text: "Code",
+    icon: "icon-activity",
+    text: "Analytics & Reporting",
+    url: "/copy-trading/admin-panel/analytics-reporting",
+
   },
   {
-    icon: "icon-copy",
-    text: "Copy",
+    icon: "icon-presention-chart",
+    text: "Marketing Tools",
+    url: "/copy-trading/admin-panel/marketing-tools",
+
   },
   {
-    icon: "icon-setting-3",
-    text: "Live Tool",
+    icon: "icon-ticket-2",
+    text: "Support & Ticketing",
+    url: "/copy-trading/admin-panel/support-ticketing",
+
   },
   {
-    icon: "icon-game",
-    text: "Quest",
+    icon: "icon-key",
+    text: "Rights Management",
+    url: "/copy-trading/admin-panel/rights-management",
+
   },
   {
-    icon: "icon-message-question",
-    text: "Learn",
+    icon: "icon-trash",
+    text: "Trash",
+    url: "/copy-trading/admin-panel/trash",
+
   },
 ];
 
@@ -144,19 +162,26 @@ function Sidebar({ items = SidebarItems, onSelect = () => {}, activeItem }) {
           </div>
 
           <nav className="flex gap-6 self-start mt-5 text-xl text-white ml-7">
+
             <div className="flex flex-col items-start dash-item-wrap admin-items">
-              {items.map((item, index) => (
-                <div
-                  key={index}
-                  className={`flex gap-2 items-center dash-item mt-6 ${active === item.text ? "dash-item-active" : ""}`}
-                  onClick={() => handleSelect(item)}
-                  role="button"
-                  tabIndex="0"
-                >
-                  <i className={`${item.icon} w-6 aspect-square`}></i>
-                  {!isCollapsed && <div>{item.text}</div>}
-                </div>
+
+
+ {items.map((item, index) => (
+                <Link href={item.url} key={index} className={`${item.text}`}> 
+                  <div
+                    className={`${item.text} flex gap-2 items-center dash-item mt-6 ${
+                      active === item.text ? "dash-item-active" : ""
+                    }`}
+                    onClick={() => handleSelect(item)}
+                    role="button"
+                    tabIndex="0"
+                  >
+                    <i className={`${item.icon} w-6 aspect-square`}></i>
+                    {!isCollapsed && <div>{item.text}</div>}
+                  </div>
+                </Link>
               ))}
+
             </div>
           </nav>
         </div>

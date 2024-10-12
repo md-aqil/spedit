@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import cogIcon from "../../../assets/cog.svg";
 import avatar from "../../../assets/avatar-f.png";
 import Image from "next/image";
-import Link from "next/link"; // Import Link from Next.js
+import Link from "next/link"; 
 
 const SidebarItems = [
   {

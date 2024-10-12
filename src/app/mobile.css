@@ -571,5 +571,11 @@
 .n-active  {
     color: #000 !important;
 }
+
+.admin-items a {
+  flex-grow: 1;
+  width: inherit;
+}
+
   }
   

@@ -38,7 +38,7 @@ const SubItem = ({ title, isSelected }) => {
   return (
     <div
       className={`pl-4 py-2 text-sm cursor-pointer ${
-        isSelected ? "border-l-2 border-[#9BEC00]" : ""
+        isSelected ? "border-l-2 border-[#9BEC00] text-black font-medium" : ""
       }`}
     >
       {title}
@@ -57,7 +57,7 @@ function Navigator() {
   };
 
   return (
-    <div className="flex flex-col  items-center px-5 pt-9 pb-16 mx-auto w-full bg-white rounded-xl max-w-[480px] navigator max-md:w-full">
+    <div className="flex flex-col  items-center px-5 pt-9 pb-16 mx-auto w-full bg-white rounded-xl max-w-[480px] navigator max-md:w-full max-md:px-2">
 
       <div className="flex gap-10 justify-between items-center w-full px-5 pb-5 mb-5 border-b ">
         <div className="self-stretch my-auto text-xl font-bold text-stone-950">

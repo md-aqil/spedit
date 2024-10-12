@@ -293,12 +293,13 @@ z-index: 10;
 .btn {
   position: relative;
   display: inline-block;
-  padding: 8px 16px; /* Equivalent to py-3.5 and px-7 */
+  padding: 8px 16px; 
   background-color: var(--theme-color);
   border-radius: 4px;
-  color: #3c3c3c; /* Darker color for text */
+  color: #3c3c3c;
   font-size: 16px;
-  letter-spacing: 1px;
+  letter-spacing: 0px;
+  line-height:normal;
   text-align: center;
   text-decoration: none;
   cursor: pointer;
