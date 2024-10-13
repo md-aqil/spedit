@@ -6,7 +6,7 @@ import MainContent from "../components/MainContent";
 import DashboardIcons from "../components/DashboardIcons";
 
 import Onboarding from "../components/Onboarding";
-import StrategieCard from "../components/strategy-card";
+import StrategyCard from "../components/strategy-card";
 
 function TopTraders() {
   return (
@@ -27,7 +27,7 @@ function TopTraders() {
             </nav>
           </header>
 
-          <StrategieCard />
+          <StrategyCard />
         </main>
       </div>
     </div>
