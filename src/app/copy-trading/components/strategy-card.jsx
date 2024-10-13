@@ -9,7 +9,7 @@ import heartFullIcon from "../../../assets/heart-full.svg";
 import userIcon from "../../../assets/user1.png";
 import JoinedUsers from "../../../assets/JoinedUsers.png";
 import Link from "next/link";
-import { startTour } from "../tour";
+import { useTour } from "../tour/provider";
 
 const StrategyCard = () => {
   const [favorites, setFavorites] = useState([]);
@@ -17,8 +17,9 @@ const StrategyCard = () => {
   const [actionType, setActionType] = useState("");
   const [selectedCard, setSelectedCard] = useState(null);
   const [cardsStatus, setCardsStatus] = useState({});
+  const tour = useTour();
   useEffect(() => {
-    startTour();
+    tour.start();
   }, []);
   const router = useRouter();
 

@@ -1,12 +1,8 @@
 "use client";
 
-import { useEffect, useRef, type PropsWithChildren } from "react";
-
-async function getTourClient() {
-  const { initializeTourGuide } = await import("./tour/lib");
-  return initializeTourGuide();
-}
+import { type PropsWithChildren } from "react";
+import { TourProvider } from "./tour/provider";
 
 export default function CopyTradingTemplate({ children }: PropsWithChildren) {
-  return <>{children}</>;
+  return <TourProvider>{children}</TourProvider>;
 }

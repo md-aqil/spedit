@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 
-const strategyCopyParameters = () => {
+const StrategyCopyParameters = () => {
   const [isFixedRatio, setIsFixedRatio] = useState(true);
   const [copyAmount, setCopyAmount] = useState("");
   const [totalStopLoss, setTotalStopLoss] = useState("");
@@ -200,4 +200,4 @@ const strategyCopyParameters = () => {
   );
 };
 
-export default strategyCopyParameters;
+export default StrategyCopyParameters;
