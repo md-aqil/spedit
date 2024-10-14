@@ -82,6 +82,9 @@ export default function StrategyDescription({ handleCopyClick, showParameters, s
               <PerformanceCard handleCopy={handleCopy} handleCopyClick={handleCopyClick} showParameters={showParameters} showConfirmTour={showConfirmTour} {...performanceData} />
             </div>
 
+
+            
+
             {/* Tabs Section */}
             <div className="flex flex-col mt-10">
               {/* Navigation Tabs */}
