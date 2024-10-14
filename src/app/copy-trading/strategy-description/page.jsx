@@ -1,19 +1,15 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import Sidebar from "../components/Sidebar";
-import Header from "../components/Header";
 import TraderCard2 from "../components/TraderCard2";
-import PerformanceCard from "../components/PerformanceCard";
 import PositionTable from "../components/PositionTable";
 import DashboardIcons from "../components/DashboardIcons";
 import { useSearchParams } from "next/navigation";
 import TradeHistoryTable from "../trade-history/TradeHistoryTable";
-import CopiersTable from "../lead-trader-management/CopiersTable"
+import CopiersTable from "../lead-trader-management/CopiersTable";
+import { PerformanceSection } from "./perfomance/performance";
 
-import Link from "next/link";
-
-
-export default function StrategyDescription({ handleCopyClick, showParameters, showConfirmTour }) {
+export default function StrategyDescription({ handleCopyClick, showParameters }) {
   // State to track the active tab
   const [activeTab, setActiveTab] = useState("positions");
   const [handleCopy, setHandleCopy] = useState(false);
@@ -63,6 +59,7 @@ export default function StrategyDescription({ handleCopyClick, showParameters, s
       setHandleCopy(true);
     }
   }, []);
+
   return (
     <div className="flex overflow-hidden flex-col pb-20 bg-stone-50">
       {/* <Header /> */}
@@ -74,12 +71,8 @@ export default function StrategyDescription({ handleCopyClick, showParameters, s
             <DashboardIcons />
 
             <div className="flex gap-10 justify-between items-start w-full strat-row">
-             
-            
-            <TraderCard2 {...traderData} />
-            
-             
-              <PerformanceCard handleCopy={handleCopy} handleCopyClick={handleCopyClick} showParameters={showParameters} showConfirmTour={showConfirmTour} {...performanceData} />
+              <TraderCard2 {...traderData} />
+              <PerformanceSection handleCopy={handleCopy} handleCopyClick={handleCopyClick} showParameters={showParameters} {...performanceData} />
             </div>
 
             {/* Tabs Section */}
@@ -124,15 +117,10 @@ export default function StrategyDescription({ handleCopyClick, showParameters, s
               {/* Tab Content */}
               <div className="">
                 {activeTab === "positions" && <PositionTable positions={positionsData} />}
-                
-      
                 {activeTab === "history" && <TradeHistoryTable />}
-
                 {activeTab === "copiers" && <CopiersTable />}
                 {activeTab === "mock-copiers" && "mock-copiers"}
               </div>
-
-              
             </div>
           </div>
         </div>

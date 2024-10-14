@@ -7,6 +7,8 @@ export const stepsPages = [
   "/copy-trading/leader-board/",
   "/copy-trading/strategy-description/",
   "/copy-trading/strategy-description/?name=copyStepOpen",
+  "/copy-trading/strategy-description/?name=copyStepOpen",
+  "/copy-trading/strategy-description/?name=copyStepOpen&confirmation=true",
   "/copy-trading/dashboard/",
 ];
 
@@ -16,7 +18,7 @@ export function useNavigate() {
     const lnk = stepsPages[path];
     if (!lnk) return;
     router.push(lnk);
-    await sleep(1000);
+    await sleep(300);
   };
 }
 

@@ -338,13 +338,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@remix-run/router@npm:1.19.2":
-  version: 1.19.2
-  resolution: "@remix-run/router@npm:1.19.2"
-  checksum: 10c0/ac7fc813350686705f2c29219e70e1e299d9a8e3b301e9e81f7e84f578c40c6462b590cf0d78863bac40dbc325b68c71ae070f4a1465793d1d1971b619618295
-  languageName: node
-  linkType: hard
-
 "@rushstack/eslint-patch@npm:^1.3.3":
   version: 1.10.4
   resolution: "@rushstack/eslint-patch@npm:1.10.4"
@@ -608,7 +601,6 @@ __metadata:
     react-chartjs-2: "npm:^5.2.0"
     react-datepicker: "npm:^7.3.0"
     react-dom: "npm:^18.3.1"
-    react-router-dom: "npm:^6.26.1"
     react-transition-group: "npm:^4.4.5"
     sass: "npm:^1.78.0"
     swiper: "npm:^11.1.9"
@@ -3717,30 +3709,6 @@ __metadata:
     react: ^15.5.x || ^16.x || ^17.x || ^18.x
     react-dom: ^15.5.x || ^16.x || ^17.x || ^18.x
   checksum: 10c0/93b02c493332ca7f8b480a1e185386c4af55d1daf33af2f68ddf440e4fc9b22ad13f59d7e204694aa31c1c2e332f0766c7ee302fe3b0cecbd0e0b45d55905c96
-  languageName: node
-  linkType: hard
-
-"react-router-dom@npm:^6.26.1":
-  version: 6.26.2
-  resolution: "react-router-dom@npm:6.26.2"
-  dependencies:
-    "@remix-run/router": "npm:1.19.2"
-    react-router: "npm:6.26.2"
-  peerDependencies:
-    react: ">=16.8"
-    react-dom: ">=16.8"
-  checksum: 10c0/7515128a98eef0a6b2bf354ef9dfefad03556a06be00fa9220eda6526aaada8a42f294911083473d7ced6d7128c3088bd193218bbb3d62593f9f4f7053781c23
-  languageName: node
-  linkType: hard
-
-"react-router@npm:6.26.2":
-  version: 6.26.2
-  resolution: "react-router@npm:6.26.2"
-  dependencies:
-    "@remix-run/router": "npm:1.19.2"
-  peerDependencies:
-    react: ">=16.8"
-  checksum: 10c0/0d15a39b419c99fb5ccad76388bfc4ee2b01323b3b1b694595a9f9ea28e1fbeea25486b5398f5d3d93922f5c6a9aa751b6bb27419488d85279f6ca5ff9e0a6bb
   languageName: node
   linkType: hard
 
